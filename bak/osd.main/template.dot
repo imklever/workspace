@@ -1,0 +1,198 @@
+digraph picture_2
+{
+        rankdir="LR";
+
+
+
+        {
+            rank="same";
+            main[label="\N\nmain"];
+            }
+
+
+
+
+
+        {
+            rank="same";
+            j1[shape=diamond,label="\N\nmkjournal"];
+            j2[shape=diamond,label="\N\nmkfs"];
+            j3[shape=diamond,label="\N\nmkkey"];
+            j4[shape=diamond,label="\N\nflushjournal"];
+            j5[shape=diamond,label="\N\nconvertfilestore"];
+            }
+
+
+
+
+
+        {
+            rank="same";
+            node[shape=box]
+            f20[label="\N\nglobal_init();\l\
+ceph_heap_profiler_init();\l"]
+            f1[label="\N\nObjectStore::create()"];
+            f2[label="\N\ncommon_init_finish()\l\
+keyring->load()\l\
+keyring->get_auth\l"];
+            f5[label="\N\nMonClient.build_initial_monmap()\l\
+MonClient.get_monmap_privately()\l\
+OSD::mkfs()\l"];
+            f8[label="\N\nstore->mkjournal()"];
+            f9[label="\N\nstore->mount()\l\
+store->umount()\l\
+delete store\l"];
+            f12[label="\N\nOSD::peek_meta"];
+            f13[label="\N\npick_addresses"];
+            f14[label="\N\nMessenger *ms_public = Messenger::create()\l\
+Messenger *ms_cluster = Messenger::create()\l\
+Messenger *ms_hb_back_client = Messenger::create()\l\
+Messenger *ms_hb_front_client = Messenger::create()\l\
+Messenger *ms_hb_back_server = Messenger::create()\l\
+Messenger *ms_hb_front_server = Messenger::create()\l\
+Messenger *ms_objecter = Messenger::create()\l"];
+            f15[label="\N\nms_cluster->set_cluster_protocol(CEPH_OSD_PROTOCOL);\l\
+ms_hb_front_client->set_cluster_protocol(CEPH_OSD_PROTOCOL);\l\
+ms_hb_back_client->set_cluster_protocol(CEPH_OSD_PROTOCOL);\l\
+ms_hb_back_server->set_cluster_protocol(CEPH_OSD_PROTOCOL);\l\
+ms_hb_front_server->set_cluster_protocol(CEPH_OSD_PROTOCOL);\l"];
+            f16[label="\N\nms_public->set_default_policy();\l\
+ms_public->set_policy_throttlers()\l\
+ms_public->set_policy()\l\
+ms_cluster->set_default_policy()\l\
+ms_cluster->set_policy()\l\
+ms_hb_front_client->set_policy()\l\
+ms_hb_back_client->set_policy()\l\
+ms_hb_back_server->set_policy()\l\
+ms_hb_front_server->set_policy()\l\
+ms_objecter->set_default_policy()\l"];
+            f17[label="\N\nms_hb_front_client->set_socket_priority();\l\
+ms_hb_back_client->set_socket_priority();\l\
+ms_hb_back_server->set_socket_priority();\l\
+ms_hb_front_server->set_socket_priority();\l"];
+            f18[label="\N\nms_hb_back_server->bind();\l\
+ms_hb_back_client->client_bind();\l\
+ms_hb_front_server->bind();\l\
+ms_hb_front_client->client_bind();\l"];
+            f19[label="\N\nglobal_init_daemonize()\lcommon_init_finish()"];
+            f21[label="\N\nMonClient mc\lbuild_initial_monmap\lglobal_init_chdir\l"];
+            f22[label="\N\nosd = new OSD(g_ceph_context,\l\
+store,\r\
+whoami,\r\
+ms_cluster,\r\
+ms_public,\r\
+ms_hb_front_client,\r\
+ms_hb_back_client,\r\
+ms_hb_front_server,\r\
+ms_hb_back_server,\r\
+ms_objecter,\r\
+&mc,\r\
+g_conf->osd_data,\r\
+g_conf->osd_journal)\r\
+osd->pre_init()\l"];
+            f23[label="\N\nms_public->start();\l\
+ms_hb_front_client->start();\l\
+ms_hb_back_client->start();\l\
+ms_hb_front_server->start();\l\
+ms_hb_back_server->start();\l\
+ms_cluster->start();\l\
+ms_objecter->start();\l"];
+            f24[label="\N\n// start osd\l\
+osd->init()\l\
+// install signal handlers\l\
+init_async_signal_handler();\l\
+register_async_signal_handler(SIGHUP, sighup_handler);\l\
+register_async_signal_handler_oneshot(SIGINT, handle_osd_signal);\l\
+register_async_signal_handler_oneshot(SIGTERM, handle_osd_signal);\l\
+
+osd->final_init();\l"];
+            f24[label="\N\nms_public->wait();\l\
+ms_hb_front_client->wait();\l\
+ms_hb_back_client->wait();\l\
+ms_hb_front_server->wait();\l\
+ms_hb_back_server->wait();\l\
+ms_cluster->wait();\l\
+ms_objecter->wait();\l"];
+            f25[label="\N\nunregister_async_signal_handler(SIGHUP, sighup_handler);\l\
+unregister_async_signal_handler(SIGINT, handle_osd_signal);\l\
+unregister_async_signal_handler(SIGTERM, handle_osd_signal);\l"];
+            f26[label="\N\nshutdown_async_signal_handler();\l"];
+            f27[label="\N\ndelete osd;
+delete ms_public;\l\
+delete ms_hb_front_client;\l\
+delete ms_hb_back_client;\l\
+delete ms_hb_front_server;\l\
+delete ms_hb_back_server;\l\
+delete ms_cluster;\l\
+delete ms_objecter;\l"];
+            f28[label="\N\nclient_byte_throttler.reset();\l"];
+            #f29[label=""];
+            }
+
+
+
+
+
+
+        {
+            main->f20[color=red];
+            main->f1[color=green];
+            main->j3[color=blue];
+                j3->f2[label="yes"];
+            main->j2[color=red];
+                j2->f5[label="yes"];
+            main->j1;
+                j1->f8[label="yes"];
+            main->j4;
+                j4->f9[label="yes"];
+            main->j5;
+            main->f12;
+            main->f13;
+            main->f14;
+            main->f15;
+            main->f16;
+            main->f17;
+            main->f18;
+            main->f19;
+            #main->f20;
+            main->f21;
+            main->f22;
+            main->f23;
+            main->f24;
+            main->f25;
+            main->f26;
+            main->f27;
+            main->f28;
+            #main->f29;
+            }
+
+
+
+        {
+            rank="same";
+            j3->j2->j1->j4->j5;
+            }
+
+
+
+
+        {
+            rank="same";
+            
+            f20->f1;
+            f1->f2[style=dotted];
+            
+            f2->f5[style=dotted];
+
+            f5->f8[style=dotted];
+
+            f8->f9[style=dotted];
+
+            f9->f12[style=dotted];
+
+            f12->f13->f14->f15->f16->f17->f18->f19->f21->f22->f23->f24->f25->f26->f27->f28;
+
+            }
+        }
+
+

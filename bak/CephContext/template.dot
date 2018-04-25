@@ -1,0 +1,44 @@
+graph {
+
+        edge[fontname="SimSun",fontcolor=red];
+        node[fontname="SimSun",size="20,20",style=filled];
+
+        fontcolor = red;
+        label = "class CephContext";
+        labelloc="t";
+        #labeljust="l";
+
+        rankdir = "LR";
+
+
+        subgraph cluster_variabl1 {
+            label = "variable";
+            labelloc="t";
+            color = red;
+            node[shape=box]
+
+            var1[label="md_config_t *_conf"];
+            var2[label="ceph::logging::Log *_log;"];
+
+            }
+        #
+
+
+        subgraph cluster_function1 {
+            label = "function"
+            labelloc = "t";
+            color = blue;
+            node[shape=box]
+
+            func1[label="\N\n"];
+            func2[label="\N\n"];
+            }
+
+        {
+            cluster_variabl1 -- cluster_function1;
+            }
+
+
+        }
+
+

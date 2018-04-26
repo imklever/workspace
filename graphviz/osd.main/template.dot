@@ -126,7 +126,13 @@ delete ms_hb_back_server;\l\
 delete ms_cluster;\l\
 delete ms_objecter;\l"];
             f28[label="\N\nclient_byte_throttler.reset();\l"];
-            #f29[label=""];
+            f29[label="\N\nosd->init();\l"];
+            f30[label="\N\n// install signal handlers\l\
+init_async_signal_handler();\l\
+register_async_signal_handler(SIGHUP, sighup_handler);\l\
+register_async_signal_handler_oneshot(SIGINT, handle_osd_signal);\l\
+register_async_signal_handler_oneshot(SIGTERM, handle_osd_signal);\l"];
+            f31[label="\N\nosd->final_init();\l"];
             }
 
 
@@ -190,7 +196,7 @@ delete ms_objecter;\l"];
 
             f9->f12[style=dotted];
 
-            f12->f13->f14->f15->f16->f17->f18->f19->f21->f22->f23->f24->f25->f26->f27->f28;
+            f12->f13->f14->f15->f16->f17->f18->f19->f21->f22->f23->f29->f30->f31->f24->f25->f26->f27->f28;
 
             }
         }

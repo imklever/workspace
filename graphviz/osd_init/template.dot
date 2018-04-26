@@ -1,0 +1,221 @@
+digraph picture_2
+{
+        rankdir="LR";
+
+
+        #main
+        {
+            rank="same";
+            main[label="osd::init"];
+            }
+
+
+
+
+        #if
+        #{
+        #    rank="same";
+        #    j1[shape=diamond,label="\N\n"];
+        #    j2[shape=diamond,label="\N\n"];
+        #    j3[shape=diamond,label="\N\n"];
+        #    j4[shape=diamond,label="\N\n"];
+        #    j5[shape=diamond,label="\N\n"];
+        #    }
+
+
+
+
+        #function
+        {
+            rank="same";
+            node[shape=box]
+            f1[label="\N
+store->mount();\l"];
+
+            f2[label="\N
+read_superblock();\l"];
+
+            f3[label="\N
+osdmap = get_map(superblock.current_epoch);\l"];
+
+            f4[label="\N
+// initialize osdmap references in sharded wq\l\
+op_shardedwq.prune_pg_waiters(osdmap, whoami);\l"];
+
+            f5[label="\N
+load_pgs();\l"];
+
+            f6[label="\N
+hb client & server messenger->add_dispatcher_head()\l"];
+
+            f7[label="\N
+monc->init();\l"];
+
+            f8[label="\N
+mgrc.init();\l"];
+
+            f9[label="\N
+peering_tp.start();\l\
+osd_op_tp.start();\l\
+disk_tp.start();\l\
+command_tp.start();\l\
+\
+ set_disk_tp_priority();\l\
+// start the heartbeat\l\
+heartbeat_thread.create(\"osd_srv_heartbt\");\l"];
+
+            f10[label="\N
+service.init();\l\
+service.publish_map(osdmap);\l\
+service.publish_superblock(superblock);\l"];
+
+            f11[label="\N
+monc->authenticate();\l"];
+
+            f12[label="\N
+update_crush_device_class();\l\
+update_crush_location();\l"];
+
+            f13[label="\N
+service.final_init();\l"]
+
+            f14[label="\N
+check_config();\l\
+\l\
+//ensuring pgs have consumed prior maps\l\
+consume_map();\l\
+peering_wq.drain();\l\
+\l\
+// subscribe to any pg creations\l\
+monc->sub_want(\"osd_pg_creates\", last_pg_create_epoch, 0);\l\
+\l\
+// MgrClient needs this (it doesn't have MonClient reference itself)\l\
+monc->sub_want(\"mgrmap\", 0, 0);\l\
+\l\
+// we don't need to ask for an osdmap here; objecter will\l\
+//monc->sub_want(\"osdmap\", osdmap->get_epoch(), CEPH_SUBSCRIBE_ONETIME);\l\
+\l\
+monc->renew_subs();\l"]
+
+
+            f15[label="\N
+start_boot();\l\
+return (0)\l"]
+            }
+
+
+
+
+        #relation
+        {
+            main->f1[color=red]
+            main->f2[color=green]
+            main->f3[color=blue]
+            main->f4
+            main->f5
+            main->f6
+            main->f7
+            main->f8
+            main->f9
+            main->f10
+            main->f11
+            main->f12
+            main->f13
+            main->f14
+            main->f15
+            }
+
+
+
+
+        #relation
+        {
+            rank="same";
+            
+            #f1->f2[style=dotted];
+            f1->f2->f3->f4->f5->f6->f7->f8->f9->f10->f11->f12->f13->f14->f15;
+
+            }
+
+
+
+
+        subgraph cluster0{
+            rankdir="LR"
+            {
+                f10->f0_0
+                }
+
+            #start
+            {
+                f0_0[label="\N
+OSDService::init()\l"]
+                }
+
+            #function
+            {
+                rank="same"
+                node[shape=box]
+                f0_1[label="\N
+reserver_finisher.start();\l\
+objecter_finisher.start();\l\
+objecter->set_client_incarnation(0);\l"]
+
+                f0_2[label="\N
+watch_timer.init();\l\
+agent_timer.init();\l\
+snap_sleep_timer.init();\l\
+scrub_sleep_timer.init();\l"]
+
+                f0_3[label="\N
+agent_thread.create(\"osd_srv_agent\");\l"]
+                }
+
+            #relation
+            {
+                f0_0->f0_1
+                f0_0->f0_2
+                f0_0->f0_3
+                }
+
+            #relation
+            {
+                f0_1->f0_2->f0_3
+                }
+
+            }
+
+
+
+
+
+        subgraph cluster1{
+            rankdir="LR"
+            {
+
+                f13->f1_0
+                }
+
+            #start
+            {
+                f1_0[label="\N
+OSDService::final_init()\l"]
+                }
+
+            #function
+            {
+                rank="same"
+                node[shape=box]
+                f1_1[label="\N
+objecter->start(osdmap.get());\l"]
+                }
+
+            #relation
+            {
+                f1_0->f1_1
+                }
+
+            }
+        }
+
+

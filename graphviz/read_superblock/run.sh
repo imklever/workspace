@@ -1,6 +1,7 @@
 #!/bin/bash
 
-dot -T png -o ../../code.png template.dot
+dot -T png -o ../../png/read_superblock.png template.dot
+
 #cp code.png /usr/share/nginx/html/
 #shotwell out.png
 #eog out.png

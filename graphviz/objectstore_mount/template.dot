@@ -1,0 +1,228 @@
+digraph picture
+{
+        rankdir="LR"
+
+
+
+        {
+            rank="same"
+            main[label="store::mount()"]
+            }
+
+
+
+
+
+        {
+            rank="same"
+            j1[shape=diamond,label="\N\nFileStore"]
+            j2[shape=diamond,label="\N\nMemStore"]
+            j3[shape=diamond,label="\N\nBlueStore"]
+            j4[shape=diamond,label="\N\nrandom{FileStore/BlueStore}"]
+            j5[shape=diamond,label="\N\nKStore"]
+            }
+
+
+
+
+
+        {
+            rank="same";
+            node[shape=box]
+            f1[label="\N\l"]
+            f3[label="\N\l"]
+            }
+
+
+
+
+
+
+        {
+            main->j1[color=red]
+            main->j2[color=green]
+            main->j3[color=blue]
+            main->j4[color=red]
+            main->j5[color=green]
+            }
+
+
+
+        {
+            rank="same";
+            j1->j2->j3->j4->j5[label="No"]
+            }
+
+
+
+
+        {
+            
+            j1->f1[label="yes"]
+            j3->f3[label="yes"]
+
+            }
+
+
+
+        {
+            
+            f1->f3
+
+            }
+        }
+
+
+supported_compat_set = get_fs_supported_compat_set();
+
+  set_throttle_params();
+
+  read_fsid(fsid_fd, &fsid);
+
+  ret = read_superblock();
+
+  // open some dir handles
+  ::open(basedir.c_str(), O_RDONLY);
+
+  // test for btrfs, xattrs, etc.
+  _detect_fs();
+
+
+  initial_op_seq = 0;
+
+  current_fd = ::open(current_fn.c_str(), O_RDONLY);
+
+  op_fd = read_op_seq(&initial_op_seq);
+
+  // check fsid with omap
+  // get omap fsid
+  snprintf(omap_fsid_buf, sizeof(omap_fsid_buf), "%s/osd_uuid", omap_dir.c_str());
+
+  // if osd_uuid not exists, assume as this omap matchs corresponding osd
+  if (::stat(omap_fsid_buf, &omap_fsid_stat) != 0){
+  }else{
+    // if osd_uuid exists, compares osd_uuid with fsid
+    omap_fsid_fd = ::open(omap_fsid_buf, O_RDONLY, 0644);
+    read_fsid(omap_fsid_fd, &omap_fsid);
+    VOID_TEMP_FAILURE_RETRY(::close(omap_fsid_fd));
+  }
+
+  dout(0) << "start omap initiation" << dendl;
+
+  if (!(generic_flags & SKIP_MOUNT_OMAP)) {
+    KeyValueDB * omap_store = KeyValueDB::create(cct,
+                         superblock.omap_backend,
+                         omap_dir);
+
+    if (superblock.omap_backend == "rocksdb")
+      omap_store->init(cct->_conf->filestore_rocksdb_options);
+    else
+      omap_store->init();
+
+
+    omap_store->create_and_open()
+
+    DBObjectMap *dbomap = new DBObjectMap(cct, omap_store);
+
+    dbomap->init(do_update);
+
+    object_map.reset(dbomap);
+  }
+
+  // journal
+  new_journal();
+
+  // select journal mode?
+  if (journal) {
+      if (m_filestore_journal_writeahead)
+          journal->set_wait_on_full(true);
+  } 
+
+  _sanity_check_fs();
+
+  // Cleanup possibly invalid collections
+  {
+    vector<coll_t> collections;
+    list_collections(collections, true);
+
+    for (vector<coll_t>::iterator i = collections.begin();i != collections.end();++i) {
+      get_index(*i, &index);
+
+      RWLock::WLocker l((index.index)->access_lock);
+
+      index->cleanup();
+    }
+  }
+
+  if (!m_disable_wbthrottle) {
+    wbthrottle.start();
+  }
+
+  sync_thread.create("filestore_sync");
+
+  if (!(generic_flags & SKIP_JOURNAL_REPLAY)) {
+    journal_replay(initial_op_seq);
+  }
+
+  if (cct->_conf->filestore_debug_omap_check && !object_map->check(err2)) {
+      goto stop_sync;
+  }
+
+  init_temp_collections();
+
+  journal_start();
+
+  op_tp.start();
+
+  for (vector<Finisher*>::iterator it = ondisk_finishers.begin(); it != ondisk_finishers.end(); ++it) {
+    (*it)->start();
+  }
+  for (vector<Finisher*>::iterator it = apply_finishers.begin(); it != apply_finishers.end(); ++it) {
+    (*it)->start();
+  }
+
+  timer.init();
+
+  // upgrade?
+  if (cct->_conf->filestore_update_to >= (int)get_target_version()) {
+    upgrade();
+  }
+
+
+#if 1      // KirkAsync
+  #ifdef HAVE_LIBAIO
+      // enable asynchronous reads in FileStore
+      create_read_completion_threads();
+  #endif
+#endif
+
+
+  // all okay.
+  return 0;
+
+stop_sync:
+  // stop sync thread
+  lock.Lock();
+  stop = true;
+  sync_cond.Signal();
+  lock.Unlock();
+  sync_thread.join();
+  if (!m_disable_wbthrottle) {
+    wbthrottle.stop();
+  }
+close_current_fd:
+  VOID_TEMP_FAILURE_RETRY(::close(current_fd));
+  current_fd = -1;
+close_basedir_fd:
+  VOID_TEMP_FAILURE_RETRY(::close(basedir_fd));
+  basedir_fd = -1;
+close_fsid_fd:
+  VOID_TEMP_FAILURE_RETRY(::close(fsid_fd));
+  fsid_fd = -1;
+done:
+  assert(!m_filestore_fail_eio || ret != -EIO);
+  delete backend;
+  backend = NULL;
+  object_map.reset();
+  return ret;
+

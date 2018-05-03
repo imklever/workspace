@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/workspace/gitrepo/workspace/CMake_test/hello.cpp
+hello.h
+/root/workspace/gitrepo/workspace/CMake_test/hello.h
+iostream
+-
+
+/root/workspace/gitrepo/workspace/CMake_test/hello.h
+
+/root/workspace/gitrepo/workspace/CMake_test/main.cpp
+hello.h
+/root/workspace/gitrepo/workspace/CMake_test/hello.h
+

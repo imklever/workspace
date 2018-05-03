@@ -1,7 +1,6 @@
 #!/bin/bash
 
-dot -T png -o code.png template.dot
-cp code.png ../../png/
+dot -T png -o ../../template.png template.dot
 #cp code.png /usr/share/nginx/html/
 #shotwell out.png
 #eog out.png

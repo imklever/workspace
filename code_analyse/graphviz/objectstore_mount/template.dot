@@ -1,0 +1,140 @@
+digraph picture
+{
+        rankdir="LR"
+
+
+
+        {
+            rank="same"
+            main[label="store::mount()"]
+            }
+
+
+
+
+
+        {
+            rank="same"
+            j1[shape=diamond,label="\N\nFileStore"]
+            j2[shape=diamond,label="\N\nMemStore"]
+            j3[shape=diamond,label="\N\nBlueStore"]
+            j4[shape=diamond,label="\N\nrandom{FileStore/BlueStore}"]
+            j5[shape=diamond,label="\N\nKStore"]
+
+            
+            }
+
+
+
+
+
+        {
+            rank="same";
+            node[shape=box]
+            f1[label="\N
+get_fs_supported_compat_set();\l\
+set_throttle_params();\l\
+read_fsid(fsid_fd, &fsid);\l"]
+
+            f2[label="\N
+read_superblock();\l"]
+
+            f3[label="\N
+// open some dir handles\l\
+::open(basedir.c_str(), O_RDONLY);\l"]
+
+            f4[label="\N
+// test for btrfs, xattrs, etc.\l\
+_detect_fs();\l"]
+
+            f5[label="\N
+// check fsid with omap\l\
+// get omap fsid\l\
+snprintf(omap_fsid_buf, sizeof(omap_fsid_buf), \"%s/osd_uuid\", omap_dir.c_str());\l\
+\l\
+// if osd_uuid not exists, assume as this omap matchs corresponding osd\l\
+if (::stat(omap_fsid_buf, &omap_fsid_stat) != 0){\l\
+}else{\l\
+  // if osd_uuid exists, compares osd_uuid with fsid\l\
+  omap_fsid_fd = ::open(omap_fsid_buf, O_RDONLY, 0644);\l\
+  read_fsid(omap_fsid_fd, &omap_fsid);\l\
+  VOID_TEMP_FAILURE_RETRY(::close(omap_fsid_fd));\l\
+}\l\
+dout(0) << \"start omap initiation\" << dendl;\l"]
+
+            j6[shape=diamond,label="\N\n(generic_flags & SKIP_MOUNT_OMAP)"]
+
+
+            f9[label="\N
+// journal\l\
+new_journal();\l\
+// select journal mode?\l\
+if (journal) {\l\
+    if (m_filestore_journal_writeahead)\l\
+        journal->set_wait_on_full(true);\l\
+} \l"]
+            f10[label="\N
+journal_start();\l\
+\l\
+op_tp.start();\l\
+\l\
+for (vector<Finisher*>::iterator it = ondisk_finishers.begin(); it != ondisk_finishers.end(); ++it) {\l\
+  (*it)->start();\l\
+}\l\
+for (vector<Finisher*>::iterator it = apply_finishers.begin(); it != apply_finishers.end(); ++it) {\l\
+  (*it)->start();\l\
+}\l\
+\l\
+// upgrade?\l\
+if (cct->_conf->filestore_update_to >= (int)get_target_version()) {\l\
+  upgrade();\l\
+}\l"]
+            }
+        {
+            rank="same";
+            node[shape=box]
+            f6[label="\N
+KeyValueDB * omap_store = KeyValueDB::create(cct,\l\
+superblock.omap_backend,omap_dir);\l"]
+
+            f7[label="\N
+omap_store->init();\l\
+omap_store->create_and_open()\l"]
+
+            f8[label="\N
+DBObjectMap *dbomap = new DBObjectMap(cct, omap_store);\l\
+dbomap->init(do_update);\l\
+object_map.reset(dbomap);\l"]
+
+            }
+
+
+
+
+
+
+        {
+            main->j1[color=red]
+            main->j2[color=green]
+            main->j3[color=blue]
+            main->j4[color=red]
+            main->j5[color=green]
+
+
+
+            j1->j2->j3->j4->j5[label="No"]
+
+
+            j1->f1[label="yes"]
+            f1->f2->f3->f4->f5->j6
+
+            j6->f6[label="No"]
+            f6->f7->f8
+
+            j6->f9->f10
+
+            }
+        }
+
+
+

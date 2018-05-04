@@ -1,0 +1,2 @@
+/root/workspace/gitrepo/workspace/CMake_test/cmake_modules_version/build/src/CMakeFiles/func.dir
+/root/workspace/gitrepo/workspace/CMake_test/cmake_modules_version/build/CMakeFiles/hello.dir

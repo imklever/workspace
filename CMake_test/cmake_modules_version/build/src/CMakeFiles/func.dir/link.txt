@@ -1,0 +1,2 @@
+/usr/bin/ar cr libfunc.a  CMakeFiles/func.dir/hello.cpp.o
+/usr/bin/ranlib libfunc.a

@@ -1,0 +1,8 @@
+controller:
+    /usr/lib/python2.7/site-packages/storagemgmt/api/controllers/v1/iscsitarget.py
+
+agent:
+    /usr/lib/python2.7/site-packages/sdsagent/agent/iscsimanager.py
+    /etc/ceph/scripts/iscsi/iscsi_log.sh
+    /etc/ceph/scripts/iscsi/add_target_lun.sh
+    /etc/ceph/scripts/iscsi/delete_target_lun.sh

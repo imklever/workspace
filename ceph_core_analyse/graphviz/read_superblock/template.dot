@@ -6,18 +6,7 @@ digraph picture
 
         {
             rank="same";
-            main[label="main"];
-            }
-
-
-
-
-
-        {
-            rank="same";
-            j1[shape=diamond,label="\N"];
-            j2[shape=diamond,label="\N"];
-            j3[shape=diamond,label="\N"];
+            main[label="OSD::read_superblock"];
             }
 
 
@@ -27,9 +16,12 @@ digraph picture
         {
             rank="same";
             node[shape=box]
-            f1[label="\N\l"];
-            f2[label="\N\l"];
-            f3[label="\N\l"];
+            f1[label="\N
+store->read(coll_t::meta(), OSD_SUPERBLOCK_GOBJECT, 0, 0, bl);\l"];
+            f2[label="\N
+bufferlist::iterator p = bl.begin();\l\
+::decode(superblock, p);\l"];
+            #f3[label="\N\l"];
             }
 
 
@@ -40,25 +32,9 @@ digraph picture
         {
             main->f1[color=red];
             main->f2[color=green];
-            main->f2[color=blue];
-            }
 
 
-
-        {
-            rank="same";
-            j1->j2->j3;
-            }
-
-
-
-
-        {
-            rank="same";
-            
-            #f1->f2[style=dotted];
-            f1->f2->f3;
-
+            f1->f2;
             }
         }
 

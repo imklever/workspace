@@ -19,13 +19,13 @@ AdminSocket *admin_socket = cct->get_admin_socket();\l"];
             f2[label="\N
 asok_hook = new OSDSocketHook(this);\l"];
             f3[label="\N
-admin_socket->register_command(\"status\", \"status\", asok_hook,\l\
-                                \"high-level status of OSD\");\l\
-admin_socket->register_command(\"flush_journal\", \"flush_journal\",\l\
-                                asok_hook,\l\
-                                \"flush the journal to permanent store\");\l\
+admin_socket->register_command(\"status\", \"status\", asok_hook,\"high-level status of OSD\");\l\
+admin_socket->register_command(\"flush_journal\", \"flush_journal\",asok_hook,\"flush the journal to permanent store\");\l\
 admin_socket->register_command()\l\
-admin_socket->register_command()\l"];
+admin_socket->register_command()\l\
+.\l\
+.\l\
+.\l"];
             }
 
 

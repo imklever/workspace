@@ -11,19 +11,6 @@ digraph picture
 
 
 
-
-
-        {
-            rank="same";
-            j1[shape=diamond,label="\N"];
-            j2[shape=diamond,label="\N"];
-            j3[shape=diamond,label="\N"];
-            }
-
-
-
-
-
         {
             rank="same";
             node[shape=box]
@@ -48,11 +35,9 @@ admin_socket->register_command()\l"];
 
             main->f1[color=red];
             main->f2[color=green];
-            main->f2[color=blue];
+            main->f3[color=blue];
 
-            j1->j2->j3;
             
-            #f1->f2[style=dotted];
             f1->f2->f3;
 
         }

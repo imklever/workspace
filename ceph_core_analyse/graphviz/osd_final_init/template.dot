@@ -1,0 +1,60 @@
+digraph picture
+{
+        rankdir="LR";
+
+
+
+        {
+            rank="same";
+            main[label="OSD::final_init()"];
+            }
+
+
+
+
+
+        {
+            rank="same";
+            j1[shape=diamond,label="\N"];
+            j2[shape=diamond,label="\N"];
+            j3[shape=diamond,label="\N"];
+            }
+
+
+
+
+
+        {
+            rank="same";
+            node[shape=box]
+            f1[label="\N
+AdminSocket *admin_socket = cct->get_admin_socket();\l"];
+            f2[label="\N
+asok_hook = new OSDSocketHook(this);\l"];
+            f3[label="\N
+admin_socket->register_command(\"status\", \"status\", asok_hook,\l\
+                                \"high-level status of OSD\");\l\
+admin_socket->register_command(\"flush_journal\", \"flush_journal\",\l\
+                                asok_hook,\l\
+                                \"flush the journal to permanent store\");\l\
+admin_socket->register_command()\l\
+admin_socket->register_command()\l"];
+            }
+
+
+
+
+
+
+            main->f1[color=red];
+            main->f2[color=green];
+            main->f2[color=blue];
+
+            j1->j2->j3;
+            
+            #f1->f2[style=dotted];
+            f1->f2->f3;
+
+        }
+
+

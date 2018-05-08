@@ -140,7 +140,6 @@ register_async_signal_handler_oneshot(SIGTERM, handle_osd_signal);\l"];
 
 
 
-        {
             main->f20[color=red];
             main->f1[color=green];
             main->j3[color=blue];
@@ -170,19 +169,15 @@ register_async_signal_handler_oneshot(SIGTERM, handle_osd_signal);\l"];
             main->f27;
             main->f28;
             #main->f29;
-            }
 
 
 
-        {
             rank="same";
             j3->j2->j1->j4->j5;
-            }
 
 
 
 
-        {
             rank="same";
             
             f20->f1;
@@ -198,7 +193,6 @@ register_async_signal_handler_oneshot(SIGTERM, handle_osd_signal);\l"];
 
             f12->f13->f14->f15->f16->f17->f18->f19->f21->f22->f23->f29->f30->f31->f24->f25->f26->f27->f28;
 
-            }
         }
 
 

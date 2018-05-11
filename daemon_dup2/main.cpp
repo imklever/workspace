@@ -7,7 +7,7 @@
 
 
 
-#define check_ret if(ret<0){printf("ret=:%d", ret);return 0;}
+#define check_ret if(ret<0){printf("ret= %d\n", ret);return 0;}
 
 
 int main(void){

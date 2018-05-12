@@ -1,0 +1,4 @@
+uptime
+vmstat
+iostat -x
+

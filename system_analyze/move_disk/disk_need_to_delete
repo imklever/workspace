@@ -1,0 +1,89 @@
+以下所列硬盘已被复制转移，源文件仍保留，后续确认无误即可删除
+
+
+sudo virsh list --all |  sed '1,2d' |tac | sed '1d' | tac | awk '{print $2}'  | awk '{for(i=0;i<NF;i++){print $i; cmd="sudo virsh domstate "$i"; sudo virsh domblklist "$i; system(cmd)}}' | grep -v mnt
+
+
+
+location:
+	10.240.217.72
+
+
+sungn-CentOS7.4
+Target     Source
+------------------------------------------------
+vda        /var/lib/libvirt/images/sungn-CentOS7.4.qcow2
+vdb        /var/lib/libvirt/images/sungn-CentOS7.4-1.qcow2
+hda        -
+
+sungn-node1
+Target     Source
+------------------------------------------------
+sda        /var/lib/libvirt/images/sungn-node1.qcow2
+sdb        /var/lib/libvirt/images/sungn-node1-1.qcow2
+sdc        /var/lib/libvirt/images/sungn-node1-2.qcow2
+sdd        /var/lib/libvirt/images/sungn-node1-3.qcow2
+hda        -
+
+sungn-node2
+Target     Source
+------------------------------------------------
+sda        /var/lib/libvirt/images/sungn-node2.qcow2
+sdb        /var/lib/libvirt/images/sungn-node1-1-clone.qcow2
+sdc        /var/lib/libvirt/images/sungn-node1-2-clone.qcow2
+sdd        /var/lib/libvirt/images/sungn-node1-3-clone.qcow2
+hda        -
+
+sungn-node3
+Target     Source
+------------------------------------------------
+sda        /var/lib/libvirt/images/sungn-node3.qcow2
+sdb        /var/lib/libvirt/images/sungn-node1-1-clone-1.qcow2
+sdc        /var/lib/libvirt/images/sungn-node1-2-clone-1.qcow2
+sdd        /var/lib/libvirt/images/sungn-node1-3-clone-1.qcow2
+hda        -
+
+zn-openstack-compute1
+shut off
+
+Target     Source
+------------------------------------------------
+vda        /home/zhouning/sds-node/openstack-compute1.qcow2
+
+zn-openstack-controller
+shut off
+
+Target     Source
+------------------------------------------------
+vda        /home/zhouning/sds-node/openstack-controller.qcow2
+
+zn-openstack-master
+shut off
+
+Target     Source
+------------------------------------------------
+hda        /home/zhouning/sds-node/fuel_master.qcow2
+hdb        -
+
+centos7.0-2
+shut off
+
+Target     Source
+------------------------------------------------
+vda        /var/lib/libvirt/images/centos7.0-2.qcow2
+hda        -
+
+lsc-devstack-2
+shut off
+
+Target     Source
+------------------------------------------------
+hda        /var/lib/libvirt/images/jiapei-template-ubuntu16.04.qcow2
+
+##################################################################################################
+lsc-logging-2
+shut off
+
+Target     Source
+------------------------------------------------
+hda        /var/lib/libvirt/images/jiapei-logging-ubuntu16.04.qcow2

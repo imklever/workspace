@@ -80,10 +80,55 @@ Target     Source
 ------------------------------------------------
 hda        /var/lib/libvirt/images/jiapei-template-ubuntu16.04.qcow2
 
-##################################################################################################
 lsc-logging-2
 shut off
 
 Target     Source
 ------------------------------------------------
 hda        /var/lib/libvirt/images/jiapei-logging-ubuntu16.04.qcow2
+##################################################################################################
+
+lj-sds-agent1
+shut off
+
+Target     Source
+------------------------------------------------
+vda        /home/lj/images/lj-sds-agent1-1.img
+sda        /home/lj/images/lj-sds-agent1-2.img
+sdb        /home/lj/images/lj-sds-agent1-4.img
+sdc        /home/lj/images/lj-sds-agent1-3.img
+hda        -
+
+lj-sds-agent2
+shut off
+
+Target     Source
+------------------------------------------------
+vda        /home/lj/images/lj-sds-agent2-1.img
+sda        /home/lj/images/lj-sds-agent2-2.img
+sdb        /home/lj/images/lj-sds-agent2-3.img
+sdc        /home/lj/images/lj-sds-agent2-4.img
+hda        -
+
+lj-sds-agent3
+shut off
+
+Target     Source
+------------------------------------------------
+vda        /home/lj/images/lj-sds-agent3-1.img
+sda        /home/lj/images/lj-sds-agent3-2.img
+sdb        /home/lj/images/lj-sds-agent3-3.img
+sdc        /home/lj/images/lj-sds-agent3-4.img
+hda        -
+
+
+
+
+
+
+
+
+
+
+
+

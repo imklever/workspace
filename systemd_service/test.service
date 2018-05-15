@@ -1,0 +1,10 @@
+[Unit]
+Description=hello
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/root/workspace/gitrepo/workspace/daemon_dup2/build/hello 
+
+[Install]
+WantedBy=multi-user.target

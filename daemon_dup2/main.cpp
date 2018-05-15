@@ -22,12 +22,12 @@ int main(void){
     printf("hello, fd=%d\n", fd);
 
 
-    daemon(0,0);
+    //daemon(0,0);
 
-    ret = dup2(fd,1);
-    check_ret
-    ret = dup2(fd,2);
-    check_ret
+    //ret = dup2(fd,1);
+    //check_ret
+    //ret = dup2(fd,2);
+    //check_ret
 
     printf("hello, fd=%d\n", fd);
 

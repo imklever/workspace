@@ -120,8 +120,6 @@ sdb        /home/lj/images/lj-sds-agent3-3.img
 sdc        /home/lj/images/lj-sds-agent3-4.img
 hda        -
 
-##################################################################################################
-
 
 zn-ceph-controller
 shut off
@@ -160,7 +158,16 @@ sdh        /home/zhouning/sds-node/zn-ceph-node3-1.qcow2
 sdi        /home/zhouning/sds-node/zn-ceph-node3-2.qcow2
 hda        -
 
+##################################################################################################
 
+sungn-controller
+running
 
-
+Target     Source
+------------------------------------------------
+sda        /var/lib/libvirt/images/sungn-controller.qcow2
+sdb        /var/lib/libvirt/images/sungn-node1-1-clone-2.qcow2
+sdc        /var/lib/libvirt/images/sungn-node1-2-clone-2.qcow2
+sdd        /var/lib/libvirt/images/sungn-node1-3-clone-2.qcow2
+hda        -
 

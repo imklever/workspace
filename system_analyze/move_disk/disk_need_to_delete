@@ -86,7 +86,6 @@ shut off
 Target     Source
 ------------------------------------------------
 hda        /var/lib/libvirt/images/jiapei-logging-ubuntu16.04.qcow2
-##################################################################################################
 
 lj-sds-agent1
 shut off
@@ -121,12 +120,45 @@ sdb        /home/lj/images/lj-sds-agent3-3.img
 sdc        /home/lj/images/lj-sds-agent3-4.img
 hda        -
 
+##################################################################################################
 
 
+zn-ceph-controller
+shut off
 
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-controller.qcow2
 
+zn-ceph-node1
+shut off
 
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-node1-0.qcow2
+sdh        /home/zhouning/sds-node/zn-ceph-node1-1.qcow2
+sdi        /home/zhouning/sds-node/zn-ceph-node1-2.qcow2
+hda        -
 
+zn-ceph-node2
+shut off
+
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-node2-0.qcow2
+sdh        /home/zhouning/sds-node/zn-ceph-node2-1.qcow2
+sdi        /home/zhouning/sds-node/zn-ceph-node2-2.qcow2
+hda        -
+
+zn-ceph-node3
+shut off
+
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-node3-0.qcow2
+sdh        /home/zhouning/sds-node/zn-ceph-node3-1.qcow2
+sdi        /home/zhouning/sds-node/zn-ceph-node3-2.qcow2
+hda        -
 
 
 

@@ -1,1 +1,4 @@
 sudo virsh list --all |  sed '1,2d' |tac | sed '1d' | tac | awk '{print $2}'  | awk '{for(i=0;i<NF;i++){print $i; cmd="sudo virsh domstate "$i"; sudo virsh domblklist "$i; system(cmd)}}' | grep -v mnt
+
+:%s;/home/zhouning/sds-node;/mnt/raid0_disk/zn;g
+

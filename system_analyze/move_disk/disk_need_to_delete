@@ -86,7 +86,6 @@ shut off
 Target     Source
 ------------------------------------------------
 hda        /var/lib/libvirt/images/jiapei-logging-ubuntu16.04.qcow2
-##################################################################################################
 
 lj-sds-agent1
 shut off
@@ -122,13 +121,126 @@ sdc        /home/lj/images/lj-sds-agent3-4.img
 hda        -
 
 
+zn-ceph-controller
+shut off
+
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-controller.qcow2
+
+zn-ceph-node1
+shut off
+
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-node1-0.qcow2
+sdh        /home/zhouning/sds-node/zn-ceph-node1-1.qcow2
+sdi        /home/zhouning/sds-node/zn-ceph-node1-2.qcow2
+hda        -
+
+zn-ceph-node2
+shut off
+
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-node2-0.qcow2
+sdh        /home/zhouning/sds-node/zn-ceph-node2-1.qcow2
+sdi        /home/zhouning/sds-node/zn-ceph-node2-2.qcow2
+hda        -
+
+zn-ceph-node3
+shut off
+
+Target     Source
+------------------------------------------------
+sda        /home/zhouning/sds-node/zn-ceph-node3-0.qcow2
+sdh        /home/zhouning/sds-node/zn-ceph-node3-1.qcow2
+sdi        /home/zhouning/sds-node/zn-ceph-node3-2.qcow2
+hda        -
 
 
+sungn-controller
+running
+
+Target     Source
+------------------------------------------------
+sda        /var/lib/libvirt/images/sungn-controller.qcow2
+sdb        /var/lib/libvirt/images/sungn-node1-1-clone-2.qcow2
+sdc        /var/lib/libvirt/images/sungn-node1-2-clone-2.qcow2
+sdd        /var/lib/libvirt/images/sungn-node1-3-clone-2.qcow2
+hda        -
 
 
+kolla-k8s
+running
+
+Target     Source
+------------------------------------------------
+vda        /var/lib/libvirt/images/kolla-k8s.qcow2
+hda        -
+
+##################################################################################################
+
+finix-sds-controller
+running
+
+Target     Source
+------------------------------------------------
+hda        /home/finix/images/finix_sds_controller.qcow2
+
+finix-sds-agent-1
+running
+
+Target     Source
+------------------------------------------------
+hda        /home/finix/images/finix_sds_agent_1.qcow2
+
+finix-sds-agent-2
+running
+
+Target     Source
+------------------------------------------------
+hda        /home/finix/images/finix_sds_agent_2.qcow2
+
+finix-sds-agent-3
+running
+
+Target     Source
+------------------------------------------------
+hda        /home/finix/images/finix_sds_agent_3.qcow2
+
+##################################################################################################
+
+lj-sds-mgmt
+running
+
+Target     Source
+------------------------------------------------
+vda        /home/lj/images/lj-sds-mgmt.img
+hda        -
+finix-docker
+running
+
+Target     Source
+------------------------------------------------
+vda        /home/finix/images/finix-docker.qcow2
+vdb        /var/lib/libvirt/images/finix-docker.qcow2
+vdc        /home/finix/images/finix_docker_disk_1.qcow2
 
 
+lj-cdev
+running
 
+Target     Source
+------------------------------------------------
+vda        /var/lib/libvirt/images/lj-cdev.qcow2
+hda        -
 
+finix-docker2
+running
+
+Target     Source
+------------------------------------------------
+hda        /home/finix/images/finix-docker2.qcow2
 
 

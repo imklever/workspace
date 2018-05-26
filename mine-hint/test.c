@@ -19,6 +19,13 @@ int main()
             //打印字符
             printf("%c", *(str+i*M+j));
 
+            //当前节点是否为mine(炸弹)
+            if(*(str+i*M+j)=='*')
+            {
+                result[i][j]=-1;
+                continue;
+            }
+
             //节点周边计算开始
             num=0;
             offset = (i-1)*M+j-1;
@@ -55,6 +62,7 @@ int main()
         printf("\n");
     }
 
+    printf("-------------\n");
 
 
     //打印统计结果
@@ -62,7 +70,10 @@ int main()
     {
         for(j=0;j<M;j++)
         {
-            printf("%d", result[i][j]);
+            if(result[i][j]==-1)
+                printf("*");
+            else
+                printf("%d", result[i][j]);
         }
         printf("\n");
     }

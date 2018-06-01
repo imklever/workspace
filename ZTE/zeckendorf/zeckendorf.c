@@ -13,24 +13,20 @@ int main()
 
     for(i=0; i<=MAX; i++)
     {
-        flag=0;
         number=i;
 
         for(j=0; j<FLength; j++)
         {
-            if(flag==0 && fibonacci[FLength-1-j] <= number)
+            result[j]='0';
+
+            if(fibonacci[FLength-1-j] <= number)
             {
                 number -= fibonacci[FLength-1-j];
                 result[j]='1';
-                flag=1;
-            }
-            else
-            {
-                result[j]='0';
-                flag=0;
             }
 
         }
+
         result[6]='\0';
         printf("%d:\t%s\n", i, result);
     }

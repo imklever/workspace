@@ -16,14 +16,21 @@ print 'hello'
 fp = open(sys.argv[1])
 
 class_struct={}
+var_tmp=""
+
 #读每一行
 for line in fp.readlines():
+
     l=line.strip()
-    #print l
+
+    #analyse line
     word=""
-    #分析行
     for c in l:
         if c == ' ' or c == '\t' or c == '\n':
+            if len(word) == 0
+            word=""
+                continue
+            if world.lower() == 'stunct'
             word=""
         else:
             word = word+c

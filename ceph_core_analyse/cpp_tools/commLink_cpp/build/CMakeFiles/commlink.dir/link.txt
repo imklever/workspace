@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/commlink.dir/testmain.cpp.o CMakeFiles/commlink.dir/src/linkData.cpp.o CMakeFiles/commlink.dir/src/commlink.cpp.o  -o commlink -rdynamic 

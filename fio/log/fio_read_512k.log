@@ -1,0 +1,32 @@
+rbd_image0: (g=0): rw=read, bs=(R) 512KiB-512KiB, (W) 512KiB-512KiB, (T) 512KiB-512KiB, ioengine=rbd, iodepth=64
+...
+rbd_image1: (g=0): rw=read, bs=(R) 512KiB-512KiB, (W) 512KiB-512KiB, (T) 512KiB-512KiB, ioengine=rbd, iodepth=64
+...
+fio-3.1
+Starting 10 processes
+
+rbd_image0: (groupid=0, jobs=10): err= 0: pid=99131: Wed Jul  4 16:36:26 2018
+   read: IOPS=1886, BW=943MiB/s (989MB/s)(100MiB/106msec)
+    slat (nsec): min=529, max=31808, avg=3042.47, stdev=5502.30
+    clat (msec): min=66, max=105, avg=87.91, stdev=11.67
+     lat (msec): min=66, max=105, avg=87.91, stdev=11.67
+    clat percentiles (msec):
+     |  1.00th=[   67],  5.00th=[   67], 10.00th=[   67], 20.00th=[   72],
+     | 30.00th=[   84], 40.00th=[   85], 50.00th=[   88], 60.00th=[   88],
+     | 70.00th=[   93], 80.00th=[  100], 90.00th=[  102], 95.00th=[  106],
+     | 99.00th=[  106], 99.50th=[  106], 99.90th=[  106], 99.95th=[  106],
+     | 99.99th=[  106]
+  lat (msec)   : 100=80.00%, 250=20.00%
+  cpu          : usr=0.00%, sys=0.00%, ctx=47, majf=0, minf=60
+  IO depths    : 1=5.0%, 2=10.0%, 4=20.0%, 8=40.0%, 16=25.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=95.2%, 8=0.0%, 16=0.0%, 32=4.8%, 64=0.0%, >=64=0.0%
+     issued rwt: total=200,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=943MiB/s (989MB/s), 943MiB/s-943MiB/s (989MB/s-989MB/s), io=100MiB (105MB), run=106-106msec
+
+Disk stats (read/write):
+    dm-0: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=0/0, aggrmerge=0/0, aggrticks=0/0, aggrin_queue=0, aggrutil=0.00%
+  sdc: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%

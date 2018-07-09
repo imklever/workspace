@@ -43,12 +43,26 @@ rbdname=test_image0
 #main
 ##########################
 
-_size="20M"
+_size="2M"
 
+if [ -f run.sh -o -d ./config ];then
+    echo "run.sh or config dir is already exist, do you want overwrite them?"
+    while [ 1 ]
+    do
+        read var
+        if [ $var"x" != "yesx" ];then
+            echo "you chose no"
+            exit 1
+        fi
+        break
+    done
+    rm -rf config run.sh
+    mkdir config
+fi
 
 
 echo "#!/bin/bash
-time_start=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H):\$(date +%M):\$(date +%S)\"
+time_start=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H)-\$(date +%M)-\$(date +%S)\"
 timestamp_start=\"\$(date +%s)\"
 
 echo \"time start:\"
@@ -61,6 +75,7 @@ fi
 
 mkdir ./log/\${time_start}_${_size}
 cp ./generate.sh ./run.sh ./log/\${time_start}_${_size}
+cp -r ./config ./log/\${time_start}_${_size}
 
 echo \"time start:\" > ./log/\${time_start}_${_size}/time.log
 echo \"\${time_start}\" >> ./log/\${time_start}_${_size}/time.log
@@ -108,7 +123,7 @@ done
 
 
 echo "
-time_stop=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H):\$(date +%M):\$(date +%S)\"
+time_stop=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H)-\$(date +%M)-\$(date +%S)\"
 timestamp_stop=\"\$(date +%s)\"
 
 echo \"time stop:\"
@@ -120,7 +135,19 @@ echo \"\${time_stop}\" >> ./log/\${time_start}_${_size}/time.log
 echo \"\${timestamp_stop}\" >> ./log/\${time_start}_${_size}/time.log
 
 echo \"\" >> ./log/\${time_start}_${_size}/time.log
-echo \"time elapse(s):\" >> ./log/\${time_start}_${_size}/time.log
-echo \"scale=4;\${timestamp_stop}-\${timestamp_start}\" | bc >> ./log/\${time_start}_${_size}/time.log
+echo \"time elapse:\" >> ./log/\${time_start}_${_size}/time.log
+
+sec=\$(echo \"scale=4;\${timestamp_stop}-\${timestamp_start}\" | bc )
+echo \"\${sec}(s)\" >> ./log/\${time_start}_${_size}/time.log
+
+min=\$(echo \"scale=4;\${sec}/60\" | bc )
+echo \"\${min}(m)\" >> ./log/\${time_start}_${_size}/time.log
+
+hour=\$(echo \"scale=4;\${min}/60\" | bc )
+echo \"\${hour}(h)\" >> ./log/\${time_start}_${_size}/time.log
+
+echo \"\"
+echo \"logdir:\"
+echo \"./log/\${time_start}_${_size}\"
 " >> run.sh
 

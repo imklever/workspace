@@ -1,0 +1,36 @@
+rbd_image0: (g=0): rw=randread, bs=(R) 64.0KiB-64.0KiB, (W) 64.0KiB-64.0KiB, (T) 64.0KiB-64.0KiB, ioengine=rbd, iodepth=64
+...
+fio-3.1
+Starting 5 processes
+
+rbd_image0: (groupid=0, jobs=5): err= 0: pid=169325: Thu Jul  5 11:34:08 2018
+   read: IOPS=10.6k, BW=660MiB/s (692MB/s)(100GiB/155126msec)
+    slat (nsec): min=499, max=148569, avg=1241.62, stdev=2126.68
+    clat (usec): min=391, max=2523.3k, avg=29926.65, stdev=114634.60
+     lat (usec): min=397, max=2523.3k, avg=29927.90, stdev=114634.62
+    clat percentiles (usec):
+     |  1.00th=[   1598],  5.00th=[   2835], 10.00th=[   3982],
+     | 20.00th=[   6980], 30.00th=[   9241], 40.00th=[  10945],
+     | 50.00th=[  12518], 60.00th=[  14484], 70.00th=[  16712],
+     | 80.00th=[  20055], 90.00th=[  26608], 95.00th=[  39060],
+     | 99.00th=[ 574620], 99.50th=[ 884999], 99.90th=[1602225],
+     | 99.95th=[1837106], 99.99th=[2332034]
+   bw (  KiB/s): min= 6528, max=513252, per=24.16%, avg=163301.09, stdev=114672.13, samples=1276
+   iops        : min=  102, max= 8019, avg=2551.50, stdev=1791.73, samples=1276
+  lat (usec)   : 500=0.01%, 750=0.04%, 1000=0.16%
+  lat (msec)   : 2=1.74%, 4=8.08%, 10=24.32%, 20=45.52%, 50=15.94%
+  lat (msec)   : 100=0.67%, 250=1.46%, 500=0.91%, 750=0.45%, 1000=0.33%
+  lat (msec)   : 2000=0.35%, >=2000=0.03%
+  cpu          : usr=0.63%, sys=0.05%, ctx=65306, majf=0, minf=90
+  IO depths    : 1=0.3%, 2=0.9%, 4=2.5%, 8=7.5%, 16=22.8%, 32=63.3%, >=64=2.7%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=97.8%, 8=0.1%, 16=0.2%, 32=0.3%, 64=1.6%, >=64=0.0%
+     issued rwt: total=1638400,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=660MiB/s (692MB/s), 660MiB/s-660MiB/s (692MB/s-692MB/s), io=100GiB (107GB), run=155126-155126msec
+
+Disk stats (read/write):
+    dm-0: ios=0/461, merge=0/0, ticks=0/3448, in_queue=3448, util=2.15%, aggrios=0/611, aggrmerge=0/4, aggrticks=0/3449, aggrin_queue=3448, aggrutil=2.15%
+  sdc: ios=0/611, merge=0/4, ticks=0/3449, in_queue=3448, util=2.15%

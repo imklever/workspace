@@ -43,28 +43,22 @@ rbdname=test_image0
 #main
 ##########################
 
-_size="20M"
+_size="20G"
 
 
 
 echo "#!/bin/bash
-time_start=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H):\$(date +%M):\$(date +%S)\"
-timestamp_start=\"\$(date +%s)\"
+time_record=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H):\$(date +%M):\$(date +%S)\"
 
-echo \"time start:\"
-echo \$time_start
+echo \$time_record
 echo \"\"
 
 if [ ! -d ./log ];then
         mkdir ./log
-fi
+    fi
 
-mkdir ./log/\${time_start}_${_size}
-cp ./generate.sh ./run.sh ./log/\${time_start}_${_size}
-
-echo \"time start:\" > ./log/\${time_start}_${_size}/time.log
-echo \"\${time_start}\" >> ./log/\${time_start}_${_size}/time.log
-echo \"\${timestamp_start}\" >> ./log/\${time_start}_${_size}/time.log
+    mkdir ./log/\${time_record}_${_size}
+    cp ./generate.sh ./run.sh ./log/\${time_record}_${_size}
 
 " > run.sh
 
@@ -81,7 +75,7 @@ do
         touch $_file_name
         generate $_rw $_bs 64 $_size $_file_name
         echo "echo \"./config/fio_${_rw}_${_bs}.config\"" >> ./run.sh
-        echo "time fio ./config/fio_${_rw}_${_bs}.config     >     ./log/\${time_start}_${_size}/fio_${_rw}_${_bs}.log" >> ./run.sh
+        echo "time fio ./config/fio_${_rw}_${_bs}.config     >     ./log/\${time_record}_${_size}/fio_${_rw}_${_bs}.log" >> ./run.sh
         echo "echo \"\"" >> ./run.sh
         echo "">> ./run.sh
     done
@@ -100,27 +94,11 @@ do
         touch $_file_name
         generate $_rw $_bs 64 $_size $_file_name
         echo "echo \"./config/fio_${_rw}_${_bs}.config\"" >> ./run.sh
-        echo "time fio ./config/fio_${_rw}_${_bs}.config     >     ./log/\${time_start}_${_size}/fio_${_rw}_${_bs}.log" >> ./run.sh
+        echo "time fio ./config/fio_${_rw}_${_bs}.config     >     ./log/\${time_record}_${_size}/fio_${_rw}_${_bs}.log" >> ./run.sh
         echo "echo \"\"" >> ./run.sh
         echo "">> ./run.sh
     done
 done
 
 
-echo "
-time_stop=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H):\$(date +%M):\$(date +%S)\"
-timestamp_stop=\"\$(date +%s)\"
-
-echo \"time stop:\"
-echo \$time_stop
-
-echo \"\" >> ./log/\${time_start}_${_size}/time.log
-echo \"time stop:\" >> ./log/\${time_start}_${_size}/time.log
-echo \"\${time_stop}\" >> ./log/\${time_start}_${_size}/time.log
-echo \"\${timestamp_stop}\" >> ./log/\${time_start}_${_size}/time.log
-
-echo \"\" >> ./log/\${time_start}_${_size}/time.log
-echo \"time elapse(s):\" >> ./log/\${time_start}_${_size}/time.log
-echo \"scale=4;\${timestamp_stop}-\${timestamp_start}\" | bc >> ./log/\${time_start}_${_size}/time.log
-" >> run.sh
 

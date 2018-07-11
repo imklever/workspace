@@ -23,7 +23,7 @@ function generate()
 ioengine=libaio
 rw=$rw
 bs=$bs
-runtime=5
+#runtime=5
 size=$size
 numjobs=1
 iodepth=$iodepth
@@ -32,7 +32,7 @@ direct=1
 group_reporting
 
 [test]
-filename=/dev/sda
+filename=/dev/sdh
 " > $filename
     fi
 

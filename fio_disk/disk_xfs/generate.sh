@@ -108,7 +108,7 @@ function time_start()
         parted /dev/\${i} -s \"mkpart primary xfs 0 -1\"
         mkfs.xfs -f /dev/${i}1
         mkdir /mnt/${i}
-        mount -t /dev/${i}1 /mnt/${i}
+        mount /dev/${i}1 /mnt/${i}
     done
     echo \"\"
 

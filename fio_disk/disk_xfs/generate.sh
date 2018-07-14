@@ -105,7 +105,7 @@ function time_start()
         echo \${i}
         parted /dev/\${i} -s \"mklabel msdos\"
         parted /dev/\${i} -s \"mklabel gpt\"
-        parted /dev/\${i} -s \"mkpart primary xfs 0 -1\"
+        parted /dev/\${i} -s \"mkpart primary 0 -1\"
         mkfs.xfs -f /dev/${i}1
         mkdir /mnt/${i}
         mount /dev/${i}1 /mnt/${i}
@@ -265,23 +265,6 @@ function time_stop()
 ##########################
 #main
 ##########################
-
-
-#if [ -f run.sh -o -d ./config ];then
-#    echo "run.sh or config dir is already exist, do you want overwrite them?[yes/no]"
-#    while [ 1 ]
-#    do
-#        read var
-#        if [ $var"x" != "yesx" ];then
-#            echo "you chose no"
-#            exit 1
-#        fi
-#        break
-#    done
-#    rm -rf config run.sh
-#    mkdir config
-#fi
-
 
 time_start="$(date +%Y)-$(date +%m)-$(date +%d)_$(date +%H)-$(date +%M)-$(date +%S)"
 if [ -d ./config ];then

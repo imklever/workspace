@@ -4,7 +4,7 @@
 ##########################
 #configuration
 ##########################
-_size="1M"
+_size="1G"
 _disk_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 _rw_list="write read "

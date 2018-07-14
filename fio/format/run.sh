@@ -23,4 +23,5 @@ done
 echo $_folder_list > iops.log
 echo $result >> iops.log
 
+./xlsx.py iops.log
 

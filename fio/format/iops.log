@@ -5,3 +5,10 @@ disk name
 IOPS
 sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn
 63700.0 63200.0 1518 1534 1498 1506 1571 1558 1499 409 1537 1543 432
+BW
+2
+BW
+disk name
+MiB/s
+sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn
+249.0 247.0 6.073 6.138 5.992 6.025 6.287 6.234 6.0 1.637 6.151 6.173 1.73

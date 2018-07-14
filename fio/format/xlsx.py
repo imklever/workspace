@@ -5,17 +5,18 @@ import sys
 import xlsxwriter
 
 
-if 2 != len(sys.argv):
-    print "unit_format.py <number[with unit]>"
+if 3 != len(sys.argv):
+    print "unit_format.py <excel filename> <number[with unit]>"
     exit(1)
 
 
 
+filename=sys.argv[1]+".xlsx"
 sds_number=2
 
+print filename
 
-
-excel = xlsxwriter.Workbook("fio.xlsx")
+excel = xlsxwriter.Workbook(filename)
 excel_sheet1 = excel.add_worksheet("sheet_name")
 excel_sheet2 = excel.add_worksheet("sheet_name2")
 excel_sheet3 = excel.add_worksheet("sheet_name3")
@@ -25,7 +26,7 @@ bold = excel.add_format({"bold":True})
 attr = excel.add_format({"bold":True})
 
 
-fp = open(sys.argv[1])
+fp = open(sys.argv[2])
 
 while 1:
     #############################################
@@ -49,7 +50,7 @@ while 1:
     #写入excel文件
     #############################################
     excel_sheet1.write(0,0,"disk",bold)
-    excel_sheet1.write(1,0,"iops",bold)
+    excel_sheet1.write(1,0,performance_name,bold)
     
     excel_sheet1.write_row(0,1,title)
     excel_sheet1.write_row(1,1,data)

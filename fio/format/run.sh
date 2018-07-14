@@ -7,6 +7,14 @@ _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 _file_list="fio_randwrite_04k.log"
 
 
+log_name="iops.log"
+rm -rf $log_name
+
+
+
+#####################################
+#IOPS
+#####################################
 result=""
 for file in $_file_list
 do
@@ -20,8 +28,20 @@ do
     done
 done
 
-echo $_folder_list > iops.log
-echo $result >> iops.log
+ssd_number="2"
+performance_name="IOPS"
+x_axis="disk name"
+y_axis="IOPS"
 
-./xlsx.py iops.log
+echo "IOPS" >> $log_name
+echo $ssd_number >> $log_name
+echo $performance_name >> $log_name
+echo $x_axis >> $log_name
+echo $y_axis >> $log_name
+echo $_folder_list >> $log_name
+echo $result >> $log_name
+
+
+
+./xlsx.py $log_name
 

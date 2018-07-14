@@ -15,6 +15,14 @@ def trans_number(input_number):
         value = number[0:-1]
         value = float(value)*1000
         value = str(value)
+    elif 'm'==unit_flag.lower():
+        value = number[0:-1]
+        value = float(value)*1000000
+        value = str(value)
+    elif 'g'==unit_flag.lower():
+        value = number[0:-1]
+        value = float(value)*1000000000
+        value = str(value)
 
     return value
 

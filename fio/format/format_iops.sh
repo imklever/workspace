@@ -6,4 +6,5 @@ if [ $# -lt 1 ];then
 fi
 
 logfile=$1
-cat $logfile | grep IOPS | awk -F "," '{print $1}' | awk -F "=" '{print $2}'
+result=`cat $logfile | grep IOPS | awk -F "," '{print $1}' | awk -F "=" '{print $2}'`
+echo $result

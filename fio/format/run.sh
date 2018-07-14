@@ -1,35 +1,10 @@
 #!/bin/bash
 
 
-_log_base="/root/gitrepo/workspace/fio/log_39"
+#_log_base="/root/gitrepo/workspace/fio/log_39"
+_log_base="/root/workspace/gitrepo/workspace/fio/log_39"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 _file_list="fio_randwrite_04k.log"
-
-
-function trans_number()
-{
-    if [ -z "$1" ];then
-        echo "function \"trans_number()\" must have atleast one parameter."
-        exit 1
-    fi
-
-    unit_flag=""
-
-    number=$1
-
-    number=`echo $number | sed 's/^[ ]*//g' | sed 's/[ ]*$//g'`
-
-    unit_flag=`echo ${number:0-1}`
-
-    echo $unit_flag
-
-    if [ "$unit_flag" == k -o "$unit_flag" == K ];then
-
-    fi
-
-}
-
-
 
 
 result=""
@@ -39,12 +14,13 @@ do
     do
         log_file="$_log_base/$folder/$file"
         value=""
-        value=`./format_iops.sh $log_file`
-        echo $value
-        value=trans_number $value
+        value=`./get_iops.sh $log_file`
+        value=`./unit_format.py $value`
         result="$result $value"
     done
 done
 
+echo $_folder_list > iops.log
+echo $result >> iops.log
 
 

@@ -4,10 +4,8 @@
 ##########################
 #configuration
 ##########################
-_size="1G"
-#_disk_list="sdb sdd"
-_disk_list="sdk sdl sdm sdn"
-#_disk_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
+_size="1M"
+_disk_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 _rw_list="write read "
 _rw_bs_list="64k 512k 1m"
@@ -52,7 +50,7 @@ direct=1
 group_reporting
 
 [test]
-filename=${disk}
+filename=${disk}/fio_test_file
 " > $filename
 
 }
@@ -105,18 +103,66 @@ function time_start()
         echo \${i}
         parted /dev/\${i} -s \"mklabel msdos\"
         parted /dev/\${i} -s \"mklabel gpt\"
-        parted /dev/\${i} -s \"mkpart primary 0 -1\"
-        mkfs.xfs -f /dev/${i}1
-        mkdir /mnt/${i}
-        mount /dev/${i}1 /mnt/${i}
     done
-    echo \"\"
 
+    echo \"\"
     lsblk
+
+    sleep 5
+
+    echo \"\"
+    echo \"formatting disk into one primary partition\"
+    for i in \${_disk_list}
+    do
+        echo \${i}
+        parted /dev/\${i} -s \"mkpart primary 0 -1\"
+    done
+
+    echo \"\"
+    lsblk
+
+    sleep 5
+
+    echo \"\"
+    echo \"formatting disk with xfs...\"
+    for i in \${_disk_list}
+    do
+        echo \${i}
+        mkfs.xfs -f /dev/\${i}1
+        if [ -d /mnt/\${i} ];then
+            rm -rf /mnt/\${i}
+        fi
+        mkdir /mnt/\${i}
+        mount /dev/\${i}1 /mnt/\${i}
+    done
+
+    echo \"\"
+    lsblk
+
+    echo \"\"
+    df -Th
+
+    echo -e \"\\033[47;31m\"
+    echo -e \"make sure the mount is right\"
+    echo -e \"\\033[0m\"
+    echo -e \"\\033[31;5m[yes/no]?\\033[0m\"
+    while [ 1 ]
+    do
+        read var
+        if [ \$var\"x\" != \"yesx\" ];then
+            echo \"you chose no\"
+            exit 1
+        else
+            break
+        fi
+    done
+
+
 
     time_start=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H)-\$(date +%M)-\$(date +%S)\"
     timestamp_start=\"\$(date +%s)\"
 
+    echo \"\"
     echo \"time start:\"
     echo \$time_start
     echo \"\"
@@ -256,6 +302,13 @@ function time_stop()
     echo \"\${sec}(s)\"
     echo \"\${min}(m)\"
     echo \"\${hour}(h)\"
+
+    for i in \${_disk_list}
+    do
+        echo \${i}
+        umount /mnt/\${i}
+        rm -rf /mnt/\${i}
+    done
 
     " >> run.sh
 }

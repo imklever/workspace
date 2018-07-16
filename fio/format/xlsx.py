@@ -21,7 +21,7 @@ excel = xlsxwriter.Workbook(filename)
 #attribute
 title_attr = excel.add_format({"bold":True,'bg_color': '00ff00'})
 disk_attr = excel.add_format({'font_color': 'red', 'align':'left'})
-data_attr = excel.add_format({'font_color': 'red', 'align':'left'})
+data_attr = excel.add_format({'align':'left'})
 
 
 fp = open(sys.argv[1])
@@ -36,11 +36,10 @@ while 1:
     print info.strip()," log processing ..."
     ssd_number=fp.readline().strip()
     performance_name=fp.readline().strip()
+    serise_name=fp.readline().strip().split()
     x_axis=fp.readline().strip()
     y_axis=fp.readline().strip()
     title = fp.readline().strip().split()
-    data  = fp.readline().strip().split()
-    data  = [ float(x) for x in data ]
     
     #############################################
     #创建sheet
@@ -52,10 +51,14 @@ while 1:
     #写入excel文件
     #############################################
     excel_sheet.write(0,0,"disk",title_attr)
-    excel_sheet.write(1,0,performance_name,title_attr)
-    
-    excel_sheet.write_row(0,1,title)
-    excel_sheet.write_row(1,1,data,data_attr)
+    excel_sheet.write_row(0,1,title,disk_attr)
+    serise_number=0
+    for serise in serise_name:
+        serise_number += 1
+        data  = fp.readline().strip().split()
+        data  = [ float(x) for x in data ]
+        excel_sheet.write(1,0,performance_name+"("+serise+")",title_attr)
+        excel_sheet.write_row(serise_number,1,data,data_attr)
     
     
     
@@ -65,61 +68,61 @@ while 1:
     
     #############################################
     chart1=excel.add_chart({'type':'column'})
-    
-    chart_categories="="+performance_name+"!$B$1:$N$1"
-    chart_value     ="="+performance_name+"!$B$2:$N$2"
-    chart1.add_series({
-        'name':'SSD & HDD',
-        'categories':chart_categories,
-        'values':chart_value,
-        })
-    #chart1.add_series({
-    #    'name':'date2',
-    #    'categories':'=sheet_name!$A$1:$G$1',
-    #    'values':'=sheet_name!$C$3:$C$9',
-    #    })
-    chart1.set_title({'name':performance_name})
-    chart1.set_x_axis({'name':x_axis})
-    chart1.set_y_axis({'name':y_axis})
-    excel_sheet.insert_chart('A3',chart1,{'x_offset':0,'y_offset':0})
-    
-    
-    #############################################
     chart2=excel.add_chart({'type':'column'})
-    
-    chart_categories="="+performance_name+"!$B$1:$C$1"
-    chart_value     ="="+performance_name+"!$B$2:$C$2"
-    chart2.add_series({
-        'name':'SSD',
-        'categories':chart_categories,
-        'values':chart_value,
-        })
-    chart2.set_title({'name':performance_name})
-    chart2.set_x_axis({'name':x_axis})
-    chart2.set_y_axis({'name':y_axis})
-    excel_sheet.insert_chart('I3',chart2,{'x_offset':0,'y_offset':0})
-    
-    
-    #############################################
     chart3=excel.add_chart({'type':'column'})
     
-    chart_categories="="+performance_name+"!$D$1:$N$1"
-    chart_value     ="="+performance_name+"!$D$2:$N$2"
-    chart3.add_series({
-        'name':'HDD',
-        'categories':chart_categories,
-        'values':chart_value,
-        })
-    chart3.set_title({'name':performance_name})
+    serise_number=0
+    chart1_categories="="+performance_name+"!$B$1:$N$1"
+    chart2_categories="="+performance_name+"!$B$1:$C$1"
+    chart3_categories="="+performance_name+"!$D$1:$N$1"
+    for serise in serise_name:
+        serise_number += 1
+        print serise
+        print serise_number
+        chart1_value     ="="+performance_name+"!$B$"+str(serise_number+1)+":$N$"+str(serise_number+1)
+        print chart1_categories
+        print chart1_value
+        chart1.add_series({
+            'name':serise,
+            'categories':chart1_categories,
+            'values':chart1_value,
+            })
+
+        chart2_value     ="="+performance_name+"!$B$"+str(serise_number+1)+":$C$"+str(serise_number+1)
+        chart2.add_series({
+            'name':serise,
+            'categories':chart2_categories,
+            'values':chart2_value,
+            })
+
+        chart3_value     ="="+performance_name+"!$D$"+str(serise_number+1)+":$N$"+str(serise_number+1)
+        chart3.add_series({
+            'name':serise,
+            'categories':chart3_categories,
+            'values':chart3_value,
+            })
+    
+    
+    chart1.set_title({'name':performance_name+"(SSD & HDD)"})
+    chart1.set_x_axis({'name':x_axis})
+    chart1.set_y_axis({'name':y_axis})
+    excel_sheet.insert_chart('A6',chart1,{'x_offset':0,'y_offset':0})
+    
+    chart2.set_title({'name':performance_name+"(SSD)"})
+    chart2.set_x_axis({'name':x_axis})
+    chart2.set_y_axis({'name':y_axis})
+    excel_sheet.insert_chart('I6',chart2,{'x_offset':0,'y_offset':0})
+
+    chart3.set_title({'name':performance_name+"(HDD)"})
     chart3.set_x_axis({'name':x_axis})
     chart3.set_y_axis({'name':y_axis})
-    excel_sheet.insert_chart('Q3',chart3,{'x_offset':0,'y_offset':0})
+    excel_sheet.insert_chart('Q6',chart3,{'x_offset':0,'y_offset':0})
     print info.strip()," log process finished\n"
 
 #############################################
 #结束处理
 #############################################
-excel_sheet.activate()
+#excel_sheet.activate()
 
 
 excel.close()

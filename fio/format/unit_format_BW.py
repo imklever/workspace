@@ -28,7 +28,7 @@ def trans_number(input_number):
 #print trans_number(10)
 
 if 2 != len(sys.argv):
-    print "unit_format.py <number[with unit]>"
+    print "unit_format_BW.py <number[with unit]>"
     exit(1)
 
 print trans_number(sys.argv[1])

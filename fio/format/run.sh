@@ -1,13 +1,13 @@
 #!/bin/bash
 
 
-#_log_base="/root/gitrepo/workspace/fio/log_39"
-_log_base="/root/workspace/gitrepo/workspace/fio/log_39"
+_log_base="/root/gitrepo/workspace/fio/log_39"
+#_log_base="/root/workspace/gitrepo/workspace/fio/log_39"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 _file_list="fio_randwrite_04k.log"
 
 
-log_name="iops.log"
+log_name="performance.log"
 rm -rf $log_name
 
 
@@ -41,7 +41,7 @@ echo $y_axis >> $log_name
 echo $_folder_list >> $log_name
 echo $result >> $log_name
 
-./xlsx.py "IOPS" $log_name
+./xlsx.py $log_name
 
 #####################################
 #IOPS
@@ -73,5 +73,6 @@ echo $_folder_list >> $log_name
 echo $result >> $log_name
 
 
-./xlsx.py "BW" $log_name
+./xlsx.py $log_name
 
+./sz.sh

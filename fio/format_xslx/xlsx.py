@@ -57,7 +57,7 @@ while 1:
         serise_number += 1
         data  = fp.readline().strip().split()
         data  = [ float(x) for x in data ]
-        excel_sheet.write(1,0,performance_name+"("+serise+")",title_attr)
+        excel_sheet.write(serise_number,0,performance_name+"("+serise+")",title_attr)
         excel_sheet.write_row(serise_number,1,data,data_attr)
     
     

@@ -11,8 +11,10 @@ sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn
 BW
 2
 BW
-randwrite_04k
+randwrite_04k randwrite_08k randwrite_64k
 disk name
 MiB/s
 sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn
 249.0 249.0 1.559 1.56 1.583 1.58 1.676 1.543 1.62 1.716 1.702 1.505 1.547
+335.0 337.0 3.195 3.195 3.23 3.235 3.384 3.083 3.274 3.45 3.439 3.087 3.125
+451.0 453.0 25.1 23.0 24.4 25.2 25.7 23.5 25.8 26.6 26.5 24.8 24.9

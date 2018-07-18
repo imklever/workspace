@@ -1,7 +1,12 @@
 #!/bin/bash
 
 
-_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/log_37"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/log_37"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/log_38"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_37"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_38"
+_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_39"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 log_name="performance.log"
@@ -17,17 +22,17 @@ result2=""
 result3=""
 for folder in $_folder_list
 do
-    log_file="$_log_base/$folder/fio_randwrite_04k.log"
+    log_file="$_log_base/$folder/fio_read_64k.log"
     value=""
     value=`./get_IOPS.sh $log_file`
     value=`./unit_format_IOPS.py $value`
     result1="$result1 $value"
-    log_file="$_log_base/$folder/fio_randwrite_08k.log"
+    log_file="$_log_base/$folder/fio_read_512k.log"
     value=""
     value=`./get_IOPS.sh $log_file`
     value=`./unit_format_IOPS.py $value`
     result2="$result2 $value"
-    log_file="$_log_base/$folder/fio_randwrite_64k.log"
+    log_file="$_log_base/$folder/fio_read_1m.log"
     value=""
     value=`./get_IOPS.sh $log_file`
     value=`./unit_format_IOPS.py $value`
@@ -36,7 +41,7 @@ done
 
 ssd_number="2"
 performance_name="IOPS"
-series_name="randwrite_04k randwrite_08k randwrite_64k"
+series_name="read_64k read_512k read_1m"
 x_axis="disk name"
 y_axis="IOPS"
 
@@ -60,17 +65,17 @@ result2=""
 result3=""
 for folder in $_folder_list
 do
-    log_file="$_log_base/$folder/fio_randwrite_04k.log"
+    log_file="$_log_base/$folder/fio_read_64k.log"
     value=""
     value=`./get_BW.sh $log_file`
     value=`./unit_format_BW.py $value`
     result1="$result1 $value"
-    log_file="$_log_base/$folder/fio_randwrite_08k.log"
+    log_file="$_log_base/$folder/fio_read_512k.log"
     value=""
     value=`./get_BW.sh $log_file`
     value=`./unit_format_BW.py $value`
     result2="$result2 $value"
-    log_file="$_log_base/$folder/fio_randwrite_64k.log"
+    log_file="$_log_base/$folder/fio_read_1m.log"
     value=""
     value=`./get_BW.sh $log_file`
     value=`./unit_format_BW.py $value`
@@ -79,7 +84,7 @@ done
 
 ssd_number="2"
 performance_name="BW"
-series_name="randwrite_04k randwrite_08k randwrite_64k"
+series_name="read_64k read_512k read_1m"
 x_axis="disk name"
 y_axis="MiB/s"
 

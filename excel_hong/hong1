@@ -1,0 +1,32 @@
+Sub 宏1()
+'
+' 宏1 宏
+'
+' 快捷键: Ctrl+q
+'
+    ActiveCell.FormulaR1C1 = "=MIN(RC[-7]:RC[-2])"
+    ActiveCell.Offset(1, 0).Range("A1").Select
+
+End Sub
+
+
+
+
+Sub 宏2()
+'
+' 宏1 宏
+'
+' 快捷键: Ctrl+q
+'
+    ActiveCell.FormulaR1C1 = "=MIN(RC[-34]:RC[-2])"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.FormulaR1C1 = "=MAX(RC[-35]:RC[-3])"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.FormulaR1C1 = "=RC[-1]-RC[-2]"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.FormulaR1C1 = "=RC[-1]/RC[-3]*100"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.FormulaR1C1 = "=RC[-2]/RC[-3]*100"
+    ActiveCell.Offset(1, -4).Range("A1").Select
+
+End Sub

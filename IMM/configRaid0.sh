@@ -1,8 +1,8 @@
 #!/bin/bash
 
-host_name="10.240.217.17"
-username="LCTC07"
-passwd="SYS201707"
+host_name="10.240.217.18"
+username="LCTC08"
+passwd="SYS201708"
 
 cnt=0
 cnt_tmp=0
@@ -24,7 +24,7 @@ do
 done
 
 disk_list="12 13"
-for disk in disk_list
+for disk in $disk_list
 do
     cmd="storage -config vol -add -R 0 -D disk[1-${disk}] -N leo_raid0 -f 1 -target ctrl[1]"
     echo $cmd

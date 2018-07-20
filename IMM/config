@@ -1,0 +1,8 @@
+
+
+
+
+
+单盘 raid0:
+
+storage -config vol -add -R 0 -D disk[9-0] -N leo_raid0 -f 1 -target ctrl[9]

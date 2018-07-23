@@ -11,10 +11,10 @@ for disk in $disk_list
 do
     cmd="storage -config vol -add -R 0 -D disk[9-${disk}] -N leo_raid0 -f 1 -target ctrl[9]"
     echo $cmd
-    sshpass -p ${passwd} ssh ${username}@10.240.217.17 -t ${cmd}
+    sshpass -p ${passwd} ssh ${username}@${host_name} -t ${cmd}
     while [ 1 ]
     do
-        cnt=`sshpass -p ${passwd} ssh -t ${username}@10.240.217.17 "storage -list volumes" | wc -l`
+        cnt=`sshpass -p ${passwd} ssh -t ${username}@${host_name} "storage -list volumes" | wc -l`
         if [ $cnt -gt $cnt_tmp ];then
             cnt_tmp=$cnt
             echo "cnt: $cnt"
@@ -28,10 +28,10 @@ for disk in $disk_list
 do
     cmd="storage -config vol -add -R 0 -D disk[1-${disk}] -N leo_raid0 -f 1 -target ctrl[1]"
     echo $cmd
-    sshpass -p ${passwd} ssh ${username}@10.240.217.17 -t ${cmd}
+    sshpass -p ${passwd} ssh ${username}@${host_name} -t ${cmd}
     while [ 1 ]
     do
-        cnt=`sshpass -p ${passwd} ssh -t ${username}@10.240.217.17 "storage -list volumes" | wc -l`
+        cnt=`sshpass -p ${passwd} ssh -t ${username}@${host_name} "storage -list volumes" | wc -l`
         if [ $cnt -gt $cnt_tmp ];then
             cnt_tmp=$cnt
             echo "cnt: $cnt"

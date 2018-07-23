@@ -5,9 +5,7 @@
 #configuration
 ##########################
 _size="1G"
-#_disk_list="sdb sdd"
-_disk_list="sdk sdl sdm sdn"
-#_disk_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
+_disk_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 _foramt_flag="no"
 
 _rw_list="write read "
@@ -193,7 +191,7 @@ function time_start_on_disk()
     echo \$time_start_disk
     echo \"\"
 
-    echo \"time start:\" > ./log/${_disk}/time.log
+    echo \"test on ${_disk} time start:\" > ./log/${_disk}/time.log
     echo \"\${time_start_disk}\" >> ./log/${_disk}/time.log
     echo \"\${timestamp_start_disk}\" >> ./log/${_disk}/time.log
 
@@ -219,7 +217,8 @@ function time_stop_on_disk()
     echo \$time_stop_disk
     echo \"\"
 
-    echo \"test on ${_disk} time stop:\" > ./log/${_disk}/time.log
+    echo \"\" >> ./log/${_disk}/time.log
+    echo \"test on ${_disk} time stop:\" >> ./log/${_disk}/time.log
     echo \"\${time_stop_disk}\" >> ./log/${_disk}/time.log
     echo \"\${timestamp_stop_disk}\" >> ./log/${_disk}/time.log
     echo \"\" >> ./log/${_disk}/time.log

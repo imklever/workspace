@@ -233,7 +233,8 @@ function time_stop_on_disk()
     echo \$time_stop_disk
     echo \"\"
 
-    echo \"test on ${_disk} time stop:\" > ./log/${_disk}/time.log
+    echo \"\" >> ./log/${_disk}/time.log
+    echo \"test on ${_disk} time stop:\" >> ./log/${_disk}/time.log
     echo \"\${time_stop_disk}\" >> ./log/${_disk}/time.log
     echo \"\${timestamp_stop_disk}\" >> ./log/${_disk}/time.log
     echo \"\" >> ./log/${_disk}/time.log

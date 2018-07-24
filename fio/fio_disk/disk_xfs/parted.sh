@@ -6,5 +6,6 @@ do
     echo ${i}
     parted /dev/sd${i} -s "mklabel msdos"
     parted /dev/sd${i} -s "mklabel gpt"
-    #parted /dev/sda -s "mkpart primary 0 -1"
+    parted /dev/sd${i} -s "mkpart primary 0 -1"
+    time mkfs.xfs -f /dev/sd${i}1
 done

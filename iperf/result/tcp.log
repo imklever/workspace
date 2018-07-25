@@ -1,0 +1,233 @@
+TCP:
+
+#10.240.220.[37->37]
+------------------------------------------------------------
+[  4] local 10.240.220.37 port 5001 connected with 10.240.220.37 port 47170
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec   186 GBytes  53.4 Gbits/sec
+
+#10.240.220.[38->38]
+------------------------------------------------------------
+[  4] local 10.240.220.38 port 5001 connected with 10.240.220.38 port 50302
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec   183 GBytes  52.5 Gbits/sec
+
+#10.240.220.[39->39]
+------------------------------------------------------------
+[  4] local 10.240.220.39 port 5001 connected with 10.240.220.39 port 33062
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec   187 GBytes  53.6 Gbits/sec
+
+#10.240.220.[37->38]
+------------------------------------------------------------
+[  5] local 10.240.220.38 port 5001 connected with 10.240.220.37 port 55446
+[  5]  0.0-30.0 sec  3.28 GBytes   939 Mbits/sec
+
+#10.240.220.[37->39]
+------------------------------------------------------------
+[  5] local 10.240.220.39 port 5001 connected with 10.240.220.37 port 60892
+[  5]  0.0-30.0 sec  3.52 GBytes  1.01 Gbits/sec
+
+#10.240.220.[38->37]
+------------------------------------------------------------
+[  4] local 10.240.220.37 port 5001 connected with 10.240.220.38 port 53158
+[  4]  0.0-30.0 sec  3.28 GBytes   939 Mbits/sec
+
+#10.240.220.[38->39]
+------------------------------------------------------------
+[  4] local 10.240.220.39 port 5001 connected with 10.240.220.38 port 54604
+[  4]  0.0-30.0 sec  3.28 GBytes   939 Mbits/sec
+
+#10.240.220.[39->37]
+------------------------------------------------------------
+[  5] local 10.240.220.37 port 5001 connected with 10.240.220.39 port 58972
+[  5]  0.0-30.0 sec  3.52 GBytes  1.01 Gbits/sec
+
+#10.240.220.[39->38]
+------------------------------------------------------------
+[  5] local 10.240.220.38 port 5001 connected with 10.240.220.39 port 33818
+[  5]  0.0-30.0 sec  3.28 GBytes   939 Mbits/sec
+
+
+
+
+#192.168.30.[37->37]
+------------------------------------------------------------
+[  4] local 192.168.30.37 port 5001 connected with 192.168.30.37 port 33566
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec   184 GBytes  52.7 Gbits/sec
+
+#192.168.30.[38->38]
+------------------------------------------------------------
+[  4] local 192.168.30.38 port 5001 connected with 192.168.30.38 port 38456
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec   188 GBytes  53.8 Gbits/sec
+
+#192.168.30.[39->39]
+------------------------------------------------------------
+[  4] local 192.168.30.39 port 5001 connected with 192.168.30.39 port 43316
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec   187 GBytes  53.4 Gbits/sec
+
+#192.168.30.[37->38]
+------------------------------------------------------------
+[  5] local 192.168.30.38 port 5001 connected with 192.168.30.37 port 53820
+[  5]  0.0-30.0 sec  32.1 GBytes  9.19 Gbits/sec
+
+#192.168.30.[37->39]
+------------------------------------------------------------
+[  5] local 192.168.30.39 port 5001 connected with 192.168.30.37 port 34828
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+
+#192.168.30.[38->37]
+------------------------------------------------------------
+[  5] local 192.168.30.37 port 5001 connected with 192.168.30.38 port 40824
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+
+#192.168.30.[38->39]
+------------------------------------------------------------
+[  4] local 192.168.30.39 port 5001 connected with 192.168.30.38 port 34420
+[  4]  0.0-30.0 sec  32.3 GBytes  9.24 Gbits/sec
+
+#192.168.30.[39->37]
+------------------------------------------------------------
+[  4] local 192.168.30.37 port 5001 connected with 192.168.30.39 port 52970
+[  4]  0.0-30.0 sec  31.9 GBytes  9.12 Gbits/sec
+
+#192.168.30.[39->38]
+------------------------------------------------------------
+[  4] local 192.168.30.38 port 5001 connected with 192.168.30.39 port 41012
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+
+
+
+
+#192.168.40.[37->37]
+------------------------------------------------------------
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.37 port 58962
+[  5]  0.0-30.0 sec   184 GBytes  52.6 Gbits/sec
+
+#192.168.40.[38->38]
+------------------------------------------------------------
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.38 port 56390
+[  5]  0.0-30.0 sec   187 GBytes  53.5 Gbits/sec
+
+#192.168.40.[39->39]
+------------------------------------------------------------
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.39 port 37674
+[  5]  0.0-30.0 sec   188 GBytes  53.8 Gbits/sec
+
+#192.168.40.[37->38]
+------------------------------------------------------------
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.37 port 42594
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+
+#192.168.40.[37->39]
+------------------------------------------------------------
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.37 port 35776
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+
+#192.168.40.[38->37]
+------------------------------------------------------------
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.38 port 34958
+[  4]  0.0-30.0 sec  32.3 GBytes  9.25 Gbits/sec
+
+#192.168.40.[38->39]
+------------------------------------------------------------
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.38 port 37658
+[  5]  0.0-30.0 sec  32.2 GBytes  9.22 Gbits/sec
+
+#192.168.40.[39->37]
+------------------------------------------------------------
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.39 port 47420
+[  5]  0.0-30.0 sec  32.3 GBytes  9.26 Gbits/sec
+
+#192.168.40.[39->38]
+------------------------------------------------------------
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.39 port 53250
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+
+
+
+
+
+
+clinet:
+------------------------------------------------------------
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 33826
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 33832
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 33838
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 33844
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 33264
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 33382
+[  5]  0.0-30.0 sec  32.2 GBytes  9.21 Gbits/sec
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 33500
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 33598
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 52336
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 52454
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 52572
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 52690
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+------------------------------------------------------------
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 43258
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 43264
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 43270
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 43276
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 50936
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 51052
+[  5]  0.0-30.0 sec  32.3 GBytes  9.24 Gbits/sec
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 51162
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 51280
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 35722
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 35790
+[  5]  0.0-30.0 sec  32.1 GBytes  9.20 Gbits/sec
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 35842
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 35926
+[  5]  0.0-30.0 sec  32.3 GBytes  9.26 Gbits/sec
+------------------------------------------------------------
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 43376
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 43382
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 43388
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 43394
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 44492
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 44550
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 44642
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 44760
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 45246
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 45364
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 45482
+[  4]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 45600
+[  5]  0.0-30.0 sec  32.1 GBytes  9.18 Gbits/sec

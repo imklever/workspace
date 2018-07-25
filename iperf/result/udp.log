@@ -1,0 +1,528 @@
+UCP:
+
+#10.240.220.[37->37]
+------------------------------------------------------------
+[  3] local 10.240.220.37 port 5001 connected with 10.240.220.37 port 39188
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.001 ms    0/  437 (0%)
+[  4] local 10.240.220.37 port 5001 connected with 10.240.220.37 port 50672
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.002 ms    0/  852 (0%)
+[  5] local 10.240.220.37 port 5001 connected with 10.240.220.37 port 33678
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.000 ms    0/ 8505 (0%)
+[  3] local 10.240.220.37 port 5001 connected with 10.240.220.37 port 44646
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 10.240.220.38 port 5001 connected with 10.240.220.37 port 57734
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.013 ms    0/  437 (0%)
+[  4] local 10.240.220.38 port 5001 connected with 10.240.220.37 port 51349
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.010 ms    0/  852 (0%)
+[  5] local 10.240.220.38 port 5001 connected with 10.240.220.37 port 60254
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.010 ms    0/ 8505 (0%)
+[  3] local 10.240.220.38 port 5001 connected with 10.240.220.37 port 35231
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 10.240.220.39 port 5001 connected with 10.240.220.37 port 56475
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   629 KBytes   513 Kbits/sec   0.009 ms    0/  437 (0%)
+[  3] 0.00-10.04 sec  1 datagrams received out-of-order
+[  4] local 10.240.220.39 port 5001 connected with 10.240.220.37 port 51797
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.004 ms    0/  852 (0%)
+[  5] local 10.240.220.39 port 5001 connected with 10.240.220.37 port 33652
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.011 ms    0/ 8505 (0%)
+[  3] local 10.240.220.39 port 5001 connected with 10.240.220.37 port 47778
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.006 ms    0/85035 (0%)
+
+
+
+
+
+#10.240.220.[38->*]
+------------------------------------------------------------
+[  3] local 10.240.220.37 port 5001 connected with 10.240.220.38 port 39437
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.010 ms    0/  437 (0%)
+[  4] local 10.240.220.37 port 5001 connected with 10.240.220.38 port 51222
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.013 ms    0/  852 (0%)
+[  5] local 10.240.220.37 port 5001 connected with 10.240.220.38 port 41831
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.013 ms    0/ 8505 (0%)
+[  3] local 10.240.220.37 port 5001 connected with 10.240.220.38 port 39314
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.006 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 10.240.220.38 port 5001 connected with 10.240.220.38 port 37614
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.003 ms    0/  437 (0%)
+[  4] local 10.240.220.38 port 5001 connected with 10.240.220.38 port 54002
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.002 ms    0/  852 (0%)
+[  5] local 10.240.220.38 port 5001 connected with 10.240.220.38 port 35202
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.000 ms    0/ 8505 (0%)
+[  3] local 10.240.220.38 port 5001 connected with 10.240.220.38 port 56721
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.005 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 10.240.220.39 port 5001 connected with 10.240.220.38 port 49102
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.015 ms    0/  437 (0%)
+[  4] local 10.240.220.39 port 5001 connected with 10.240.220.38 port 60423
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.009 ms    0/  852 (0%)
+[  5] local 10.240.220.39 port 5001 connected with 10.240.220.38 port 35951
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.013 ms    0/ 8505 (0%)
+[  3] local 10.240.220.39 port 5001 connected with 10.240.220.38 port 58970
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.009 ms    0/85035 (0%)
+
+
+
+
+
+
+#10.240.220.[39->*]
+------------------------------------------------------------
+[  3] local 10.240.220.37 port 5001 connected with 10.240.220.39 port 42192
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.009 ms    0/  437 (0%)
+[  4] local 10.240.220.37 port 5001 connected with 10.240.220.39 port 55224
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.011 ms    0/  852 (0%)
+[  5] local 10.240.220.37 port 5001 connected with 10.240.220.39 port 43855
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.003 ms    0/ 8505 (0%)
+[  3] local 10.240.220.37 port 5001 connected with 10.240.220.39 port 42718
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.008 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 10.240.220.38 port 5001 connected with 10.240.220.39 port 59088
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.010 ms    0/  437 (0%)
+[  4] local 10.240.220.38 port 5001 connected with 10.240.220.39 port 36029
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.012 ms    0/  852 (0%)
+[  5] local 10.240.220.38 port 5001 connected with 10.240.220.39 port 52607
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.019 ms    0/ 8505 (0%)
+[  3] local 10.240.220.38 port 5001 connected with 10.240.220.39 port 33175
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.005 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 10.240.220.39 port 5001 connected with 10.240.220.39 port 53002
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.004 ms    0/  437 (0%)
+[  4] local 10.240.220.39 port 5001 connected with 10.240.220.39 port 58432
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.002 ms    0/  852 (0%)
+[  5] local 10.240.220.39 port 5001 connected with 10.240.220.39 port 58687
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.004 ms    0/ 8505 (0%)
+[  3] local 10.240.220.39 port 5001 connected with 10.240.220.39 port 38010
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.002 ms    0/85035 (0%)
+
+
+
+
+
+
+
+#10.240.220.[37->37]
+------------------------------------------------------------
+
+#10.240.220.[38->38]
+------------------------------------------------------------
+
+#10.240.220.[39->39]
+------------------------------------------------------------
+
+#10.240.220.[37->38]
+------------------------------------------------------------
+
+#10.240.220.[37->39]
+------------------------------------------------------------
+
+#10.240.220.[38->37]
+------------------------------------------------------------
+
+#10.240.220.[38->39]
+------------------------------------------------------------
+
+#10.240.220.[39->37]
+------------------------------------------------------------
+
+#10.240.220.[39->38]
+------------------------------------------------------------
+
+
+
+
+#192.168.30.[37->*]
+------------------------------------------------------------
+[  3] local 192.168.30.37 port 5001 connected with 192.168.30.37 port 43466
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.002 ms    0/  437 (0%)
+[  4] local 192.168.30.37 port 5001 connected with 192.168.30.37 port 36106
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.000 ms    0/  852 (0%)
+[  5] local 192.168.30.37 port 5001 connected with 192.168.30.37 port 58590
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.003 ms    0/ 8505 (0%)
+[  3] local 192.168.30.37 port 5001 connected with 192.168.30.37 port 60303
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.30.38 port 5001 connected with 192.168.30.37 port 42295
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.019 ms    0/  437 (0%)
+[  4] local 192.168.30.38 port 5001 connected with 192.168.30.37 port 40526
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.011 ms    0/  852 (0%)
+[  5] local 192.168.30.38 port 5001 connected with 192.168.30.37 port 56521
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.015 ms    0/ 8505 (0%)
+[  3] local 192.168.30.38 port 5001 connected with 192.168.30.37 port 53810
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.011 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.30.39 port 5001 connected with 192.168.30.37 port 56230
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.014 ms    0/  437 (0%)
+[  4] local 192.168.30.39 port 5001 connected with 192.168.30.37 port 47593
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.005 ms    0/  852 (0%)
+[  5] local 192.168.30.39 port 5001 connected with 192.168.30.37 port 53982
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.024 ms    0/ 8505 (0%)
+[  3] local 192.168.30.39 port 5001 connected with 192.168.30.37 port 43423
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.009 ms    0/85035 (0%)
+
+
+
+
+
+
+#192.168.30.[38->*]
+------------------------------------------------------------
+[  3] local 192.168.30.37 port 5001 connected with 192.168.30.38 port 44283
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.012 ms    0/  437 (0%)
+[  4] local 192.168.30.37 port 5001 connected with 192.168.30.38 port 36958
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.016 ms    0/  852 (0%)
+[  5] local 192.168.30.37 port 5001 connected with 192.168.30.38 port 34558
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.008 ms    0/ 8505 (0%)
+[  3] local 192.168.30.37 port 5001 connected with 192.168.30.38 port 56266
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.003 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.30.38 port 5001 connected with 192.168.30.38 port 57179
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.001 ms    0/  437 (0%)
+[  4] local 192.168.30.38 port 5001 connected with 192.168.30.38 port 46353
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.000 ms    0/  852 (0%)
+[  5] local 192.168.30.38 port 5001 connected with 192.168.30.38 port 49499
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.002 ms    0/ 8505 (0%)
+[  3] local 192.168.30.38 port 5001 connected with 192.168.30.38 port 49456
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.000 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.30.39 port 5001 connected with 192.168.30.38 port 55709
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.017 ms    0/  437 (0%)
+[  4] local 192.168.30.39 port 5001 connected with 192.168.30.38 port 60931
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.30.39 port 5001 connected with 192.168.30.38 port 52560
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.006 ms    0/ 8505 (0%)
+[  3] local 192.168.30.39 port 5001 connected with 192.168.30.38 port 45259
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.007 ms    0/85035 (0%)
+
+
+
+
+
+
+#192.168.30.[39->*]
+------------------------------------------------------------
+[  3] local 192.168.30.37 port 5001 connected with 192.168.30.39 port 50692
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.012 ms    0/  437 (0%)
+[  4] local 192.168.30.37 port 5001 connected with 192.168.30.39 port 56765
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.011 ms    0/  852 (0%)
+[  5] local 192.168.30.37 port 5001 connected with 192.168.30.39 port 36346
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.017 ms    0/ 8505 (0%)
+[  3] local 192.168.30.37 port 5001 connected with 192.168.30.39 port 38138
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.007 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.30.38 port 5001 connected with 192.168.30.39 port 55368
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.010 ms    0/  437 (0%)
+[  4] local 192.168.30.38 port 5001 connected with 192.168.30.39 port 34481
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.016 ms    0/  852 (0%)
+[  5] local 192.168.30.38 port 5001 connected with 192.168.30.39 port 58291
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.026 ms    0/ 8505 (0%)
+[  3] local 192.168.30.38 port 5001 connected with 192.168.30.39 port 51742
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.30.39 port 5001 connected with 192.168.30.39 port 43189
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.003 ms    0/  437 (0%)
+[  4] local 192.168.30.39 port 5001 connected with 192.168.30.39 port 55691
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.001 ms    0/  852 (0%)
+[  5] local 192.168.30.39 port 5001 connected with 192.168.30.39 port 43940
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.002 ms    0/ 8505 (0%)
+[  3] local 192.168.30.39 port 5001 connected with 192.168.30.39 port 53794
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.005 ms    0/85035 (0%)
+
+
+
+
+
+
+
+#192.168.30.[37->37]
+------------------------------------------------------------
+
+#192.168.30.[38->38]
+------------------------------------------------------------
+
+#192.168.30.[39->39]
+------------------------------------------------------------
+
+#192.168.30.[37->38]
+------------------------------------------------------------
+
+#192.168.30.[37->39]
+------------------------------------------------------------
+
+#192.168.30.[38->37]
+------------------------------------------------------------
+
+#192.168.30.[38->39]
+------------------------------------------------------------
+
+#192.168.30.[39->37]
+------------------------------------------------------------
+
+#192.168.30.[39->38]
+------------------------------------------------------------
+
+
+
+
+#192.168.40.[37->*]
+------------------------------------------------------------
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.37 port 34590
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.000 ms    0/  437 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.37 port 46228
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.002 ms    0/  852 (0%)
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.37 port 53938
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.003 ms    0/ 8505 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.37 port 41258
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.003 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.37 port 47673
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.005 ms    0/  437 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.37 port 43972
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.37 port 33531
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.023 ms    0/ 8505 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.37 port 51787
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.005 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.37 port 33342
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.005 ms    0/  437 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.37 port 46998
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.004 ms    0/  852 (0%)
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.37 port 59786
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.006 ms    0/ 8505 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.37 port 34016
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.002 ms    0/85035 (0%)
+
+
+
+
+
+
+#192.168.40.[38->*]
+------------------------------------------------------------
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.38 port 46575
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.018 ms    0/  437 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.38 port 49305
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.008 ms    0/  852 (0%)
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.38 port 57311
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.008 ms    0/ 8505 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.38 port 40943
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.007 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.38 port 40367
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.003 ms    0/  437 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.38 port 54171
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.002 ms    0/  852 (0%)
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.38 port 60570
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.003 ms    0/ 8505 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.38 port 33023
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.001 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.38 port 49480
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.013 ms    0/  437 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.38 port 39535
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.016 ms    0/  852 (0%)
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.38 port 39159
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.022 ms    0/ 8505 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.38 port 42736
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.007 ms    0/85035 (0%)
+
+
+
+
+
+#192.168.40.[39->*]
+------------------------------------------------------------
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.39 port 49830
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.003 ms    0/  437 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.39 port 37911
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.39 port 54483
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.019 ms    0/ 8505 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.39 port 52941
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.39 port 45555
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.006 ms    0/  437 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.39 port 46125
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.011 ms    0/  852 (0%)
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.39 port 54250
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.021 ms    0/ 8505 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.39 port 42884
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.003 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.39 port 57226
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.003 ms    0/  437 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.39 port 54469
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.003 ms    0/  852 (0%)
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.39 port 36711
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.002 ms    0/ 8505 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.39 port 36628
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+
+
+
+
+
+#192.168.40.[37->37]
+------------------------------------------------------------
+
+#192.168.40.[38->38]
+------------------------------------------------------------
+
+#192.168.40.[39->39]
+------------------------------------------------------------
+
+#192.168.40.[37->38]
+------------------------------------------------------------
+
+#192.168.40.[37->39]
+------------------------------------------------------------
+
+#192.168.40.[38->37]
+------------------------------------------------------------
+
+#192.168.40.[38->39]
+------------------------------------------------------------
+
+#192.168.40.[39->37]
+------------------------------------------------------------
+
+#192.168.40.[39->38]
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+#iperf -u -c 192.168.40.37 -b 512K -t 10
+#iperf -u -c 192.168.40.37 -b 1M -t 10
+#iperf -u -c 192.168.40.37 -b 10M -t 10
+#iperf -u -c 192.168.40.37 -b 100M -t 10
+#
+#iperf -u -c 192.168.40.38 -b 512K -t 10
+#iperf -u -c 192.168.40.38 -b 1M -t 10
+#iperf -u -c 192.168.40.38 -b 10M -t 10
+#iperf -u -c 192.168.40.38 -b 100M -t 10
+#
+#iperf -u -c 192.168.40.39 -b 512K -t 10
+#iperf -u -c 192.168.40.39 -b 1M -t 10
+#iperf -u -c 192.168.40.39 -b 10M -t 10
+#iperf -u -c 192.168.40.39 -b 100M -t 10
+#
+#client:
+------------------------------------------------------------
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 58754
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.012 ms    0/  437 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 55336
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 39135
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.019 ms    0/ 8505 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.101 port 35752
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.001 ms    0/85035 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 45290
+[  4]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.010 ms    0/  437 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 57288
+[  3]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 49508
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.021 ms    0/ 8505 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.102 port 38268
+[  4]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.002 ms    0/85035 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 39815
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.013 ms    0/  437 (0%)
+[  4] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 37976
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.019 ms    0/  852 (0%)
+[  5] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 34876
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.015 ms    0/ 8505 (0%)
+[  3] local 192.168.40.37 port 5001 connected with 192.168.40.103 port 49978
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.005 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 57498
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.006 ms    0/  437 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 55360
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.016 ms    0/  852 (0%)
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 44841
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.003 ms    0/ 8505 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.101 port 45189
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 53809
+[  4]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.004 ms    0/  437 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 36365
+[  3]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.015 ms    0/  852 (0%)
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 46928
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.013 ms    0/ 8505 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.102 port 58194
+[  4]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.000 ms    0/85035 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 58004
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.009 ms    0/  437 (0%)
+[  4] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 49327
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 51079
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.018 ms    0/ 8505 (0%)
+[  3] local 192.168.40.38 port 5001 connected with 192.168.40.103 port 58410
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.010 ms    0/85035 (0%)
+------------------------------------------------------------
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 37310
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.018 ms    0/  437 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 54853
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.017 ms    0/  852 (0%)
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 35471
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.021 ms    0/ 8505 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.101 port 45671
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.002 ms    0/85035 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 40549
+[  4]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.003 ms    0/  437 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 54772
+[  3]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 44697
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.021 ms    0/ 8505 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.102 port 55854
+[  4]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.003 ms    0/85035 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 53771
+[  3]  0.0-10.0 sec   627 KBytes   512 Kbits/sec   0.012 ms    0/  437 (0%)
+[  4] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 32939
+[  4]  0.0-20.1 sec  1.19 MBytes   499 Kbits/sec   0.014 ms    0/  852 (0%)
+[  5] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 39987
+[  5]  0.0-30.1 sec  11.9 MBytes  3.32 Mbits/sec   0.005 ms    0/ 8505 (0%)
+[  3] local 192.168.40.39 port 5001 connected with 192.168.40.103 port 49686
+[  3]  0.0-40.1 sec   119 MBytes  24.9 Mbits/sec   0.004 ms    0/85035 (0%)
+
+
+

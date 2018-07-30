@@ -1,9 +1,9 @@
 pool_name="test_pool"
 image_name="test_image0"
-pg_num="2200"
+pg_num="256"
 
 echo "#######################################"
-ceph osd pool create ${pool_name} $pg_num $pg_num
+rados mkpool ${pool_name}
 echo -e "\033[32m pool list:\033[0m "
 rados lspools
 echo "---------------------------------------"
@@ -11,7 +11,12 @@ echo "---------------------------------------"
 ceph osd pool get ${pool_name} pg_num
 ceph osd pool get ${pool_name} pgp_num
 
-sleep 10
+ceph osd pool set ${pool_name} pg_num ${pg_num}
+ceph osd pool set ${pool_name} pgp_num ${pg_num}
+
+ceph osd pool get ${pool_name} pg_num
+ceph osd pool get ${pool_name} pgp_num
+
 echo "---------------------------------------"
 rbd create ${pool_name}/${image_name} --size=102400 --image-format 2
 echo -e "\033[32m image list:\033[0m "

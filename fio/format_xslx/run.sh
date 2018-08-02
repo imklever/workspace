@@ -6,7 +6,13 @@
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/log_39"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_37"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_38"
-_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_37"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_38"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_37"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_38"
+_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 log_name="performance.log"
@@ -20,6 +26,8 @@ rm -rf $log_name
 result1=""
 result2=""
 result3=""
+
+file_list="wrie_64k write_512k write_1m read_64k read_512k read_1m"
 for folder in $_folder_list
 do
     log_file="$_log_base/$folder/fio_read_64k.log"
@@ -58,7 +66,7 @@ echo $result3           >> $log_name
 
 
 #####################################
-#IOPS
+#BW
 #####################################
 result1=""
 result2=""
@@ -100,6 +108,6 @@ echo $result2           >> $log_name
 echo $result3           >> $log_name
 
 
-./xlsx.py $log_name
+./scripts/xlsx.py $log_name
 
-./sz.sh
+./scripts/sz.sh

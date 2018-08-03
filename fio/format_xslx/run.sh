@@ -10,9 +10,9 @@
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_37"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_38"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_39"
-#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_37"
+_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_37"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_38"
-_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 log_name="performance.log"
@@ -23,33 +23,11 @@ rm -rf $log_name
 #####################################
 #IOPS
 #####################################
-result1=""
-result2=""
-result3=""
-
-file_list="wrie_64k write_512k write_1m read_64k read_512k read_1m"
-for folder in $_folder_list
-do
-    log_file="$_log_base/$folder/fio_read_64k.log"
-    value=""
-    value=`./get_IOPS.sh $log_file`
-    value=`./unit_format_IOPS.py $value`
-    result1="$result1 $value"
-    log_file="$_log_base/$folder/fio_read_512k.log"
-    value=""
-    value=`./get_IOPS.sh $log_file`
-    value=`./unit_format_IOPS.py $value`
-    result2="$result2 $value"
-    log_file="$_log_base/$folder/fio_read_1m.log"
-    value=""
-    value=`./get_IOPS.sh $log_file`
-    value=`./unit_format_IOPS.py $value`
-    result3="$result3 $value"
-done
+_file_list="randwrite_04k randwrite_08k randwrite_64k randread_04k randread_08k randread_64k write_64k write_512k write_1m read_64k read_512k read_1m"
 
 ssd_number="2"
 performance_name="IOPS"
-series_name="read_64k read_512k read_1m"
+series_name="$_file_list"
 x_axis="disk name"
 y_axis="IOPS"
 
@@ -60,39 +38,31 @@ echo $series_name       >> $log_name
 echo $x_axis            >> $log_name
 echo $y_axis            >> $log_name
 echo $_folder_list      >> $log_name
-echo $result1           >> $log_name
-echo $result2           >> $log_name
-echo $result3           >> $log_name
+
+
+for file in $_file_list
+do
+    result=""
+    for folder in $_folder_list
+    do
+        log_file="$_log_base/$folder/fio_${file}.log"
+        value=""
+        value=`./get_IOPS.sh $log_file`
+        value=`./unit_format_IOPS.py $value`
+        result="$result $value"
+    done
+    echo $result    >> $log_name
+done
 
 
 #####################################
 #BW
 #####################################
-result1=""
-result2=""
-result3=""
-for folder in $_folder_list
-do
-    log_file="$_log_base/$folder/fio_read_64k.log"
-    value=""
-    value=`./get_BW.sh $log_file`
-    value=`./unit_format_BW.py $value`
-    result1="$result1 $value"
-    log_file="$_log_base/$folder/fio_read_512k.log"
-    value=""
-    value=`./get_BW.sh $log_file`
-    value=`./unit_format_BW.py $value`
-    result2="$result2 $value"
-    log_file="$_log_base/$folder/fio_read_1m.log"
-    value=""
-    value=`./get_BW.sh $log_file`
-    value=`./unit_format_BW.py $value`
-    result3="$result3 $value"
-done
+_file_list="randwrite_04k randwrite_08k randwrite_64k randread_04k randread_08k randread_64k write_64k write_512k write_1m read_64k read_512k read_1m"
 
 ssd_number="2"
 performance_name="BW"
-series_name="read_64k read_512k read_1m"
+series_name="$_file_list"
 x_axis="disk name"
 y_axis="MiB/s"
 
@@ -103,11 +73,26 @@ echo $series_name       >> $log_name
 echo $x_axis            >> $log_name
 echo $y_axis            >> $log_name
 echo $_folder_list      >> $log_name
-echo $result1            >> $log_name
-echo $result2           >> $log_name
-echo $result3           >> $log_name
 
 
+for file in $_file_list
+do
+    result=""
+    for folder in $_folder_list
+    do
+        log_file="$_log_base/$folder/fio_${file}.log"
+        value=""
+        value=`./get_BW.sh $log_file`
+        value=`./unit_format_BW.py $value`
+        result="$result $value"
+    done
+    echo $result    >> $log_name
+done
+
+
+#####################################
+#生成exce图表
+#####################################
 ./scripts/xlsx.py $log_name
 
 ./scripts/sz.sh

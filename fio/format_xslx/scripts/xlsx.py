@@ -77,8 +77,8 @@ while 1:
     chart3_categories="="+performance_name+"!$D$1:$N$1"
     for serise in serise_name:
         serise_number += 1
-        print serise
         print serise_number
+        print serise
         chart1_value     ="="+performance_name+"!$B$"+str(serise_number+1)+":$N$"+str(serise_number+1)
         print chart1_categories
         print chart1_value
@@ -106,17 +106,29 @@ while 1:
     chart1.set_title({'name':performance_name+"(SSD & HDD)"})
     chart1.set_x_axis({'name':x_axis})
     chart1.set_y_axis({'name':y_axis})
-    excel_sheet.insert_chart('A6',chart1,{'x_offset':0,'y_offset':0})
+    #->
+    #excel_sheet.insert_chart('A6',chart1,{'x_offset':0,'y_offset':0})
+    chart_position="A"+str(serise_number+3)
+    excel_sheet.insert_chart(chart_position,chart1,{'x_offset':0,'y_offset':0})
+    #<-
     
     chart2.set_title({'name':performance_name+"(SSD)"})
     chart2.set_x_axis({'name':x_axis})
     chart2.set_y_axis({'name':y_axis})
-    excel_sheet.insert_chart('I6',chart2,{'x_offset':0,'y_offset':0})
+    #->
+    #excel_sheet.insert_chart('I6',chart2,{'x_offset':0,'y_offset':0})
+    chart_position="I"+str(serise_number+3)
+    excel_sheet.insert_chart(chart_position,chart2,{'x_offset':0,'y_offset':0})
+    #<-
 
     chart3.set_title({'name':performance_name+"(HDD)"})
     chart3.set_x_axis({'name':x_axis})
     chart3.set_y_axis({'name':y_axis})
-    excel_sheet.insert_chart('Q6',chart3,{'x_offset':0,'y_offset':0})
+    #->
+    #excel_sheet.insert_chart('Q6',chart3,{'x_offset':0,'y_offset':0})
+    chart_position="Q"+str(serise_number+3)
+    excel_sheet.insert_chart(chart_position,chart3,{'x_offset':0,'y_offset':0})
+    #<-
     print info.strip()," log process finished\n"
 
 #############################################

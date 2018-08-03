@@ -77,11 +77,11 @@ while 1:
     chart3_categories="="+performance_name+"!$D$1:$N$1"
     for serise in serise_name:
         serise_number += 1
-        print serise_number
-        print serise
+        #print serise_number
+        #print serise
         chart1_value     ="="+performance_name+"!$B$"+str(serise_number+1)+":$N$"+str(serise_number+1)
-        print chart1_categories
-        print chart1_value
+        #print chart1_categories
+        #print chart1_value
         chart1.add_series({
             'name':serise,
             'categories':chart1_categories,

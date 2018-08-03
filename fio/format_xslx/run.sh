@@ -10,9 +10,9 @@
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_37"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_38"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_39"
-_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_37"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_37"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_38"
-#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
+_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 log_name="performance.log"
@@ -23,6 +23,9 @@ rm -rf $log_name
 #####################################
 #IOPS
 #####################################
+echo ""
+echo "begin with IOPS:"
+
 _file_list="randwrite_04k randwrite_08k randwrite_64k randread_04k randread_08k randread_64k write_64k write_512k write_1m read_64k read_512k read_1m"
 
 ssd_number="2"
@@ -42,6 +45,8 @@ echo $_folder_list      >> $log_name
 
 for file in $_file_list
 do
+    echo "$file"
+
     result=""
     for folder in $_folder_list
     do
@@ -53,11 +58,15 @@ do
     done
     echo $result    >> $log_name
 done
+echo "done with IOPS"
 
 
 #####################################
 #BW
 #####################################
+echo ""
+echo "begin with BW:"
+
 _file_list="randwrite_04k randwrite_08k randwrite_64k randread_04k randread_08k randread_64k write_64k write_512k write_1m read_64k read_512k read_1m"
 
 ssd_number="2"
@@ -77,6 +86,8 @@ echo $_folder_list      >> $log_name
 
 for file in $_file_list
 do
+    echo "$file"
+
     result=""
     for folder in $_folder_list
     do
@@ -88,11 +99,14 @@ do
     done
     echo $result    >> $log_name
 done
-
+echo "done with BW"
 
 #####################################
 #生成exce图表
 #####################################
+echo ""
+echo "begin create execl:"
+
 ./scripts/xlsx.py $log_name
 
 ./scripts/sz.sh

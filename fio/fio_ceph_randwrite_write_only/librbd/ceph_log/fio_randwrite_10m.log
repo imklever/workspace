@@ -1,0 +1,31 @@
+rbd_image0: (g=0): rw=randwrite, bs=(R) 10.0MiB-10.0MiB, (W) 10.0MiB-10.0MiB, (T) 10.0MiB-10.0MiB, ioengine=rbd, iodepth=64
+fio-3.1
+Starting 1 process
+
+rbd_image0: (groupid=0, jobs=1): err= 0: pid=125569: Fri Aug  3 17:46:56 2018
+  write: IOPS=38, BW=386MiB/s (405MB/s)(10.0GiB/26543msec)
+    slat (usec): min=1933, max=13359, avg=3629.82, stdev=2599.61
+    clat (msec): min=157, max=4990, avg=1540.08, stdev=732.66
+     lat (msec): min=159, max=4993, avg=1543.71, stdev=732.22
+    clat percentiles (msec):
+     |  1.00th=[  182],  5.00th=[  477], 10.00th=[ 1200], 20.00th=[ 1284],
+     | 30.00th=[ 1334], 40.00th=[ 1351], 50.00th=[ 1385], 60.00th=[ 1418],
+     | 70.00th=[ 1469], 80.00th=[ 1569], 90.00th=[ 2198], 95.00th=[ 3608],
+     | 99.00th=[ 3675], 99.50th=[ 3708], 99.90th=[ 5000], 99.95th=[ 5000],
+     | 99.99th=[ 5000]
+   bw (  KiB/s): min=20480, max=1454080, per=100.00%, avg=921741.73, stdev=554159.75, samples=22
+   iops        : min=    2, max=  142, avg=90.00, stdev=54.11, samples=22
+  lat (msec)   : 250=3.03%, 500=2.73%, 750=2.83%, 2000=78.91%, >=2000=12.50%
+  cpu          : usr=10.50%, sys=3.46%, ctx=88, majf=0, minf=350778
+  IO depths    : 1=0.6%, 2=2.1%, 4=5.3%, 8=10.9%, 16=23.8%, 32=53.1%, >=64=4.1%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=98.0%, 8=0.4%, 16=0.0%, 32=0.1%, 64=1.5%, >=64=0.0%
+     issued rwt: total=0,1024,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+  WRITE: bw=386MiB/s (405MB/s), 386MiB/s-386MiB/s (405MB/s-405MB/s), io=10.0GiB (10.7GB), run=26543-26543msec
+
+Disk stats (read/write):
+    dm-0: ios=0/93, merge=0/0, ticks=0/117, in_queue=117, util=0.22%, aggrios=0/90, aggrmerge=0/3, aggrticks=0/111, aggrin_queue=111, aggrutil=0.22%
+  sdc: ios=0/90, merge=0/3, ticks=0/111, in_queue=111, util=0.22%

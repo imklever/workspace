@@ -7,11 +7,11 @@
 _size="10G"
 _disk_list="rbd0"
 
-_rw_list="write read "
-_rw_bs_list="64k 512k 1m"
+_rw_list="write"
+_rw_bs_list="04k 08k 16k 32k 64k 128k 512k 1m 2m 4m 6m 8m 10m 12m 16m 20m 24m 28m 32m 64m 128m"
 
-_rand_rw_list="randwrite randread"
-_rand_rw_bs_list="04k 08k 64k"
+_rand_rw_list="randwrite"
+_rand_rw_bs_list="04k 08k 16k 32k 64k 128k 512k 1m 2m 4m 6m 8m 10m 12m 16m 20m 24m 28m 32m 64m 128m"
 
 
 

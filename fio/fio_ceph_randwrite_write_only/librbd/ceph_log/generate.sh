@@ -5,8 +5,6 @@
 #configuration
 ##########################
 _size="10G"
-_disk_list="rbd0"
-_foramt_flag="no"
 
 _rw_list="write"
 _rw_bs_list="04k 08k 16k 32k 64k 128k 512k 1m 2m 4m 6m 8m 10m 12m 16m 20m 24m 28m 32m 64m 128m"
@@ -26,20 +24,21 @@ _rand_rw_bs_list="04k 08k 16k 32k 64k 128k 512k 1m 2m 4m 6m 8m 10m 12m 16m 20m 2
 ##########################
 function generate()
 {
-    if [ $# -lt 6 ];then
+    if [ $# -lt 5 ];then
         echo "wrong parameters!
-        usage: generate <disk> <rw> <bs> <iodepth> <size > <filename>"
+        usage: generate <rw> <bs> <iodepth> <size > <filename>"
         exit 1
     fi
-    disk=$1
-    rw=$2
-    bs=$3
-    iodepth=$4
-    size=$5
-    filename=$6
+    rw=$1
+    bs=$2
+    iodepth=$3
+    size=$4
+    filename=$5
     
     echo "[global]
-ioengine=libaio
+ioengine=rbd
+clientname=admin
+pool=test_pool
 rw=$rw
 bs=$bs
 #runtime=5
@@ -50,8 +49,8 @@ direct=1
 #rwmixread=70
 group_reporting
 
-[test]
-filename=${disk}
+[rbd_image0]
+rbdname=test_image0
 " > $filename
 
 }
@@ -77,14 +76,13 @@ function time_start()
     df -Th
     echo \"\"
 
-    echo -e \"Data on these disk will \\033[31mlost\\033[0m, do you want to continue?\"
-    echo -e \"make sure the \\033[31mOS disk\\033[0m is not one of them!\"
+    ceph -s
+    echo \"\"
+
+
 
     echo -e \"\\033[47;31m\"
-    for i in \$_disk_list
-    do
-        echo \${i}
-    done
+    echo -e \"make sure the ceph cluster is health\"
     echo -e \"\\033[0m\"
     echo -e \"\\033[31;5m[yes/no]?\\033[0m\"
     while [ 1 ]
@@ -98,55 +96,12 @@ function time_start()
         fi
     done
 
-    " >> run.sh
 
 
-    if [ ${_foramt_flag}"x" == "yesx" ];then
-        echo "
-    lsblk
-    echo \"\"
-
-    df -Th
-    echo \"\"
-
-    echo -e \"these disk will be \\033[31mformatted\\033[0m, do you want to continue?\"
-    echo -e \"make sure the \\033[31mOS disk\\033[0m is not one of them!\"
-    echo -e \"\\033[47;31m\"
-    for i in \$_disk_list
-    do
-        echo \${i}
-    done
-    echo -e \"\\033[0m\"
-    echo -e \"\\033[31;5m[yes/no]?\\033[0m\"
-    while [ 1 ]
-    do
-        read var
-        if [ \$var\"x\" != \"yesx\" ];then
-            echo \"you chose no\"
-            exit 1
-        else
-            break
-        fi
-    done
-
-    echo \"\"
-    echo \"formatting disk...\"
-    for i in \${_disk_list}
-    do
-        echo \${i}
-        parted /dev/\${i} -s "mklabel msdos"
-        parted /dev/\${i} -s "mklabel gpt"
-    done
-    echo \"\"
-
-    lsblk
-        " >> run.sh
-    fi
-
-    echo "
     time_start=\"\$(date +%Y)-\$(date +%m)-\$(date +%d)_\$(date +%H)-\$(date +%M)-\$(date +%S)\"
     timestamp_start=\"\$(date +%s)\"
 
+    echo \"\"
     echo \"time start:\"
     echo \$time_start
     echo \"\"
@@ -191,7 +146,7 @@ function time_start_on_disk()
     echo \$time_start_disk
     echo \"\"
 
-    echo \"test on ${_disk} time start:\" > ./log/${_disk}/time.log
+    echo \"time start:\" > ./log/${_disk}/time.log
     echo \"\${time_start_disk}\" >> ./log/${_disk}/time.log
     echo \"\${timestamp_start_disk}\" >> ./log/${_disk}/time.log
 
@@ -288,6 +243,13 @@ function time_stop()
     echo \"\${min}(m)\"
     echo \"\${hour}(h)\"
 
+    for i in \${_disk_list}
+    do
+        echo \${i}
+        umount /mnt/\${i}
+        rm -rf /mnt/\${i}
+    done
+
     " >> run.sh
 }
 
@@ -296,23 +258,6 @@ function time_stop()
 ##########################
 #main
 ##########################
-
-
-#if [ -f run.sh -o -d ./config ];then
-#    echo "run.sh or config dir is already exist, do you want overwrite them?[yes/no]"
-#    while [ 1 ]
-#    do
-#        read var
-#        if [ $var"x" != "yesx" ];then
-#            echo "you chose no"
-#            exit 1
-#        fi
-#        break
-#    done
-#    rm -rf config run.sh
-#    mkdir config
-#fi
-
 
 time_start="$(date +%Y)-$(date +%m)-$(date +%d)_$(date +%H)-$(date +%M)-$(date +%S)"
 if [ -d ./config ];then
@@ -330,41 +275,36 @@ done
 time_start
 
 
-for _disk in $_disk_list
+for _bs in $_rw_bs_list
 do
-    time_start_on_disk
-    for _bs in $_rw_bs_list
+    for _rw in $_rw_list
     do
-        for _rw in $_rw_list
-        do
-            _config_file="./config/${_disk}/fio_${_rw}_${_bs}.config"
-            _log_file="./log/${_disk}/fio_${_rw}_${_bs}.log"
-            touch $_config_file
-            generate "/dev/${_disk}" $_rw $_bs 64 $_size $_config_file
-            echo "    echo \"${_config_file}\"" >> ./run.sh
-            echo "    /usr/bin/time -f \"time:%E\\nuser:%U\\nsys:%S\" -o ${_log_file}.time fio ${_config_file}  >  ${_log_file}" >> ./run.sh
-        done
+        _config_file="./config/fio_${_rw}_${_bs}.config"
+        _log_file="./log/fio_${_rw}_${_bs}.log"
+        touch $_config_file
+        generate $_rw $_bs 64 $_size $_config_file
+        echo "    echo \"${_config_file}\"" >> ./run.sh
+        echo "    /usr/bin/time -f \"time:%E\\nuser:%U\\nsys:%S\" -o ${_log_file}.time fio ${_config_file}  >  ${_log_file}" >> ./run.sh
     done
-
-    for _bs in $_rand_rw_bs_list
-    do
-        for _rw in $_rand_rw_list
-        do
-            _config_file="./config/${_disk}/fio_${_rw}_${_bs}.config"
-            _log_file="./log/${_disk}/fio_${_rw}_${_bs}.log"
-            touch $_config_file
-            generate "/dev/${_disk}" $_rw $_bs 64 $_size $_config_file
-            echo "    echo \"${_config_file}\"" >> ./run.sh
-            echo "    /usr/bin/time -f \"time:%E\\nuser:%U\\nsys:%S\" -o ${_log_file}.time fio ${_config_file}  >  ${_log_file}" >> ./run.sh
-        done
-    done
-    time_stop_on_disk
-    echo "    echo \"\"" >> ./run.sh
-    echo "    echo \"\"" >> ./run.sh
-    echo "    echo \"\"" >> ./run.sh
-    echo "    echo \"\"" >> ./run.sh
-    echo "" >> ./run.sh
 done
+
+for _bs in $_rand_rw_bs_list
+do
+    for _rw in $_rand_rw_list
+    do
+        _config_file="./config/fio_${_rw}_${_bs}.config"
+        _log_file="./log/fio_${_rw}_${_bs}.log"
+        touch $_config_file
+        generate $_rw $_bs 64 $_size $_config_file
+        echo "    echo \"${_config_file}\"" >> ./run.sh
+        echo "    /usr/bin/time -f \"time:%E\\nuser:%U\\nsys:%S\" -o ${_log_file}.time fio ${_config_file}  >  ${_log_file}" >> ./run.sh
+    done
+done
+echo "    echo \"\"" >> ./run.sh
+echo "    echo \"\"" >> ./run.sh
+echo "    echo \"\"" >> ./run.sh
+echo "    echo \"\"" >> ./run.sh
+echo "" >> ./run.sh
 
 time_stop
 

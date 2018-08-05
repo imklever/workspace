@@ -1,0 +1,34 @@
+rbd_image0: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=rbd, iodepth=64
+fio-3.1
+Starting 1 process
+
+rbd_image0: (groupid=0, jobs=1): err= 0: pid=124407: Fri Aug  3 17:18:21 2018
+  write: IOPS=1965, BW=7860KiB/s (8049kB/s)(10.0GiB/1334022msec)
+    slat (nsec): min=1450, max=147371, avg=3563.59, stdev=3912.46
+    clat (usec): min=992, max=10939k, avg=32421.27, stdev=302167.54
+     lat (usec): min=999, max=10939k, avg=32424.84, stdev=302167.56
+    clat percentiles (msec):
+     |  1.00th=[    3],  5.00th=[    4], 10.00th=[    4], 20.00th=[    4],
+     | 30.00th=[    5], 40.00th=[    5], 50.00th=[    5], 60.00th=[    5],
+     | 70.00th=[    5], 80.00th=[    5], 90.00th=[    5], 95.00th=[    6],
+     | 99.00th=[  768], 99.50th=[ 1334], 99.90th=[ 5403], 99.95th=[ 6678],
+     | 99.99th=[ 9194]
+   bw (  KiB/s): min=  160, max=61336, per=100.00%, avg=17383.85, stdev=15431.25, samples=1207
+   iops        : min=   40, max=15334, avg=4345.92, stdev=3857.80, samples=1207
+  lat (usec)   : 1000=0.01%
+  lat (msec)   : 2=0.90%, 4=24.59%, 10=71.60%, 20=0.10%, 50=0.16%
+  lat (msec)   : 100=0.21%, 250=0.44%, 500=0.56%, 750=0.42%, 1000=0.28%
+  lat (msec)   : 2000=0.40%, >=2000=0.34%
+  cpu          : usr=0.92%, sys=0.07%, ctx=101929, majf=0, minf=8543
+  IO depths    : 1=0.8%, 2=2.4%, 4=5.6%, 8=11.7%, 16=24.4%, 32=52.8%, >=64=2.4%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=98.3%, 8=0.1%, 16=0.1%, 32=0.1%, 64=1.5%, >=64=0.0%
+     issued rwt: total=0,2621440,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+  WRITE: bw=7860KiB/s (8049kB/s), 7860KiB/s-7860KiB/s (8049kB/s-8049kB/s), io=10.0GiB (10.7GB), run=1334022-1334022msec
+
+Disk stats (read/write):
+    dm-0: ios=0/4467, merge=0/0, ticks=0/45341, in_queue=45341, util=1.06%, aggrios=0/4417, aggrmerge=0/50, aggrticks=0/43622, aggrin_queue=43620, aggrutil=1.06%
+  sdc: ios=0/4417, merge=0/50, ticks=0/43622, in_queue=43620, util=1.06%

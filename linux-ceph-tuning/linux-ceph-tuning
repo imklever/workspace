@@ -1,0 +1,105 @@
+#操作系统层面
+
+    #https://www.cnblogs.com/kerrycode/p/4743015.html
+    readahead:(page cache)
+        /sbin/blockdev --getra /dev/sda
+        /sbin/blockdev --setra 8192 /dev/sda
+    
+    #kernel
+        #Linux IO scheduler
+            #For SSD
+            cat /sys/block/sda/queue/scheduler
+            echo noop > /sys/block/sda/queue/scheduler
+            #For HDD
+            cat /sys/block/sda/queue/scheduler
+            echo deadline > /sys/block/sda/queue/scheduler
+        
+        #readahead for rados system
+            cat /sys/block/sda/queue/read_ahead_kb
+            echo "8192" > /sys/block/sda/queue/read_ahead_kb
+        
+        #max of pid in kernel
+            cat /proc/sys/kernel/pid_max
+            echo 4194303 > /proc/sys/kernel/pid_max
+        
+        #cpu performance
+            cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+            echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    
+    #Memory
+        #SMP & NUMA
+        
+        #SWAP: try not to use the swap
+            echo "vm.swappiness" >> /etc/sysctl.conf
+        
+        #memory
+        #Ceph use TCmalloc for not all flash system
+        #Increse TCmalloc cache size or use jemalloc for all SSD system
+    
+    #Cgroups
+        #tools or cmd:
+            hwloc
+        #bind the pid with CPU    
+    
+    
+
+
+#网络层面
+    #巨型帧
+    #中断亲和：指定网络中断处理的cpu，默认仅cpu0
+    #硬件加速
+        #TOE:网卡协处理器
+            #协议处理
+            #中断处理
+            #减少内存拷贝
+            ethtool -k | grep -i tcp-segmentation-offload: on
+            ethtool -k em1 tso on
+    #RDMA
+    #DPDK
+
+
+
+
+#ceph 层面优化
+    #Ceph parameter
+        #[osd]-filestore
+            参数名                                  描述            默认值          建议值
+            filestore xattr use omap
+            filestore max sync interval
+            filestore min sync interval
+            filestore queue max ops
+            filestore queue max bytes
+            filestore queue committing max ops
+            filestore queue committing max bytes
+            filestore op threads
+
+        #[osd]-journal
+            osd journal size
+            journal max write bytes
+            journal max write entries
+            journal queue max ops
+            journal queue max bytes
+
+        #[osd]-osd config tuning
+            osd max write size
+            osd client message size cap
+            osd deep scrub stride
+            osd op threads
+            osd disk threads
+            osd map cache size
+            osd map cache bl size
+            osd mount options xfs
+
+        #[osd]-recovery tuning
+            osd recovery priority
+            osd recovery max active
+            osd max backfills
+
+        #[osd]-client tuning
+            rbd cache
+            rbd cache size
+            rbd cache max dirty
+            rbd cache max dirty age
+
+    #PG & PGP number
+

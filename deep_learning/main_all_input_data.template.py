@@ -28,14 +28,14 @@ layer_number = 9
 #########################
 
 #输入层
-nur_num=[2]
+nur_num=[3]
 
 #中间层
 for i in range(1,layer_number):
-    nur_num.append(2)
+    nur_num.append(3)
 
 #输出层
-nur_num.append(2)
+nur_num.append(5)
 
 layer_data=[]
 layer_parameter=[]
@@ -106,7 +106,7 @@ for i in range(layer_number):
 #########################
 for layer in range(layer_number):
 
-    print "\n"
+    print "------------------------------------------------------"
     print "last layer_Data"
     print layer_Data
     print "\n"

@@ -1,0 +1,16 @@
+#DMA(Direct Memory Access)
+#DMAC(DMA controller)
+#RDMA(Remote DMA)
+
+#RoCE(RDMA over Converged Ethernet)
+#iWRAP(Internet Wide Area RDMA Protocol，或者叫RDMA over TCP)
+    #业界有两家厂商各自在主推iWRAP和RoCE，Chelsio主推iWRAP，而Mellanox则在融合网络主推RoCE
+#softRoCE
+    #不同于RoCE，softRoCE适用于任何以太环境，无需依赖NIC、switch、L2QoS等支持。
+    #softRoCE的目标是在所有支持以太网的设备上都可以部署RDMA传输
+
+
+
+#基于InfiniBand的RDMA是在2000年发布规范，属于原生RDMA
+#基于Ethernet的RDMA叫做RoCE，在2010年发布协议，基于增强型以太网并将传输层换成IB传输层实现。
+#基于TCP/IP的RDMA称作iWARP，在 2007年形成标准，主要包括MPA/DDP/RDMAP三层子协议

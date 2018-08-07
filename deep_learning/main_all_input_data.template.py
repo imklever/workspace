@@ -37,7 +37,6 @@ for i in range(1,layer_number):
 #输出层
 nur_num.append(2)
 
-
 layer_data=[]
 layer_parameter=[]
 
@@ -49,9 +48,6 @@ layer_parameter=[]
 for i in range(layer_number+1):
     layer_data.append(np.zeros((nur_num[i],1),np.int))
 
-#print "layer_data"
-#for i in layer_data:
-#    print i.reshape(1,-1)
 
 
 #########################
@@ -59,6 +55,7 @@ for i in range(layer_number+1):
 #包括所有的输入样例,
 #即包括所有输入向量
 #########################
+sample_number=4
 tmp_data=[]
 #样例1
 tmp_data.append(np.random.random(size=(nur_num[0],1)))
@@ -70,9 +67,6 @@ tmp_data.append(np.random.random(size=(nur_num[0],1)))
 #样例n
 tmp_data.append(np.random.random(size=(nur_num[0],1)))
 
-#print "layer_data"
-#for i in layer_data:
-#    print i.reshape(1,-1)
 
 
 #########################
@@ -82,8 +76,9 @@ tmp_data.append(np.random.random(size=(nur_num[0],1)))
 layer_Data=np.array(tmp_data)
 
 #print "layer_Data"
-#for i in layer_Data:
-#    print i.reshape(1,-1)
+#print layer_Data
+
+
 
 #########################
 #初始化每两层神经元之间的
@@ -98,8 +93,10 @@ for i in range(layer_number):
 #print layer_parameter
 
 #print "layer_b"
-#for i in layer_b:
-#    print i.reshape(1,-1)
+#print layer_b"
+
+
+
 
 
 
@@ -112,35 +109,49 @@ for layer in range(layer_number):
     print "\n"
     print "last layer_Data"
     print layer_Data
+    print "\n"
+
     print "layer_parameter[layer]"
     print layer_parameter[layer]
-    #for i in layer_Data:
-    #    #print i.reshape(1,-1)
-    #    print i
+    print "\n"
 
-    layer_Data1 = np.dot(layer_parameter[layer],layer_Data)
-    layer_Data = np.dot(layer_parameter[layer],layer_Data)
-
-    #layer_Data = np.dot(layer_parameter[layer],layer_Data)+layer_b[layer]
+    #layer_Data1 = layer_Data
+    #layer_Data1  = np.dot(layer_parameter[layer],layer_Data1)
+    layer_Data = np.dot(layer_parameter[layer],layer_Data).T.reshape(sample_number,-1,1)
 
 
     print "next layer before b"
 
-    print "layer_Data1"
-    print layer_Data1
-
     print "layer_Data"
     print layer_Data
+    print "\n"
 
-    print "layer_Data.T"
-    print layer_Data.T
+    #print "layer_Data1"
+    #print layer_Data1
+    #print "\n"
 
     print "layer_b[layer]"
     print layer_b[layer]
+    print "\n"
 
-    layer_Data += layer_b[layer]
-    
     print "next layer after b"
-    for i in layer_Data:
-        print i.reshape(1,-1)
+    layer_Data += layer_b[layer]
+    print layer_Data
+
+    print "\n\n\n\n"
+
+
+
+
+#########################
+#计算损失函数：
+#########################
+
+
+
+
+#########################
+#反向传递：
+#更新每层神经元的 权重 & 偏置
+#########################
 

@@ -3,7 +3,6 @@ scrt xdisplay
 rsyslog
 rpc
 graphviz 自动生成dot文件
-eda
 
 1、install-deps.sh  安装依赖 
 2、do_cmake.sh 生成build/  
@@ -22,8 +21,6 @@ ceph 代码
 samba 搭建
 epel
 
-备份72ftp下的文件
-
 c 创建目录 存储 pid、log等 
 信号捕捉，ctr+c，kill -9
 
@@ -31,6 +28,3 @@ hardware power on -> bios -> mbr(master boot record -> boot loader-> kernel
 
 小咖遇大咖 14 完
 
-excel
-神经网络课程
-远程中转

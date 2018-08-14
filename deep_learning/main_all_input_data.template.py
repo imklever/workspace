@@ -70,8 +70,6 @@ tmp_data.append(np.random.random(size=(nur_num[0],1)))
 #########################
 layer_Data=np.array(tmp_data)
 
-#print "layer_Data"
-#print layer_Data
 
 
 
@@ -82,18 +80,9 @@ layer_Data=np.array(tmp_data)
 layer_parameter=[]
 layer_b=[]
 for i in range(layer_number):
-    #layer_parameter.append(0.01 * np.random.random(size=(nur_num[i+1],nur_num[i])))
-    #layer_b.append(np.random.random(size=(nur_num[i+1],1)))
-
     layer_parameter.append(0.01 * np.random.randn(nur_num[i+1],nur_num[i]))
-    #layer_b.append(np.random.randn(nur_num[i+1],1))
     layer_b.append(np.zeros((nur_num[i+1],1),np.int))
 
-#print "layer_parameter"
-#print layer_parameter
-
-#print "layer_b"
-#print layer_b"
 
 
 
@@ -101,6 +90,7 @@ for i in range(layer_number):
 #自定义ufunc函数：
 #激活函数
 #########################
+
 #ReLU_limit = 6
 #def ReLU(number_in):
 #    #return number_in
@@ -110,8 +100,8 @@ for i in range(layer_number):
 #        return ReLU_limit
 #    else:
 #        return 0
+
 def ReLU(number_in):
-    #return number_in
     if number_in > 0:
         return number_in
     else:
@@ -133,9 +123,6 @@ print layer_Data
 for layer in range(layer_number):
 
     print "------------------------------------------------------"
-    #print "last layer_Data"
-    #print layer_Data
-    #print "\n"
 
     print "layer_parameter[layer]"
     print layer_parameter[layer]

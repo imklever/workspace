@@ -1,0 +1,11 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+10.240.200.5    git.tclab.lenovo.com
+10.240.36.25    hpcgitlab.labs.lenovo.com
+10.240.205.253  cicd.thinkcloud.lenovo.com
+10.240.217.163  sungn-localsa.labs.lenovo.com
+
+10.240.220.37 ceph1
+10.240.220.38 ceph2
+10.240.220.39 ceph3

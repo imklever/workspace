@@ -12,7 +12,9 @@
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/log/RAID0/log_39"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_37"
 #_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_38"
-_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_xfs/log/RAID0/log_39"
+#_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/with_raid_cache/log_37"
+_log_base="/root/gitrepo/workspace/fio/fio_disk/disk_bare/with_raid_cache/log_38"
 _folder_list="sda sdb sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn"
 
 log_name="performance.log"

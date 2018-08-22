@@ -1,0 +1,35 @@
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.1
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=27671: Fri Aug 17 19:59:26 2018
+   read: IOPS=536, BW=2146KiB/s (2197kB/s)(1024MiB/488686msec)
+    slat (nsec): min=2380, max=92294, avg=16657.10, stdev=8434.48
+    clat (usec): min=2, max=2493.5k, avg=119286.62, stdev=112673.87
+     lat (usec): min=27, max=2493.5k, avg=119303.71, stdev=112674.71
+    clat percentiles (usec):
+     |  1.00th=[     29],  5.00th=[     47], 10.00th=[  57410],
+     | 20.00th=[  67634], 30.00th=[  74974], 40.00th=[  82314],
+     | 50.00th=[  92799], 60.00th=[ 106431], 70.00th=[ 125305],
+     | 80.00th=[ 156238], 90.00th=[ 212861], 95.00th=[ 274727],
+     | 99.00th=[ 488637], 99.50th=[ 750781], 99.90th=[1585447],
+     | 99.95th=[1686111], 99.99th=[1769997]
+   bw (  KiB/s): min=   64, max=29504, per=99.46%, avg=2133.47, stdev=1476.97, samples=976
+   iops        : min=   16, max= 7376, avg=533.36, stdev=369.24, samples=976
+  lat (usec)   : 4=0.01%, 20=0.01%, 50=5.47%, 100=1.31%, 250=0.38%
+  lat (usec)   : 500=0.08%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.03%, 10=0.06%, 20=0.18%, 50=1.30%
+  lat (msec)   : 100=47.15%, 250=37.41%, 500=5.66%, 750=0.46%, 1000=0.21%
+  lat (msec)   : 2000=0.29%, >=2000=0.01%
+  cpu          : usr=0.51%, sys=1.43%, ctx=257394, majf=0, minf=95
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=262144,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=2146KiB/s (2197kB/s), 2146KiB/s-2146KiB/s (2197kB/s-2197kB/s), io=1024MiB (1074MB), run=488686-488686msec
+
+Disk stats (read/write):
+  sdl: ios=260306/0, merge=0/0, ticks=31261394/0, in_queue=31274873, util=100.00%

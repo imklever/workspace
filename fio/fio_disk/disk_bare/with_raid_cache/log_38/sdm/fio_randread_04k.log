@@ -1,0 +1,35 @@
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.1
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=28118: Fri Aug 17 20:21:04 2018
+   read: IOPS=533, BW=2134KiB/s (2186kB/s)(1024MiB/491294msec)
+    slat (nsec): min=2424, max=66225, avg=19489.66, stdev=8064.68
+    clat (usec): min=10, max=2400.7k, avg=119919.62, stdev=122117.31
+     lat (usec): min=27, max=2400.7k, avg=119939.60, stdev=122118.27
+    clat percentiles (usec):
+     |  1.00th=[     28],  5.00th=[     41], 10.00th=[  53216],
+     | 20.00th=[  67634], 30.00th=[  74974], 40.00th=[  82314],
+     | 50.00th=[  92799], 60.00th=[ 106431], 70.00th=[ 125305],
+     | 80.00th=[ 156238], 90.00th=[ 212861], 95.00th=[ 278922],
+     | 99.00th=[ 497026], 99.50th=[ 884999], 99.90th=[1686111],
+     | 99.95th=[1769997], 99.99th=[1920992]
+   bw (  KiB/s): min=   48, max=31168, per=98.74%, avg=2107.12, stdev=1431.49, samples=981
+   iops        : min=   12, max= 7792, avg=526.77, stdev=357.86, samples=981
+  lat (usec)   : 20=0.01%, 50=6.50%, 100=1.20%, 250=0.61%, 500=0.01%
+  lat (usec)   : 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.02%, 20=0.06%, 50=1.31%
+  lat (msec)   : 100=46.29%, 250=37.37%, 500=5.64%, 750=0.36%, 1000=0.24%
+  lat (msec)   : 2000=0.40%, >=2000=0.01%
+  cpu          : usr=0.57%, sys=1.68%, ctx=257688, majf=0, minf=95
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=262144,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=2134KiB/s (2186kB/s), 2134KiB/s-2134KiB/s (2186kB/s-2186kB/s), io=1024MiB (1074MB), run=491294-491294msec
+
+Disk stats (read/write):
+  sdm: ios=258990/0, merge=0/0, ticks=31433101/0, in_queue=31435211, util=100.00%

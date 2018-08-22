@@ -1,0 +1,35 @@
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.1
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=27075: Fri Aug 17 19:38:25 2018
+   read: IOPS=537, BW=2148KiB/s (2200kB/s)(1024MiB/488059msec)
+    slat (nsec): min=3153, max=68354, avg=10635.79, stdev=8165.62
+    clat (usec): min=16, max=2523.6k, avg=119141.45, stdev=112363.42
+     lat (usec): min=31, max=2523.6k, avg=119152.31, stdev=112364.18
+    clat percentiles (usec):
+     |  1.00th=[     31],  5.00th=[     40], 10.00th=[  56886],
+     | 20.00th=[  67634], 30.00th=[  74974], 40.00th=[  82314],
+     | 50.00th=[  92799], 60.00th=[ 106431], 70.00th=[ 125305],
+     | 80.00th=[ 156238], 90.00th=[ 212861], 95.00th=[ 278922],
+     | 99.00th=[ 492831], 99.50th=[ 750781], 99.90th=[1568670],
+     | 99.95th=[1652556], 99.99th=[1769997]
+   bw (  KiB/s): min=  128, max=43600, per=99.91%, avg=2146.09, stdev=1773.58, samples=975
+   iops        : min=   32, max=10900, avg=536.52, stdev=443.39, samples=975
+  lat (usec)   : 20=0.01%, 50=5.98%, 100=1.26%, 250=0.29%, 500=0.02%
+  lat (usec)   : 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%, 20=0.10%, 50=1.37%
+  lat (msec)   : 100=46.94%, 250=37.34%, 500=5.71%, 750=0.47%, 1000=0.20%
+  lat (msec)   : 2000=0.29%, >=2000=0.01%
+  cpu          : usr=0.29%, sys=0.94%, ctx=257786, majf=0, minf=95
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=262144,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=2148KiB/s (2200kB/s), 2148KiB/s-2148KiB/s (2200kB/s-2200kB/s), io=1024MiB (1074MB), run=488059-488059msec
+
+Disk stats (read/write):
+  sdk: ios=258704/0, merge=0/0, ticks=31221265/0, in_queue=31222462, util=100.00%

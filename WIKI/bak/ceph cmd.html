@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ceph cmd</title>
+	<!--
+	-->
+	<link rel="stylesheet" type="text/css" href="mystyle.css" />
+	<style>
+	</style>
+	
+	<script>
+		function nav_scroll()
+		{
+			//var topScroll = document.body.scrollTop;//滚动的距离,距离顶部的距离
+			var topScroll = document.documentElement.scrollTop	//滚动的距离,距离顶部的距离
+			console.log("top= "+topScroll);
+            var nav_leo  = document.getElementById("nav_leo").innerHTML;	//获取到导航栏id
+            console.log("innerHTML= "+nav_leo);
+            var nav_leo  = document.getElementById("nav_leo");	//获取到导航栏id
+            console.log("nav_leo= "+nav_leo);
+            var top=0
+		}
+		
+		function show_code(button_id, pre_id)
+		{
+			element_button=document.getElementById(button_id);
+			element_pre=document.getElementById(pre_id);
+			//alert(element_pre.style.value);
+			if('show'==element_button.innerHTML)
+			{
+				element_pre.style.visibility='visible';
+				element_button.innerHTML='hide';
+			}
+			else
+			{
+				element_pre.style.visibility='hidden';
+				element_button.innerHTML='show';
+			}
+		}
+		
+	</script>
+</head>
+
+<!--
+	<button onClick=nav_scroll()>move to top</button>
+-->
+<body onload="timeout_id=setTimeout('location.reload()',5000)">
+
+<ul class="nav_dl">
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+</ul>
+		
+	<div id="nav_left">
+		<h2><a href=#check> 查寻命令: </a></h2>
+		<ul class=nv_left_ul>
+			<li><a href=#ceph_health> ceph -s </a></li>
+			<li><a href=#ceph_mon_dump> ceph mon dump </a></li>
+			<li><a href=#ceph_osd_dump> ceph osd dump </a></li>
+			<li><a href=#ceph_pg_dump> ceph  pg dump </a></li>
+			<li><a href=#ceph_osd_crush_dump> ceph osd crush dump </a></li>
+			<li><a href=#ceph_mds_dump> ceph mds dump </a></li>
+		</ul>
+		<h2><a href=#check> TODO: </a></h2>
+		<ul class=nv_left_ul>
+			<li><a href=#ceph_health> TODO </a></li>
+		</ul>
+	</div>
+	
+	<div id="header">
+			<h1 > 笔记簿 </h1>
+	</div>
+	
+	
+	<div id="contant">
+	
+	<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
+	<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+	
+	
+		<h1 style="text-align:center;"> Ceph cmd </h1>
+		
+		
+				
+		<h2 id=check> 查寻命令：</h2>
+		
+
+		<h3 id=ceph_health> ceph -s </h3>
+		<button id="button_ceph_health" onclick="show_code('button_ceph_health', 'pre_ceph_health')" > show </button>
+		
+<pre id=pre_ceph_health style="visibility:hidden;">
+[root@node-1 ~]# ceph -s:
+    cluster 2919782d-e935-4215-b32e-be72c5677f1a
+     health HEALTH_OK
+     monmap e1: 3 mons at {a=192.168.2.3:6789/0,b=192.168.2.4:6789/0,c=192.168.2.5:6789/0}
+            election epoch 4, quorum 0,1,2 a,b,c
+     osdmap e54: 9 osds: 9 up, 9 in
+            flags sortbitwise,require_jewel_osds
+      pgmap v146: 0 pgs, 0 pools, 0 bytes data, 0 objects
+            172 MB used, 161 GB / 161 GB avail
+</pre>
+
+
+		<h3 id=ceph_mon_dump> ceph mon dump </h3>
+<pre>
+[root@node-1 ~]# ceph mon dump:
+dumped monmap epoch 1
+epoch 1
+fsid 2919782d-e935-4215-b32e-be72c5677f1a
+last_changed 2018-04-04 09:40:51.035944
+created 2018-04-04 09:40:51.035944
+0: 192.168.2.3:6789/0 mon.a
+1: 192.168.2.4:6789/0 mon.b
+2: 192.168.2.5:6789/0 mon.c
+</pre>
+
+
+		<h3 id=ceph_osd_dump> ceph osd dump </h3>
+<pre>
+[root@node-1 ~]# ceph osd dump:
+epoch 54
+fsid 2919782d-e935-4215-b32e-be72c5677f1a
+created 2018-04-04 09:41:32.684328
+modified 2018-04-04 09:49:33.937807
+flags sortbitwise,require_jewel_osds
+max_osd 9
+osd.0 up   in  weight 1 up_from 49 up_thru 51 down_at 43 last_clean_interval [3,48) 192.168.2.3:6900/296239 192.168.0.3:6808/1296239 192.168.0.3:6809/1296239 192.168.2.3:6803/1296239 exists,up 44b637ec-17ec-4465-8d63-15a27756c275
+osd.1 up   in  weight 1 up_from 48 up_thru 49 down_at 43 last_clean_interval [3,46) 192.168.2.3:6901/296347 192.168.0.3:6806/1296347 192.168.0.3:6807/1296347 192.168.2.3:6804/1296347 exists,up e50560aa-26f4-4d02-9682-5496dc01a093
+osd.2 up   in  weight 1 up_from 54 up_thru 2 down_at 43 last_clean_interval [2,53) 192.168.2.3:6902/296507 192.168.0.3:6800/1296507 192.168.0.3:6801/1296507 192.168.2.3:6800/1296507 exists,up f4c09b78-8484-4d8d-bcfd-4ac0e3964e13
+osd.3 up   in  weight 1 up_from 46 up_thru 50 down_at 43 last_clean_interval [3,45) 192.168.2.4:6903/287911 192.168.0.4:6802/1287911 192.168.0.4:6803/1287911 192.168.2.4:6803/1287911 exists,up 706a3b13-c369-468c-bf37-d29bcc55bdf1
+osd.4 up   in  weight 1 up_from 45 up_thru 46 down_at 43 last_clean_interval [4,44) 192.168.2.4:6904/288012 192.168.0.4:6806/1288012 192.168.0.4:6807/1288012 192.168.2.4:6804/1288012 exists,up 6126b0de-b581-41d9-8abf-398388ecfdd4
+osd.5 up   in  weight 1 up_from 5 up_thru 42 down_at 0 last_clean_interval [0,0) 192.168.2.4:6905/288126 192.168.0.4:6804/288126 192.168.0.4:6805/288126 192.168.2.4:6802/288126 exists,up 804f3e55-d254-4254-86e4-0d98637759f2
+osd.6 up   in  weight 1 up_from 5 up_thru 5 down_at 0 last_clean_interval [0,0) 192.168.2.5:6906/293372 192.168.0.5:6800/293372 192.168.0.5:6801/293372 192.168.2.5:6800/293372 exists,up 62ec9f73-711f-4715-af60-1cc1e38fc780
+osd.7 up   in  weight 1 up_from 5 up_thru 5 down_at 0 last_clean_interval [0,0) 192.168.2.5:6907/293536 192.168.0.5:6802/293536 192.168.0.5:6803/293536 192.168.2.5:6801/293536 exists,up c8a39de4-8c3a-44e8-8d9f-ac9418203750
+osd.8 up   in  weight 1 up_from 6 up_thru 6 down_at 0 last_clean_interval [0,0) 192.168.2.5:6908/293647 192.168.0.5:6804/293647 192.168.0.5:6805/293647 192.168.2.5:6802/293647 exists,up 27478a26-5da0-4dc9-8b9e-42445c5b8aa9
+</pre>
+
+		
+		<h3 id=ceph_pg_dump> ceph  pg dump </h3>
+<pre>
+[root@node-1 ~]# ceph  pg dump:
+dumped all in format plain
+version 146
+stamp 2018-04-04 09:53:13.770147
+last_osdmap_epoch 54
+last_pg_scan 54
+full_ratio 0.95
+nearfull_ratio 0.85
+pg_stat objects mip     degr    misp    unf     bytes   log     disklog state   state_stamp      v       reported        up      up_primary      acting  acting_primary  last_scrub       scrub_stamp     last_deep_scrub deep_scrub_stamp
+ sum    0       0       0       0       0       0       0       0
+osdstat kbused  kbavail kb      hb in   hb out
+8       17920   18829824        18847744        [5,6,7] []
+7       18024   18829720        18847744        [5,6]   []
+6       17992   18829752        18847744        [5,7]   []
+5       18224   18829520        18847744        [6,7,8] []
+4       19044   18828700        18847744        [5,6,7,8]       []
+3       19856   18827888        18847744        [4,5,6,7,8]     []
+2       25676   18822068        18847744        [0,1,3,4,5,6,7,8]       []
+1       19648   18828096        18847744        [3,4,5,6,7,8]   []
+0       20136   18827608        18847744        [3,4,5,6,7,8]   []
+ sum    176520  169453176       169629696
+</pre>
+
+
+		<h3 id=ceph_osd_crush_dump> ceph osd crush dump </h3>
+<pre>
+[root@node-1 ~]# ceph osd crush dump:
+{
+    "devices": [
+        {
+            "id": 0,
+            "name": "osd.0"
+        },
+        {
+            "id": 1,
+            "name": "osd.1"
+        },
+        {
+            "id": 2,
+            "name": "osd.2"
+        },
+        {
+            "id": 3,
+            "name": "osd.3"
+        },
+        {
+            "id": 4,
+            "name": "osd.4"
+        },
+        {
+            "id": 5,
+            "name": "osd.5"
+        },
+        {
+            "id": 6,
+            "name": "osd.6"
+        },
+        {
+            "id": 7,
+            "name": "osd.7"
+        },
+        {
+            "id": 8,
+            "name": "osd.8"
+        }
+    ],
+    "types": [
+        {
+            "type_id": 0,
+            "name": "osd"
+        },
+        {
+            "type_id": 1,
+            "name": "host"
+        },
+        {
+            "type_id": 2,
+            "name": "chassis"
+        },
+        {
+            "type_id": 3,
+            "name": "rack"
+        },
+        {
+            "type_id": 4,
+            "name": "row"
+        },
+        {
+            "type_id": 5,
+            "name": "pdu"
+        },
+        {
+            "type_id": 6,
+            "name": "pod"
+        },
+        {
+            "type_id": 7,
+            "name": "room"
+        },
+        {
+            "type_id": 8,
+            "name": "datacenter"
+        },
+        {
+            "type_id": 9,
+            "name": "region"
+        },
+        {
+            "type_id": 10,
+            "name": "root"
+        }
+    ],
+    "buckets": [
+        {
+            "id": -6,
+            "name": "hdd-default",
+            "type_id": 10,
+            "type_name": "root",
+            "weight": 10350,
+            "alg": "straw",
+            "hash": "rjenkins1",
+            "items": [
+                {
+                    "id": -7,
+                    "weight": 10350,
+                    "pos": 0
+                }
+            ]
+        },
+        {
+            "id": -7,
+            "name": "hdd-default_rack-default",
+            "type_id": 3,
+            "type_name": "rack",
+            "weight": 10350,
+            "alg": "straw",
+            "hash": "rjenkins1",
+            "items": [
+                {
+                    "id": -8,
+                    "weight": 3450,
+                    "pos": 0
+                },
+                {
+                    "id": -9,
+                    "weight": 3450,
+                    "pos": 1
+                },
+                {
+                    "id": -10,
+                    "weight": 3450,
+                    "pos": 2
+                }
+            ]
+        },
+        {
+            "id": -8,
+            "name": "hdd-node-1-default_rack-default",
+            "type_id": 1,
+            "type_name": "host",
+            "weight": 3450,
+            "alg": "straw",
+            "hash": "rjenkins1",
+            "items": [
+                {
+                    "id": 0,
+                    "weight": 1150,
+                    "pos": 0
+                },
+                {
+                    "id": 1,
+                    "weight": 1150,
+                    "pos": 1
+                },
+                {
+                    "id": 2,
+                    "weight": 1150,
+                    "pos": 2
+                }
+            ]
+        },
+        {
+            "id": -9,
+            "name": "hdd-node-2-default_rack-default",
+            "type_id": 1,
+            "type_name": "host",
+            "weight": 3450,
+            "alg": "straw",
+            "hash": "rjenkins1",
+            "items": [
+                {
+                    "id": 3,
+                    "weight": 1150,
+                    "pos": 0
+                },
+                {
+                    "id": 4,
+                    "weight": 1150,
+                    "pos": 1
+                },
+                {
+                    "id": 5,
+                    "weight": 1150,
+                    "pos": 2
+                }
+            ]
+        },
+        {
+            "id": -10,
+            "name": "hdd-node-3-default_rack-default",
+            "type_id": 1,
+            "type_name": "host",
+            "weight": 3450,
+            "alg": "straw",
+            "hash": "rjenkins1",
+            "items": [
+                {
+                    "id": 6,
+                    "weight": 1150,
+                    "pos": 0
+                },
+                {
+                    "id": 7,
+                    "weight": 1150,
+                    "pos": 1
+                },
+                {
+                    "id": 8,
+                    "weight": 1150,
+                    "pos": 2
+                }
+            ]
+        }
+    ],
+    "rules": [
+        {
+            "rule_id": 1,
+            "rule_name": "hdd-defaultrule",
+            "ruleset": 1,
+            "type": 1,
+            "min_size": 1,
+            "max_size": 10,
+            "steps": [
+                {
+                    "op": "take",
+                    "item": -6,
+                    "item_name": "hdd-default"
+                },
+                {
+                    "op": "chooseleaf_firstn",
+                    "num": 0,
+                    "type": "host"
+                },
+                {
+                    "op": "emit"
+                }
+            ]
+        }
+    ],
+    "tunables": {
+        "choose_local_tries": 0,
+        "choose_local_fallback_tries": 0,
+        "choose_total_tries": 50,
+        "chooseleaf_descend_once": 1,
+        "chooseleaf_vary_r": 1,
+        "chooseleaf_stable": 0,
+        "straw_calc_version": 1,
+        "allowed_bucket_algs": 22,
+        "profile": "firefly",
+        "optimal_tunables": 0,
+        "legacy_tunables": 0,
+        "minimum_required_version": "firefly",
+        "require_feature_tunables": 1,
+        "require_feature_tunables2": 1,
+        "has_v2_rules": 0,
+        "require_feature_tunables3": 1,
+        "has_v3_rules": 0,
+        "has_v4_buckets": 0,
+        "require_feature_tunables5": 0,
+        "has_v5_rules": 0
+    }
+}
+
+</pre>
+
+
+		<h3 id=ceph_mds_dump> ceph mds dump </h3>
+<pre>
+[root@node-1 ~]# ceph mds dump:
+dumped fsmap epoch 1
+fs_name cephfs
+epoch   1
+flags   0
+created 0.000000
+modified        0.000000
+tableserver     0
+root    0
+session_timeout 0
+session_autoclose       0
+max_file_size   0
+last_failure    0
+last_failure_osd_epoch  0
+compat  compat={},rocompat={},incompat={}
+max_mds 0
+in
+up      {}
+failed
+damaged
+stopped
+data_pools
+metadata_pool   0
+inline_data     disabled
+</pre>
+
+	</div>
+</body>
+ 
+</html>

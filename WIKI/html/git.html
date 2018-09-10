@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>buildbot guide</title>
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+<body onload="timeout_id=setTimeout('location.reload()',1000)">
+
+<ul class="nav_dl">
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+</ul>
+
+<div class="nav_left">
+    <h2> 目录：</h2>
+    <ul class=nv_left_ul>
+        <li><a href=#repo_migrate> git repo 迁移 </a></li>
+    </ul>
+</div>
+
+<div class="page_header">
+    <h1 style="margin:0"> 笔记簿 </h1>
+</div>
+
+
+<div class="contant">
+
+<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
+<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+<button onClick=nav_scroll()>move to top</button>
+
+
+    <h1 style="text-align:center;"> git cmd </h1>
+
+    <h2 id=repo_migrate> git repo 迁移 </h2>
+
+
+
+    <h3> step1. 获取需要迁移的repo </h3>
+    <pre>
+root@localhost:~# <pre_mark>git clone --bare</pre_mark> git@github.com/old_repo.git
+    </pre>
+
+    <h3> step2. 推送至新的目标repo: </h3>
+    <pre>
+root@localhost:~# cd old_repo.git
+root@localhost:~# <pre_mark>git push --mirror</pre_mark> git@github.com/new_repo.git
+    </pre>
+
+
+    <h2>ref:</h2>
+    <a target= _blank href=https://www.cnblogs.com/ZhangRuoXu/p/6706530.html>https://www.cnblogs.com/ZhangRuoXu/p/6706530.html</a><br>
+</div>
+
+	<script src="../js/WIKI.js"></script>
+</body>
+
+</html>

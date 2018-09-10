@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<!--
+    -->
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+<style>
+</style>
+</head>
+
+<body onScroll=nav_scroll() onload="timeout_id=setTimeout('location.reload()',1000)">
+	
+<ul class="nav_dl">
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+</ul>
+<!--
+<style type="text/css"> 
+.page{width:950px;margin:0 auto;}  
+</style> 
+<div class="page"> 
+    <iframe margin=0px padding=0 frameboder="0" scrolling="no" width="100%" height="20px" src="nav_page.html">
+    </iframe> 
+-->
+<div id="nav_left">
+    <ul class=nv_left_ul>
+        <li><a href=buildbot.html>buildbot</a></li>
+        <li><a href="LVM.html">LVM 扩容</a></li>
+        <li><a href="KVM.html">KVM 冷迁移</a></li>
+        <li><a href="ceph cmd.html">ceph cmd</a></li>
+    </ul>
+</div>
+<div id="header">
+    <h1 > 笔记簿 </h1>
+</div>
+<div id="contant">
+
+	<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
+	<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+
+	<img id=contant src=http://www.w3school.com.cn/svg/circle1.svg>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿body {
+    margin:0;
+    margin-top:20px;
+	background-color:#FFFAF0;
+	}
+
+code {
+    padding:0px 3px 0px 3px;
+    background-color:#D0D0D0;
+    background-color:#E0E0E0;
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono","Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace; 
+    font-size:90%;
+    font-style:normal;
+    white-space:pre-wrap;
+    }
+
+pre {
+    margin-top:0;
+    margin-bottom:0;
+    padding:10px 0px 10px 10px;
+    background-color:#404040;
+    color:#D8D8D8;
+    color:#E0E0E0;
+    line-height:120%;
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono","Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace; 
+    font-size:70%;
+}
+
+pre mark {
+    background-color: #A0A000;
+    color:#F0F0F0; 
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+h2 {
+    margin:0;
+    margin-top:20px;
+}
+
+h3 {
+    margin:0;
+    margin-top:10px;
+}
+
+note {
+    margin-top:0;
+    padding-top:0;
+    font-size:70%;
+    font-style:italic;
+    font-style:normal;
+}
+
+nav_dl {
+    position:fixed;
+    top:0;
+    margin:0px;
+    padding:0;
+    background-color:#2980B9;
+    list-style-type:none;
+    width:100%;
+    margin:0;
+    padding:0;
+    display:block;
+}
+
+nav_dl li {
+    float:left;
+    margin:0;
+    padding:0;
+    width:25%;
+    display:block;
+}
+
+nav_left {
+    position:fixed;
+    float:left;
+    margin:10% 0 0px 0;
+    padding:10px 0 0 5px;
+    width:18%;
+    background-color:#eeeeee;
+    font-size:75%;
+}
+
+mine:nav_left ul {
+    margin:5px 0 5px 15px;
+    padding:3px 0 0 3px;
+}
+
+mine:nav_left ul a {
+    text-decoration:none;
+}
+
+mine:nav_left ul li {
+    margin:5px 0 0px 0;
+}
+
+mine:page_header {
+    margin-top:5%;
+    margin-left:20%;
+    padding:0;
+    padding-right:0px;
+    width:80%;
+    height:10%;
+    background-color:#318d8f;
+    background-color:#aaaaaa;
+    color:white;
+    text-align:center;
+    font-style:hei;
+}
+
+contant {
+    margin-top:20%;
+    margin-left:20%;
+    padding:0;
+    width:78%;
+}
+
+foot {
+    clear:both;
+    margin-top:0px;
+    padding:0;
+    width:100%;
+    text-align:center;
+    background-color:#aaaaaa;
+}

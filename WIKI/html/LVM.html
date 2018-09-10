@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> LVM 扩容 </title>
+	<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+<!--
+-->
+<body onScroll=nav_scroll() onload="timeout_id=setTimeout('location.reload()',1000)">
+
+<ul class="nav_dl">
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+    <li class="nav_li">asd</li>
+</ul>
+
+		
+	<div class="nav_left">
+		<h2> 目录：</h2>
+		<ul class=nv_left_ul>
+			<li><a href=#centos7> Centos7.3 1611 </a></li>
+			<li><a href=#ubuntu> Ubuntu 16.04 </a><br></li>
+		</ul>
+	</div>
+	
+	<div class="page_header">
+			<h1 > 笔记簿 </h1>
+	</div>
+	
+	
+	<div class="contant">
+	
+	<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
+	<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+	<button onClick=nav_scroll()>move to top</button>
+	
+	
+		<h1 style="text-align:center;"> LVM 扩容 </h1>
+		
+		
+		
+		<h2> df -Th </h2>
+<pre>
+[root@dev_kvm ~]# df -Th
+Filesystem          Type      Size  Used Avail Use% Mounted on
+<pre_mark>/dev/mapper/cl-root</pre_mark> xfs        <pre_mark>50G</pre_mark>   <pre_mark>48G</pre_mark>  <pre_mark>2.6G</pre_mark>  <pre_mark>95%</pre_mark> <pre_mark>/</pre_mark>
+devtmpfs            devtmpfs  1.9G     0  1.9G   0% /dev
+tmpfs               tmpfs     1.9G     0  1.9G   0% /dev/shm
+tmpfs               tmpfs     1.9G  1.1M  1.9G   1% /run
+tmpfs               tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/vda1           xfs      1014M  382M  633M  38% /boot
+/dev/mapper/cl-home xfs       202G  4.2G  197G   3% /home
+tmpfs               tmpfs     380M   12K  380M   1% /run/user/42
+tmpfs               tmpfs     380M     0  380M   0% /run/user/0
+</pre>
+
+
+
+<h2> lvs </h2>
+<pre>
+[root@dev_kvm ~]# lvs
+  LV   <pre_mark>VG</pre_mark> Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  home cl -wi-ao---- <201.12g
+  root cl -wi-ao----   50.00g
+  swap cl -wi-ao----   <3.88g
+</pre>
+
+
+
+<h2> vgdisplay </h2>
+<pre>
+[root@dev_kvm ~]# vgdisplay
+  --- Volume group ---
+  VG Name               <pre_mark>cl</pre_mark>
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  4
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <255.00 GiB
+  PE Size               4.00 MiB
+  Total PE              65279
+  Alloc PE / Size       65278 / 254.99 GiB
+  Free  PE / Size       1 / 4.00 MiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+</pre>
+
+
+
+<h2> add disk </h2>
+
+
+
+<h2> fdisk /dev/vdb </h2>
+<pre>
+fdisk /dev/vdb
+[root@dev_kvm ~]# fdisk /dev/vdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1): 
+First sector (2048-536870911, default 2048): 
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-536870911, default 536870911): 
+Using default value 536870911
+Partition 1 of type Linux and of size 256 GiB is set
+
+Command (m for help): p
+
+Disk /dev/vdb: 274.9 GB, 274877906944 bytes, 536870912 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0xd25667ef
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/vdb1            2048   536870911   268434432   83  Linux
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+</pre>
+
+
+
+<h2> fdisk -l /dev/vdb </h2>
+<pre>
+[root@dev_kvm ~]# fdisk -l /dev/vdb
+
+Disk /dev/vdb: 274.9 GB, 274877906944 bytes, 536870912 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0xb77dba64
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/vdb1            2048   536870911   268434432   83  Linux
+</pre>
+
+
+
+<h2> mkfs.xfs -f /dev/vdb1 </h2>
+<pre>
+[root@dev_kvm ~]# mkfs.xfs -f /dev/vdb1    
+meta-data=/dev/vdb1              isize=512    agcount=4, agsize=16777152 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=67108608, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=32767, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+</pre>
+
+
+
+<h2> pvcreate /dev/vdb1 </h2>
+<pre>
+[root@dev_kvm ~]# <pre_mark>pvcreate</pre_mark> /dev/vdb1
+WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
+  Wiping xfs signature on /dev/vdb1.
+  Physical volume "/dev/vdb1" successfully created.
+</pre>
+
+
+
+<h2> vgextend cl /dev/vdb1 </h2>
+<pre>
+[root@dev_kvm ~]# <pre_mark>vgextend cl /dev/vdb1</pre_mark>
+  Volume group "cl" successfully extended
+</pre>
+
+
+
+<h2> vgdisplay </h2>
+<pre>
+[root@dev_kvm ~]# vgdisplay
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  5
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       65278 / 254.99 GiB
+  Free  PE / Size       65536 / 256.00 GiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+</pre>
+
+
+
+<h2> lvextend -L +256G /dev/mapper/cl-root /dev/vdb1 </h2>
+<pre>
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +256G /dev/mapper/cl-root /dev/vdb1 
+  Insufficient free space: 65536 extents needed, but only 65535 available
+
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +65535 /dev/mapper/cl-root /dev/vdb1     
+  Rounding size to boundary between physical extents: 64.00 GiB.
+  Size of logical volume cl/root changed from 50.00 GiB (12800 extents) to 114.00 GiB (29184 extents).
+  Logical volume cl/root successfully resized.
+
+[root@dev_kvm ~]# <pre_mark>vgdisplay</pre_mark> 
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  6
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       81662 / 318.99 GiB
+  Free  PE / Size       49152 / 192.00 GiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +65535 /dev/mapper/cl-root /dev/vdb1 
+  Rounding size to boundary between physical extents: 64.00 GiB.
+  Size of logical volume cl/root changed from 114.00 GiB (29184 extents) to 178.00 GiB (45568 extents).
+  Logical volume cl/root successfully resized.
+[root@dev_kvm ~]# vgdisplay 
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  7
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       98046 / 382.99 GiB
+  Free  PE / Size       32768 / 128.00 GiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +128G /dev/mapper/cl-root /dev/vdb1      
+  Insufficient free space: 32768 extents needed, but only 32767 available
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +127G /dev/mapper/cl-root /dev/vdb1  
+  Size of logical volume cl/root changed from 178.00 GiB (45568 extents) to 305.00 GiB (78080 extents).
+  Logical volume cl/root successfully resized.
+[root@dev_kvm ~]# vgdisplay 
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  8
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       130558 / 509.99 GiB
+  Free  PE / Size       256 / 1.00 GiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +255 /dev/mapper/cl-root /dev/vdb1     
+  Rounding size to boundary between physical extents: 256.00 MiB.
+  Size of logical volume cl/root changed from 305.00 GiB (78080 extents) to 305.25 GiB (78144 extents).
+  Logical volume cl/root successfully resized.
+[root@dev_kvm ~]# vgdisplay 
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  9
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       130622 / 510.24 GiB
+  Free  PE / Size       192 / 768.00 MiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +192 /dev/mapper/cl-root /dev/vdb1    
+  Size of logical volume cl/root changed from 305.25 GiB (78144 extents) to <305.44 GiB (78192 extents).
+  Logical volume cl/root successfully resized.
+[root@dev_kvm ~]# vgdisplay 
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  10
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       130670 / <510.43 GiB
+  Free  PE / Size       144 / 576.00 MiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +576 /dev/mapper/cl-root /dev/vdb1    
+  Insufficient free space: 144 extents needed, but only 143 available
+[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +575 /dev/mapper/cl-root /dev/vdb1  
+  Rounding size to boundary between physical extents: 576.00 MiB.
+  Insufficient free space: 144 extents needed, but only 143 available
+[root@dev_kvm ~]# vgdisplay 
+  --- Volume group ---
+  VG Name               cl
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  10
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               3
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               510.99 GiB
+  PE Size               4.00 MiB
+  Total PE              130814
+  Alloc PE / Size       130670 / <510.43 GiB
+  Free  PE / Size       144 / 576.00 MiB
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
+   
+</pre>
+
+
+
+<h2> resize2fs /dev/mapper/cl-root </h2>
+<pre>
+[root@dev_kvm ~]# <pre_mark>resize2fs</pre_mark> /dev/mapper/cl-root 
+resize2fs 1.42.9 (28-Dec-2013)
+resize2fs: Bad magic number in super-block while trying to open /dev/mapper/cl-root
+Couldn't find valid filesystem superblock.
+</pre>
+
+
+
+<h2> xfs_growfs /dev/mapper/cl-root </h2>
+<pre>
+[root@dev_kvm ~]# <pre_mark>xfs_growfs</pre_mark> /dev/mapper/cl-root 
+meta-data=/dev/mapper/cl-root    isize=512    agcount=4, agsize=3276800 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0 spinodes=0
+data     =                       bsize=4096   blocks=13107200, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=6400, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 13107200 to 80068608
+</pre>
+
+
+
+<h2> df -Th </h2>
+<pre>
+[root@dev_kvm ~]# df -Th
+Filesystem          Type      Size  Used Avail Use% Mounted on
+/dev/mapper/cl-root xfs       <pre_mark>306G</pre_mark>   <pre_mark>48G</pre_mark>  <pre_mark>259G</pre_mark>  <pre_mark>16%</pre_mark> <pre_mark>/</pre_mark>
+devtmpfs            devtmpfs  1.9G     0  1.9G   0% /dev
+tmpfs               tmpfs     1.9G     0  1.9G   0% /dev/shm
+tmpfs               tmpfs     1.9G  972K  1.9G   1% /run
+tmpfs               tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/vda1           xfs      1014M  382M  633M  38% /boot
+/dev/mapper/cl-home xfs       202G  4.2G  197G   3% /home
+tmpfs               tmpfs     380M   12K  380M   1% /run/user/42
+tmpfs               tmpfs     380M     0  380M   0% /run/user/0
+</pre>
+	</div>
+
+	<script src="../js/WIKI.js"></script>
+</body>
+ 
+</html>

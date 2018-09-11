@@ -2,42 +2,44 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+
 <title>buildbot guide</title>
+
+<meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
 </head>
 
-<body onload="timeout_id=setTimeout('location.reload()',1000)">
 
-<nav_dl>
-<ul>
-    <li>asd</li>
-    <li>asd</li>
-    <li>asd</li>
-    <li>asd</li>
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1 > 笔记簿 </h1>
+</header>
+
+<ul class="nav_dl">
+    <li>subpage1</li>
+    <li>subpage2</li>
+    <li>subpage3</li>
+    <li>subpage4</li>
 </ul>
-</nav_dl>
 
-<nav_left>
-<h2> 目录：</h2>
-<ul>
-    <li><a href=#centos7> Centos7.3 1611 </a></li>
-    <li><a href=#ubuntu> Ubuntu 16.04 </a><br></li>
-</ul>
-</nav_left>
-
-<ownhtml:page_header>
-<h1 > 笔记簿 </h1>
-</ownhtml:page_header>
+<nav>
+    <h2> 目录：</h2>
+    <ul>
+        <li><a href=#centos7> Centos7.3 1611 </a></li>
+        <li><a href=#ubuntu> Ubuntu 16.04 </a></li>
+    </ul>
+</nav>
 
 
-<ownhtml:contant>
+<div class="contant">
 
-<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
+<button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button>
 <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
 
 
-<h1 style="text-align:center;"> buildbot guide </h1>
+<h1> buildbot guide </h1>
 
 <h2 id=centos7> Centos7.3 1611：</h2>
 
@@ -93,13 +95,13 @@ buildbot@localhost:~/master$ source venv_buildbot/bin/activate
 </pre>
 <div class=note>
     problem(1):<br>
-    <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'No module named service_identity'.  Please install it from <https://pypi.python.org/pypi/service_identity> and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+    <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'No module named service_identity'.  Please install it from &lt;https://pypi.python.org/pypi/service_identity&gt; and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
         never saw process go away<br></code>
     method:<br>
     <code> pip install service_identity </code>
     <br><br>
     problem(2):<br>
-    <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name opentype'.  Please install it from <https://pypi.python.org/pypi/service_identity> and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+    <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name opentype'.  Please install it froma &lt;https://pypi.python.org/pypi/service_identity&gt; and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
         buildmaster not running
         now restarting buildbot process..
         Following twistd.log until startup finished..
@@ -231,7 +233,7 @@ buildbot@localhost:~/master$ source venv_buildbot/bin/activate
 <a target= _blank href=http://www.cnblogs.com/lkiversonlk/p/4878129.html>http://www.cnblogs.com/lkiversonlk/p/4878129.html</a><br>
 
 <a target= _blank href=http://docs.buildbot.net/current/manual/cfg-buildsteps.html>http://docs.buildbot.net/current/manual/cfg-buildsteps.html</a><br>
-</ownhtml:contant>
+</div>
 
 <script src="../js/WIKI.js"></script>
 </body>

@@ -1,138 +1,141 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title> KVM 冷迁移 </title>
-	<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+
+<title> KVM 冷迁移 </title>
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
 </head>
 
 <!--
 -->
-<body onload="timeout_id=setTimeout('location.reload()',5000)">
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1 >笔记簿</h1>
+</header>
 
 <ul class="nav_dl">
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
+    <li>asd</li>
+    <li>asd</li>
+    <li>asd</li>
+    <li>asd</li>
 </ul>
 
-		
-	<div class="nav_left">
-		<h3> 目录：</h3>
-		<ul class=nv_left_ul>
-			<li><a href=#> step1.获取虚拟机的Name </a></li>
-			<li><a href=#> step2.获取磁盘镜像文件位置 </a><br></li>
-			<li><a href=#> step3.缩小需迁移的虚拟机的磁盘 </a><br></li>
-			<li><a href=#> step4.获取需迁移虚拟机的xml文件 </a><br></li>
-			<li><a href=#> step5.复制磁盘文件 </a><br></li>
-			<li><a href=#> step6.修改目标host机上的xml文件 </a><br></li>
-			<li><a href=#> step7.在目标host上创建虚拟机件 </a><br></li>
-			<li><a href=#> step8.确定虚拟机使用的网络 </a><br></li>
-			<li><a href=#> step9.启动虚拟机 </a><br></li>
-		</ul>
-	</div>
-	
-	<div class="page_header">
-			<h1 > 笔记簿 </h1>
-	</div>
-	
-	
-	<div class="contant">
-	
-	<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
-	<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
-	<button onClick=nav_scroll()>move to top</button>
-	
-	
-		<h1 style="text-align:center;"> KVM 冷迁移 </h1>
-			
-			
-		<h3> step1. 获取虚拟机的Name: </h3>
-			eg：
-<pre>	
-[root@localhost]# <pre_mark>virsh list</pre_mark> --all
+
+<nav>
+    <h3> 目录：</h3>
+    <ul>
+        <li><a href=#> step1.获取虚拟机的Name </a></li>
+        <li><a href=#> step2.获取磁盘镜像文件位置 </a><br></li>
+        <li><a href=#> step3.缩小需迁移的虚拟机的磁盘 </a><br></li>
+        <li><a href=#> step4.获取需迁移虚拟机的xml文件 </a><br></li>
+        <li><a href=#> step5.复制磁盘文件 </a><br></li>
+        <li><a href=#> step6.修改目标host机上的xml文件 </a><br></li>
+        <li><a href=#> step7.在目标host上创建虚拟机件 </a><br></li>
+        <li><a href=#> step8.确定虚拟机使用的网络 </a><br></li>
+        <li><a href=#> step9.启动虚拟机 </a><br></li>
+    </ul>
+</nav>
+
+
+<div class="contant">
+
+    <button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+    <button onClick=nav_scroll()>move to top</button>
+
+
+    <h1 style="text-align:center;"> KVM 冷迁移 </h1>
+
+
+    <h3> step1. 获取虚拟机的Name: </h3>
+    eg：
+    <pre>	
+[root@localhost]# <mark>virsh list</mark> --all
 Id    Name                           State
 ----------------------------------------------------
 -     machine1610               shut off
 
-</pre>
+    </pre>
 
 
-		<h3> step2. 获取磁盘镜像文件位置: </h3>
-			eg：
-<pre>
-[root@localhost]# <pre_mark>virsh domblklist</pre_mark> machine1610
+    <h3> step2. 获取磁盘镜像文件位置: </h3>
+    eg：
+    <pre>
+[root@localhost]# <mark>virsh domblklist</mark> machine1610
 Target     Source
 ------------------------------------------------
 vda        /mnt/sdb/KVM/libvirt/machine1610.img
 hda        -
-</pre>
+    </pre>
 
 
-		<h3> step3. 缩小需迁移的虚拟机的磁盘: </h3>
-eg：
-<pre>
-<pre_mark>qemu-img convert</pre_mark> -O qcow2 machine1610.img machine1610.new.img
+    <h3> step3. 缩小需迁移的虚拟机的磁盘: </h3>
+    eg：
+    <pre>
+<mark>qemu-img convert</mark> -O qcow2 machine1610.img machine1610.new.img
 mv machine1610.new.img machine1610.img
-</pre>
-			<div class=note>
-				[注意-O选项根据KVM虚拟机实际磁盘格式选择]<br>
-				[此命应用场景：KVM 上创建的虚拟机分配磁盘为256GB，运行后至需要迁移时，仅使用约10GB的空间。du -h显示确实为10GB。但ls -hl看到的结果则为257G]<br>
-				[scp至目标host机时，实际所传大小为257GB，执行此命令后，镜像文件缩小至约10GB。]<br>
-				[局限：仅能缩小未曾分配的空间，若虚拟机曾经使用过50G的空间，则此命令执行后只能缩小至50GB左右，若要完全释放，可使用dd命令将虚拟机的磁盘空间用0写满.然后删除该文件后关闭虚拟机，再重新执行step3，可获得10GB的镜像文件。若网络带宽资源不紧张，则dd命令使用意义不大]<br>
-			</div>
+    </pre>
+    <div class=note>
+        [注意-O选项根据KVM虚拟机实际磁盘格式选择]<br>
+        [此命应用场景：KVM 上创建的虚拟机分配磁盘为256GB，运行后至需要迁移时，仅使用约10GB的空间。du -h显示确实为10GB。但ls -hl看到的结果则为257G]<br>
+        [scp至目标host机时，实际所传大小为257GB，执行此命令后，镜像文件缩小至约10GB。]<br>
+        [局限：仅能缩小未曾分配的空间，若虚拟机曾经使用过50G的空间，则此命令执行后只能缩小至50GB左右，若要完全释放，可使用dd命令将虚拟机的磁盘空间用0写满.然后删除该文件后关闭虚拟机，再重新执行step3，可获得10GB的镜像文件。若网络带宽资源不紧张，则dd命令使用意义不大]<br>
+    </div>
 
 
-	<h3> step4. 获取需迁移虚拟机的xml文件：</h3>
-		eg：
-<pre>
-<pre_mark>virsh dumpxml</pre_mark> machine1610 > machine1610.xml
-</pre>
+    <h3> step4. 获取需迁移虚拟机的xml文件：</h3>
+    eg：
+    <pre>
+<mark>virsh dumpxml</mark> machine1610 > machine1610.xml
+    </pre>
 
 
-		<h3> step5. 复制磁盘文件 </h3>
-		将虚拟机的xml文件和经过qemu-image的img文件一同复制至目标host机上:<br>
-			eg：
-<pre>
-<pre_mark>scp</pre_mark> machine1610.img machine1610.xml Des_hostIP:Des_path
-</pre>
-			<div class=note>
-				#当master和worker同时安装到同一台机器时，worker会自动升级twisted至其最新版本。<br>
-				造成master的buildbot命令使用出错。<br>
-			</div>
+    <h3> step5. 复制磁盘文件 </h3>
+    将虚拟机的xml文件和经过qemu-image的img文件一同复制至目标host机上:<br>
+    eg：
+    <pre>
+<mark>scp</mark> machine1610.img machine1610.xml Des_hostIP:Des_path
+    </pre>
+    <div class=note>
+        #当master和worker同时安装到同一台机器时，worker会自动升级twisted至其最新版本。<br>
+        造成master的buildbot命令使用出错。<br>
+    </div>
 
 
-		<h3> step6. 修改目标host机上的xml文件： </h3>
-			若目标img文件位于目标host机的路径与源host机的路径不同，请修改目标host机上的xml文件<br>
-			修改位置:<code>&lt;source file='/mnt/sdb/KVM/libvirt/machine1610.img'/></code><br>
-			eg：
-<pre>
+    <h3> step6. 修改目标host机上的xml文件： </h3>
+    若目标img文件位于目标host机的路径与源host机的路径不同，请修改目标host机上的xml文件<br>
+    修改位置:<code>&lt;source file='/mnt/sdb/KVM/libvirt/machine1610.img'/></code><br>
+    eg：
+    <pre>
 vim machine1610.img
     &lt;disk type='file' device='disk'>
       &lt;driver name='qemu' type='qcow2' cache='writeback'/>
-      <pre_mark>&lt;source file='/mnt/sdb/KVM/libvirt/machine1610.img'/></pre_mark>
+      <mark>&lt;source file='/mnt/sdb/KVM/libvirt/machine1610.img'/></mark>
       &lt;backingStore/>
       &lt;target dev='vda' bus='virtio'/>
       &lt;alias name='virtio-disk0'/>
       &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     &lt;/disk>
-</pre>
-		<h3> step7. 在目标host上创建虚拟机件： </h3>
-			eg：
-<pre>
-<pre_mark>virsh define</pre_mark> machine1610.xml
-</pre>
-		<h3> step8. 确定虚拟机使用的网络： </h3>
-			<div class=note>
-				确定虚拟机使用的网络确实存在.若不存在，创建或更换
-			</div>
+    </pre>
+    <h3> step7. 在目标host上创建虚拟机件： </h3>
+    eg：
+    <pre>
+<mark>virsh define</mark> machine1610.xml
+    </pre>
+    <h3> step8. 确定虚拟机使用的网络： </h3>
+    <div class=note>
+        确定虚拟机使用的网络确实存在.若不存在，创建或更换
+    </div>
 
-		<h3> step9. 启动虚拟机： </h3>
-		
-	</div>
+    <h3> step9. 启动虚拟机： </h3>
 
-	<script src="../js/WIKI.js"></script>
+</div>
+
+<script src="../js/WIKI.js"></script>
 </body>
- 
+
 </html>

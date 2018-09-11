@@ -1,6 +1,6 @@
 ﻿body {
     margin:0;
-    border:1px solid red;
+    border:0;
     padding:0;
 	background-color:#FFFAF0;
 	}
@@ -43,8 +43,7 @@ header h1 {
 }
 
 nav {
-    //position:fixed;
-    //float:left;
+    position:fixed;
     margin:25px 0 0 0;
     border:0;
     padding:0;
@@ -60,14 +59,14 @@ nav ul {
     padding:0 0 0 3px;
 }
 
+nav ul a {
+    text-decoration:none;
+}
+
 nav ul li {
     margin:0;
     border:0;
     padding:0 0 0 3px;
-}
-
-nav ul a {
-    text-decoration:none;
 }
 
 .contant{
@@ -112,7 +111,6 @@ pre {
     line-height:120%;
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono","Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace; 
     font-size:70%;
-    white-space:pre-wrap;
 }
 
 pre mark {

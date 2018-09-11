@@ -35,42 +35,42 @@
 
 <div class="contant">
 
-<button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button>
-<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
 
 
-<h1> buildbot guide </h1>
+    <h1> buildbot guide </h1>
 
-<h2 id=centos7> Centos7.3 1611：</h2>
+    <h2 id=centos7> Centos7.3 1611：</h2>
 
 
 
-<h3> step1. config the system </h3>
-<pre>
+    <h3> step1. config the system </h3>
+    <pre>
 root@localhost:~# sed -i 's/^#.*StrictHostKeyChecking.*ask/    StrictHostKeyChecking no/g' /etc/ssh/ssh_config
-</pre>
-<h3> step1. Install packages: </h3>
+    </pre>
+    <h3> step1. Install packages: </h3>
 
-<pre>
+    <pre>
 root@localhost:~# yum install -y python python-pip
 root@localhost:~# yum install -y gcc git python-devel
 root@localhost:~# pip install -U pip
 root@localhost:~# pip install -U virtualenv
-</pre>
+    </pre>
 
 
-<h3> step2. create user: </h3>
-<pre>
+    <h3> step2. create user: </h3>
+    <pre>
 root@localhost:~# adduser buildbot
 root@localhost:~# su - buildbot
 buildbot@localhost:~$ ssh-keygen -N '' -f /home/buildbot/.ssh/id_rsa
 buildbot@localhost:~$ cat .ssh/id_rsa.pub 
 #add this ssh-key into gitlab.
-</pre>
+    </pre>
 
 
-<h3> step3. install buildbot master: </h3>
-<pre>
+    <h3> step3. install buildbot master: </h3>
+    <pre>
 buildbot@localhost:~$ cd
 buildbot@localhost:~$ mkdir -p workspace/buildbot/master;cd workspace/buildbot/master
 buildbot@localhost:~/master$ virtualenv --no-site-packages venv_buildbot
@@ -79,40 +79,40 @@ buildbot@localhost:~/master$ source venv_buildbot/bin/activate
 (venv_buildbot) buildbot@localhost:~/master$ pip install buildbot buildbot-www buildbot-grid-view buildbot-waterfall_view buildbot-console_view
 (venv_buildbot) buildbot@localhost:~/master$ pip install <mark>twisted==14.0.1</mark>
 (venv_buildbot) buildbot@localhost:~/master$ pip install 'buildbot[tls]'
-</pre>
-<div class=note>
-    #buildbot version == 0.9.10; requires twisted>=14.0.1;<br>
-    不指定 twisted 版本时，默认安装的版本太高，执行 buildbot 命令时会报错<br>
-</div>
+    </pre>
+    <div class=note>
+        #buildbot version == 0.9.10; requires twisted>=14.0.1;<br>
+        不指定 twisted 版本时，默认安装的版本太高，执行 buildbot 命令时会报错<br>
+    </div>
 
 
-<h3> step4. 创建并启动master：</h3>
-<pre>
+    <h3> step4. 创建并启动master：</h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/master$ buildbot create-master master_test
 (venv_buildbot) buildbot@localhost:~/master$ mv master.cfg.sample master.cfg
 (venv_buildbot) buildbot@localhost:~/master$ buildbot start master_test
 (venv_buildbot) buildbot@localhost:~/master$ deactivate
-</pre>
-<div class=note>
-    problem(1):<br>
-    <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'No module named service_identity'.  Please install it from &lt;https://pypi.python.org/pypi/service_identity&gt; and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
-        never saw process go away<br></code>
-    method:<br>
-    <code> pip install service_identity </code>
-    <br><br>
-    problem(2):<br>
-    <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name opentype'.  Please install it froma &lt;https://pypi.python.org/pypi/service_identity&gt; and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
-        buildmaster not running
-        now restarting buildbot process..
-        Following twistd.log until startup finished..
-        The buildmaster appears to have (re)started correctly.<br></code>
-    method:<br>
-    <code> pip install --upgrade google-auth-oauthlib </code>
-</div>
+    </pre>
+    <div class=note>
+        problem(1):<br>
+        <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'No module named service_identity'.  Please install it from https://pypi.python.org/pypi/service_identity, and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+            never saw process go away<br></code>
+        method:<br>
+        <code> pip install service_identity </code>
+        <br><br>
+        problem(2):<br>
+        <code> :0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name opentype'.  Please install it from https://pypi.python.org/pypi/service_identity and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+            buildmaster not running
+            now restarting buildbot process..
+            Following twistd.log until startup finished..
+            The buildmaster appears to have (re)started correctly.<br></code>
+        method:<br>
+        <code> pip install --upgrade google-auth-oauthlib </code>
+    </div>
 
 
-<h3> step5. install buildbot worker: </h3>
-<pre>
+    <h3> step5. install buildbot worker: </h3>
+    <pre>
 buildbot@localhost:~/master$ cd
 buildbot@localhost:~$ mkdir -p workspace/buildbot/worker;cd workspace/buildbot/worker
 buildbot@localhost:~/worker$ virtualenv --no-site-packages venv_buildbot
@@ -121,21 +121,21 @@ buildbot@localhost:~/worker$ source venv_buildbot/bin/activate
 (venv_buildbot) buildbot@localhost:~/worker$ pip install buildbot-worker
 (venv_buildbot) buildbot@localhost:~/worker$ pip install <mark>twisted==14.0.1</mark>
 (venv_buildbot) buildbot@localhost:~/worker$ pip install cython
-</pre>
-<div class=note>
-    #当master和worker同时安装到同一台机器时，worker会自动升级twisted至其最新版本。<br>
-    造成master的buildbot命令使用出错。<br>
-</div>
+    </pre>
+    <div class=note>
+        #当master和worker同时安装到同一台机器时，worker会自动升级twisted至其最新版本。<br>
+        造成master的buildbot命令使用出错。<br>
+    </div>
 
 
-<h3> step6. 创建并启动worker： </h3>
-<pre>
+    <h3> step6. 创建并启动worker： </h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/worker$ buildbot-worker create-worker worker-test MASTER-HOST:PORT NAME PASSWD
 (venv_buildbot) buildbot@localhost:~/worker$ buildbot-worker start worker-test
-</pre>
-<div class=note>
-    #edit the <code>./worker-vx/info/admin</code> and <code>./worker-vx/info/host</code> if you need. the content in this file will show up in the page. 
-</div>
+    </pre>
+    <div class=note>
+        #edit the <code>./worker-vx/info/admin</code> and <code>./worker-vx/info/host</code> if you need. the content in this file will show up in the page. 
+    </div>
 
 
 
@@ -147,35 +147,35 @@ buildbot@localhost:~/worker$ source venv_buildbot/bin/activate
 
 
 
-<h2 id=ubuntu> Ubuntu 16.04: </h2>
-<h3> step1. config the system </h3>
+    <h2 id=ubuntu> Ubuntu 16.04: </h2>
+    <h3> step1. config the system </h3>
 
 
-<pre>
+    <pre>
 root@localhost:~# sed -i 's/^#.*StrictHostKeyChecking.*ask/    StrictHostKeyChecking no/g' /etc/ssh/ssh_config
-</pre>
+    </pre>
 
 
 
-<h3> step2. install packages needed </h3>
-<pre>
+    <h3> step2. install packages needed </h3>
+    <pre>
 root@localhost:~# apt-get install -y gcc python python-dev python-pip python-openssl git
 root@localhost:~# pip install -U pip
 root@localhost:~# pip install virtualenv
-</pre>
+    </pre>
 
-<h3> step3. create user buildbot </h3>
-<pre>
+    <h3> step3. create user buildbot </h3>
+    <pre>
 root@localhost:~# adduser buildbot
 root@localhost:~# su - buildbot
 
 buildbot@localhost:~$ ssh-keygen -N '' -f /home/buildbot/.ssh/id_rsa
 buildbot@localhost:~$ cat .ssh/id_rsa.pub 
 #add this ssh-key into gitlab.
-</pre>
+    </pre>
 
-<h3> step4. create a virtual environment </h3>
-<pre>
+    <h3> step4. create a virtual environment </h3>
+    <pre>
 buildbot@localhost:~$ cd
 buildbot@localhost:~$ mkdir -p workspace/buildbot/master;cd workspace/buildbot/master
 buildbot@localhost:~/master$ virtualenv --no-site-packages venv_buildbot
@@ -184,55 +184,58 @@ buildbot@localhost:~/master$ source venv_buildbot/bin/activate
 (venv_buildbot) buildbot@localhost:~/master$ pip install twisted==14.0.1
 (venv_buildbot) buildbot@localhost:~/master$ pip install buildbot buildbot-www buildbot-grid-view buildbot-waterfall_view buildbot-console_view
 (venv_buildbot) buildbot@localhost:~/master$ pip install 'buildbot[tls]'
-</pre>
+    </pre>
 
-<h3> step5. install buildbot </h3>
-<pre>
+    <h3> step5. install buildbot </h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/workspace$ pip install virtualenv twisted buildbot buildbot-www buildbot-grid-view buildbot-waterfall_view buildbot-console_view
 (venv_buildbot) buildbot@localhost:~/workspace$ pip install 'buildbot[tls]'
-</pre>
+    </pre>
 
-<h3> step6. create & start a buildbot master </h3>
-<pre>
+    <h3> step6. create & start a buildbot master </h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/workspace$ buildbot create-master buildbot-master
 (venv_buildbot) buildbot@localhost:~/workspace$ git clone git@hpcgitlab.labs.lenovo.com:WSS/buildbot.git
 (venv_buildbot) buildbot@localhost:~/workspace$ cp buildbot/master/* buildbot-master/
 #edit buildbot-master/master.cfg file, and change the value of c['buildbotURL'] = "http://10.243.10.125:8010/" into your own IP value
 
 (venv_buildbot) buildbot@localhost:~/workspace$ buildbot start  buildbot-master
-</pre>
+    </pre>
 
 
-<h3> step7. install buildbot-worker </h3>
-<pre>
+    <h3> step7. install buildbot-worker </h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/workspace$ pip install buildbot-worker
-</pre>
+    </pre>
 
 
-<h3> step8. create & config buildbot workers </h3>
-<pre>
+    <h3> step8. create & config buildbot workers </h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/workspace$ buildbot-worker create-worker worker-vx 127.0.0.1:9989 vx_installer Passw0rd
 #edit the ./worker-vx/info/admin and ./worker-vx/info/host if you need. the content in this file will show up in the page. 
 
 (venv_buildbot) buildbot@localhost:~/workspace$ buildbot-worker create-worker worker-uhm 127.0.0.1:9989 uhm Passw0rd
 #edit the ./worker-uhm/info/admin and ./worker-uhm/info/host if you need. the content in this file will show up in the page. 
-</pre>
+    </pre>
 
 
-<h3> step9. config the buildbot workers for vx </h3>
-<a href=https://github.com/lenovo/workload-solution/wiki/build-vx-in-docker-environment>https://github.com/lenovo/workload-solution/wiki/build-vx-in-docker-environment</a>
+    <h3> step9. config the buildbot workers for vx </h3>
+    <a href="https://github.com/lenovo/workload-solution/wiki/build-vx-in-docker-environment">https://github.com/lenovo/workload-solution/wiki/build-vx-in-docker-environment</a>
+    <a href="https://github.com/lenovo/workload-solution/wiki/build-vx-in-docker-environment">https://github.com/lenovo/workload-solution/wiki/build-vx-in-docker-environment</a>
 
-
-<h3> step10. start buildbot workers </h3>
-<pre>
+    <h3> step10. start buildbot workers </h3>
+    <pre>
 (venv_buildbot) buildbot@localhost:~/workspace$ bbuildbot-worker start worker-vx/
 (venv_buildbot) buildbot@localhost:~/workspace$ bbuildbot-worker start worker-uhm/
-</pre>
+    </pre>
 
-<h2>ref:</h2>
-<a target= _blank href=http://www.cnblogs.com/lkiversonlk/p/4878129.html>http://www.cnblogs.com/lkiversonlk/p/4878129.html</a><br>
+    <h2>ref:</h2>
+    <div class="link">
+        <a target= _blank href="http://www.cnblogs.com/lkiversonlk/p/4878129.html"><span>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></a><br>
+        <a target= _blank href="http://www.cnblogs.com/lkiversonlk/p/4878129.html"><span>http://www.cnblogs.com/lkiversonlk/p/4878129.html</span></a><br>
 
-<a target= _blank href=http://docs.buildbot.net/current/manual/cfg-buildsteps.html>http://docs.buildbot.net/current/manual/cfg-buildsteps.html</a><br>
+        <a target= _blank href="http://docs.buildbot.net/current/manual/cfg-buildsteps.html">http://docs.buildbot.net/current/manual/cfg-buildsteps.html</a><br>
+    </div>
 </div>
 
 <script src="../js/WIKI.js"></script>

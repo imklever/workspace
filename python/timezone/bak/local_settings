@@ -1,0 +1,546 @@
+# -*- coding: utf-8 -*-
+import os
+
+from django.utils.translation import ugettext_lazy as _
+from thinkcloud_portal import exceptions
+from thinkcloud_portal.settings import HORIZON_CONFIG
+
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+PROD = True
+#USE_SSL = False
+ENABLE_BOOT_FROM_VOLUME=True
+
+WEBROOT = '/dashboard/'
+SITE_BRANDING='ThinkCloud Storage'
+
+# Required for Django 1.5.
+# If horizon is running in production (DEBUG is False), set this
+# with the list of host/domain names that the application can serve.
+# For more information see:
+# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
+# ALLOWED_HOSTS = ['horizon.example.com', 'localhost']
+ALLOWED_HOSTS = ['*']
+
+# Set SSL proxy settings:
+# For Django 1.4+ pass this header from the proxy after terminating the SSL,
+# and don't forget to strip it from the client's request.
+# For more information see:
+# https://docs.djangoproject.com/en/1.4/ref/settings/#secure-proxy-ssl-header
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
+
+# If Horizon is being served through SSL, then uncomment the following two
+# settings to better secure the cookies from security exploits
+#CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+
+# Overrides for OpenStack API versions. Use this setting to force the
+# OpenStack dashboard to use a specfic API version for a given service API.
+# NOTE: The version should be formatted as it appears in the URL for the
+# service API. For example, The identity service APIs have inconsistent
+# use of the decimal point, so valid options would be "2.0" or "3".
+OPENSTACK_API_VERSIONS = {
+    "identity": 2.0
+}
+
+# Set this to True if running on multi-domain model. When this is enabled, it
+# will require user to enter the Domain name in addition to username for login.
+# OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = False
+
+# Overrides the default domain used when running on single-domain model
+# with Keystone V3. All entities will be created in the default domain.
+OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'default'
+
+# Set Console type:
+# valid options would be "AUTO", "VNC" or "SPICE"
+CONSOLE_TYPE = "AUTO"
+
+# Specify a regular expression to validate user passwords.
+# HORIZON_CONFIG["password_validator"] = {
+#     "regex": '.*',
+#     "help_text": _("Your password does not meet the requirements.")
+# }
+
+# Disable simplified floating IP address management for deployments with
+# multiple floating IP pools or complex network requirements.
+HORIZON_CONFIG["simple_ip_management"] = False
+
+# Turn off browser autocompletion for the login form if so desired.
+# HORIZON_CONFIG["password_autocomplete"] = "off"
+
+LOCAL_PATH = os.path.dirname(os.path.abspath(__file__))
+
+# Set custom secret key:
+# You can either set it to a specific value or you can let horizion generate a
+# default secret key that is unique on this machine, e.i. regardless of the
+# amount of Python WSGI workers (if used behind Apache+mod_wsgi): However, there
+# may be situations where you would want to set this explicitly, e.g. when
+# multiple dashboard instances are distributed on different machines (usually
+# behind a load-balancer). Either you have to make sure that a session gets all
+# requests routed to the same dashboard instance or you set the same SECRET_KEY
+# for all of them.
+#from horizon.utils import secret_key
+#SECRET_KEY = secret_key.generate_or_read_from_file(os.path.join(LOCAL_PATH, '.secret_key_store'))
+SECRET_KEY = 'dummy_secret_key'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
+CACHES = {
+    'default': {
+        'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION' : "127.0.0.1:22122"
+    },
+    #'local': {
+    #    'BACKEND' : 'django.core.cache.backends.locmem.LocMemCache'
+    #}
+}
+
+# Send email to the console by default
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Or send them to /dev/null
+#EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
+# Configure these for your outgoing email host
+# EMAIL_HOST = 'smtp.my-company.com'
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = 'djangomail'
+# EMAIL_HOST_PASSWORD = 'top-secret!'
+LOGIN_SMTP_SERVER = True
+
+# For multiple regions uncomment this configuration, and add (endpoint, title).
+# AVAILABLE_REGIONS = [
+#     ('http://cluster1.example.com:5000/v2.0', 'cluster1'),
+#     ('http://cluster2.example.com:5000/v2.0', 'cluster2'),
+# ]
+
+OPENSTACK_HOST = "127.0.0.1"
+OPENSTACK_KEYSTONE_URL = "http://%s:5000/v2.0" % OPENSTACK_HOST
+OPENSTACK_KEYSTONE_DEFAULT_ROLE = "Member"
+
+#OPENSTACK_HOST = "api.inte.lenovo.com"
+#OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
+#OPENSTACK_KEYSTONE_DEFAULT_ROLE = "admin"
+
+#BILLING_URL = "api.inte.lenovo.com"
+#BILLING_PORT = '7206'
+#NOTIFY_IP = "192.168.100.11"
+#NOTIFY_PORT = '80'
+#BILLING_USER = 'billing'
+#BILLING_PASSWORD = "billing"
+#ENABLE_BILLING =True
+SMTP_SERVER = 'localhost'
+SENDER = 'Lenovo'
+SMTP_PW = None
+GANGLIA_URL = 'api.inte.lenovo.com'
+NAGIOS_URL = '/var/log/nagios/status.dat'
+ACCESS_URL = "http://api.pub.lenovo.com"
+ACCESS_PORT = 80
+ACCESS_LOGIN = "%s:%s" % (ACCESS_URL, ACCESS_PORT)
+
+INVCODE_ENABLE = True
+
+# Disable SSL certificate checks (useful for self-signed certificates):
+# OPENSTACK_SSL_NO_VERIFY = True
+
+# The CA certificate to use to verify SSL connections
+# OPENSTACK_SSL_CACERT = '/path/to/cacert.pem'
+
+# The OPENSTACK_KEYSTONE_BACKEND settings can be used to identify the
+# capabilities of the auth backend for Keystone.
+# If Keystone has been configured to use LDAP as the auth backend then set
+# can_edit_user to False and name to 'ldap'.
+#
+# TODO(tres): Remove these once Keystone has an API to identify auth backend.
+OPENSTACK_KEYSTONE_BACKEND = {
+    'name': 'native',
+    'can_edit_user': True,
+    'can_edit_group': True,
+    'can_edit_project': True,
+    'can_edit_domain': True,
+    'can_edit_role': True
+}
+
+OPENSTACK_HYPERVISOR_FEATURES = {
+    'can_set_mount_point': False
+}
+
+# The OPENSTACK_NEUTRON_NETWORK settings can be used to enable optional
+# services provided by neutron. Options currenly available are load
+# balancer service, security groups, quotas, VPN service.
+OPENSTACK_NEUTRON_NETWORK = {
+    'enable_lb': True,
+    'enable_firewall': True,
+    'enable_quotas': True,
+    'enable_vpn': True,
+    # The profile_support option is used to detect if an external router can be
+    # configured via the dashboard. When using specific plugins the
+    # profile_support can be turned on if needed.
+    'profile_support': None,
+    #'profile_support': 'cisco',
+}
+
+# The OPENSTACK_IMAGE_BACKEND settings can be used to customize features
+# in the OpenStack Dashboard related to the Image service, such as the list
+# of supported image formats.
+# OPENSTACK_IMAGE_BACKEND = {
+#     'image_formats': [
+#         ('', ''),
+#         ('aki', _('AKI - Amazon Kernel Image')),
+#         ('ami', _('AMI - Amazon Machine Image')),
+#         ('ari', _('ARI - Amazon Ramdisk Image')),
+#         ('iso', _('ISO - Optical Disk Image')),
+#         ('qcow2', _('QCOW2 - QEMU Emulator')),
+#         ('raw', _('Raw')),
+#         ('vdi', _('VDI')),
+#         ('vhd', _('VHD')),
+#         ('vmdk', _('VMDK'))
+#     ]
+# }
+
+IMAGE_CUSTOM_PROPERTY_TITLES = {
+    "architecture": _("Architecture"),
+    "kernel_id": _("Kernel ID"),
+    "ramdisk_id": _("Ramdisk ID"),
+    "image_state": _("Euca2ools state"),
+    "project_id": _("Project ID"),
+    "image_type": _("Image Type"),
+}
+IMAGE_RESERVED_CUSTOM_PROPERTIES = []
+
+# The OPENSTACK_CINDER_FEATURES settings can be used to enable optional
+# services provided by cinder that is not exposed by its extension API.
+OPENSTACK_CINDER_FEATURES = {
+
+    'enable_backup': False,
+}
+
+# OPENSTACK_ENDPOINT_TYPE specifies the endpoint type to use for the endpoints
+# in the Keystone service catalog. Use this setting when Horizon is running
+# external to the OpenStack environment. The default is 'publicURL'.
+#OPENSTACK_ENDPOINT_TYPE = "publicURL"
+
+# SECONDARY_ENDPOINT_TYPE specifies the fallback endpoint type to use in the
+# case that OPENSTACK_ENDPOINT_TYPE is not present in the endpoints
+# in the Keystone service catalog. Use this setting when Horizon is running
+# external to the OpenStack environment. The default is None.  This
+# value should differ from OPENSTACK_ENDPOINT_TYPE if used.
+#SECONDARY_ENDPOINT_TYPE = "publicURL"
+
+
+# The number of Swift containers and objects to display on a single page before
+# providing a paging element (a "more" link) to paginate results.
+API_RESULT_LIMIT = 1000
+API_RESULT_PAGE_SIZE = 20
+
+# Specify a maximum number of items to display in a dropdown.
+DROPDOWN_MAX_ITEMS = 30
+
+# The timezone of the server. This should correspond with the timezone
+# of your entire OpenStack installation, and hopefully be in UTC.
+#TIME_ZONE = "Asia/Shanghai"
+TIME_ZONE ="America/New_York"
+
+# When launching an instance, the menu of available flavors is
+# sorted by RAM usage, ascending.  Provide a callback method here
+# (and/or a flag for reverse sort) for the sorted() method if you'd
+# like a different behaviour.  For more info, see
+# http://docs.python.org/2/library/functions.html#sorted
+# CREATE_INSTANCE_FLAVOR_SORT = {
+#     'key': my_awesome_callback_method,
+#     'reverse': False,
+# }
+
+# The Horizon Policy Enforcement engine uses these values to load per service
+# policy rule files. The content of these files should match the files the
+# OpenStack services are using to determine role based access control in the
+# target installation.
+
+# Path to directory containing policy.json files
+#POLICY_FILES_PATH = os.path.join(ROOT_PATH, "conf")
+# Map of local copy of service policy files
+#POLICY_FILES = {
+#    'identity': 'keystone_policy.json',
+#    'compute': 'nova_policy.json'
+#}
+
+# Trove user and database extension support. By default support for
+# creating users and databases on database instances is turned on.
+# To disable these extensions set the permission here to something
+# unusable such as ["!"].
+# TROVE_ADD_USER_PERMS = []
+# TROVE_ADD_DATABASE_PERMS = []
+
+
+# If you have external monitoring links, eg:
+EXTERNAL_MONITORING = [ ]
+
+LOGGING = {
+        'version': 1,
+        # When set to True this will disable all logging except
+        # for loggers specified in this configuration dictionary. Note that
+        # if nothing is specified here and disable_existing_loggers is True,
+        # django.db.backends will still log unless it is disabled explicitly.
+        'disable_existing_loggers': False,
+        'formatters': {
+            'debug': {
+                'format': 'dashboard-%(name)s: %(levelname)s [pid=%(process)d] %(module)s %(funcName)s %(message)s'
+            },
+            'normal': {
+                'format': 'dashboard-%(name)s: %(levelname)s %(message)s'
+            },
+        },
+        'handlers': {
+            'null': {
+                'level': 'DEBUG',
+                'class': 'django.utils.log.NullHandler',
+                },
+            'console': {
+                # Set the level to "DEBUG" for verbose output logging.
+                'level': 'INFO',
+                'class': 'logging.StreamHandler',
+                },
+            'file': {
+                'level': 'INFO',
+                'class': 'logging.FileHandler',
+                'filename': '/var/log/horizon/horizon.log',
+                'formatter': 'normal'
+                },
+            'syslog': {
+                'level': 'INFO',
+                'facility': 'local1',
+                'class': 'logging.handlers.SysLogHandler',
+                'address': '/dev/log',
+                'formatter': 'normal'
+                },
+            },
+        'loggers': {
+            # Logging from django.db.backends is VERY verbose, send to null
+            # by default.
+            'django.db.backends': {
+                'handlers': ['null'],
+                'propagate': False,
+            },
+            'requests': {
+                'handlers': ['null'],
+                'propagate': False,
+            },
+            'horizon': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'openstack_dashboard': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'thinkcloud_portal': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'cephmgmtclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'novaclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'cinderclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'glanceclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'keystoneclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'neutronclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'heatclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'ceilometerclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'troveclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'swiftclient': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'openstack_auth': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'nose.plugins.manager': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'django': {
+                'handlers': ['null'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'iso8601': {
+                'handlers': ['null'],
+                'propagate': False,
+            },
+            'scss': {
+                'handlers': ['null'],
+                'propagate': False,
+            },
+        }
+}
+
+# The Ubuntu package includes pre-compressed JS and compiled CSS to allow
+# offline compression by default.
+# Cantos will compress it durind deploy
+# To enable online compression, install
+# the node-less package and enable the following option.
+COMPRESS_OFFLINE = True
+
+SECURITY_GROUP_RULES = {
+    'all_tcp': {
+        'name': 'ALL TCP',
+        'ip_protocol': 'tcp',
+        'from_port': '1',
+        'to_port': '65535',
+    },
+    'all_udp': {
+        'name': 'ALL UDP',
+        'ip_protocol': 'udp',
+        'from_port': '1',
+        'to_port': '65535',
+    },
+    'all_icmp': {
+        'name': 'ALL ICMP',
+        'ip_protocol': 'icmp',
+        'from_port': '-1',
+        'to_port': '-1',
+    },
+    'ssh': {
+        'name': 'SSH',
+        'ip_protocol': 'tcp',
+        'from_port': '22',
+        'to_port': '22',
+    },
+    'smtp': {
+        'name': 'SMTP',
+        'ip_protocol': 'tcp',
+        'from_port': '25',
+        'to_port': '25',
+    },
+    'dns': {
+        'name': 'DNS',
+        'ip_protocol': 'tcp',
+        'from_port': '53',
+        'to_port': '53',
+    },
+    'http': {
+        'name': 'HTTP',
+        'ip_protocol': 'tcp',
+        'from_port': '80',
+        'to_port': '80',
+    },
+    'pop3': {
+        'name': 'POP3',
+        'ip_protocol': 'tcp',
+        'from_port': '110',
+        'to_port': '110',
+    },
+    'imap': {
+        'name': 'IMAP',
+        'ip_protocol': 'tcp',
+        'from_port': '143',
+        'to_port': '143',
+    },
+    'ldap': {
+        'name': 'LDAP',
+        'ip_protocol': 'tcp',
+        'from_port': '389',
+        'to_port': '389',
+    },
+    'https': {
+        'name': 'HTTPS',
+        'ip_protocol': 'tcp',
+        'from_port': '443',
+        'to_port': '443',
+    },
+    'smtps': {
+        'name': 'SMTPS',
+        'ip_protocol': 'tcp',
+        'from_port': '465',
+        'to_port': '465',
+    },
+    'imaps': {
+        'name': 'IMAPS',
+        'ip_protocol': 'tcp',
+        'from_port': '993',
+        'to_port': '993',
+    },
+    'pop3s': {
+        'name': 'POP3S',
+        'ip_protocol': 'tcp',
+        'from_port': '995',
+        'to_port': '995',
+    },
+    'ms_sql': {
+        'name': 'MS SQL',
+        'ip_protocol': 'tcp',
+        'from_port': '1443',
+        'to_port': '1443',
+    },
+    'mysql': {
+        'name': 'MYSQL',
+        'ip_protocol': 'tcp',
+        'from_port': '3306',
+        'to_port': '3306',
+    },
+    'rdp': {
+        'name': 'RDP',
+        'ip_protocol': 'tcp',
+        'from_port': '3389',
+        'to_port': '3389',
+    },
+}
+
+
+OPENSTACK_AUTH_URL = 'http://%s:5000/v2.0' % OPENSTACK_HOST
+CHAKRA_USER = 'chakra'
+CHAKRA_PASSWORD = 'chakra'
+
+PRODUCT_VERSION = '3.4.3'
+
+# For protecting violence crack:
+# In LOGIN_OBSERVATION_TIME, if input the wrong password for login
+# for LOGIN_LOCK_COUNT times,
+# then this account will be locked for LOGIN_LOCK_TIME seconds
+LOGIN_OBSERVATION_TIME = 300
+LOGIN_LOCK_COUNT = 5
+LOGIN_LOCK_TIME = 7200
+
+# Language setting
+LANGUAGE_CODE = 'en-us'

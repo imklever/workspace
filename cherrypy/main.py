@@ -5,6 +5,11 @@ import cherrypy
 
 class HelloWorld(object):
     def index(self):
-        return "Hello World!"
+        return "Hello World!\n"
     index.exposed = True
-cherrypy.quickstart(HelloWorld())
+
+
+
+
+if __name__ == '__main__':
+    cherrypy.quickstart(HelloWorld(), '/nihao', {'global': {'server.socket_port': 9090}})

@@ -1,0 +1,33 @@
+[global]
+server.socket_host: '0.0.0.0'
+server.socket_port: 9999
+
+[/]
+tools.gzip.on: True
+#tools.staticdir.dir: '/root/gitrepo/workspace/WIKI'
+#root : '/root/gitrepo/workspace/WIKI'
+
+[html]: 
+tools.staticdir.on: True
+#tools.staticdir.dir: '/root/gitrepo/workspace/WIKI/html'
+tools.staticdir.dir: '../WIKI/html'
+
+[css]: 
+tools.staticdir.on: True
+#tools.staticdir.dir: '/root/gitrepo/workspace/WIKI/css'
+tools.staticdir.dir: '../WIKI/css'
+
+[js]: 
+tools.staticdir.on: True
+#tools.staticdir.dir: '/root/gitrepo/workspace/WIKI/js'
+tools.staticdir.dir: '../WIKI/js'
+
+[/rest1]:
+request.dispatch: cherrypy.dispatch.MethodDispatcher()
+tools.response_headers.on: True
+tools.response_headers.headers: [('Content-Type', 'text/plain')]
+
+[/rest2]:
+request.dispatch: cherrypy.dispatch.MethodDispatcher()
+tools.response_headers.on: True
+tools.response_headers.headers: [('Content-Type', 'text/plain')]

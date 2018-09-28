@@ -1,52 +1,55 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title> LVM 扩容 </title>
-	<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+
+<title>template</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
 </head>
 
-<!--
--->
+
+
 <body onScroll=nav_scroll() onload="timeout_id=setTimeout('location.reload()',1000)">
 
+<header>
+    <h1>笔记簿</h1>
+</header>
+
 <ul class="nav_dl">
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
 </ul>
 
-		
-	<div class="nav_left">
-		<h2> 目录：</h2>
-		<ul class=nv_left_ul>
-			<li><a href=#centos7> Centos7.3 1611 </a></li>
-			<li><a href=#ubuntu> Ubuntu 16.04 </a><br></li>
-		</ul>
-	</div>
-	
-	<div class="page_header">
-			<h1 > 笔记簿 </h1>
-	</div>
-	
-	
-	<div class="contant">
-	
-	<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
-	<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
-	<button onClick=nav_scroll()>move to top</button>
-	
-	
-		<h1 style="text-align:center;"> LVM 扩容 </h1>
-		
-		
-		
-		<h2> df -Th </h2>
-<pre>
+<nav>
+    <h2> 目录：</h2>
+    <ul>
+        <li><a href=#centos7> Centos7.3 1611 </a></li>
+        <li><a href=#ubuntu> Ubuntu 16.04 </a><br></li>
+    </ul>
+</nav>
+
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+
+
+    <h1 style="text-align:center;"> LVM 扩容 </h1>
+
+
+
+    <h2> df -Th </h2>
+    <pre>
 [root@dev_kvm ~]# df -Th
 Filesystem          Type      Size  Used Avail Use% Mounted on
-<pre_mark>/dev/mapper/cl-root</pre_mark> xfs        <pre_mark>50G</pre_mark>   <pre_mark>48G</pre_mark>  <pre_mark>2.6G</pre_mark>  <pre_mark>95%</pre_mark> <pre_mark>/</pre_mark>
+<mark>/dev/mapper/cl-root xfs        50G   48G  2.6G  95% /</mark>
 devtmpfs            devtmpfs  1.9G     0  1.9G   0% /dev
 tmpfs               tmpfs     1.9G     0  1.9G   0% /dev/shm
 tmpfs               tmpfs     1.9G  1.1M  1.9G   1% /run
@@ -55,26 +58,26 @@ tmpfs               tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
 /dev/mapper/cl-home xfs       202G  4.2G  197G   3% /home
 tmpfs               tmpfs     380M   12K  380M   1% /run/user/42
 tmpfs               tmpfs     380M     0  380M   0% /run/user/0
-</pre>
+    </pre>
 
 
 
-<h2> lvs </h2>
-<pre>
+    <h2> lvs </h2>
+    <pre>
 [root@dev_kvm ~]# lvs
-  LV   <pre_mark>VG</pre_mark> Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  LV   <mark>VG</mark> Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
   home cl -wi-ao---- <201.12g
   root cl -wi-ao----   50.00g
   swap cl -wi-ao----   <3.88g
-</pre>
+    </pre>
 
 
 
-<h2> vgdisplay </h2>
-<pre>
+    <h2> vgdisplay </h2>
+    <pre>
 [root@dev_kvm ~]# vgdisplay
   --- Volume group ---
-  VG Name               <pre_mark>cl</pre_mark>
+  VG Name               <mark>cl</mark>
   System ID             
   Format                lvm2
   Metadata Areas        1
@@ -93,16 +96,16 @@ tmpfs               tmpfs     380M     0  380M   0% /run/user/0
   Alloc PE / Size       65278 / 254.99 GiB
   Free  PE / Size       1 / 4.00 MiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-</pre>
+    </pre>
 
 
 
-<h2> add disk </h2>
+    <h2> add disk </h2>
 
 
 
-<h2> fdisk /dev/vdb </h2>
-<pre>
+    <h2> fdisk /dev/vdb </h2>
+    <pre>
 fdisk /dev/vdb
 [root@dev_kvm ~]# fdisk /dev/vdb
 Welcome to fdisk (util-linux 2.23.2).
@@ -161,12 +164,12 @@ The partition table has been altered!
 
 Calling ioctl() to re-read partition table.
 Syncing disks.
-</pre>
+    </pre>
 
 
 
-<h2> fdisk -l /dev/vdb </h2>
-<pre>
+    <h2> fdisk -l /dev/vdb </h2>
+    <pre>
 [root@dev_kvm ~]# fdisk -l /dev/vdb
 
 Disk /dev/vdb: 274.9 GB, 274877906944 bytes, 536870912 sectors
@@ -178,12 +181,12 @@ Disk identifier: 0xb77dba64
 
    Device Boot      Start         End      Blocks   Id  System
 /dev/vdb1            2048   536870911   268434432   83  Linux
-</pre>
+    </pre>
 
 
 
-<h2> mkfs.xfs -f /dev/vdb1 </h2>
-<pre>
+    <h2> mkfs.xfs -f /dev/vdb1 </h2>
+    <pre>
 [root@dev_kvm ~]# mkfs.xfs -f /dev/vdb1    
 meta-data=/dev/vdb1              isize=512    agcount=4, agsize=16777152 blks
          =                       sectsz=512   attr=2, projid32bit=1
@@ -194,30 +197,30 @@ naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
 log      =internal log           bsize=4096   blocks=32767, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
-</pre>
+    </pre>
 
 
 
-<h2> pvcreate /dev/vdb1 </h2>
-<pre>
-[root@dev_kvm ~]# <pre_mark>pvcreate</pre_mark> /dev/vdb1
+    <h2> pvcreate /dev/vdb1 </h2>
+    <pre>
+[root@dev_kvm ~]# <mark>pvcreate</mark> /dev/vdb1
 WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Wiping xfs signature on /dev/vdb1.
   Physical volume "/dev/vdb1" successfully created.
-</pre>
+    </pre>
 
 
 
-<h2> vgextend cl /dev/vdb1 </h2>
-<pre>
-[root@dev_kvm ~]# <pre_mark>vgextend cl /dev/vdb1</pre_mark>
+    <h2> vgextend cl /dev/vdb1 </h2>
+    <pre>
+[root@dev_kvm ~]# <mark>vgextend cl /dev/vdb1</mark>
   Volume group "cl" successfully extended
-</pre>
+    </pre>
 
 
 
-<h2> vgdisplay </h2>
-<pre>
+    <h2> vgdisplay </h2>
+    <pre>
 [root@dev_kvm ~]# vgdisplay
   --- Volume group ---
   VG Name               cl
@@ -239,22 +242,22 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       65278 / 254.99 GiB
   Free  PE / Size       65536 / 256.00 GiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-</pre>
+
+    </pre>
 
 
 
-<h2> lvextend -L +256G /dev/mapper/cl-root /dev/vdb1 </h2>
-<pre>
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +256G /dev/mapper/cl-root /dev/vdb1 
+    <h2> lvextend -L +256G /dev/mapper/cl-root /dev/vdb1 </h2>
+    <pre>
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +256G /dev/mapper/cl-root /dev/vdb1 
   Insufficient free space: 65536 extents needed, but only 65535 available
 
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +65535 /dev/mapper/cl-root /dev/vdb1     
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +65535 /dev/mapper/cl-root /dev/vdb1     
   Rounding size to boundary between physical extents: 64.00 GiB.
   Size of logical volume cl/root changed from 50.00 GiB (12800 extents) to 114.00 GiB (29184 extents).
   Logical volume cl/root successfully resized.
 
-[root@dev_kvm ~]# <pre_mark>vgdisplay</pre_mark> 
+[root@dev_kvm ~]# <mark>vgdisplay</mark> 
   --- Volume group ---
   VG Name               cl
   System ID             
@@ -275,8 +278,8 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       81662 / 318.99 GiB
   Free  PE / Size       49152 / 192.00 GiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +65535 /dev/mapper/cl-root /dev/vdb1 
+
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +65535 /dev/mapper/cl-root /dev/vdb1 
   Rounding size to boundary between physical extents: 64.00 GiB.
   Size of logical volume cl/root changed from 114.00 GiB (29184 extents) to 178.00 GiB (45568 extents).
   Logical volume cl/root successfully resized.
@@ -301,10 +304,10 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       98046 / 382.99 GiB
   Free  PE / Size       32768 / 128.00 GiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +128G /dev/mapper/cl-root /dev/vdb1      
+
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +128G /dev/mapper/cl-root /dev/vdb1      
   Insufficient free space: 32768 extents needed, but only 32767 available
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +127G /dev/mapper/cl-root /dev/vdb1  
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +127G /dev/mapper/cl-root /dev/vdb1  
   Size of logical volume cl/root changed from 178.00 GiB (45568 extents) to 305.00 GiB (78080 extents).
   Logical volume cl/root successfully resized.
 [root@dev_kvm ~]# vgdisplay 
@@ -328,8 +331,8 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       130558 / 509.99 GiB
   Free  PE / Size       256 / 1.00 GiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +255 /dev/mapper/cl-root /dev/vdb1     
+
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +255 /dev/mapper/cl-root /dev/vdb1     
   Rounding size to boundary between physical extents: 256.00 MiB.
   Size of logical volume cl/root changed from 305.00 GiB (78080 extents) to 305.25 GiB (78144 extents).
   Logical volume cl/root successfully resized.
@@ -354,8 +357,8 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       130622 / 510.24 GiB
   Free  PE / Size       192 / 768.00 MiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +192 /dev/mapper/cl-root /dev/vdb1    
+
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +192 /dev/mapper/cl-root /dev/vdb1    
   Size of logical volume cl/root changed from 305.25 GiB (78144 extents) to <305.44 GiB (78192 extents).
   Logical volume cl/root successfully resized.
 [root@dev_kvm ~]# vgdisplay 
@@ -379,10 +382,10 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       130670 / <510.43 GiB
   Free  PE / Size       144 / 576.00 MiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +576 /dev/mapper/cl-root /dev/vdb1    
+
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +576 /dev/mapper/cl-root /dev/vdb1    
   Insufficient free space: 144 extents needed, but only 143 available
-[root@dev_kvm ~]# <pre_mark>lvextend</pre_mark> -L +575 /dev/mapper/cl-root /dev/vdb1  
+[root@dev_kvm ~]# <mark>lvextend</mark> -L +575 /dev/mapper/cl-root /dev/vdb1  
   Rounding size to boundary between physical extents: 576.00 MiB.
   Insufficient free space: 144 extents needed, but only 143 available
 [root@dev_kvm ~]# vgdisplay 
@@ -406,24 +409,24 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Alloc PE / Size       130670 / <510.43 GiB
   Free  PE / Size       144 / 576.00 MiB
   VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-   
-</pre>
+
+    </pre>
 
 
 
-<h2> resize2fs /dev/mapper/cl-root </h2>
-<pre>
-[root@dev_kvm ~]# <pre_mark>resize2fs</pre_mark> /dev/mapper/cl-root 
+    <h2> resize2fs /dev/mapper/cl-root </h2>
+    <pre>
+[root@dev_kvm ~]# <mark>resize2fs</mark> /dev/mapper/cl-root 
 resize2fs 1.42.9 (28-Dec-2013)
 resize2fs: Bad magic number in super-block while trying to open /dev/mapper/cl-root
 Couldn't find valid filesystem superblock.
-</pre>
+    </pre>
 
 
 
-<h2> xfs_growfs /dev/mapper/cl-root </h2>
-<pre>
-[root@dev_kvm ~]# <pre_mark>xfs_growfs</pre_mark> /dev/mapper/cl-root 
+    <h2> xfs_growfs /dev/mapper/cl-root </h2>
+    <pre>
+[root@dev_kvm ~]# <mark>xfs_growfs</mark> /dev/mapper/cl-root 
 meta-data=/dev/mapper/cl-root    isize=512    agcount=4, agsize=3276800 blks
          =                       sectsz=512   attr=2, projid32bit=1
          =                       crc=1        finobt=0 spinodes=0
@@ -434,15 +437,15 @@ log      =internal               bsize=4096   blocks=6400, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 data blocks changed from 13107200 to 80068608
-</pre>
+    </pre>
 
 
 
-<h2> df -Th </h2>
-<pre>
+    <h2> df -Th </h2>
+    <pre>
 [root@dev_kvm ~]# df -Th
 Filesystem          Type      Size  Used Avail Use% Mounted on
-/dev/mapper/cl-root xfs       <pre_mark>306G</pre_mark>   <pre_mark>48G</pre_mark>  <pre_mark>259G</pre_mark>  <pre_mark>16%</pre_mark> <pre_mark>/</pre_mark>
+/dev/mapper/cl-root xfs       <mark>306G   48G  259G  16% /</mark>
 devtmpfs            devtmpfs  1.9G     0  1.9G   0% /dev
 tmpfs               tmpfs     1.9G     0  1.9G   0% /dev/shm
 tmpfs               tmpfs     1.9G  972K  1.9G   1% /run
@@ -451,10 +454,15 @@ tmpfs               tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
 /dev/mapper/cl-home xfs       202G  4.2G  197G   3% /home
 tmpfs               tmpfs     380M   12K  380M   1% /run/user/42
 tmpfs               tmpfs     380M     0  380M   0% /run/user/0
-</pre>
-	</div>
+    </pre>
+</div>
 
-	<script src="../js/WIKI.js"></script>
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
 </body>
- 
+
 </html>

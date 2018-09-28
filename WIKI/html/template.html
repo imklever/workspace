@@ -1,39 +1,57 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
+
+<title>template</title>
+
 <meta charset="utf-8">
-<title>buildbot guide</title>
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
 <link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
 </head>
 
+
+
 <body onload="timeout_id=setTimeout('location.reload()',3000)">
 
+<header>
+    <h1>笔记簿</h1>
+</header>
+
 <ul class="nav_dl">
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
 </ul>
 
-<div class="nav_left">
+<nav>
     <h2> 目录：</h2>
-    <ul class=nv_left_ul>
-        <li><a href=#> content1 </a></li>
-        <li><a href=#> content2 </a><br></li>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+        <li><a href="#4">#4</a></li>
+        <li><a href="#5">#5</a></li>
+        <li><a href="#6">#6</a></li>
+        <li><a href="#7">#7</a></li>
+        <li><a href="#8">#8</a></li>
     </ul>
-</div>
-
-<div class="page_header">
-    <h1 > 笔记簿 </h1>
-</div>
-
+</nav>
 
 <div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
 
-<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
-<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
-<button onClick=nav_scroll()>move to top</button>
-
+    <br>
+    asd<br>
+    asd<br>
+    asd<br>
+    asd<br>
+    asd<br>
+    wsx<br>
 
     <h1 style="text-align:center;"> head1 </h1>
 
@@ -43,7 +61,7 @@
 
     <h3> step1. head3</h3>
     <pre>
-pre
+pre<mark>mark</mark>
     </pre>
 
 
@@ -52,20 +70,6 @@ pre
 pre
     </pre>
 
-
-    <h3> step3. head3: </h3>
-    <pre>
-pre
-    </pre>
-    <div class=note>
-        note
-    </div>
-
-
-    <h3> step4. head3：</h3>
-    <pre>
-pre
-    </pre>
     <div class=note>
         note
         <code>code</code>
@@ -78,7 +82,12 @@ pre
     <a target= _blank href=ref>ref</a><br>
 </div>
 
-	<script src="../js/WIKI.js"></script>
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
 </body>
 
 </html>

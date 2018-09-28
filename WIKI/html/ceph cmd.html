@@ -1,58 +1,69 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Ceph cmd</title>
-	<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+
+<title>Ceph cmd</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
 </head>
+
+
 
 <body onload="timeout_id=setTimeout('location.reload()',5000)">
 
-<ul class="nav_dl">
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-    <li class="nav_li">asd</li>
-</ul>
-		
-	<div class="nav_left">
-		<h2><a href=#check> 查寻命令: </a></h2>
-		<ul class=nv_left_ul>
-			<li><a href=#ceph_health> ceph -s </a></li>
-			<li><a href=#ceph_mon_dump> ceph mon dump </a></li>
-			<li><a href=#ceph_osd_dump> ceph osd dump </a></li>
-			<li><a href=#ceph_pg_dump> ceph  pg dump </a></li>
-			<li><a href=#ceph_osd_crush_dump> ceph osd crush dump </a></li>
-			<li><a href=#ceph_mds_dump> ceph mds dump </a></li>
-		</ul>
-		<h2><a href=#check> TODO: </a></h2>
-		<ul class=nv_left_ul>
-			<li><a href=#ceph_health> TODO </a></li>
-		</ul>
-	</div>
-	
-	<div class="page_header">
-			<h1 > 笔记簿 </h1>
-	</div>
-	
-	
-	<div class="contant">
-	
-	<button style="margin-left:160px;" onClick="timeout_id=setTimeout('location.reload()',1000)">start auto reload</button>
-	<button onClick=clearTimeout(timeout_id)>stop auto reload</button>
-	
-	
-		<h1 style="text-align:center;"> Ceph cmd </h1>
-		
-		
-				
-		<h2 id=check> 查寻命令：</h2>
-		
+<header>
+    <h1>笔记簿</h1>
+</header>
 
-		<h3 id=ceph_health> ceph -s </h3>
-		<button id="button_ceph_health" onclick="show_code('button_ceph_health', 'pre_ceph_health')" > show </button>
-		
-<pre id=pre_ceph_health style="visibility:hidden;">
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2> 目录：</h2>
+
+    <h3><a href=#check> 查寻命令: </a></h2>
+    <ul>
+        <li><a href=#ceph_health> ceph -s </a></li>
+        <li><a href=#ceph_mon_dump> ceph mon dump </a></li>
+        <li><a href=#ceph_osd_dump> ceph osd dump </a></li>
+        <li><a href=#ceph_pg_dump> ceph  pg dump </a></li>
+        <li><a href=#ceph_osd_crush_dump> ceph osd crush dump </a></li>
+        <li><a href=#ceph_mds_dump> ceph mds dump </a></li>
+    </ul>
+
+    <h3><a href=#check> TODO: </a></h2>
+    <ul>
+        <li><a href=#ceph_health> TODO </a></li>
+    </ul>
+</nav>
+
+
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+
+
+    <h1> Ceph cmd </h1>
+
+
+
+    <h2 id=check> 查寻命令：</h2>
+
+
+    <h3 id=ceph_health> ceph -s </h3>
+    <button id="button_ceph_health" onclick="show_code('button_ceph_health', 'pre_ceph_health')" > show </button>
+
+    <pre id=pre_ceph_health style="visibility:hidden;">
 [root@node-1 ~]# ceph -s:
     cluster 2919782d-e935-4215-b32e-be72c5677f1a
      health HEALTH_OK
@@ -62,11 +73,11 @@
             flags sortbitwise,require_jewel_osds
       pgmap v146: 0 pgs, 0 pools, 0 bytes data, 0 objects
             172 MB used, 161 GB / 161 GB avail
-</pre>
+    </pre>
 
 
-		<h3 id=ceph_mon_dump> ceph mon dump </h3>
-<pre>
+    <h3 id=ceph_mon_dump> ceph mon dump </h3>
+    <pre>
 [root@node-1 ~]# ceph mon dump:
 dumped monmap epoch 1
 epoch 1
@@ -76,11 +87,11 @@ created 2018-04-04 09:40:51.035944
 0: 192.168.2.3:6789/0 mon.a
 1: 192.168.2.4:6789/0 mon.b
 2: 192.168.2.5:6789/0 mon.c
-</pre>
+    </pre>
 
 
-		<h3 id=ceph_osd_dump> ceph osd dump </h3>
-<pre>
+    <h3 id=ceph_osd_dump> ceph osd dump </h3>
+    <pre>
 [root@node-1 ~]# ceph osd dump:
 epoch 54
 fsid 2919782d-e935-4215-b32e-be72c5677f1a
@@ -97,11 +108,11 @@ osd.5 up   in  weight 1 up_from 5 up_thru 42 down_at 0 last_clean_interval [0,0)
 osd.6 up   in  weight 1 up_from 5 up_thru 5 down_at 0 last_clean_interval [0,0) 192.168.2.5:6906/293372 192.168.0.5:6800/293372 192.168.0.5:6801/293372 192.168.2.5:6800/293372 exists,up 62ec9f73-711f-4715-af60-1cc1e38fc780
 osd.7 up   in  weight 1 up_from 5 up_thru 5 down_at 0 last_clean_interval [0,0) 192.168.2.5:6907/293536 192.168.0.5:6802/293536 192.168.0.5:6803/293536 192.168.2.5:6801/293536 exists,up c8a39de4-8c3a-44e8-8d9f-ac9418203750
 osd.8 up   in  weight 1 up_from 6 up_thru 6 down_at 0 last_clean_interval [0,0) 192.168.2.5:6908/293647 192.168.0.5:6804/293647 192.168.0.5:6805/293647 192.168.2.5:6802/293647 exists,up 27478a26-5da0-4dc9-8b9e-42445c5b8aa9
-</pre>
+    </pre>
 
-		
-		<h3 id=ceph_pg_dump> ceph  pg dump </h3>
-<pre>
+
+    <h3 id=ceph_pg_dump> ceph  pg dump </h3>
+    <pre>
 [root@node-1 ~]# ceph  pg dump:
 dumped all in format plain
 version 146
@@ -123,11 +134,11 @@ osdstat kbused  kbavail kb      hb in   hb out
 1       19648   18828096        18847744        [3,4,5,6,7,8]   []
 0       20136   18827608        18847744        [3,4,5,6,7,8]   []
  sum    176520  169453176       169629696
-</pre>
+    </pre>
 
 
-		<h3 id=ceph_osd_crush_dump> ceph osd crush dump </h3>
-<pre>
+    <h3 id=ceph_osd_crush_dump> ceph osd crush dump </h3>
+    <pre>
 [root@node-1 ~]# ceph osd crush dump:
 {
     "devices": [
@@ -385,11 +396,11 @@ osdstat kbused  kbavail kb      hb in   hb out
     }
 }
 
-</pre>
+    </pre>
 
 
-		<h3 id=ceph_mds_dump> ceph mds dump </h3>
-<pre>
+    <h3 id=ceph_mds_dump> ceph mds dump </h3>
+    <pre>
 [root@node-1 ~]# ceph mds dump:
 dumped fsmap epoch 1
 fs_name cephfs
@@ -414,11 +425,16 @@ stopped
 data_pools
 metadata_pool   0
 inline_data     disabled
-</pre>
+    </pre>
 
-	</div>
+</div>
 
-	<script src="../js/WIKI.js"></script>
+<footer>
+    yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
 </body>
- 
+
 </html>

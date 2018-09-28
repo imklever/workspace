@@ -1,37 +1,9 @@
 ﻿@import url("base.css");
 
-body {
-    margin:0;
-    border:1px solid red;
-    padding:0;
-	//background-color:#FFFAF0;
-	background-color:#FFFFFF;
-    //white-space:pre-wrap;
-    //overflow: hidden;
-	}
-
-header {
-    margin:0;
-    border:0;
-    padding:0;
-    width:100%;
-    height:auto;
-    background-color:#aaaaaa;
-    color:white;
-    //text-align:center;
-    //text-align:right;
-    font-style:hei;
-}
-
-header h1 {
-    margin:0;
-    padding:0;
-    text-align:right;
-}
-
 .nav_dl {
-    margin:10px 0 0 0;
+    margin:3px 0 0 0;
     border:0;
+    border:1px solid purple;
     padding:0;
     width:100%;
     overflow: hidden;
@@ -56,95 +28,15 @@ header h1 {
     background-color: #111;
 }
 
-nav {
-    //position:fixed;
-    float:left;
-    margin:10px 0 0 0;
-    border:0;
-    padding:10px 0 10px 0;
-    width:20%;
-    height:100%;
-    background-color:#eeeeee;
-    font-size:75%;
-}
-
-nav ul {
-    padding:0 0 0 3px;
-}
-
-nav ul li {
-    padding:0 0 0 3px;
-}
-
-nav ul a {
-    text-decoration:none;
-}
-
 .contant{
-    margin:10px 0 0 20%;
+    margin:3px 0 0 20%;
     border:0;
     padding:0 0 0 10px;
     width:78%;
-	//background-color:#FFFAF0;
 	background-color:#dddddd;
 }
 
-footer {
-    clear:both;
-    margin:10px 0 0 0;
-    border:0;
-    padding:0;
-    width:100%;
-    text-align:center;
-    background-color:#aaaaaa;
-}
 
-
-
-code {
-    padding:0px 3px 0px 3px;
-    background-color:#D0D0D0;
-    background-color:#E0E0E0;
-    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono","Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace; 
-    font-size:90%;
-    font-style:normal;
-    white-space:pre-wrap;
-    }
-
-pre {
-    margin-top:0;
-    margin-bottom:0;
-    padding:10px 10px 10px 10px;
-    background-color:#404040;
-    color:#D8D8D8;
-    color:#E0E0E0;
-    //white-space:pre-wrap;
-    overflow:auto;
-    line-height:120%;
-    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono","Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace; 
-    font-size:70%;
-}
-
-pre mark {
-    background-color: #A0A000;
-    color:#F0F0F0; 
-    margin: 0px;
-    padding: 0px 0px 0px 0px;
-}
-
-h1 {
-    text-align:center;
-}
-
-h2 {
-    margin:0;
-    margin-top:20px;
-}
-
-h3 {
-    margin:0;
-    margin-top:10px;
-}
 
 .note {
     margin-top:0;

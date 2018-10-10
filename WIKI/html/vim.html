@@ -44,12 +44,28 @@
 
     <h2>变量保存:</h2>
     <pre>
-\(\) --&gt; \1
+\(.*\) --&gt; \1
 
 :%s/a\(b.*c\)/\1d/g
     </pre>
 
     <h2>最小(非贪婪)模式匹配:</h2>
+    <pre>
+\{
+\{n,m} Matches n to m of the preceding atom, as many as possible
+\{n} Matches n of the preceding atom
+\{n,} Matches at least n of the preceding atom, as many as possible
+\{,m} Matches 0 to m of the preceding atom, as many as possible
+\{} Matches 0 or more of the preceding atom, as many as possible (like *)
+\{-n,m} matches n to m of the preceding atom, as few as possible
+\{-n} matches n of the preceding atom
+\{-n,} matches at least n of the preceding atom, as few as possible
+\{-,m} matches 0 to m of the preceding atom, as few as possible
+\{-} matches 0 or more of the preceding atom, as few as possible
+也就是.\{-}可以实现.*的非贪婪匹配，.\{-1,}可以实现.+的非贪婪匹配。
+    </pre>
+    <br>
+    <h3>示例<h3>
     <pre>
 .\{-}
 

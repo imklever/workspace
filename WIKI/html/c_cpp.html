@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>c_cpp</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+
+
+    <h1 style="text-align:center;">C_CPP</h1>
+
+
+    <h2>pthread_cond_t 条件变量:</h2>
+    需要和互斥锁搭配使用<br>
+    作用仅仅是用于将从 "加锁--->某个条件满足时" 之间的等待时间消除<br>
+    没有实现同步的作用<br>
+    <pre>
+#include 
+#include 
+
+#define THREADNUM 100
+
+void *thread_func(void *param);
+
+pthread_mutex_t     g_ptmutex;
+pthread_barrier_t       g_ptb_1;
+pthread_barrier_t       g_ptb_2;
+pthread_cond_t          g_pthread_cond_1;
+
+int main()
+{
+
+    pthread_t pid[THREADNUM];
+    int param[THREADNUM]; 
+    int iret = 0;
+    int i = 0;
+
+    printf("hello\n");
+
+    pthread_barrier_init(&ampg_ptb_1, NULL, THREADNUM+1);
+    pthread_barrier_init(&ampg_ptb_2, NULL, THREADNUM+1);
+
+    pthread_cond_init(&ampg_pthread_cond_1, NULL);
+
+    pthread_mutex_init(&ampg_ptmutex, NULL);
+
+    for(i=0; i&lt;HREADNUM; i++)
+    {
+        param[i] = i;
+        iret = pthread_create(&amppid[i], NULL, thread_func, (void *) &ampparam[i]);
+        if(0 != iret)
+        {
+            printf("thread create failed at: %d\n", i);
+            return 0;
+        }
+        usleep(10000);
+    }
+
+    pthread_barrier_wait(&ampg_ptb_1);
+
+    usleep(1000000);
+
+    pthread_cond_signal(&ampg_pthread_cond_1);
+
+    pthread_barrier_wait(&ampg_ptb_2);
+
+    pthread_cond_destroy(&ampg_pthread_cond_1);
+
+    for(i=0; i&lt;THREADNUM; i++)
+        pthread_join(pid[i], NULL);
+
+    return 0;
+}
+
+
+void *thread_func(void *param)
+{
+    int thread_number = *(int *)param;
+
+    pthread_barrier_wait(&ampg_ptb_1);
+
+    pthread_mutex_lock(&ampg_ptmutex);
+
+    pthread_cond_wait(&ampg_pthread_cond_1, &ampg_ptmutex);
+
+    printf("this is thread: %d\n", thread_number);
+
+    pthread_mutex_unlock(&ampg_ptmutex);
+
+    pthread_cond_signal(&ampg_pthread_cond_1);
+
+    pthread_barrier_wait(&ampg_ptb_2);
+
+    return NULL;
+}
+    </pre>
+
+
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>

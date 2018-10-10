@@ -30,11 +30,6 @@
         <li><a href="#1">#1</a></li>
         <li><a href="#2">#2</a></li>
         <li><a href="#3">#3</a></li>
-        <li><a href="#4">#4</a></li>
-        <li><a href="#5">#5</a></li>
-        <li><a href="#6">#6</a></li>
-        <li><a href="#7">#7</a></li>
-        <li><a href="#8">#8</a></li>
     </ul>
 </nav>
 
@@ -46,13 +41,19 @@
 
     <h1 style="text-align:center;"> vim </h1>
 
-    <h2 id=centos7> vim：</h2>
 
-
-
-    <h3> step1. head3</h3>
+    <h2>变量保存:</h2>
     <pre>
-pre
+\(\) --&gt; \1
+
+:%s/a\(b.*c\)/\1d/g
+    </pre>
+
+    <h2>最小模式匹配:</h2>
+    <pre>
+.\{-}
+
+:%s/a.\{-}b/a_min_b/g
     </pre>
 
 

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>ssh</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2> 目录：</h2>
+    <ul>
+        <li><a href="#1">内网穿透</a></li>
+        <ul>
+            <li><a href="#1_1">内网主机设置</a></li>
+            <li><a href="#1_2">外网反向登录</a></li>
+            <li><a href="#1_3">连续中转示例</a></li>
+        </ul>
+    </ul>
+</nav>
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+
+    <h1 style="text-align:center;">ssh</h1>
+
+    <h2 id=1>内网穿透</h2>
+
+
+
+    <h3 id=1_1>内网主机:</h3>
+    <pre>
+#ip: 192.168.248.37
+ssh -N -R 2223:localhost:22 root@10.240.217.107
+    </pre>
+    <div class=note>
+    <B>远端2223，本地22</B><br>
+    该程序将连接外网服务器，并告知sshd绑定2223端口，并将2223端口接收的数据转发至内网主机端口22上<br>
+    22可修改为任意端口，但是ssh连接将会失败<br>
+    <code>-N</code> 参数使此命令处于阻塞状态，不进入终端模式，也就是不执行命令，不加该参数会直接进入一个远程终端，可在该终端上执行命令<br>
+    </div>
+
+
+    <h3 id=1_2>外网服务器:</h3>
+    <pre>
+#ip: 10.240.217.107
+ssh -p 2223 localhost
+    </pre>
+    <div class=note>
+    连接向本地2223端口的申请，将会通过sshd转发至远程内网的22端口上
+    </div>
+
+
+    <h3 id=1_3>连续中转示例:</h3>
+    <div class=note>
+        <B>ssh访问顺序:</B> <code>host1->host2->host3</code>
+    </div>
+    <pre>
+commands:
+
+on host3:
+ssh -N -R 2223:localhost:22 root@host2
+
+on host2:
+ssh -N -R 2223:localhost:2223 root@host1
+
+on host1:
+ssh -p 2223 root@host2
+    </pre>
+    
+
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>

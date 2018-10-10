@@ -3,7 +3,7 @@
 
 <head>
 
-<title>template</title>
+<title>od</title>
 
 <meta charset="utf-8">
 <link rel="icon" href="../icon/title.png" type="image/x-icon">
@@ -27,7 +27,7 @@
 </ul>
 
 <nav>
-    <h2>目录:</h2>
+    <h2> 目录：</h2>
     <ul>
         <li><a href="#1">#1</a></li>
         <li><a href="#2">#2</a></li>
@@ -40,35 +40,49 @@
     <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
     <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
 
-    <br>
-    asd<br>
-    asd<br>
-    asd<br>
-    asd<br>
-    asd<br>
-    wsx<br>
 
-    <h1 style="text-align:center;"></h1>
-
-    <h2></h2>
+    <h1 style="text-align:center;">od</h1>
 
 
-
-    <h3></h3>
+    <h3>示例</h3>
     <pre>
-    <mark></mark>
+od -Ad -tx1 -w10 -v -j10 -N10 filename
     </pre>
 
 
+    <h3>参数解释</h3>
+    <pre>
+-A对显示地址设置
+
+    -d十进制显示
+
+    -o八进制显示
+
+    -x十六进制显示
+
+    -n:none,不显示
+
+-t对显示内容设置
+
+    -x1十六进制显示，单个字符分开显示
+
+    all:[-a,o1,c,u2,fF,dI,dL,o2,d2,x2]
+
+-w10每行显示10字节长度。
+
+-v 显示所有内容，默认连续的00会被用*显示代替
+
+-j10 跳过前10个自己
+
+-N10 限制输入的字节数。在-j之后开始计算，读到第10个字节结束
+    </pre>
+
+    <h3>xxd</h3>
     <div class=note>
-        <code></code>
+        note
+        同<code>od</code>差不多，也用于查看二进制指令。暂未详细研究。待补充。
     </div>
 
-
-
-    <h2>ref:</h2>
-    <a target= _blank href=ref>ref</a><br>
-    <a target= _blank href=ref>ref</a><br>
 </div>
 
 <footer>

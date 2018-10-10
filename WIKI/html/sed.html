@@ -3,7 +3,7 @@
 
 <head>
 
-<title>template</title>
+<title>sed</title>
 
 <meta charset="utf-8">
 <link rel="icon" href="../icon/title.png" type="image/x-icon">
@@ -27,11 +27,11 @@
 </ul>
 
 <nav>
-    <h2>目录:</h2>
+    <h2> 目录：</h2>
     <ul>
-        <li><a href="#1">#1</a></li>
-        <li><a href="#2">#2</a></li>
-        <li><a href="#3">#3</a></li>
+        <li><a href="#1">变量保存</a></li>
+        <li><a href="#2">删除匹配行到匹配行</a></li>
+        <li><a href="#ref">ref</a></li>
     </ul>
 </nav>
 
@@ -40,35 +40,26 @@
     <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
     <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
 
-    <br>
-    asd<br>
-    asd<br>
-    asd<br>
-    asd<br>
-    asd<br>
-    wsx<br>
-
-    <h1 style="text-align:center;"></h1>
-
-    <h2></h2>
+    <h1 style="text-align:center;">sed</h1>
 
 
-
-    <h3></h3>
+    <h3 id=1>变量保存:</h3>
     <pre>
-    <mark></mark>
+sed 's/\(前一部分\)要替换的部分\(后一部分\)/\1替换后的字符串\2/'
+sed '/start part/,/end part/p'
     </pre>
 
 
-    <div class=note>
-        <code></code>
-    </div>
+    <h3 id=2>删除匹配行到匹配行:</h3>
+    <pre>
+sed '/start/,/stop/d'
+sed '1,/stop/d'
+sed 'start,$d'
+    </pre>
 
-
-
-    <h2>ref:</h2>
-    <a target= _blank href=ref>ref</a><br>
-    <a target= _blank href=ref>ref</a><br>
+    <h2 id=ref>ref:</h2>
+    <a target= _blank href="http://man.linuxde.net/sed">http://man.linuxde.net/sed</a><br>
+    <a target= _blank href="http://bbs.51cto.com/thread-1148265-1.html">http://bbs.51cto.com/thread-1148265-1.html</a><br>
 </div>
 
 <footer>

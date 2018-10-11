@@ -17,7 +17,6 @@ class WebApp(object):
 class Rest_1(object):
 
     @cherrypy.tools.accept(media='text/plain')
-
     def GET(self):
         #time.sleep(10)
         return "get rest_1\n"
@@ -33,8 +32,6 @@ class Rest_1(object):
 class Rest_2(object):
 
     @cherrypy.tools.accept(media='text/plain')
-
-
     def GET(self):
         return "get rest_2\n"
     def POST(self, length=8):

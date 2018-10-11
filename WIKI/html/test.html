@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>JS test page</title>
+
+<meta charset="utf-8">
+
+<script>
+function hello()
+{
+    var obj_but=document.getElementById("button1")
+    console.log("hello hehe")
+    console.log(obj_but.style.marginTop)
+    console.log(obj_but.style.marginBottom)
+    console.log(obj_but.style.marginLeft)
+    console.log(obj_but.style.marginRight)
+    obj_but.style.margin="200px 0px 100px 0px"
+}
+</script>
+</head>
+
+
+
+<body>
+
+<header>
+    <h1>JS test page</h1>
+</header>
+
+
+
+<div class="contant">
+
+    <button id='button1' style="margin:0 0 0 0;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button id='button2' onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
+    <button id='button3' onClick=hello()>hello</button>
+</div>
+
+<footer>
+    yqnt418@163.com
+</footer>
+
+
+</body>
+
+</html>

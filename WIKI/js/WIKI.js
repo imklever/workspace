@@ -9,13 +9,13 @@ function nav_scroll()
        }
      */
     //console.log(window.getComputedStyle(document.body,null).offset);
-    var body_top=(window.getComputedStyle(document.body,null).top);//¹ö¶¯µÄ¾àÀë,¾àÀë¶¥²¿µÄ¾àÀë
+    var body_top=(window.getComputedStyle(document.body,null).top);//æ»šåŠ¨çš„è·ç¦»,è·ç¦»é¡¶éƒ¨çš„è·ç¦»
     console.log("body_top = "+body_top);
 
-    var nav_left  = document.getElementById("nav_left");	//»ñÈ¡µ½µ¼º½À¸id
+    var nav_left  = document.getElementById("nav_left");	//è·å–åˆ°å¯¼èˆªæ id
     //nav_left = window.getComputedStyle(nav_left,null);
 
-    if( body_top > 100 )  //µ±¹ö¶¯¾àÀë´óÓÚ100pxÊ±Ö´ĞĞÏÂÃæµÄ¶«Î÷
+    if( body_top > 100 )  //å½“æ»šåŠ¨è·ç¦»å¤§äº100pxæ—¶æ‰§è¡Œä¸‹é¢çš„ä¸œè¥¿
     {
         nav_left.style.top=0;
     }else

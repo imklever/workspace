@@ -10,16 +10,16 @@ class WebApp(object):
         return file('../WIKI/index.html')
 
     @cherrypy.expose
-    def nihao(self):
-        return "nihao!\n"
+    def hello(self):
+        return "hello!\n"
 
+@cherrypy.popargs('rest_version','op')
 @cherrypy.expose
 class Rest_1(object):
 
     @cherrypy.tools.accept(media='text/plain')
-    def GET(self):
-        #time.sleep(10)
-        return "get rest_1\n"
+    def GET(self, rest_version, op):
+        return "get rest_1 %s %s\n" % (rest_version, op)
     def POST(self, length=8):
         str = "post rest_1 length="+length+"\n"
         return str
@@ -28,6 +28,7 @@ class Rest_1(object):
     def DELETE(self):
         return "delete rest_1\n"
 
+@cherrypy.popargs('rest_version','op')
 @cherrypy.expose
 class Rest_2(object):
 
@@ -46,4 +47,4 @@ if __name__ == '__main__':
     webapp = WebApp()
     webapp.rest1 = Rest_1()
     webapp.rest2 = Rest_2()
-    cherrypy.quickstart(webapp, '/', './config')
+    cherrypy.quickstart(webapp, '/', '/etc/cherrypy/config')

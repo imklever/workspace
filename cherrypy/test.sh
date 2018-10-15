@@ -2,11 +2,11 @@
 
 echo
 
-curl -X GET -H "Content-Length:0" http://127.0.0.1:9999/nihao
+curl -X GET -H "Content-Length:0" http://127.0.0.1:9999/hello
 
 echo
 
-curl -X GET -H "Content-Length:0" http://127.0.0.1:9999/rest1
+curl -X GET -H "Content-Length:0" http://127.0.0.1:9999/rest1/asd/qwe/
 curl -X POST -H "Content-Length:0" http://127.0.0.1:9999/rest1?length=9
 curl -X PUT -H "Content-Length:0" http://127.0.0.1:9999/rest1
 curl -X DELETE -H "Content-Length:0" http://127.0.0.1:9999/rest1

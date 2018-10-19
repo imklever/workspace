@@ -46,8 +46,7 @@
     <pre>
 \(.*\) --&gt; \1
 
-:%s/a\(b.*c\)/\1d/g
-    </pre>
+:%s/a\(b.*c\)/\1d/g</pre>
 
     <h2>最小(非贪婪)模式匹配:</h2>
     <pre>
@@ -62,24 +61,22 @@
 \{-n,} matches at least n of the preceding atom, as few as possible
 \{-,m} matches 0 to m of the preceding atom, as few as possible
 \{-} matches 0 or more of the preceding atom, as few as possible
-也就是.\{-}可以实现.*的非贪婪匹配，.\{-1,}可以实现.+的非贪婪匹配。
-    </pre>
+也就是.\{-}可以实现.*的非贪婪匹配，.\{-1,}可以实现.+的非贪婪匹配。</pre>
     <br>
     <h2>示例</h2>
     <pre>
 .\{-}
 
-:%s/a.\{-}b/a_min_b/g
-    </pre>
+:%s/a.\{-}b/a_min_b/g</pre>
 
 
 
     <h2>keymap示例</h2>
     按ESC键，在最后一行插入一行hi，并保存退出<br>
     <pre>
-:map &lt;ESC&gt; Gohi&lt;ESC&gt;:wq&lt;ENTER&gt;
-    </pre>
-
+:map &lt;F1&gt; Gohi&lt;ESC&gt;:wq&lt;ENTER&gt;
+:map &lt;F1&gt; :.s/&lt;/\&lt;/g &lt;ENTER&gt;
+:map &lt;F2&gt; :.s/&gt;/\&gt;/g &lt;ENTER&gt;</pre>
     <h2>ref:</h2>
     <a target= _blank href=https://www.cnblogs.com/didi/p/4067193.html>vim 复制粘贴 </a><br>
 </div>

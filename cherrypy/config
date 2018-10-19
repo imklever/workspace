@@ -5,7 +5,8 @@ server.socket_port: 9999
 [/]
 tools.gzip.on: True
 tools.staticdir.on: True
-tools.staticdir.dir: '/root/gitrepo/workspace/WIKI'
+#tools.staticdir.dir: '/root/gitrepo/workspace/WIKI'
+tools.staticdir.dir: './'
 tools.sessions.on: True
 #tools.response_headers.on: True
 #tools.response_headers.headers: [('Content-Type', 'text/plain')]

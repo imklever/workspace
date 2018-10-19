@@ -50,23 +50,19 @@
 
     <h2> 环境: </h2>
     <pre>
-CentOS7.3 1611
-    </pre>
+CentOS7.3 1611</pre>
 
     <h2> 安装: </h2>
     <pre>
 yum install python-devel
-pip install matplotlib
-    </pre>
+pip install matplotlib</pre>
 
     <h2> 版本：:</h2>
     <pre>
 import matplotlib
-print matplotlib.__version__
-    </pre>
+print matplotlib.__version__</pre>
     <pre>
-'2.1.0'
-    </pre>
+'2.1.0'</pre>
 
     <h2> 1. 快速绘图:</h2>
     <h3> （1）使用pyplot绘图模块:</h3>
@@ -91,8 +87,7 @@ plt.title("pyplot first example")
 plt.ylim(-1.2,1.2)
 
 plt.legend()
-plt.show()
-    </pre>
+plt.show()</pre>
     <h3> （2）面向对象方式绘图:</h3>
     <code>_matplotlib_</code> 实际上是一套面向对象的绘图库,<br>
     它所绘制的图表中的每个绘图元素，例如线条、文字、刻度等在内存中都有一个对象与之对应。<br>
@@ -114,11 +109,9 @@ import matplotlib.pyplot as plt
 
 fig = plt.gcf()
 axes = plt.gca() 
-print fig, axes
-    </pre>
+print fig, axes</pre>
     <pre>
-Figure(640x480) AxesSubplot(0.125,0.11;0.775x0.77)
-    </pre>
+Figure(640x480) AxesSubplot(0.125,0.11;0.775x0.77)</pre>
     <h3> （3）配置属性:</h3>
     matplotlib所绘制图表的每个组成部分都和一个对象对应，<br>
     可以通过调用这些对象的属性设置方法 <code>_set\_\*()_</code> 或者pyplot模块的属性设置函数 <code>_set()_</code> 来设置它们的属性值。<br>
@@ -141,20 +134,17 @@ plt.setp(lines, color="r", linewidth=4.0)
 print line.get_linewidth()
 print plt.getp(lines[0], "color")
 
-plt.show()
-    </pre>
+plt.show()</pre>
     <pre>
 1.5
-r
-    </pre>
+r</pre>
     注意 <code>_getp()_</code> 和 <code>_setp()_</code> 不同同，它只能对一个对象进行操作，它有两利调法: <br>
     •指定屈性名：返冋对象的某个属性的值。<br>
     •不指定属性名：输出对象的所有属性和值。<br>
     下面通过getp()查看Figure对象的属性：
     <pre>
 f = plt.gcf()
-plt.getp(f)
-    </pre>
+plt.getp(f)</pre>
 
     <pre>
 agg_filter = None
@@ -188,16 +178,14 @@ transformed_clip_path_and_affine = (None, None)
 url = None
 visible = True
 window_extent = TransformedBbox(Bbox([[0.0, 0.0], [4.0, 3.0]]), Af...
-zorder = 0
-    </pre>
+zorder = 0</pre>
 
     <h3> （4）绘制多子图:</h3>
     一个Figure对象可以包含多个子图(Axes),在matplotlib中用Axes对象表示一个绘图区域<br>
     之前的例子中Figure对象只包括一个子图。<br>
     可以使用 <code>_subplot()_</code> 快速绘制包含多个子图的图表。
     <pre>
-subplot(numRows, numCols, plotNum)
-    </pre>
+subplot(numRows, numCols, plotNum)</pre>
     该函数前2个参数，将Figure分成 <code>_numRows_</code> 行， <code>_numCols_</code> 列个区域，<br>
     并以坐上角为1，从左到右，从上倒下编号，<br>
     <code>_plotNum_</code> 指定现在函数对应的是第几个区域，<br>
@@ -214,8 +202,7 @@ for idx, color in enumerate("rgbyck"):
     plt.subplot(3,2,1+idx, axisbg=color)
 
 #此行代码将使上面创建的3、4号子图删除，并重建一个更大子图。
-plt.subplot(3,1,2, axisbg="r")
-    </pre>
+plt.subplot(3,1,2, axisbg="r")</pre>
     如下程序演示一次在不同的图标的不同子图中绘制曲线：
     <pre>
 #!/bin/env python
@@ -236,8 +223,7 @@ for i in xrange(5):
     plt.plot(x, np.sin(i*x))
     plt.sca(ax2) #选择图表2的子图2
     plt.plot(x, np.cos(i*x))
-plt.show()
-    </pre>
+plt.show()</pre>
     使用 <code>_subplots()_</code> 可以一次性创建多个子图。
     <pre>
 #!/bin/env python
@@ -251,8 +237,7 @@ fig, axes = plt.subplots(2, 3)
 print axes.shape
 print b
 
-plt.show()
-    </pre>
+plt.show()</pre>
     <h3> （5）配置文件:</h3>
     <h3> （6）在图表中显示中文:</h3>
     <h2> 2. Artist对象:</h2>

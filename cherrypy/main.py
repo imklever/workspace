@@ -7,7 +7,7 @@ import time
 class WebApp(object):
     @cherrypy.expose
     def index(self):
-        return file('../WIKI/index.html')
+        return file('index.html')
 
     @cherrypy.expose
     def hello(self):

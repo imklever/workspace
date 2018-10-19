@@ -52,8 +52,7 @@
     <h3 id=1_1>内网主机:</h3>
     <pre>
 #ip: 192.168.248.37
-ssh -N -R 2223:localhost:22 root@10.240.217.107
-    </pre>
+ssh -N -R 2223:localhost:22 root@10.240.217.107</pre>
     <div class=note>
     <B>远端2223，本地22</B><br>
     该程序将连接外网服务器，并告知sshd绑定2223端口，并将2223端口接收的数据转发至内网主机端口22上<br>
@@ -65,8 +64,7 @@ ssh -N -R 2223:localhost:22 root@10.240.217.107
     <h3 id=1_2>外网服务器:</h3>
     <pre>
 #ip: 10.240.217.107
-ssh -p 2223 localhost
-    </pre>
+ssh -p 2223 localhost</pre>
     <div class=note>
     连接向本地2223端口的申请，将会通过sshd转发至远程内网的22端口上
     </div>
@@ -86,8 +84,7 @@ on host2:
 ssh -N -R 2223:localhost:2223 root@host1
 
 on host1:
-ssh -p 2223 root@host2
-    </pre>
+ssh -p 2223 root@host2</pre>
     
 
 </div>

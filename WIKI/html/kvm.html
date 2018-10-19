@@ -54,9 +54,7 @@
 [root@localhost]# <mark>virsh list</mark> --all
 Id    Name                           State
 ----------------------------------------------------
--     machine1610               shut off
-
-    </pre>
+-     machine1610               shut off</pre>
 
 
     <h3> step2. 获取磁盘镜像文件位置: </h3>
@@ -66,16 +64,14 @@ Id    Name                           State
 Target     Source
 ------------------------------------------------
 vda        /mnt/sdb/KVM/libvirt/machine1610.img
-hda        -
-    </pre>
+hda        -</pre>
 
 
     <h3> step3. 缩小需迁移的虚拟机的磁盘: </h3>
     eg：
     <pre>
 <mark>qemu-img convert</mark> -O qcow2 machine1610.img machine1610.new.img
-mv machine1610.new.img machine1610.img
-    </pre>
+mv machine1610.new.img machine1610.img</pre>
     <div class=note>
         [注意-O选项根据KVM虚拟机实际磁盘格式选择]<br>
         [此命应用场景：KVM 上创建的虚拟机分配磁盘为256GB，运行后至需要迁移时，仅使用约10GB的空间。du -h显示确实为10GB。但ls -hl看到的结果则为257G]<br>
@@ -87,16 +83,14 @@ mv machine1610.new.img machine1610.img
     <h3> step4. 获取需迁移虚拟机的xml文件：</h3>
     eg：
     <pre>
-<mark>virsh dumpxml</mark> machine1610 > machine1610.xml
-    </pre>
+<mark>virsh dumpxml</mark> machine1610 > machine1610.xml</pre>
 
 
     <h3> step5. 复制磁盘文件 </h3>
     将虚拟机的xml文件和经过qemu-image的img文件一同复制至目标host机上:<br>
     eg：
     <pre>
-<mark>scp</mark> machine1610.img machine1610.xml Des_hostIP:Des_path
-    </pre>
+<mark>scp</mark> machine1610.img machine1610.xml Des_hostIP:Des_path</pre>
     <div class=note>
         #当master和worker同时安装到同一台机器时，worker会自动升级twisted至其最新版本。<br>
         造成master的buildbot命令使用出错。<br>
@@ -116,13 +110,11 @@ vim machine1610.img
       &lt;target dev='vda' bus='virtio'/>
       &lt;alias name='virtio-disk0'/>
       &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
-    &lt;/disk>
-    </pre>
+    &lt;/disk></pre>
     <h3> step7. 在目标host上创建虚拟机件： </h3>
     eg：
     <pre>
-<mark>virsh define</mark> machine1610.xml
-    </pre>
+<mark>virsh define</mark> machine1610.xml</pre>
     <h3> step8. 确定虚拟机使用的网络： </h3>
     <div class=note>
         确定虚拟机使用的网络确实存在.若不存在，创建或更换

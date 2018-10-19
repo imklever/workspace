@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Docker</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
+
+    <h1 style="text-align:center;">Docker</h1>
+
+    <h2>install:</h2>
+        <h3>in centos:</h3>
+            <pre>yum install -y docker</pre>
+        <h3>in ubuntu:</h3>
+            <pre>apt-get install docker.io</pre>
+
+
+
+    <h2>command list:</h2>
+
+        <h3>Container:</h3>
+            <pre>
+docker ps -a
+docker create  -i -t -p80:80 --name &lt;container name&gt; &lt;image name&gt;   #create container
+docker run -d -p80:80 --name &lt;container name&gt; &lt;image name&gt;          #create and run the container with daemon mode
+docker run -i -t -d -p80:80 --name &lt;container name&gt; &lt;image name&gt;    #create and run the container with interactive mode
+docker rename &lt;container name&gt; &lt;new name&gt;                           #rename a container
+
+docker rm  &lt;container name&gt;                                         #delete container
+
+docker inspect  &lt;container name&gt;                                    #output info of the container
+
+docker start &lt;container name&gt;                                       #start a container
+docker stop &lt;container name&gt;                                        #stop a container
+
+docker export -o &lt;container file&gt; &lt;container ID&gt;                    #export a container
+docker import &lt;container file&gt;                                      #import a container
+
+docker exec &lt;container name&gt; &lt;command&gt;                              #execute command in docker 
+docker attach -i &lt;container name&gt;                                   #go into the container, then you can use it in interactive mode</pre>
+
+        <h3>Image:</h3>
+            <pre>
+docker images
+docker commit -m &lt;'message'&gt; &lt;container ID&gt; &lt;REPOSITORY:TAG&gt;    #commit the changes into the base image to create a new image
+docker save -o &lt;image file&gt; &lt;image ID&gt;                          #save the image into a image file
+docker load -i &lt;image file&gt;                                     #load the image from a image file
+docker rmi  &lt;image name&gt;                                        #delete image
+docker tag &lt;image ID&gt; &lt;REPOSITORY:TAG&gt;</pre>
+
+        <h3>Data volume:</h3>
+            <pre>
+docker volume create --name test_volume              #create a data volume
+docker volume ls                                     #list data volume
+docker volume inspect test_volume                    #show the info of data volume
+docker volume rm test_volume                         #delete a data volume
+docker create -ti -v &lt;path in host&gt;:&lt;path in container&gt;:ro -v &lt;volume name&gt;:&lt;path in container&gt;:ro --name &lt;container name&gt; &lt;image name&gt;      #mount the data volume into the container,ro means read only
+    eg: docker create -ti -v /root:/volumes/volume2:ro -v volume1:/volumes/volume1 --name test_container ubuntu</pre>
+
+    <!---
+    <h2>ref:</h2>
+    <a target= _blank href=ref>ref</a><br>
+    <a target= _blank href=ref>ref</a><br>
+    --->
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+
+
+</html>

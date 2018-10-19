@@ -3,7 +3,7 @@
 
 <head>
 
-<title>sed</title>
+<title>CherryPy</title>
 
 <meta charset="utf-8">
 <link rel="icon" href="../icon/title.png" type="image/x-icon">
@@ -27,37 +27,42 @@
 </ul>
 
 <nav>
-    <h2> 目录：</h2>
+    <h2>目录:</h2>
     <ul>
-        <li><a href="#1">变量保存</a></li>
-        <li><a href="#2">删除匹配行到匹配行</a></li>
-        <li><a href="#ref">ref</a></li>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
     </ul>
 </nav>
 
 <div class="contant">
     <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
     <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
-    <button onClick=clearTimeout(timeout_id)>stop auto reload</button>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
 
-    <h1 style="text-align:center;">sed</h1>
+    <h1 style="text-align:center;">CherryPy</h1>
+
+    <h2></h2>
 
 
-    <h3 id=1>变量保存:</h3>
+
+    <h3></h3>
     <pre>
-sed 's/\(前一部分\)要替换的部分\(后一部分\)/\1替换后的字符串\2/'
-sed '/start part/,/end part/p'</pre>
+    <mark></mark>
+    </pre>
 
 
-    <h3 id=2>删除匹配行到匹配行:</h3>
-    <pre>
-sed '/start/,/stop/d'
-sed '1,/stop/d'
-sed 'start,$d'</pre>
+    <div class=note>
+        <code></code>
+    </div>
 
-    <h2 id=ref>ref:</h2>
-    <a target= _blank href="http://man.linuxde.net/sed">http://man.linuxde.net/sed</a><br>
-    <a target= _blank href="http://bbs.51cto.com/thread-1148265-1.html">http://bbs.51cto.com/thread-1148265-1.html</a><br>
+
+
+    <h2>ref:</h2>
+    <a target= _blank href=https://docs.cherrypy.org/en/latest/index.html>docs.cherrypy.org</a><br>
+    <a target= _blank href=https://www.cnblogs.com/rader/archive/2013/11/13/3421054.html>MethodDispatcher—Cherrypy对REST的支持</a><br>
+    <a target= _blank href=http://blog.chinaunix.net/xmlrpc.php?r=blog/article&uid=30065118&id=4712484>CherryPy教程- Start the Turtorial(1)</a><br>
+    <a target= _blank href=http://ju.outofmemory.cn/entry/106439>CherryPy: 一个极简主义Python Web框架(2)——基础</a><br>
 </div>
 
 <footer>

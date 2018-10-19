@@ -57,8 +57,7 @@ tmpfs               tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
 /dev/vda1           xfs      1014M  382M  633M  38% /boot
 /dev/mapper/cl-home xfs       202G  4.2G  197G   3% /home
 tmpfs               tmpfs     380M   12K  380M   1% /run/user/42
-tmpfs               tmpfs     380M     0  380M   0% /run/user/0
-    </pre>
+tmpfs               tmpfs     380M     0  380M   0% /run/user/0</pre>
 
 
 
@@ -68,8 +67,7 @@ tmpfs               tmpfs     380M     0  380M   0% /run/user/0
   LV   <mark>VG</mark> Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
   home cl -wi-ao---- <201.12g
   root cl -wi-ao----   50.00g
-  swap cl -wi-ao----   <3.88g
-    </pre>
+  swap cl -wi-ao----   <3.88g</pre>
 
 
 
@@ -95,8 +93,7 @@ tmpfs               tmpfs     380M     0  380M   0% /run/user/0
   Total PE              65279
   Alloc PE / Size       65278 / 254.99 GiB
   Free  PE / Size       1 / 4.00 MiB
-  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-    </pre>
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx</pre>
 
 
 
@@ -163,8 +160,7 @@ Command (m for help): w
 The partition table has been altered!
 
 Calling ioctl() to re-read partition table.
-Syncing disks.
-    </pre>
+Syncing disks.</pre>
 
 
 
@@ -180,8 +176,7 @@ Disk label type: dos
 Disk identifier: 0xb77dba64
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/vdb1            2048   536870911   268434432   83  Linux
-    </pre>
+/dev/vdb1            2048   536870911   268434432   83  Linux</pre>
 
 
 
@@ -196,8 +191,7 @@ data     =                       bsize=4096   blocks=67108608, imaxpct=25
 naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
 log      =internal log           bsize=4096   blocks=32767, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
-realtime =none                   extsz=4096   blocks=0, rtextents=0
-    </pre>
+realtime =none                   extsz=4096   blocks=0, rtextents=0</pre>
 
 
 
@@ -206,16 +200,14 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 [root@dev_kvm ~]# <mark>pvcreate</mark> /dev/vdb1
 WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Wiping xfs signature on /dev/vdb1.
-  Physical volume "/dev/vdb1" successfully created.
-    </pre>
+  Physical volume "/dev/vdb1" successfully created.</pre>
 
 
 
     <h2> vgextend cl /dev/vdb1 </h2>
     <pre>
 [root@dev_kvm ~]# <mark>vgextend cl /dev/vdb1</mark>
-  Volume group "cl" successfully extended
-    </pre>
+  Volume group "cl" successfully extended</pre>
 
 
 
@@ -241,9 +233,7 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Total PE              130814
   Alloc PE / Size       65278 / 254.99 GiB
   Free  PE / Size       65536 / 256.00 GiB
-  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-
-    </pre>
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx</pre>
 
 
 
@@ -408,9 +398,7 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
   Total PE              130814
   Alloc PE / Size       130670 / <510.43 GiB
   Free  PE / Size       144 / 576.00 MiB
-  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx
-
-    </pre>
+  VG UUID               rvAzcB-uu3B-60oJ-9PbA-KleV-trNw-DVaWrx</pre>
 
 
 
@@ -419,8 +407,7 @@ WARNING: xfs signature detected on /dev/vdb1 at offset 0. Wipe it? [y/n]: y
 [root@dev_kvm ~]# <mark>resize2fs</mark> /dev/mapper/cl-root 
 resize2fs 1.42.9 (28-Dec-2013)
 resize2fs: Bad magic number in super-block while trying to open /dev/mapper/cl-root
-Couldn't find valid filesystem superblock.
-    </pre>
+Couldn't find valid filesystem superblock.</pre>
 
 
 
@@ -436,8 +423,7 @@ naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
 log      =internal               bsize=4096   blocks=6400, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
-data blocks changed from 13107200 to 80068608
-    </pre>
+data blocks changed from 13107200 to 80068608</pre>
 
 
 
@@ -453,8 +439,7 @@ tmpfs               tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
 /dev/vda1           xfs      1014M  382M  633M  38% /boot
 /dev/mapper/cl-home xfs       202G  4.2G  197G   3% /home
 tmpfs               tmpfs     380M   12K  380M   1% /run/user/42
-tmpfs               tmpfs     380M     0  380M   0% /run/user/0
-    </pre>
+tmpfs               tmpfs     380M     0  380M   0% /run/user/0</pre>
 </div>
 
 <footer>

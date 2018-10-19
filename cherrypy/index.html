@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!---
+<link href="/static/css/style.css" rel="stylesheet">
+--->
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+        $("#get-rest1").click(function(e) {
+            $.get("rest1/a/b")
+            .done(function(string) {
+                $("#the-string").show();
+                $("#the-string input").val(string);
+                });
+            e.preventDefault();
+            });
+
+        $("#post-rest1").click(function(e) {
+            $.post("/rest1", {"length": $("input[name='length']").val()})
+            .done(function(string) {
+                $("#the-string").show();
+                $("#the-string input").val(string);
+                });
+            e.preventDefault();
+            });
+
+        $("#put-rest1").click(function(e) {
+            $.ajax({
+                type: "PUT",
+                url: "/rest1",
+                })
+            .done(function(string) {
+                //alert("Replaced!");
+                $("#the-string").show();
+                $("#the-string input").val(string);
+                });
+            e.preventDefault();
+            });
+
+        $("#delete-rest1").click(function(e) {
+            $.ajax({
+                type: "DELETE",
+                url: "/rest1"
+                })
+            .done(function(string) {
+                //$("#the-string").hide();
+                $("#the-string").show();
+                $("#the-string input").val(string);
+                });
+            e.preventDefault();
+            });
+
+});
+</script>
+</head>
+
+
+<body>
+<input type="text" value="8" name="length"/><br>
+<button id="get-rest1">get rest1</button><br>
+<button id="put-rest1">put rest1</button><br>
+<button id="post-rest1">post rest1</button><br>
+<button id="delete-rest1">delete rest1</button><br>
+
+<div id="the-string">
+    <input type="text" />
+</div><br>
+
+<a href=http://10.240.220.37:7000>http://10.240.220.37:7000</a><br>
+<a href=http://10.240.220.38:7000>http://10.240.220.38:7000</a><br>
+<a href=http://10.240.220.39:7000>http://10.240.220.39:7000</a><br>
+
+
+</body>
+</html>

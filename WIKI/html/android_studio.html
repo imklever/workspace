@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Android</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
+
+    <h1 style="text-align:center;">Android</h1>
+
+    <h2>软件下载地址:</h2>
+    <a target= _blank href=http://www.android-studio.org/>http://www.android-studio.org/</a><br>
+
+    <h2>创建工程:</h2>
+        <h2>---启动页:</h2>
+        <div>
+            <div class="scale scale2">
+                <a href="../picture/start_page1.png"><img src="../picture/start_page1.png" alt="启动页面1"/></a>
+            </div>
+            <div class="scale scale2">
+                <a href="../picture/start_page2.png"><img src="../picture/start_page2.png" alt="启动页面2"/></a>
+            </div>
+        </div>
+        
+        <div style="clear:both">
+        </div>
+
+        <h3>---创建新的工程:</h3>
+        <div>
+            <div class="scale scale2">
+                <a href="../picture/api_device.png"><img src="../picture/api_device.png" alt="api_device"/></a>
+            </div>
+            <div class="scale scale2">
+                <a href="../picture/api_version.png"><img src="../picture/api_version.png" alt="api version"/></a>
+            </div>
+        </div>
+        
+        <div style="clear:both">
+        </div>
+
+        <h3>---选择空的activity 模板:</h3>
+        <div>
+            <div class="scale scale2">
+                <a href="../picture/select_activity.png"><img src="../picture/select_activity.png" alt="select_acticity"/></a>
+            </div>
+            <div class="scale scale2">
+                <a href="../picture/main_page.png"><img src="../picture/main_page.png" alt="main_page"/></a>
+            </div>
+        </div>
+        
+        <div style="clear:both">
+        </div>
+
+    <h2>手动添加Activity文件:</h2>
+        <h3>---添加kotlin Activity文件:</h3>
+        <div>
+            <div class="scale scale2">
+                <a href="../picture/new_activity.png"><img src="../picture/new_activity.png" alt="new_activity"/></a>
+            </div>
+        </div>
+        <div style="clear:both">
+        </div>
+        <div>
+            <div class="scale scale3">
+                <a href="../picture/my_activity1.png"><img src="../picture/my_activity1.png" alt="main_page"/></a>
+            </div>
+            <div class="scale scale3">
+                <a href="../picture/my_activity2.png"><img src="../picture/my_activity2.png" alt="main_page"/></a>
+            </div>
+        </div>
+        <div style="clear:both">
+        </div>
+        <div>
+            <div class="scale scale2">
+                <a href="../picture/my_activity3.png"><img src="../picture/my_activity3.png" alt="main_page"/></a>
+            </div>
+        </div>
+        
+        <div style="clear:both">
+        </div>
+        <h3>---在MyActivity文件中添加如下代码:</h3>
+            <pre>
+package com.yqnt4.myapplication
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+
+//Activity 类必须是Activity 的直接或间接子类
+class MainActivity : AppCompatActivity()
+{
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        //重写的类必须调用父类中相同的函数
+        super.onCreate(savedInstanceState)
+    }
+}</pre>
+            <div class=note><code>onCreate()</code>函数是<code>Activity</code>的初始化函数，也是<code>Activity</code>的7个生命周期函数之一</div>
+
+    <h2>创建和加载布局:</h2>
+<!---
+    <h2></h2>
+        <h3></h3>
+            <pre>
+            <mark></mark>
+            </pre>
+
+    <div class=note>
+        <code></code>
+    </div>
+
+
+
+    <h2>ref:</h2>
+    <a target= _blank href=http://www.android-studio.org/>http://www.android-studio.org/</a><br>
+    <a target= _blank href=ref>ref</a><br>
+--->
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>

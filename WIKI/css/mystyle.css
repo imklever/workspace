@@ -54,3 +54,39 @@
 .link {
     overflow-x:auto;
 }
+
+//.scale {
+//    width:30%;
+//    height: auto;
+//}
+
+.scale img{
+    background-size:contain|cover;
+    width:100%;
+    height: auto;
+}
+
+.scale2 img{
+    float:left;
+    margin:1% 1% 1% 1%;
+    width:48%;
+    height: auto;
+}
+.scale3 img{
+    float:left;
+    margin:1% 1% 1% 1%;
+    width:28%;
+    height: auto;
+}
+.scale4 img{
+    float:left;
+    margin:1% 1% 1% 1%;
+    width:23%;
+    height: auto;
+}
+.scale5 img{
+    float:left;
+    margin:1% 1% 1% 1%;
+    width:18%;
+    height: auto;
+}

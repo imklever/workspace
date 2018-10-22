@@ -42,13 +42,18 @@
 
     <h1 style="text-align:center;">Android</h1>
 
-    <h2>启动页:</h2>
-        <a href="android_studio.html">Android Studio 创建引导</a>
+    <h2>启动页</h2>
+        <img src="../picture/start_page1.png">qidongye</img>
+        <h3></h3>
+            <pre>
+            <mark></mark>
+            </pre>
 
 
-<!---
-    <h2>:</h2>
-        <h3>:</h3>
+
+
+    <h2></h2>
+        <h3></h3>
             <pre>
             <mark></mark>
             </pre>
@@ -62,7 +67,6 @@
     <h2>ref:</h2>
     <a target= _blank href=http://www.android-studio.org/>http://www.android-studio.org/</a><br>
     <a target= _blank href=ref>ref</a><br>
---->
 </div>
 
 <footer>

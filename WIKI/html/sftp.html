@@ -3,7 +3,7 @@
 
 <head>
 
-<title>template</title>
+<title>SFTP</title>
 
 <meta charset="utf-8">
 <link rel="icon" href="../icon/title.png" type="image/x-icon">
@@ -40,16 +40,28 @@
     <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
     <button onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
 
-    <h1 style="text-align:center;"></h1>
+    <h1 style="text-align:center;">SFTP</h1>
 
+    <h2>安装:</h2>
+        <pre>yum isntall vsftpd</pre>
+    <h2>配置:</h2>
+    <code>vim /etc/vsftpd/vsftpd.conf</code>
+        <pre>anon_root=/mnt/vsftpd</pre>
+    <h2>启动:</h2>
+        <pre>systemctl start vsftpd</pre>
 <!---
     <h2>:</h2>
         <h3>:</h3>
-            <pre><mark></mark></pre>
+            <pre>
+            <mark></mark>
+            </pre>
+
 
     <div class=note>
         <code></code>
     </div>
+
+
 
     <h2>ref:</h2>
     <a target= _blank href=ref>ref</a><br>

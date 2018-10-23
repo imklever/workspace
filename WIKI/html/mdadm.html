@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>template</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
+
+    <h1 style="text-align:center;"></h1>
+
+    <h2>step1:</h2>
+    安装软件mdadm 并创建raid5
+        <pre>
+yum install mdadm
+
+mdadm -C /dev/md5 -ayes -l5 -n10 -x1 /dev/sd[b,c,d,e,f,g,h,i,j,k,l]1
+or
+mdadm -C /dev/md5 -ayes -l5 -n10 /dev/sd[b,c,d,e,f,g,h,i,j,k]1 -x1 /dev/sdl1</pre>
+    <h2>step2:</h2>
+    对raid5进行分区
+        <pre>
+parted /dev/md5
+    >>mklabel gpt
+    >>mkpart primary 0 -1
+    >>print
+    >>quit</pre>
+    <h2>step3:</h2>
+    对raid5进行格式化，安装文件系统
+        <pre>
+mkfs.xfs -f /dev/md5p1</pre>
+    <h2>step4:</h2>
+    挂载raid5到目录
+        <pre>
+mkdir /mnt/raid5_disk
+mount -t /dev/md5p1 /mnt/raid5_disk</pre>
+    <h2>step5:</h2>
+    修改用于组件raid5的磁盘数量，只用于增加磁盘数，减小磁盘数时，会出现错误。
+        <pre>
+mdadm -G /dev/md5 -n10</pre>
+    <h2>step6:</h2>
+    删除raid5
+        <pre>
+#!/bin/bash
+        
+for i in b c d e f g h i j k l
+do
+    echo sd${i}
+    mdadm /dev/md5 --fail /dev/sd${i}1 --remove /dev/sd${i}1
+    mdadm --misc --zero-superblock /dev/sd${i}1
+done
+
+mdadm --stop /dev/md5</pre>
+    <h2>其他指令:</h2>
+        <pre>
+watch -n 1 "mdadm -D /dev/md5;cat /proc/mdstat"
+
+mdadm --grow /dev/md5 --array-size   80G
+mdadm -G /dev/md5 -n9
+
+mdadm -D /dev/md5
+cat /proc/mdstat</pre>
+    <h2>重建失败:</h2>
+    由于不确定原因，导致硬盘分区被删除，启动失败 进入应急模式，修改/etc/fstab 注释掉raid的挂载信息，重新进入系统成功。 接下来需要恢复分区 使用parted命令
+    <pre>
+    parted /dev/sdb
+    rescue
+    start？ 0
+    End？3T
+    Yes</pre>
+    使用 mdadm -E 查看之前的raid信息。
+    <pre>
+    [root@node1 gpart-0.3]# mdadm -E /dev/sdb1 
+    /dev/sdb1:
+      Magic : a92b4efc
+           Version : 1.2
+       Feature Map : 0x0
+        Array UUID : f49bd6da:ed6a8bb7:931b3349:e3972784
+              Name : host-72:0
+     Creation Time : Wed Nov 22 10:53:36 2017
+        Raid Level : raid0
+      Raid Devices : 11
+
+    Avail Dev Size : 5859112823 (2793.84 GiB 2999.87 GB)
+       Data Offset : 262144 sectors
+      Super Offset : 8 sectors
+      Unused Space : before=262064 sectors, after=18446744073709551609 sectors
+             State : clean
+       Device UUID : 783e2355:4e902277:59cbf79c:24986412
+
+       Update Time : Wed Nov 22 10:53:36 2017
+     Bad Block Log : 512 entries available at offset 8 sectors
+          Checksum : 44b8abf4 - correct
+            Events : 0
+
+        Chunk Size : 512K
+
+       Device Role : Active device 0
+       Array State : AAAAAAAAAAA ('A' == active, '.' == missing, 'R' == replacing)
+    [root@sungn-node1 gpart-0.3]# 
+    </pre>
+
+    尝试重建
+    <pre>
+mdadm -A /dev/md0 /dev/sd[b-l]1
+mdadm: failed to add /dev/sdb1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdc1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdd1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sde1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdf1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdg1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdh1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdi1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdj1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdk1 to /dev/md0: Invalid argument
+mdadm: failed to add /dev/sdl1 to /dev/md0: Invalid argument
+mdadm: failed to RUN_ARRAY /dev/md0: Invalid argument</pre>
+
+    查看错误信息
+    <pre>
+dmesg
+[ 2530.017400] md: md0 stopped.
+[ 2530.314664] md: sdc1 does not have a valid v1.2 superblock, not importing!
+[ 2530.314669] md: md_import_device returned -22
+[ 2530.314822] md: sdd1 does not have a valid v1.2 superblock, not importing!
+[ 2530.314831] md: md_import_device returned -22
+[ 2530.315014] md: sde1 does not have a valid v1.2 superblock, not importing!
+[ 2530.315023] md: md_import_device returned -22
+[ 2530.315212] md: sdf1 does not have a valid v1.2 superblock, not importing!
+[ 2530.315221] md: md_import_device returned -22
+[ 2530.315388] md: sdg1 does not have a valid v1.2 superblock, not importing!
+[ 2530.315398] md: md_import_device returned -22
+[ 2530.315581] md: sdh1 does not have a valid v1.2 superblock, not importing!
+[ 2530.315589] md: md_import_device returned -22
+[ 2530.315798] md: sdi1 does not have a valid v1.2 superblock, not importing!
+[ 2530.315807] md: md_import_device returned -22
+[ 2530.315983] md: sdj1 does not have a valid v1.2 superblock, not importing!
+[ 2530.315992] md: md_import_device returned -22
+[ 2530.316156] md: sdk1 does not have a valid v1.2 superblock, not importing!
+[ 2530.316172] md: md_import_device returned -22
+[ 2530.316833] md: sdl1 does not have a valid v1.2 superblock, not importing!
+[ 2530.316840] md: md_import_device returned -22
+[ 2530.328511] md: sdb1 does not have a valid v1.2 superblock, not importing!
+[ 2530.328522] md: md_import_device returned -22
+[ 2530.328540] md: md0 stopped.</pre>
+
+    更改参数 终极指令
+    <pre>
+mdadm -A --update=devicesize -f /dev/md0 /dev/sd[b-l]1</pre>
+    <a target= _blank href="https://unix.stackexchange.com/questions/324313/md-raid5-no-valid-superblock-but-mdadm-examine-says-everything-is-fine">https://unix.stackexchange.com/questions/324313/md-raid5-no-valid-superblock-but-mdadm-examine-says-everything-is-fine</a><br>
+<!---
+    <h2>:</h2>
+        <h3>:</h3>
+            <pre><mark></mark></pre>
+
+    <div class=note>
+        <code></code>
+    </div>
+
+    <h2>ref:</h2>
+    <a target= _blank href=ref>ref</a><br>
+--->
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>

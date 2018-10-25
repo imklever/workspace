@@ -1,0 +1,11 @@
+systemd file location:
+/etc/systemd/system/devstack@keystone.service
+
+ExecStart:
+ExecStart = /usr/local/bin/uwsgi --procname-prefix keystone --ini /etc/keystone/keystone-uwsgi-public.ini
+
+uwsgi ini file:
+/etc/keystone/keystone-uwsgi-public.ini
+
+keystone python file
+wsgi-file = /usr/local/bin/keystone-wsgi-public

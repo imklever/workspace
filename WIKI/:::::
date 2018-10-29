@@ -131,7 +131,6 @@ sudo docker exec -ti laughing_rosalind /bin/bash
         <li><a target= _blank href=https://www.redhat.com/en/technologies/management/cloudforms>Red Hat CloudForms</a>
         <li><a target= _blank href=https://en.wikipedia.org/wiki/ManageIQ>Wikipedia</a>
         <li><a target= _blank href="https://github.com/pemcg/mastering-automation-in-cloudforms-and-manageiq">Mastering Automation in ManageIQ</a>
-        <li><a target= _blank href="https://github.com/pemcg/manageiq-automation-howto-guide">A How-to Guide for working with ManageIQ Automation</a>
     </ul>
 </div>
 

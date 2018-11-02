@@ -1,0 +1,10 @@
+IMM: 10.240.217.13
+用户名密码 
+LCTC03
+SYS201703
+
+
+
+yum install -y python-tripleoclient
+yum install -y libvirt-client libvirt-daemon qemu-kvm libvirt-daemon-driver-qemu libvirt-daemon-kvm virt-install bridge-utils rsync
+yum install -y python-virtualbmc

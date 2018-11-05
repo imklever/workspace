@@ -1,1 +1,1 @@
-time ./dd.sh > out.log 2>/dev/null
+time ./dd.sh 2>/dev/null

@@ -11,7 +11,7 @@ echo "hello" > ./inputfile
 
 sectors=421773312
 #sectors=10000
-step=10000
+step=1000000
 for i in `seq 0 ${step} ${sectors}`
 do
     str=`printf "%010d\n" "$i"`
@@ -23,7 +23,6 @@ do
     echo "write: ${i}/${sectors} ${rate}"
 done
 
-exit
 for i in `seq 0 ${step} ${sectors}`
 do
     str=`printf "%010d\n" "$i"`
@@ -32,7 +31,7 @@ do
 
     rate=`echo "scale=4;$i/$sectors*100" | bc`%
 
-    echo "read: ${i}/${sectors} $rate"
+    echo "read: ${i}/${sectors} $rate $readstr"
     if [ $readstr != $str ];then
         echo "wrong!"
         echo "supposed: $str"

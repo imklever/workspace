@@ -1,0 +1,81 @@
+[root@bootstrap-node xrdp-0.9.3.1]# systemctl status xrdp-sesman -l
+● xrdp-sesman.service - xrdp session manager
+Loaded: loaded (/usr/lib/systemd/system/xrdp-sesman.service; disabled; vendor preset: disabled)
+Active: active (running) since Sun 2018-11-04 21:43:26 EST; 16s ago
+Docs: man:xrdp-sesman(8)
+man:sesman.ini(5)
+Process: 29305 ExecStop=/usr/local/sbin/xrdp-sesman $SESMAN_OPTIONS --kill (code=exited, status=0/SUCCESS)
+Process: 29320 ExecStart=/usr/local/sbin/xrdp-sesman $SESMAN_OPTIONS (code=exited, status=0/SUCCESS)
+Main PID: 29321 (xrdp-sesman)
+Tasks: 1
+CGroup: /system.slice/xrdp-sesman.service
+└─29321 /usr/local/sbin/xrdp-sesman
+
+Nov 04 21:43:26 bootstrap-node systemd[1]: Starting xrdp session manager...
+Nov 04 21:43:26 bootstrap-node xrdp-sesman[29320]: (29320)(140236127418496)[DEBUG] libscp initialized
+Nov 04 21:43:26 bootstrap-node xrdp-sesman[29320]: (29320)(140236127418496)[DEBUG] Testing if xrdp-sesman can listen on 127.0.0.1 port 3350.
+Nov 04 21:43:26 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[INFO ] starting xrdp-sesman with pid 29321
+Nov 04 21:43:26 bootstrap-node xrdp-sesman[29320]: (29320)(140236127418496)[DEBUG] Closed socket 5 (AF_INET 127.0.0.1:3350)
+Nov 04 21:43:26 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[INFO ] listening to port 3350 on 127.0.0.1
+Nov 04 21:43:26 bootstrap-node systemd[1]: Started xrdp session manager.
+
+
+
+
+
+Nov 04 21:46:27 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[INFO ] A connection received from 127.0.0.1 port 33078
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[INFO ] ++ created session (access granted): username root, ip 10.104.206.25:54590 - socket: 12
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[INFO ] starting Xorg session...
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[DEBUG] Closed socket 9 (AF_INET 0.0.0.0:5910)
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[DEBUG] Closed socket 9 (AF_INET 0.0.0.0:0)
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[DEBUG] Closed socket 9 (AF_INET 0.0.0.0:5913)
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[DEBUG] Closed socket 9 (AF_INET 0.0.0.0:6013)
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[DEBUG] Closed socket 9 (AF_INET 0.0.0.0:6213)
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29321]: (29321)(140236127418496)[DEBUG] Closed socket 8 (AF_INET 127.0.0.1:3350)
+Nov 04 21:46:28 bootstrap-node xrdp-sesman[29336]: (29336)(140236127418496)[INFO ] calling auth_start_session from pid 29336
+
+
+
+
+
+
+
+
+
+[root@bootstrap-node xrdp-0.9.3.1]# systemctl status xrdp -l       
+● xrdp.service - xrdp daemon
+Loaded: loaded (/usr/lib/systemd/system/xrdp.service; disabled; vendor preset: disabled)
+Active: active (running) since Sun 2018-11-04 21:43:27 EST; 30s ago
+Docs: man:xrdp(8)
+man:xrdp.ini(5)
+Process: 29244 ExecStop=/usr/local/sbin/xrdp $XRDP_OPTIONS --kill (code=exited, status=0/SUCCESS)
+Process: 29322 ExecStart=/usr/local/sbin/xrdp $XRDP_OPTIONS (code=exited, status=0/SUCCESS)
+Main PID: 29323 (xrdp)
+Tasks: 1
+CGroup: /system.slice/xrdp.service
+└─29323 /usr/local/sbin/xrdp
+
+Nov 04 21:43:26 bootstrap-node systemd[1]: Starting xrdp daemon...
+Nov 04 21:43:26 bootstrap-node xrdp[29322]: (29322)(140432900327488)[DEBUG] Testing if xrdp can listen on 0.0.0.0 port 3389.
+Nov 04 21:43:26 bootstrap-node xrdp[29322]: (29322)(140432900327488)[DEBUG] Closed socket 7 (AF_INET 0.0.0.0:3389)
+Nov 04 21:43:26 bootstrap-node systemd[1]: PID file /var/run/xrdp.pid not readable (yet?) after start.
+Nov 04 21:43:27 bootstrap-node systemd[1]: Started xrdp daemon.
+Nov 04 21:43:28 bootstrap-node xrdp[29323]: (29323)(140432900327488)[INFO ] starting xrdp with pid 29323
+Nov 04 21:43:28 bootstrap-node xrdp[29323]: (29323)(140432900327488)[INFO ] listening to port 3389 on 0.0.0.0
+[root@bootstrap-node xrdp-0.9.3.1]# 
+Nov 04 21:46:27 bootstrap-node xrdp[29332]: (29332)(140432900327488)[INFO ] Cannot find keymap file /etc/xrdp/km-00000804.ini
+Nov 04 21:46:27 bootstrap-node xrdp[29332]: (29332)(140432900327488)[INFO ] Cannot find keymap file /etc/xrdp/km-00000804.ini
+Nov 04 21:46:27 bootstrap-node xrdp[29332]: (29332)(140432900327488)[INFO ] Loading keymap file /etc/xrdp/km-00000409.ini
+Nov 04 21:46:27 bootstrap-node xrdp[29332]: (29332)(140432900327488)[WARN ] local keymap file for 0x00000804 found and doesn't match built in keymap, using local keymap file
+Nov 04 21:46:27 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] xrdp_wm_log_msg: connecting to sesman ip 127.0.0.1 port 3350
+Nov 04 21:46:28 bootstrap-node xrdp[29332]: (29332)(140432900327488)[INFO ] xrdp_wm_log_msg: sesman connect ok
+Nov 04 21:46:28 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] xrdp_wm_log_msg: sending login info to session manager, please wait...
+Nov 04 21:46:28 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] return value from xrdp_mm_connect 0
+Nov 04 21:46:28 bootstrap-node xrdp[29332]: (29332)(140432900327488)[INFO ] xrdp_wm_log_msg: login successful for display 13
+Nov 04 21:46:28 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] xrdp_wm_log_msg: started connecting
+Nov 04 21:46:31 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] Closed socket 19 (AF_UNIX)
+Nov 04 21:46:35 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] Closed socket 19 (AF_UNIX)
+Nov 04 21:46:38 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] Closed socket 19 (AF_UNIX)
+Nov 04 21:46:42 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] Closed socket 19 (AF_UNIX)
+Nov 04 21:46:45 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] Closed socket 19 (AF_UNIX)
+Nov 04 21:46:49 bootstrap-node xrdp[29332]: (29332)(140432900327488)[DEBUG] Closed socket 19 (AF_UNIX)

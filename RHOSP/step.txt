@@ -3,8 +3,14 @@ IMM: 10.240.217.13
 LCTC03
 SYS201703
 
+server:10.240.220.22
+
 
 
 yum install -y python-tripleoclient
 yum install -y libvirt-client libvirt-daemon qemu-kvm libvirt-daemon-driver-qemu libvirt-daemon-kvm virt-install bridge-utils rsync
 yum install -y python-virtualbmc
+
+virt-install --name undercloud --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network network=rhosp --graphics=vnc --hvm --os-variant=rhel7
+
+virt-install --name undercloud2 --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=512 --network bridge=br0 --graphics=vnc --hvm --os-variant=rhel7 --initrd-inject=/root/ks.cfg --extra-args "ks=file:/ks.cfg"

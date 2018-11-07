@@ -1,11 +1,14 @@
 host:
 #############################################
 IMM: 10.240.217.13
-用户名密码 
+用户名密码:
 LCTC03
 SYS201703
 
 server:10.240.220.22
+用户名密码:
+root
+passw0rd
 
 
 echo "10.240.217.163 sungn-localsa.labs.lenovo.com" >> /etc/hosts
@@ -16,8 +19,13 @@ subscription-manager register --org="Lenovo_Open_Cloud" --activationkey="Cloud D
 
 
 yum install -y libvirt-client libvirt-daemon qemu-kvm libvirt-daemon-driver-qemu libvirt-daemon-kvm virt-install bridge-utils rsync
+brctl addbr br-ex
+brctl addbr br-ctlplane
 
-virt-install --name undercloud --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network network=rhosp --graphics=vnc --hvm --os-variant=rhel7
+original one:
+#virt-install --name undercloud --memory=16384 --vcpus=4 --location /var/lib/libvirt/images/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br-ex --network bridge=br-ctlplane --graphics=vnc --hvm --os-variant=rhel7
+#virt-install --name undercloud --memory=16384 --vcpus=4 --location /var/lib/libvirt/images/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network bridge=br-ex --network bridge=br-ctlplane --graphics=vnc --hvm --os-variant=rhel7
+#virt-install --name undercloud --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network network=rhosp --graphics=vnc --hvm --os-variant=rhel7
 
 #virt-install --name undercloud2 --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=512 --network bridge=br0 --graphics=vnc --hvm --os-variant=rhel7 --initrd-inject=/root/ks.cfg --extra-args "ks=file:/ks.cfg"
 
@@ -49,7 +57,7 @@ undercontroller:
 #############################################
 echo "10.240.217.163 sungn-localsa.labs.lenovo.com" >> /etc/hosts
 rpm -Uvh http://sungn-localsa.labs.lenovo.com/pub/katello-ca-consumer-latest.noarch.rpm
-hostnamectl set-hostname leo-undercoloud
+hostnamectl set-hostname leo-undercoloud.lenovo.com
 subscription-manager register --org="Lenovo_Open_Cloud" --activationkey="Cloud Development key"
 
 useradd stack

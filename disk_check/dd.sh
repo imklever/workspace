@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sectors=524285952
-step=1000000
+step=10000
 
 #write data
 for i in `seq 0 ${step} ${sectors}`

@@ -23,10 +23,28 @@ brctl addbr br-ex
 brctl addbr br-ctlplane
 
 original one:
-#virt-install --name undercloud --memory=16384 --vcpus=4 --location /var/lib/libvirt/images/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br-ex --network bridge=br-ctlplane --graphics=vnc --hvm --os-variant=rhel7
 #virt-install --name undercloud --memory=16384 --vcpus=4 --location /var/lib/libvirt/images/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network bridge=br-ex --network bridge=br-ctlplane --graphics=vnc --hvm --os-variant=rhel7
-#virt-install --name undercloud --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network network=rhosp --graphics=vnc --hvm --os-variant=rhel7
 
+#####################
+#undercloud
+#####################
+virt-install --name undercloud --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network network=rhosp --graphics=vnc --noautoconsole --hvm --os-variant=rhel7
+
+#####################
+#controller
+#####################
+virt-install --name controller --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network bridge=br0 --network network=rhosp --network network=rhosp1 --graphics=vnc --noautoconsole --hvm --os-variant=rhel7
+
+#####################
+#compute
+#####################
+virt-install --name compute1 --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network network=rhosp --network network=rhosp1 --graphics=vnc --noautoconsole --hvm --os-variant=rhel7
+virt-install --name compute2 --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network network=rhosp --network network=rhosp1 --graphics=vnc --noautoconsole --hvm --os-variant=rhel7
+virt-install --name compute3 --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=100 --network network=rhosp --network network=rhosp1 --graphics=vnc --noautoconsole --hvm --os-variant=rhel7
+
+#####################
+#kickstart failed
+#####################
 #virt-install --name undercloud2 --memory=16384 --vcpus=4 --location /home/rhel-server-7.5-x86_64-dvd.iso --disk size=512 --network bridge=br0 --graphics=vnc --hvm --os-variant=rhel7 --initrd-inject=/root/ks.cfg --extra-args "ks=file:/ks.cfg"
 
 

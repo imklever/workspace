@@ -78,6 +78,7 @@ netstat -anp | grep :::62[0-9][0-9]
 
 
 
+ipmitool -I lanplus -H 10.240.220.22 -p 6229 -U admin -P passw0rd power status
 
 
 
@@ -114,9 +115,6 @@ cp /usr/share/instack-undercloud/undercloud.conf.sample ~/undercloud.conf
 cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
 
 
-###################################
-#from snapshot
-###################################
 {
         "nodes":[
             {
@@ -127,7 +125,7 @@ cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
                 "pm_type":"ipmi",
                 "pm_user":"admin",
                 "pm_password":"passw0rd",
-                "pm_addr":"10.240.217.72",
+                "pm_addr":"10.240.220.22",
                 "pm_port":"6232",
                 "capabilities": "profile:control,boot_option:local"
                 },
@@ -139,7 +137,7 @@ cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
                 "pm_type":"ipmi",
                 "pm_user":"admin",
                 "pm_password":"passw0rd",
-                "pm_addr":"10.240.217.72",
+                "pm_addr":"10.240.220.22",
                 "pm_port":"6229",
                 "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
                 },
@@ -151,7 +149,7 @@ cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
                 "pm_type":"ipmi",
                 "pm_user":"admin",
                 "pm_password":"passw0rd",
-                "pm_addr":"10.240.217.72",
+                "pm_addr":"10.240.220.22",
                 "pm_port":"6230",
                 "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
                 },
@@ -163,7 +161,7 @@ cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
                 "pm_type":"ipmi",
                 "pm_user":"admin",
                 "pm_password":"passw0rd",
-                "pm_addr":"10.240.217.72",
+                "pm_addr":"10.240.220.22",
                 "pm_port":"6231",
                 "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
                 }
@@ -174,5 +172,32 @@ cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
 cd ~
 openstack undercloud install
 source ~/stackrc
+sudo yum -y install rhosp-director-images rhosp-director-images-ipa
+mkdir ~/images
+cd ~/images
+tar -xvf /usr/share/rhosp-director-images/overcloud-full-latest-13.0.tar
+tar -xvf /usr/share/rhosp-director-images/ironic-python-agent-latest-13.0.tar
+openstack overcloud image upload --image-path /home/stack/images
+
+openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 virtual-compute
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="virtual-compute" virtual-compute
+
+openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 x3650-compute
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="x3650-compute" x3650-compute
+
+openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 dpdkcompute
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="dpdkcompute" dpdkcompute
+
+
+
+###################################
+#from snapshot
+###################################
 openstack overcloud node import ~/env.json
 openstack overcloud node introspect --all-manageable --provide
+openstack overcloud profiles list
+
+openstack overcloud container image prepare --namespace=locsatellite.labs.lenovo.com:5000 --push-destination=172.30.4.1:8787 --prefix=lenovo_open_cloud-development-cloud_group_2-osp13_containers-rhosp13_openstack- --tag-from-label {version}-{release} --output-env-file=/home/stack/templates/overcloud_images_sa.yaml --output-images-file /home/stack/local_registry_images_sa.yaml
+
+openstack overcloud container image upload --config-file /home/stack/local_registry_images_sa.yaml --verbose
+

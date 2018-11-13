@@ -96,10 +96,17 @@ ipmitool -I lanplus -H 10.240.220.22 -p 6229 -U admin -P passw0rd power status
 
 undercontroller:
 #############################################
+
+hostnamectl set-hostname leo-undercoloud.lenovo.com
+
+
 echo "10.240.217.163 sungn-localsa.labs.lenovo.com" >> /etc/hosts
 rpm -Uvh http://sungn-localsa.labs.lenovo.com/pub/katello-ca-consumer-latest.noarch.rpm
-hostnamectl set-hostname leo-undercoloud.lenovo.com
 subscription-manager register --org="Lenovo_Open_Cloud" --activationkey="Cloud Development key"
+
+echo "10.240.43.185 locsatellite.labs.lenovo.com" >> /etc/hosts
+rpm -Uvh http://locsatellite.labs.lenovo.com/pub/katello-ca-consumer-latest.noarch.rpm --force
+subscription-manager register --org="Lenovo_Open_Cloud" --activationkey="cloud osp 13 development key" --force
 
 useradd stack
 passwd stack #passw0rd
@@ -201,3 +208,8 @@ openstack overcloud container image prepare --namespace=locsatellite.labs.lenovo
 
 openstack overcloud container image upload --config-file /home/stack/local_registry_images_sa.yaml --verbose
 
+cd /usr/share/openstack-tripleo-heat-templates/
+(undercloud) [stack@lctc-brain3-cloud4-director openstack-tripleo-heat-templates]$ ./tools/process-templates.py --safe
+
+cd ~/templates
+decompress the attached file to ~/templates

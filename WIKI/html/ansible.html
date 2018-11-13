@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Ansible</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body onload="timeout_id=setTimeout('location.reload()',3000)">
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+    <img id=contant src=http://www.w3school.com.cn/svg/circle1.svg><br>
+    <button style="margin-left:0px;" onClick="timeout_id=setTimeout('location.reload()',3000)">start auto reload</button><br>
+    <button onClick=clearTimeout(timeout_id)>stop auto reload</button><br>
+
+    <h1 style="text-align:center;">Ansible</h1>
+
+    <h2>关键字:</h2>
+        <h3>-- hosts:</h3>
+        <h3>-- remote_user:</h3>
+        <h3>-- vars:</h3>
+        <h3>-- tasks:</h3>
+        <h3>-- handlers:</h3>
+        <h3>-- tags:</h3>
+
+    <h2>常用模块:</h2>
+        <h3>-- ping:</h3>
+        <h3>-- debug:</h3>
+        <h3>-- copy:</h3>
+        <h3>-- template:</h3>
+        <h3>-- file:</h3>
+        <h3>-- user:</h3>
+        <h3>-- yum:</h3>
+        <h3>-- service:</h3>
+        <h3>-- firewalld:</h3>
+        <h3>-- shell:</h3>
+        <h3>-- command:</h3>
+
+    <h2>传参:</h2>
+        <h3>eg:</h3>
+            <pre>
+ansible-playbook test.yaml --extra-vars "hosts=web user=root"
+ansible-playbook test.yaml --extra-vars "{'hosts':'web','user':'root'}"
+ansible-playbook test.yaml --extra-vars "@vars.json"</pre>
+    <h2>逻辑控制语句:</h2>
+    <h3>-- when:</h3>
+    <ul>
+        <li style="font-weight:bold">match:</li style="font-weight:bold">
+        <li style="font-weight:bold">search:</li style="font-weight:bold">
+        <li style="font-weight:bold">version_compare:</li style="font-weight:bold">
+        <li style="font-weight:bold">issuperset:</li style="font-weight:bold">
+        <li style="font-weight:bold">issubset:</li style="font-weight:bold">
+        <li style="font-weight:bold">is_dir:</li style="font-weight:bold">
+        <li style="font-weight:bold">is_file:</li style="font-weight:bold">
+        <li style="font-weight:bold">is_link:</li style="font-weight:bold">
+        <li style="font-weight:bold">exists:</li style="font-weight:bold">
+        <li style="font-weight:bold">failed:</li style="font-weight:bold">
+        <li style="font-weight:bold">changed:</li style="font-weight:bold">
+        <li style="font-weight:bold">succeeded:</li style="font-weight:bold">
+        <li style="font-weight:bold">success:</li style="font-weight:bold">
+        <li style="font-weight:bold">skipped:</li style="font-weight:bold">
+    </ul>
+        <h3>-- loop:</h3>
+            <pre>
+with_items
+with_nested</pre>
+        <h3>-- block:</h3>
+        <h3>-- include:</h3>
+        <h3>-- role:</h3>
+
+    <h2>标签 tags:</h2>
+        <h3>-- :</h3>
+
+    <h2>lookup 访问数据:</h2>
+        访问外部文件或数据库中的数据
+        <h3>-- :</h3>
+
+    <h2>filter 过滤器:</h2>
+        <h3>-- :</h3>
+
+    <h2>插件:</h2>
+        <h3>-- Action:</h3>
+        <h3>-- Cache:</h3>
+        <h3>-- Callback:</h3>
+        <h3>-- connection:</h3>
+        <h3>-- filter:</h3>
+        <h3>-- lookup:</h3>
+        <h3>-- strategy:</h3>
+        <h3>-- shell:</h3>
+        <h3>-- test:</h3>
+        <h3>-- vars:</h3>
+<!---
+    <h2>:</h2>
+        <h3>:</h3>
+            <pre><mark></mark></pre>
+
+    <div class=note>
+        <code></code>
+    </div>
+
+    <h2>ref:</h2>
+    <a target= _blank href=ref>ref</a><br>
+    <a target= _blank href=ref>ref</a><br>
+--->
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>

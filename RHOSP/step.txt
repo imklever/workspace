@@ -121,6 +121,43 @@ sudo yum install -y python-tripleoclient
 cp /usr/share/instack-undercloud/undercloud.conf.sample ~/undercloud.conf
 cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
 
+"
+[DEFAULT]
+undercloud_hostname = lctc-brain3-cloud4-director.labs.lenovo.com
+undercloud_nameservers = 10.240.0.10,10.240.0.11
+local_ip = 172.30.4.1/24
+network_gateway = 172.30.4.1
+undercloud_public_vip = 172.30.4.2
+undercloud_admin_vip = 172.30.4.3
+undercloud_service_certificate = /etc/pki/tls/certs/undercloud-172.30.4.2.pem
+generate_service_certificate = True
+certificate_generation_ca = local
+local_interface = eth1
+network_cidr = 172.30.4.0/24
+masquerade_network = 172.30.4.0/24
+dhcp_start = 172.30.4.5
+dhcp_end = 172.30.4.24
+inspection_interface = br-ctlplane
+inspection_iprange = 172.30.4.100,172.30.4.130
+inspection_extras = true
+inspection_runbench = false
+inspection_enable_uefi = true
+undercloud_debug = true
+enable_tempest = true
+enable_ui = true
+enable_validations = true
+ipxe_enabled = true
+store_events = false
+scheduler_max_attempts = 30
+enabled_hardware_types=ipmi,staging-ovirt
+
+[auth]
+"
+
+
+
+
+
 
 {
         "nodes":[

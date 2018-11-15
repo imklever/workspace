@@ -116,7 +116,7 @@ su - stack
 mkdir ~/images
 mkdir ~/templates
 
-sudo yum install -y python-tripleoclient
+sudo yum install -y python-tripleoclient git gcc python-devel python-ovirt-engine-sdk4
 
 cp /usr/share/instack-undercloud/undercloud.conf.sample ~/undercloud.conf
 cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
@@ -158,7 +158,9 @@ enabled_hardware_types=ipmi,staging-ovirt
 
 
 
-
+#############################3
+#On KVM
+#############################3
 {
         "nodes":[
             {
@@ -211,13 +213,69 @@ enabled_hardware_types=ipmi,staging-ovirt
                 }
             ]
         }
+#############################3
+#On RHV
+#############################3
+echo "10.240.220.17 engine.local" > /etc/hosts
+{
+        "nodes":[
+            {
+                "name":"controller",
+                "mac":[
+                    "00:1a:4a:16:01:6e"
+                    ],
+                "pm_type":"staging-ovirt",
+                "pm_user":"admin@internal",
+                "pm_password":"passw0rd",
+                "pm_addr":"engine.local",
+                "pm_vm_name":"leo-controller",
+                "capabilities": "profile:control,boot_option:local"
+                },
+            {
+                "name":"compute1",
+                "mac":[
+                    "00:1a:4a:16:01:77"
+                    ],
+                "pm_type":"staging-ovirt",
+                "pm_user":"admin@internal",
+                "pm_password":"passw0rd",
+                "pm_addr":"engine.local",
+                "pm_vm_name":"leo-compute1",
+                "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
+                },
+            {
+                "name":"compute2",
+                "mac":[
+                    "00:1a:4a:16:01:70"
+                    ],
+                "pm_type":"staging-ovirt",
+                "pm_user":"admin@internal",
+                "pm_password":"passw0rd",
+                "pm_addr":"engine.local",
+                "pm_vm_name":"leo-compute2",
+                "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
+                },
+            {
+                "name":"compute3",
+                "mac":[
+                    "00:1a:4a:16:01:72"
+                    ],
+                "pm_type":"staging-ovirt",
+                "pm_user":"admin@internal",
+                "pm_password":"passw0rd",
+                "pm_addr":"engine.local",
+                "pm_vm_name":"leo-compute3",
+                "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
+                }
+            ]
+        }
+
 
 
 cd ~
 openstack undercloud install
 source ~/stackrc
 sudo yum -y install rhosp-director-images rhosp-director-images-ipa
-mkdir ~/images
 cd ~/images
 tar -xvf /usr/share/rhosp-director-images/overcloud-full-latest-13.0.tar
 tar -xvf /usr/share/rhosp-director-images/ironic-python-agent-latest-13.0.tar
@@ -250,3 +308,30 @@ cd /usr/share/openstack-tripleo-heat-templates/
 
 cd ~/templates
 decompress the attached file to ~/templates
+
+
+
+
+config network in ~/templates/network-environment.yaml(info)
+config osd device in ~/templates/storage-config.yaml
+config compute port in ~/templates/nic-configs/compute-hci.yaml(info)
+config controller port in ~/templates/nic-configs/controller.yaml
+copy certificate from /etc/pki/ca-trust/source/anchors/cm-local-ca.pem into ~/templates/inject-trust-anchor.yaml(info)
+install ceph-ansible if it's installed(info)
+
+
+source ~/stackrc
+openstack overcloud deploy --templates \
+        -p /home/stack/templates/plan-environment-derived-params.yaml \
+        -r /home/stack/templates/roles_data.yaml \
+        -e /usr/share/openstack-tripleo-heat-templates/environments/ceph-ansible/ceph-ansible.yaml \
+        -e /home/stack/templates/storage-config.yaml \
+        -e /home/stack/templates/storage-container-config.yaml \
+        -e /home/stack/templates/network-environment.yaml \
+        -e /home/stack/templates/overcloud_images_sa.yaml \
+        -e /home/stack/templates/inject-trust-anchor.yaml \
+        --ntp-server cn.ntp.org.cn
+
+
+
+

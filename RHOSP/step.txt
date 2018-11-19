@@ -336,3 +336,35 @@ openstack overcloud deploy --templates \
 
 
 /usr/share/openstack-tripleo-heat-templates
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cmd:
+    openstack stack list
+    openstack stack delete <ID>
+
+    openstack baremetal node list 
+    openstack baremetal node delete <UUID>
+
+
+
+
+openstack stack list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $2}' | xargs openstack stack delete;watch openstack stack list

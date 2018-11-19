@@ -22,6 +22,9 @@
         name: vsftpd
         enabled: yes
         state: started
+    - service:
+        name: vsftpd
+        state: restarted
     - debug:
         msg: "stop firewalld"
     - service:

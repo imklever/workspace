@@ -1,0 +1,1650 @@
+jinja2 rendering normal template net-config-bond.j2.yaml
+rendering j2 template to file: ./net-config-bond.yaml
+jinja2 rendering normal template net-config-bridge.j2.yaml
+rendering j2 template to file: ./net-config-bridge.yaml
+jinja2 rendering normal template net-config-linux-bridge.j2.yaml
+rendering j2 template to file: ./net-config-linux-bridge.yaml
+jinja2 rendering normal template net-config-noop.j2.yaml
+rendering j2 template to file: ./net-config-noop.yaml
+jinja2 rendering normal template net-config-static-bridge-with-external-dhcp.j2.yaml
+rendering j2 template to file: ./net-config-static-bridge-with-external-dhcp.yaml
+jinja2 rendering normal template net-config-static-bridge.j2.yaml
+rendering j2 template to file: ./net-config-static-bridge.yaml
+jinja2 rendering normal template net-config-static.j2.yaml
+rendering j2 template to file: ./net-config-static.yaml
+jinja2 rendering normal template net-config-undercloud.j2.yaml
+rendering j2 template to file: ./net-config-undercloud.yaml
+jinja2 rendering normal template overcloud-resource-registry-puppet.j2.yaml
+rendering j2 template to file: ./overcloud-resource-registry-puppet.yaml
+jinja2 rendering normal template overcloud.j2.yaml
+rendering j2 template to file: ./overcloud.yaml
+jinja2 rendering normal template post.j2.yaml
+rendering j2 template to file: ./common/post.yaml
+jinja2 rendering normal template host-config-and-reboot.j2.yaml
+rendering j2 template to file: ./environments/host-config-and-reboot.yaml
+jinja2 rendering normal template net-multiple-nics-v6.j2.yaml
+rendering j2 template to file: ./environments/net-multiple-nics-v6.yaml
+jinja2 rendering normal template net-multiple-nics.j2.yaml
+rendering j2 template to file: ./environments/net-multiple-nics.yaml
+jinja2 rendering normal template network-environment.j2.yaml
+rendering j2 template to file: ./environments/network-environment.yaml
+jinja2 rendering normal template network-isolation-v6.j2.yaml
+rendering j2 template to file: ./environments/network-isolation-v6.yaml
+jinja2 rendering normal template network-isolation.j2.yaml
+rendering j2 template to file: ./environments/network-isolation.yaml
+jinja2 rendering normal template deployed-server-environment.j2.yaml
+rendering j2 template to file: ./environments/deployed-server-environment.yaml
+jinja2 rendering normal template net-bond-with-vlans-v6.j2.yaml
+rendering j2 template to file: ./environments/net-bond-with-vlans-v6.yaml
+jinja2 rendering normal template net-bond-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-bond-with-vlans.yaml
+jinja2 rendering normal template net-single-nic-linux-bridge-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-linux-bridge-with-vlans.yaml
+jinja2 rendering normal template net-bond-with-vlans-no-external.j2.yaml
+rendering j2 template to file: ./environments/net-bond-with-vlans-no-external.yaml
+jinja2 rendering normal template net-dpdkbond-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-dpdkbond-with-vlans.yaml
+jinja2 rendering normal template net-single-nic-with-vlans-no-external.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-with-vlans-no-external.yaml
+jinja2 rendering normal template net-single-nic-with-vlans-v6.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-with-vlans-v6.yaml
+jinja2 rendering normal template net-single-nic-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-with-vlans.yaml
+jinja2 rendering normal template network-environment-v6.j2.yaml
+rendering j2 template to file: ./environments/network-environment-v6.yaml
+jinja2 rendering normal template network-isolation-no-tunneling.j2.yaml
+rendering j2 template to file: ./environments/network-isolation-no-tunneling.yaml
+jinja2 rendering normal template networks-disable.j2.yaml
+rendering j2 template to file: ./environments/networks-disable.yaml
+jinja2 rendering normal template overcloud-baremetal.j2.yaml
+rendering j2 template to file: ./environments/overcloud-baremetal.yaml
+jinja2 rendering normal template split-stack-consistent-hostname-format.j2.yaml
+rendering j2 template to file: ./environments/split-stack-consistent-hostname-format.yaml
+jinja2 rendering normal template mac_hostname.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/mac_hostname.yaml
+jinja2 rendering normal template random_string.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/random_string.yaml
+jinja2 rendering normal template swap-partition.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/swap-partition.yaml
+jinja2 rendering normal template swap.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/swap.yaml
+jinja2 rendering normal template krb-service-principals.j2.yaml
+rendering j2 template to file: ./extraconfig/nova_metadata/krb-service-principals.yaml
+jinja2 rendering normal template post_puppet_pacemaker.j2.yaml
+rendering j2 template to file: ./extraconfig/tasks/post_puppet_pacemaker.yaml
+jinja2 rendering network template network.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/internal_api.yaml
+rendering j2 template to file: ./network/management.yaml
+rendering j2 template to file: ./network/storage.yaml
+rendering j2 template to file: ./network/storage_mgmt.yaml
+rendering j2 template to file: ./network/external.yaml
+rendering j2 template to file: ./network/tenant.yaml
+jinja2 rendering network template network_v6.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/internal_api_v6.yaml
+rendering j2 template to file: ./network/management_v6.yaml
+rendering j2 template to file: ./network/storage_v6.yaml
+rendering j2 template to file: ./network/storage_mgmt_v6.yaml
+rendering j2 template to file: ./network/external_v6.yaml
+rendering j2 template to file: ./network/tenant_v6.yaml
+jinja2 rendering normal template networks.j2.yaml
+rendering j2 template to file: ./network/networks.yaml
+jinja2 rendering normal template service_net_map.j2.yaml
+rendering j2 template to file: ./network/service_net_map.yaml
+jinja2 rendering normal template controller-no-external.j2.yaml
+rendering j2 template to file: ./network/config/bond-with-vlans/controller-no-external.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/bond-with-vlans/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/bond-with-vlans/controller.yaml
+rendering j2 template to file: ./network/config/bond-with-vlans/compute.yaml
+jinja2 rendering normal template compute-dvr.j2.yaml
+rendering j2 template to file: ./network/config/multiple-nics/compute-dvr.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/multiple-nics/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/multiple-nics/controller.yaml
+rendering j2 template to file: ./network/config/multiple-nics/compute.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/single-nic-linux-bridge-vlans/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/single-nic-linux-bridge-vlans/controller.yaml
+rendering j2 template to file: ./network/config/single-nic-linux-bridge-vlans/compute.yaml
+jinja2 rendering normal template controller-no-external.j2.yaml
+rendering j2 template to file: ./network/config/single-nic-vlans/controller-no-external.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/single-nic-vlans/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/single-nic-vlans/controller.yaml
+rendering j2 template to file: ./network/config/single-nic-vlans/compute.yaml
+jinja2 rendering normal template net_ip_list_map.j2.yaml
+rendering j2 template to file: ./network/ports/net_ip_list_map.yaml
+jinja2 rendering normal template net_ip_map.j2.yaml
+rendering j2 template to file: ./network/ports/net_ip_map.yaml
+jinja2 rendering normal template net_vip_map_external.j2.yaml
+rendering j2 template to file: ./network/ports/net_vip_map_external.yaml
+jinja2 rendering normal template net_vip_map_external_v6.j2.yaml
+rendering j2 template to file: ./network/ports/net_vip_map_external_v6.yaml
+jinja2 rendering network template port.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api.yaml
+rendering j2 template to file: ./network/ports/management.yaml
+rendering j2 template to file: ./network/ports/storage.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt.yaml
+rendering j2 template to file: ./network/ports/external.yaml
+rendering j2 template to file: ./network/ports/tenant.yaml
+jinja2 rendering network template port_from_pool.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api_from_pool.yaml
+rendering j2 template to file: ./network/ports/management_from_pool.yaml
+rendering j2 template to file: ./network/ports/storage_from_pool.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt_from_pool.yaml
+rendering j2 template to file: ./network/ports/external_from_pool.yaml
+rendering j2 template to file: ./network/ports/tenant_from_pool.yaml
+jinja2 rendering network template port_from_pool_v6.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/management_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/storage_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/external_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/tenant_from_pool_v6.yaml
+jinja2 rendering network template port_v6.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api_v6.yaml
+rendering j2 template to file: ./network/ports/management_v6.yaml
+rendering j2 template to file: ./network/ports/storage_v6.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt_v6.yaml
+rendering j2 template to file: ./network/ports/external_v6.yaml
+rendering j2 template to file: ./network/ports/tenant_v6.yaml
+jinja2 rendering normal template all-nodes-config.j2.yaml
+rendering j2 template to file: ./puppet/all-nodes-config.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./puppet/controller-role.yaml
+rendering j2 template to file: ./puppet/compute-role.yaml
+jinja2 rendering normal template neutron-ml2-cisco-nexus-ucsm.j2.yaml
+rendering j2 template to file: ./puppet/extraconfig/all_nodes/neutron-ml2-cisco-nexus-ucsm.yaml
+jinja2 rendering normal template apache.j2.yaml
+rendering j2 template to file: ./puppet/services/apache.yaml
+jinja2 rendering normal template haproxy-internal-tls-certmonger.j2.yaml
+rendering j2 template to file: ./puppet/services/haproxy-internal-tls-certmonger.yaml
+Started Mistral Workflow tripleo.validations.v1.check_pre_deployment_validations. Execution ID: dd5256d3-4c7c-42f2-93d9-f6698761c94b
+Removing the current plan files
+Uploading new plan files
+Started Mistral Workflow tripleo.plan_management.v1.update_deployment_plan. Execution ID: 00fd6eb1-b1c5-49f8-a4e5-e697640bedf5
+Plan updated.
+Processing templates in the directory /tmp/tripleoclient-CC75TZ/tripleo-heat-templates
+Started Mistral Workflow tripleo.plan_management.v1.get_deprecated_parameters. Execution ID: f025a09b-c19d-4d87-a4e0-381ab346a1c6
+WARNING: Following parameters are deprecated and still defined. Deprecated parameters will be removed soon!
+  controllerExtraConfig
+WARNING: Following parameters are defined but not used in plan. Could be possible that parameter is valid but currently not used.
+  CinderBackupBackend
+  DockerMysqlClientConfigImage
+Deploying templates in the directory /tmp/tripleoclient-CC75TZ/tripleo-heat-templates
+Started Mistral Workflow tripleo.deployment.v1.deploy_plan. Execution ID: a3707c8d-db79-4fd8-b27e-a1778a77f363
+2018-11-19 08:23:34Z [overcloud]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:37Z [overcloud.Networks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:38Z [overcloud.Networks]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:38Z [overcloud.MysqlRootPassword]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:38Z [overcloud.MysqlRootPassword]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:38Z [overcloud.Networks.InternalApiNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:39Z [overcloud.Networks.ManagementNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:39Z [overcloud.Networks.InternalApiNetwork]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:40Z [overcloud.RabbitCookie]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:40Z [overcloud.RabbitCookie]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:40Z [overcloud.Networks.InternalApiNetwork.InternalApiNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:40Z [overcloud.Networks.StorageMgmtNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:40Z [overcloud.Networks.ManagementNetwork]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:41Z [overcloud.HeatAuthEncryptionKey]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:41Z [overcloud.HeatAuthEncryptionKey]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:41Z [overcloud.Networks.ManagementNetwork.ManagementNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:41Z [overcloud.Networks.StorageNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:41Z [overcloud.Networks.InternalApiNetwork.InternalApiNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:42Z [overcloud.Networks.InternalApiNetwork.InternalApiSubnet]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:42Z [overcloud.Networks.StorageMgmtNetwork]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:42Z [overcloud.ServiceNetMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:42Z [overcloud.Networks.StorageMgmtNetwork.StorageMgmtNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:42Z [overcloud.Networks.ManagementNetwork.ManagementNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:42Z [overcloud.Networks.ManagementNetwork.ManagementSubnet]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:43Z [overcloud.ServiceNetMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:43Z [overcloud.Networks.ExternalNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:43Z [overcloud.ServiceNetMap.ServiceNetMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:43Z [overcloud.ServiceNetMap.ServiceNetMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:43Z [overcloud.ServiceNetMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:43Z [overcloud.Networks.StorageNetwork]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:43Z [overcloud.Networks.NetworkExtraConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:43Z [overcloud.HorizonSecret]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:44Z [overcloud.Networks.NetworkExtraConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:44Z [overcloud.DeploymentServerBlacklistDict]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:44Z [overcloud.HorizonSecret]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:44Z [overcloud.DeploymentServerBlacklistDict]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:44Z [overcloud.ServiceNetMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:44Z [overcloud.Networks.StorageNetwork.StorageNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:45Z [overcloud.Networks.TenantNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:45Z [overcloud.PcsdPassword]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:45Z [overcloud.PcsdPassword]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:45Z [overcloud.Networks.InternalApiNetwork.InternalApiSubnet]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:45Z [overcloud.Networks.StorageMgmtNetwork.StorageMgmtNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:45Z [overcloud.Networks.ExternalNetwork]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:45Z [overcloud.Networks.InternalApiNetwork]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:45Z [overcloud.DefaultPasswords]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:46Z [overcloud.Networks.StorageMgmtNetwork.StorageMgmtSubnet]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:47Z [overcloud.Networks.InternalApiNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:47Z [overcloud.Networks.ManagementNetwork.ManagementSubnet]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:47Z [overcloud.Networks.ManagementNetwork]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:47Z [overcloud.Networks.StorageNetwork.StorageNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:47Z [overcloud.Networks.StorageNetwork.StorageSubnet]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:47Z [overcloud.Networks.TenantNetwork]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:23:47Z [overcloud.Networks.ExternalNetwork.ExternalNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:47Z [overcloud.Networks.ManagementNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:48Z [overcloud.Networks.TenantNetwork.TenantNetwork]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:48Z [overcloud.DefaultPasswords]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:48Z [overcloud.Networks.StorageMgmtNetwork.StorageMgmtSubnet]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:48Z [overcloud.Networks.StorageMgmtNetwork]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:49Z [overcloud.Networks.StorageMgmtNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:49Z [overcloud.Networks.ExternalNetwork.ExternalNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:50Z [overcloud.Networks.ExternalNetwork.ExternalSubnet]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:50Z [overcloud.Networks.TenantNetwork.TenantNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:50Z [overcloud.Networks.StorageNetwork.StorageSubnet]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:50Z [overcloud.Networks.StorageNetwork]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:50Z [overcloud.Networks.TenantNetwork.TenantSubnet]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:23:51Z [overcloud.Networks.StorageNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:51Z [overcloud.Networks.ExternalNetwork.ExternalSubnet]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:51Z [overcloud.Networks.ExternalNetwork]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:52Z [overcloud.Networks.TenantNetwork.TenantSubnet]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:52Z [overcloud.Networks.TenantNetwork]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:52Z [overcloud.Networks.ExternalNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:52Z [overcloud.Networks.TenantNetwork]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:52Z [overcloud.Networks]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:23:53Z [overcloud.Networks]: CREATE_COMPLETE  state changed
+2018-11-19 08:23:59Z [overcloud.ControlVirtualIP]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:01Z [overcloud.ControlVirtualIP]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:01Z [overcloud.StorageVirtualIP]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:01Z [overcloud.StorageMgmtVirtualIP]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:01Z [overcloud.RedisVirtualIP]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:01Z [overcloud.NetCidrMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:02Z [overcloud.NetCidrMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:02Z [overcloud.PublicVirtualIP]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:02Z [overcloud.InternalApiVirtualIP]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:04Z [overcloud.StorageVirtualIP]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:04Z [overcloud.StorageMgmtVirtualIP]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:04Z [overcloud.StorageVirtualIP.StoragePort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:05Z [overcloud.RedisVirtualIP]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:05Z [overcloud.StorageMgmtVirtualIP.StorageMgmtPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:05Z [overcloud.PublicVirtualIP]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:05Z [overcloud.RedisVirtualIP.VipPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:05Z [overcloud.PublicVirtualIP.ExternalPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:06Z [overcloud.InternalApiVirtualIP]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:06Z [overcloud.InternalApiVirtualIP.InternalApiPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:09Z [overcloud.StorageMgmtVirtualIP.StorageMgmtPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:09Z [overcloud.StorageMgmtVirtualIP]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:09Z [overcloud.PublicVirtualIP.ExternalPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:09Z [overcloud.StorageVirtualIP.StoragePort]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:09Z [overcloud.StorageMgmtVirtualIP]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:09Z [overcloud.StorageVirtualIP]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:09Z [overcloud.PublicVirtualIP]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:10Z [overcloud.RedisVirtualIP.VipPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:10Z [overcloud.RedisVirtualIP]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:10Z [overcloud.StorageVirtualIP]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:10Z [overcloud.PublicVirtualIP]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:10Z [overcloud.InternalApiVirtualIP.InternalApiPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:10Z [overcloud.InternalApiVirtualIP]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:11Z [overcloud.RedisVirtualIP]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:11Z [overcloud.InternalApiVirtualIP]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:13Z [overcloud.VipMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:13Z [overcloud.VipMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:13Z [overcloud.VipMap.NetIpMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:13Z [overcloud.VipMap.NetIpMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:13Z [overcloud.VipMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:14Z [overcloud.VipMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:15Z [overcloud.EndpointMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:15Z [overcloud.VipHosts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:15Z [overcloud.VipHosts]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:17Z [overcloud.EndpointMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:17Z [overcloud.EndpointMapData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:17Z [overcloud.EndpointMapData]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:17Z [overcloud.ObjectStorageServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:17Z [overcloud.ControllerServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:17Z [overcloud.ComputeServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:18Z [overcloud.CephStorageServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:18Z [overcloud.BlockStorageServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:18Z [overcloud.ObjectStorageServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:18Z [overcloud.ComputeServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:19Z [overcloud.CephStorageServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:19Z [overcloud.ControllerServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:20Z [overcloud.BlockStorageServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:21Z [overcloud.ComputeServiceChain.ServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:21Z [overcloud.CephStorageServiceChain.ServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:21Z [overcloud.ControllerServiceChain.ServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:22Z [overcloud.CephStorageServiceChain.LoggingConfiguration]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:22Z [overcloud.ControllerServiceChain.LoggingConfiguration]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:23Z [overcloud.CephStorageServiceChain.ServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:23Z [overcloud.ComputeServiceChain.LoggingConfiguration]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:24Z [overcloud.ObjectStorageServiceChain.LoggingConfiguration]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:24Z [overcloud.ComputeServiceChain.ServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:25Z [overcloud.ControllerServiceChain.LoggingConfiguration]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:25Z [overcloud.ComputeServiceChain.LoggingConfiguration]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:26Z [overcloud.BlockStorageServiceChain.LoggingConfiguration]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:26Z [overcloud.ObjectStorageServiceChain.LoggingConfiguration]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:26Z [overcloud.CephStorageServiceChain.ServiceChain.15]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:26Z [overcloud.CephStorageServiceChain.ServiceChain.15]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:27Z [overcloud.BlockStorageServiceChain.ServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:27Z [overcloud.ComputeServiceChain.ServiceChain.38]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:28Z [overcloud.CephStorageServiceChain.ServiceChain.20]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:28Z [overcloud.ComputeServiceChain.ServiceChain.13]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:28Z [overcloud.ComputeServiceChain.ServiceChain.13]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:29Z [overcloud.BlockStorageServiceChain.ServiceChain]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:24:29Z [overcloud.ComputeServiceChain.ServiceChain.29]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:29Z [overcloud.ComputeServiceChain.ServiceChain.38]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:30Z [overcloud.ComputeServiceChain.ServiceChain.29]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:30Z [overcloud.CephStorageServiceChain.ServiceChain.11]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:30Z [overcloud.ComputeServiceChain.ServiceChain.27]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:30Z [overcloud.ComputeServiceChain.ServiceChain.27]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:31Z [overcloud.ComputeServiceChain.ServiceChain.4]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:31Z [overcloud.ComputeServiceChain.ServiceChain.4]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:31Z [overcloud.BlockStorageServiceChain.ServiceChain.10]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:32Z [overcloud.CephStorageServiceChain.ServiceChain.11]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:32Z [overcloud.CephStorageServiceChain.ServiceChain.2]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:32Z [overcloud.BlockStorageServiceChain.ServiceChain.11]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:33Z [overcloud.CephStorageServiceChain.ServiceChain.7]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:33Z [overcloud.ComputeServiceChain.ServiceChain.17]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:33Z [overcloud.CephStorageServiceChain.ServiceChain.16]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:33Z [overcloud.ComputeServiceChain.ServiceChain.28]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:34Z [overcloud.BlockStorageServiceChain.ServiceChain.22]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:34Z [overcloud.ComputeServiceChain.ServiceChain.17]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:34Z [overcloud.ObjectStorageServiceChain.ServiceChain]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:34Z [overcloud.CephStorageServiceChain.ServiceChain.18]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:34Z [overcloud.CephStorageServiceChain.LoggingConfiguration]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:34Z [overcloud.CephStorageServiceChain.ServiceChain.23]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:35Z [overcloud.BlockStorageServiceChain.ServiceChain.12]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:35Z [overcloud.BlockStorageServiceChain.ServiceChain.11]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:35Z [overcloud.ComputeServiceChain.ServiceChain.11]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:35Z [overcloud.CephStorageServiceChain.ServiceChain.7]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:35Z [overcloud.BlockStorageServiceChain.ServiceChain.12]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:36Z [overcloud.BlockStorageServiceChain.ServiceChain.22]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:36Z [overcloud.ComputeServiceChain.ServiceChain.14]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:36Z [overcloud.BlockStorageServiceChain.ServiceChain.4]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:36Z [overcloud.BlockStorageServiceChain.ServiceChain.4]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:37Z [overcloud.CephStorageServiceChain.ServiceChain.16]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:37Z [overcloud.ComputeServiceChain.ServiceChain.39]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:37Z [overcloud.ComputeServiceChain.ServiceChain.28]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:37Z [overcloud.ComputeServiceChain.ServiceChain.39]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:37Z [overcloud.ComputeServiceChain.ServiceChain.14]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:37Z [overcloud.CephStorageServiceChain.ServiceChain.17]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:37Z [overcloud.CephStorageServiceChain.ServiceChain.4]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.23]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.17]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.12]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.18]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:38Z [overcloud.BlockStorageServiceChain.ServiceChain.21]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.20]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:38Z [overcloud.ComputeServiceChain.ServiceChain.12]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.4]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:38Z [overcloud.BlockStorageServiceChain.ServiceChain.7]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:38Z [overcloud.BlockStorageServiceChain.LoggingConfiguration]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.3]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:38Z [overcloud.CephStorageServiceChain.ServiceChain.2]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:39Z [overcloud.ComputeServiceChain.ServiceChain.19]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:39Z [overcloud.CephStorageServiceChain.ServiceChain.5]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:39Z [overcloud.BlockStorageServiceChain.ServiceChain.23]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:40Z [overcloud.CephStorageServiceChain.ServiceChain.5]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:40Z [overcloud.ComputeServiceChain.ServiceChain.19]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:40Z [overcloud.ComputeServiceChain.ServiceChain.34]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:40Z [overcloud.CephStorageServiceChain.ServiceChain.13]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:40Z [overcloud.BlockStorageServiceChain.ServiceChain.10]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:41Z [overcloud.CephStorageServiceChain.ServiceChain.3]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:41Z [overcloud.BlockStorageServiceChain.ServiceChain.13]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:41Z [overcloud.ComputeServiceChain.ServiceChain.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:41Z [overcloud.ComputeServiceChain.ServiceChain.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:41Z [overcloud.ComputeServiceChain.ServiceChain.12]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:42Z [overcloud.CephStorageServiceChain.ServiceChain.1]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:42Z [overcloud.CephStorageServiceChain.ServiceChain.12]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:42Z [overcloud.BlockStorageServiceChain.ServiceChain.7]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:42Z [overcloud.CephStorageServiceChain.ServiceChain.1]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:42Z [overcloud.BlockStorageServiceChain.ServiceChain.18]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:42Z [overcloud.ComputeServiceChain.ServiceChain.24]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:42Z [overcloud.BlockStorageServiceChain.ServiceChain.13]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:43Z [overcloud.CephStorageServiceChain.ServiceChain.10]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:43Z [overcloud.BlockStorageServiceChain.ServiceChain.17]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:44Z [overcloud.BlockStorageServiceChain.ServiceChain.17]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:44Z [overcloud.CephStorageServiceChain.ServiceChain.10]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:44Z [overcloud.BlockStorageServiceChain.ServiceChain.2]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:45Z [overcloud.ComputeServiceChain.ServiceChain.35]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:45Z [2]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:45Z [overcloud.ComputeServiceChain.ServiceChain.1]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:45Z [overcloud.BlockStorageServiceChain.ServiceChain.24]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:46Z [overcloud.CephStorageServiceChain.ServiceChain.14]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:46Z [overcloud.CephStorageServiceChain.ServiceChain.14]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:46Z [overcloud.BlockStorageServiceChain.ServiceChain.18]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:46Z [4]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:46Z [overcloud.CephStorageServiceChain.ServiceChain.19]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:47Z [overcloud.ComputeServiceChain.ServiceChain.9]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:47Z [overcloud.BlockStorageServiceChain.ServiceChain.23]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [overcloud.CephStorageServiceChain.ServiceChain.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:47Z [overcloud.ComputeServiceChain.ServiceChain.5]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:47Z [overcloud.CephStorageServiceChain.ServiceChain.13]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [overcloud.ComputeServiceChain.ServiceChain.1]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [overcloud.ComputeServiceChain.ServiceChain.9]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [overcloud.CephStorageServiceChain.ServiceChain.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [19]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:47Z [overcloud.BlockStorageServiceChain.ServiceChain.16]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:47Z [4]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [overcloud.BlockStorageServiceChain.ServiceChain.21]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:47Z [overcloud.BlockStorageServiceChain.ServiceChain.16]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:48Z [overcloud.ComputeServiceChain.ServiceChain.5]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:48Z [overcloud.ComputeServiceChain.ServiceChain.35]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:48Z [overcloud.BlockStorageServiceChain.ServiceChain.24]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:48Z [overcloud.CephStorageServiceChain.ServiceChain.22]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:49Z [2]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:49Z [overcloud.BlockStorageServiceChain.ServiceChain.5]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:49Z [14]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:49Z [overcloud.ComputeServiceChain.ServiceChain.7]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:50Z [16]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:50Z [14]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:50Z [overcloud.BlockStorageServiceChain.ServiceChain.5]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:50Z [16]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:50Z [overcloud.ComputeServiceChain.ServiceChain.2]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:50Z [overcloud.BlockStorageServiceChain.ServiceChain.25]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:51Z [overcloud.ComputeServiceChain.ServiceChain.34]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:51Z [overcloud.ComputeServiceChain.ServiceChain.3]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:52Z [overcloud.CephStorageServiceChain.ServiceChain.9]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:52Z [overcloud.BlockStorageServiceChain.ServiceChain.3]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:52Z [overcloud.CephStorageServiceChain.ServiceChain.21]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:52Z [overcloud.ComputeServiceChain.ServiceChain.3]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:52Z [overcloud.CephStorageServiceChain.ServiceChain.22]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:52Z [23]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:53Z [overcloud.BlockStorageServiceChain.ServiceChain.15]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:54Z [overcloud.ComputeServiceChain.ServiceChain.37]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:55Z [8]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:55Z [overcloud.CephStorageServiceChain.ServiceChain.6]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:55Z [overcloud.BlockStorageServiceChain.ServiceChain.6]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:55Z [23]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:56Z [overcloud.BlockStorageServiceChain.ServiceChain.6]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:56Z [overcloud.CephStorageServiceChain.ServiceChain.19]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:56Z [overcloud.ComputeServiceChain.ServiceChain.2]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:56Z [overcloud.CephStorageServiceChain.ServiceChain.8]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:56Z [overcloud.ComputeServiceChain.ServiceChain.26]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:56Z [overcloud.BlockStorageServiceChain.ServiceChain.9]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:56Z [overcloud.CephStorageServiceChain.ServiceChain.21]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:57Z [overcloud.BlockStorageServiceChain.ServiceChain.9]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:57Z [overcloud.ComputeServiceChain.ServiceChain.24]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:57Z [overcloud.CephStorageServiceChain.ServiceChain.24]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:57Z [overcloud.BlockStorageServiceChain.ServiceChain.3]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:57Z [overcloud.CephStorageServiceChain.ServiceChain.24]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:57Z [overcloud.ComputeServiceChain.ServiceChain.11]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:57Z [19]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:58Z [overcloud.CephStorageServiceChain.ServiceChain.8]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:58Z [15]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:58Z [overcloud.BlockStorageServiceChain.ServiceChain.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:58Z [15]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:58Z [overcloud.BlockStorageServiceChain.ServiceChain.25]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:58Z [overcloud.ComputeServiceChain.ServiceChain.15]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:58Z [overcloud.CephStorageServiceChain.ServiceChain.9]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:58Z [overcloud.CephStorageServiceChain.ServiceChain.6]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:58Z [overcloud.BlockStorageServiceChain.ServiceChain.14]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:59Z [10]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:59Z [overcloud.BlockStorageServiceChain.ServiceChain.1]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:59Z [overcloud.CephStorageServiceChain.ServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:24:59Z [overcloud.BlockStorageServiceChain.ServiceChain.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:59Z [overcloud.ComputeServiceChain.ServiceChain.31]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:24:59Z [overcloud.ComputeServiceChain.ServiceChain.37]: CREATE_COMPLETE  state changed
+2018-11-19 08:24:59Z [overcloud.ComputeServiceChain.ServiceChain.31]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:00Z [overcloud.CephStorageServiceChain.ServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:00Z [overcloud.BlockStorageServiceChain.ServiceChain.1]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:00Z [overcloud.BlockStorageServiceChain.ServiceChain.2]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:00Z [overcloud.BlockStorageServiceChain.ServiceChain.8]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:00Z [overcloud.BlockStorageServiceChain.ServiceChain.8]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:00Z [overcloud.ComputeServiceChain.ServiceChain.16]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:00Z [12]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:01Z [10]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:01Z [overcloud.BlockStorageServiceChain.ServiceChain.15]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:01Z [8]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:01Z [11]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:01Z [overcloud.BlockStorageServiceChain.ServiceChain.19]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:01Z [overcloud.ComputeServiceChain.ServiceChain.32]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:01Z [overcloud.ComputeServiceChain.ServiceChain.32]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:02Z [overcloud.BlockStorageServiceChain.ServiceChain.20]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:02Z [overcloud.BlockStorageServiceChain.ServiceChain.14]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:02Z [13]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:03Z [overcloud.BlockStorageServiceChain.ServiceChain.19]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:03Z [13]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:03Z [overcloud.ComputeServiceChain.ServiceChain.21]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:03Z [overcloud.ComputeServiceChain.ServiceChain.21]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:04Z [overcloud.BlockStorageServiceChain.ServiceChain.26]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:04Z [overcloud.ComputeServiceChain.ServiceChain.26]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:04Z [24]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:04Z [overcloud.ComputeServiceChain.ServiceChain.7]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:04Z [overcloud.BlockStorageServiceChain.ServiceChain.26]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:04Z [overcloud.ComputeServiceChain.ServiceChain.8]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:04Z [11]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:05Z [overcloud.ComputeServiceChain.ServiceChain.41]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:05Z [6]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:05Z [overcloud.BlockStorageServiceChain.ServiceChain.20]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:05Z [overcloud.ComputeServiceChain.ServiceChain.16]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:05Z [overcloud.BlockStorageServiceChain.ServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:25:05Z [6]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:05Z [overcloud.BlockStorageServiceChain.ServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:05Z [overcloud.CephStorageServiceChain.GlobalConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:06Z [5]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.LoggingSourcesConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.LoggingSourcesConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.PreUpgradeRollingTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.ServiceServerMetadataHook]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:06Z [overcloud.ComputeServiceChain.ServiceChain.41]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.GlobalConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.PreUpgradeRollingTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.UpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.ServiceServerMetadataHook]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:06Z [overcloud.CephStorageServiceChain.UpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:07Z [24]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:07Z [overcloud.ComputeServiceChain.ServiceChain.33]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:07Z [overcloud.CephStorageServiceChain.DockerPuppetTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:07Z [overcloud.CephStorageServiceChain.DockerPuppetTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:07Z [overcloud.ComputeServiceChain.ServiceChain.10]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:07Z [overcloud.ComputeServiceChain.ServiceChain.15]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:07Z [overcloud.ComputeServiceChain.ServiceChain.10]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:07Z [3]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:07Z [overcloud.CephStorageServiceChain.ServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:07Z [overcloud.CephStorageServiceChain.MonitoringSubscriptionsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:07Z [overcloud.CephStorageServiceChain.MonitoringSubscriptionsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:08Z [41]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.DockerConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:08Z [3]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.ServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:08Z [1]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.CellV2Discovery]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.DockerConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.UpgradeBatchTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.CellV2Discovery]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:08Z [1]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:08Z [overcloud.CephStorageServiceChain.WorkflowTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:08Z [5]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [70]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.UpgradeBatchTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [12]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.KollaConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.WorkflowTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [20]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.ComputeServiceChain.ServiceChain.33]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.HostPrepTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.ComputeServiceChain.ServiceChain.25]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.LoggingGroupsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.KollaConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [70]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.LoggingGroupsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.FastForwardUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:09Z [overcloud.CephStorageServiceChain.HostPrepTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.FastForwardPostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.ExternalDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.FastForwardUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.DeployStepsTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.FastForwardPostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.ExternalDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.PostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.UpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.ServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [123]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.PostUpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.PostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.ServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [overcloud.CephStorageServiceChain.PostUpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:10Z [41]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:11Z [overcloud.CephStorageServiceChain.UpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:11Z [overcloud.ComputeServiceChain.ServiceChain.20]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:11Z [overcloud.CephStorageServiceChain.DockerConfigScripts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:11Z [21]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:11Z [123]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:11Z [overcloud.CephStorageServiceChain.DockerConfigScripts]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:11Z [overcloud.ComputeServiceChain.ServiceChain.23]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:11Z [overcloud.CephStorageServiceChain.DeployStepsTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:12Z [4]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:12Z [overcloud.ComputeServiceChain.ServiceChain.25]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:12Z [overcloud.CephStorageServiceChain.PuppetStepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:12Z [18]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:12Z [overcloud.CephStorageServiceChain.PuppetStepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:12Z [overcloud.CephStorageServiceChain.PuppetConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:12Z [overcloud.CephStorageServiceChain.PuppetConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:12Z [overcloud.ComputeServiceChain.ServiceChain.40]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:12Z [overcloud.CephStorageServiceChain.ExternalPostDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:13Z [overcloud.ComputeServiceChain.ServiceChain.20]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:13Z [69]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:13Z [overcloud.ComputeServiceChain.ServiceChain.30]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:13Z [overcloud.ComputeServiceChain.ServiceChain.30]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:14Z [9]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:14Z [21]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:14Z [overcloud.ComputeServiceChain.ServiceChain.22]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:14Z [overcloud.CephStorageServiceChain.ExternalPostDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:14Z [overcloud.ComputeServiceChain.ServiceChain.40]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:14Z [76]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:14Z [overcloud.CephStorageServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:25:15Z [76]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:15Z [22]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:15Z [9]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:15Z [69]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:15Z [overcloud.ComputeServiceChain.ServiceChain.6]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:16Z [overcloud.ComputeServiceChain.ServiceChain.6]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:16Z [overcloud.CephStorageServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:16Z [0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:17Z [24]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:17Z [0]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:17Z [18]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:17Z [22]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:17Z [overcloud.ComputeServiceChain.ServiceChain.18]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:18Z [85]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:18Z [overcloud.ComputeServiceChain.ServiceChain.42]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:18Z [7]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:18Z [85]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:18Z [overcloud.ComputeServiceChain.ServiceChain.42]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:19Z [overcloud.CephStorageServiceChainRoleData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:19Z [overcloud.CephStorageServiceChainRoleData]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:19Z [78]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:19Z [17]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:19Z [78]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:20Z [overcloud.ComputeServiceChain.ServiceChain.36]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:20Z [overcloud.CephStorageServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:20Z [7]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:20Z [25]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:20Z [overcloud.CephStorageServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:20Z [overcloud.ComputeServiceChain.ServiceChain.18]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:21Z [25]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:23Z [7]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:23Z [16]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:23Z [overcloud.ComputeServiceChain.ServiceChain.8]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:23Z [17]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:24Z [32]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:24Z [20]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:24Z [7]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:24Z [overcloud.ObjectStorageServiceChain.ServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:25:25Z [105]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:25Z [overcloud.ObjectStorageServiceChain.ServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:27Z [138]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:28Z [32]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:28Z [overcloud.BlockStorageServiceChain.MonitoringSubscriptionsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:29Z [73]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:29Z [overcloud.BlockStorageServiceChain.MonitoringSubscriptionsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:29Z [overcloud.BlockStorageServiceChain.WorkflowTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:29Z [overcloud.BlockStorageServiceChain.WorkflowTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:29Z [overcloud.BlockStorageServiceChain.ServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:29Z [overcloud.BlockStorageServiceChain.ServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:29Z [73]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:29Z [93]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:29Z [4]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:29Z [overcloud.BlockStorageServiceChain.GlobalConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:29Z [93]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.GlobalConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [overcloud.ComputeServiceChain.ServiceChain.36]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.FastForwardUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.FastForwardPostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:30Z [91]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:30Z [24]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.FastForwardUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.FastForwardPostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.PuppetConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:30Z [overcloud.BlockStorageServiceChain.PuppetConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:30Z [91]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:32Z [121]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:32Z [133]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:33Z [133]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:33Z [overcloud.BlockStorageServiceChain.CellV2Discovery]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:33Z [43]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:33Z [overcloud.BlockStorageServiceChain.LoggingGroupsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:33Z [overcloud.BlockStorageServiceChain.CellV2Discovery]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:33Z [overcloud.BlockStorageServiceChain.ServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:34Z [overcloud.BlockStorageServiceChain.ServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:34Z [138]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:34Z [72]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:34Z [43]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [72]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.UpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.LoggingGroupsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.ExternalDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.PuppetStepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.UpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.ExternalDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.UpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:35Z [overcloud.ComputeServiceChain.ServiceChain.23]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.PuppetStepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:35Z [overcloud.BlockStorageServiceChain.DeployStepsTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:36Z [50]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:36Z [overcloud.BlockStorageServiceChain.LoggingSourcesConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:36Z [overcloud.BlockStorageServiceChain.LoggingSourcesConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.DeployStepsTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:37Z [overcloud.ComputeServiceChain.ServiceChain.22]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.DockerConfigScripts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.DockerPuppetTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:37Z [overcloud.ComputeServiceChain.ServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.DockerConfigScripts]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.DockerConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.UpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:37Z [108]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.UpgradeBatchTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:37Z [overcloud.BlockStorageServiceChain.UpgradeBatchTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.DockerPuppetTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.DockerConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:38Z [overcloud.ComputeServiceChain.ServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.PostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.PostUpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.ExternalPostDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.PostUpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:38Z [overcloud.BlockStorageServiceChain.ExternalPostDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.PostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.PreUpgradeRollingTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.PreUpgradeRollingTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.ServiceServerMetadataHook]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:39Z [105]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.ServiceServerMetadataHook]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:39Z [37]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.HostPrepTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:39Z [103]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:39Z [overcloud.BlockStorageServiceChain.KollaConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:40Z [overcloud.BlockStorageServiceChain.HostPrepTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:40Z [74]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:40Z [overcloud.BlockStorageServiceChain.KollaConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:41Z [overcloud.BlockStorageServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:25:41Z [74]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:41Z [overcloud.BlockStorageServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:42Z [122]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:42Z [16]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:42Z [122]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:43Z [34]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:43Z [108]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:43Z [34]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:45Z [55]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:45Z [121]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:45Z [overcloud.ObjectStorageServiceChain.ServiceServerMetadataHook]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:45Z [135]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:45Z [overcloud.BlockStorageServiceChainRoleData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:45Z [overcloud.ObjectStorageServiceChain.PostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:46Z [overcloud.ObjectStorageServiceChain.ServiceServerMetadataHook]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:46Z [overcloud.BlockStorageServiceChainRoleData]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:47Z [97]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:47Z [overcloud.ObjectStorageServiceChain.PuppetConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:47Z [overcloud.ObjectStorageServiceChain.UpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:47Z [overcloud.ObjectStorageServiceChain.PostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:48Z [overcloud.ObjectStorageServiceChain.UpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:48Z [overcloud.ObjectStorageServiceChain.PuppetConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:48Z [overcloud.ObjectStorageServiceChain.UpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:48Z [overcloud.BlockStorageServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:48Z [overcloud.ObjectStorageServiceChain.PuppetStepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:48Z [overcloud.ObjectStorageServiceChain.DockerPuppetTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:48Z [overcloud.ObjectStorageServiceChain.DockerPuppetTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.UpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:49Z [51]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.ServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:49Z [overcloud.BlockStorageServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.DockerConfigScripts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.FastForwardUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.DockerConfigScripts]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.FastForwardUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:49Z [overcloud.ObjectStorageServiceChain.KollaConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.PreUpgradeRollingTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.ServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.PreUpgradeRollingTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.PuppetStepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.PostUpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:50Z [61]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.LoggingGroupsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:50Z [overcloud.ObjectStorageServiceChain.LoggingSourcesConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:51Z [overcloud.ObjectStorageServiceChain.ExternalPostDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:51Z [overcloud.ObjectStorageServiceChain.HostPrepTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:51Z [overcloud.ObjectStorageServiceChain.ExternalDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:51Z [overcloud.ObjectStorageServiceChain.LoggingGroupsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:51Z [overcloud.ObjectStorageServiceChain.LoggingSourcesConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:51Z [overcloud.ObjectStorageServiceChain.ExternalDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.PostUpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.HostPrepTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.ExternalPostDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.MonitoringSubscriptionsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:52Z [62]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:52Z [38]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.KollaConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.CellV2Discovery]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.DockerConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:52Z [overcloud.ObjectStorageServiceChain.MonitoringSubscriptionsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:53Z [62]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:53Z [overcloud.ObjectStorageServiceChain.DockerConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:53Z [overcloud.ObjectStorageServiceChain.CellV2Discovery]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:55Z [overcloud.ObjectStorageServiceChain.UpgradeBatchTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:55Z [overcloud.ObjectStorageServiceChain.UpgradeBatchTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:55Z [99]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:55Z [50]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:55Z [103]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:56Z [119]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:56Z [overcloud.ObjectStorageServiceChain.ServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:56Z [overcloud.ObjectStorageServiceChain.DeployStepsTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:56Z [overcloud.ObjectStorageServiceChain.GlobalConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:56Z [overcloud.ObjectStorageServiceChain.DeployStepsTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:57Z [overcloud.ObjectStorageServiceChain.GlobalConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:57Z [31]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:58Z [overcloud.ObjectStorageServiceChain.FastForwardPostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:58Z [overcloud.ObjectStorageServiceChain.FastForwardPostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:58Z [overcloud.ObjectStorageServiceChain.WorkflowTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:25:58Z [overcloud.ObjectStorageServiceChain.WorkflowTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:25:58Z [31]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:00Z [overcloud.ObjectStorageServiceChain.ServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:02Z [135]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:02Z [77]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:02Z [13]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:02Z [overcloud.ObjectStorageServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:26:02Z [37]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:03Z [115]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:04Z [77]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:04Z [overcloud.ObjectStorageServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:05Z [115]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:05Z [61]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:05Z [55]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:06Z [8]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:06Z [15]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:06Z [13]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:06Z [8]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:07Z [64]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:08Z [overcloud.ComputeServiceChain.MonitoringSubscriptionsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:08Z [overcloud.ObjectStorageServiceChainRoleData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:08Z [overcloud.ComputeServiceChain.DockerConfigScripts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:08Z [51]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:08Z [overcloud.ComputeServiceChain.DockerConfigScripts]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:09Z [overcloud.ComputeServiceChain.MonitoringSubscriptionsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:09Z [overcloud.ObjectStorageServiceChainRoleData]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:09Z [79]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:09Z [overcloud.ComputeServiceChain.FastForwardUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:09Z [overcloud.ComputeServiceChain.FastForwardUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:10Z [79]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:10Z [28]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:10Z [overcloud.ComputeServiceChain.PuppetStepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:10Z [overcloud.ComputeServiceChain.PostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:11Z [overcloud.ComputeServiceChain.PuppetStepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:11Z [28]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:11Z [overcloud.ComputeServiceChain.FastForwardPostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:11Z [overcloud.ComputeServiceChain.PostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:11Z [overcloud.ObjectStorageServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:11Z [overcloud.ComputeServiceChain.FastForwardPostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:11Z [overcloud.ObjectStorageServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:11Z [9]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:12Z [97]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:12Z [9]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:12Z [overcloud.ComputeServiceChain.ServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:12Z [overcloud.ComputeServiceChain.CellV2Discovery]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:12Z [overcloud.ComputeServiceChain.CellV2Discovery]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:12Z [140]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:12Z [overcloud.ComputeServiceChain.UpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:12Z [overcloud.ComputeServiceChain.ServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:13Z [overcloud.ComputeServiceChain.UpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:13Z [overcloud.ComputeServiceChain.UpgradeBatchTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:13Z [overcloud.ComputeServiceChain.UpgradeBatchTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:13Z [overcloud.ComputeServiceChain.PuppetConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:13Z [overcloud.ComputeServiceChain.ExternalPostDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:14Z [29]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:14Z [overcloud.ComputeServiceChain.PuppetConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:14Z [overcloud.ComputeServiceChain.ExternalPostDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:14Z [33]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:14Z [overcloud.ComputeServiceChain.LoggingSourcesConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:14Z [overcloud.ComputeServiceChain.WorkflowTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:14Z [overcloud.ComputeServiceChain.PostUpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:14Z [overcloud.ComputeServiceChain.LoggingSourcesConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:15Z [33]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:15Z [overcloud.ComputeServiceChain.WorkflowTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:15Z [15]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:15Z [0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:16Z [overcloud.ComputeServiceChain.GlobalConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:16Z [29]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:16Z [overcloud.ComputeServiceChain.PostUpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:16Z [overcloud.ComputeServiceChain.PreUpgradeRollingTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:16Z [overcloud.ComputeServiceChain.GlobalConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:16Z [overcloud.ComputeServiceChain.PreUpgradeRollingTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:17Z [0]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:17Z [137]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:17Z [overcloud.ComputeServiceChain.ServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:17Z [119]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:17Z [overcloud.ComputeServiceChain.ExternalDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:17Z [140]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:17Z [overcloud.ComputeServiceChain.ServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:17Z [overcloud.ComputeServiceChain.UpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.UpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.ExternalDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.DeployStepsTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [118]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.DockerConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.HostPrepTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.LoggingGroupsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.DockerConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.DockerPuppetTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.HostPrepTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.LoggingGroupsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:18Z [overcloud.ComputeServiceChain.DockerPuppetTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:19Z [overcloud.ComputeServiceChain.DeployStepsTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:19Z [44]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:19Z [overcloud.ComputeServiceChain.ServiceServerMetadataHook]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:19Z [overcloud.ComputeServiceChain.ServiceServerMetadataHook]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:19Z [137]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:19Z [overcloud.ComputeServiceChain.KollaConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:19Z [44]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:19Z [overcloud.ComputeServiceChain.KollaConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:19Z [overcloud.ComputeServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:26:20Z [99]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:20Z [39]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:20Z [39]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:20Z [118]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:21Z [17]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:21Z [38]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:21Z [64]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:21Z [overcloud.ComputeServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:21Z [17]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:22Z [102]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:22Z [102]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:23Z [143]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:23Z [143]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:23Z [overcloud.ComputeServiceChainRoleData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:23Z [overcloud.ComputeServiceChainRoleData]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:24Z [overcloud.ComputeServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:24Z [overcloud.ComputeServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:24Z [81]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:25Z [56]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:26Z [90]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:27Z [65]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:27Z [65]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:28Z [6]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:29Z [6]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:29Z [81]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:30Z [71]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:30Z [25]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:31Z [71]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:31Z [25]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:32Z [131]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:33Z [136]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:33Z [136]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:33Z [56]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:33Z [90]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:35Z [47]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:35Z [22]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:36Z [131]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:36Z [22]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:37Z [40]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:37Z [40]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:38Z [106]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:39Z [54]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:39Z [47]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:40Z [126]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:40Z [126]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:41Z [63]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:42Z [10]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:42Z [10]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:44Z [139]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:44Z [23]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:44Z [63]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:45Z [124]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:46Z [111]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:46Z [111]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:46Z [23]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:46Z [124]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:46Z [106]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:47Z [96]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:47Z [96]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:48Z [139]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:48Z [49]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:49Z [117]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:50Z [117]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:50Z [1]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:51Z [2]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:52Z [54]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:52Z [125]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:52Z [125]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:54Z [84]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:55Z [84]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:55Z [21]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:55Z [21]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:56Z [57]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:56Z [57]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:57Z [80]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:58Z [30]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:26:58Z [30]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:59Z [80]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:59Z [49]: CREATE_COMPLETE  state changed
+2018-11-19 08:26:59Z [83]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:00Z [14]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:01Z [1]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:01Z [67]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:02Z [67]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:02Z [2]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:02Z [98]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:02Z [14]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:02Z [98]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:03Z [26]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:04Z [26]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:04Z [141]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:04Z [141]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:06Z [130]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:07Z [128]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:07Z [128]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:07Z [130]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:07Z [127]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:07Z [83]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:08Z [127]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:08Z [53]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:09Z [58]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:10Z [58]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:10Z [53]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:11Z [120]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:12Z [48]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:13Z [112]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:13Z [112]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:14Z [92]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:14Z [92]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:15Z [3]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:15Z [120]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:16Z [12]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:16Z [12]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:17Z [89]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:18Z [113]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:19Z [116]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:19Z [89]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:19Z [113]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:19Z [116]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:20Z [95]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:20Z [95]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:21Z [86]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:22Z [75]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:23Z [3]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:23Z [11]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:24Z [66]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:24Z [48]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:24Z [66]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:25Z [87]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:26Z [20]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:26Z [20]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:27Z [11]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:27Z [82]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:28Z [134]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:28Z [82]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:28Z [86]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:29Z [5]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:29Z [75]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:30Z [5]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:30Z [42]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:31Z [42]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:31Z [110]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:31Z [110]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:32Z [134]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:32Z [109]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:32Z [109]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:33Z [107]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:34Z [19]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:34Z [19]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:35Z [107]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:35Z [87]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:35Z [132]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:36Z [104]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:37Z [114]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:38Z [35]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:38Z [114]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:39Z [59]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:39Z [59]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:40Z [35]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:41Z [60]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:41Z [60]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:42Z [100]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:43Z [18]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:43Z [18]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:44Z [142]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:44Z [142]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:45Z [129]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:45Z [104]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:45Z [129]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:46Z [88]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:46Z [88]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:47Z [52]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:47Z [132]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:48Z [36]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:49Z [27]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:49Z [27]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:50Z [100]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:50Z [45]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:50Z [45]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:51Z [94]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:52Z [46]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:53Z [68]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:54Z [68]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:54Z [101]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:27:59Z [52]: CREATE_COMPLETE  state changed
+2018-11-19 08:27:59Z [46]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:00Z [94]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:00Z [36]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:04Z [101]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:05Z [overcloud.ControllerServiceChain.ServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:28:05Z [overcloud.ControllerServiceChain.ServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:33Z [overcloud.ControllerServiceChain.MonitoringSubscriptionsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.DockerConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.GlobalConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.MonitoringSubscriptionsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.DockerConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.GlobalConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.LoggingSourcesConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:34Z [overcloud.ControllerServiceChain.LoggingSourcesConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:35Z [overcloud.ControllerServiceChain.LoggingGroupsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:35Z [overcloud.ControllerServiceChain.ServiceServerMetadataHook]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:35Z [overcloud.ControllerServiceChain.ServiceServerMetadataHook]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:35Z [overcloud.ControllerServiceChain.LoggingGroupsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:35Z [overcloud.ControllerServiceChain.ExternalPostDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.ExternalPostDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.PreUpgradeRollingTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.PreUpgradeRollingTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.DeployStepsTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.ServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.DeployStepsTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.ServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.DockerPuppetTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.CellV2Discovery]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:36Z [overcloud.ControllerServiceChain.CellV2Discovery]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.DockerPuppetTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.ServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.ServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.FastForwardPostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.FastForwardPostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.WorkflowTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.PostUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:37Z [overcloud.ControllerServiceChain.WorkflowTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.PostUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.UpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.FastForwardUpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.UpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.UpgradeBatchTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.FastForwardUpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.UpgradeBatchTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:38Z [overcloud.ControllerServiceChain.PuppetStepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:39Z [overcloud.ControllerServiceChain.PuppetStepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:39Z [overcloud.ControllerServiceChain.KollaConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:39Z [overcloud.ControllerServiceChain.PuppetConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:39Z [overcloud.ControllerServiceChain.KollaConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:39Z [overcloud.ControllerServiceChain.PuppetConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.UpgradeTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.PostUpdateTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.UpgradeTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.PostUpdateTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.DockerConfigScripts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.DockerConfigScripts]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:40Z [overcloud.ControllerServiceChain.HostPrepTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:41Z [overcloud.ControllerServiceChain.ExternalDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:41Z [overcloud.ControllerServiceChain.HostPrepTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:41Z [overcloud.ControllerServiceChain.ExternalDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:41Z [overcloud.ControllerServiceChain]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:28:42Z [overcloud.ControllerServiceChain]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:43Z [overcloud.ControllerServiceChainRoleData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:43Z [overcloud.ControllerServiceChainRoleData]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:44Z [overcloud.ComputeServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:44Z [overcloud.ComputeServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:45Z [overcloud.ObjectStorageServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.ComputeMergedConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.ObjectStorageServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:45Z [overcloud.ComputeMergedConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:45Z [overcloud.BlockStorageServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.BlockStorageServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:45Z [overcloud.ControllerServiceNames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.ObjectStorage]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.ObjectStorageMergedConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.Compute]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.ControllerServiceNames]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:45Z [overcloud.ObjectStorageMergedConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:45Z [overcloud.BlockStorage]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.BlockStorageMergedConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:45Z [overcloud.BlockStorageMergedConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:46Z [overcloud.CephStorageServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:46Z [overcloud.CephStorageServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:46Z [overcloud.ControllerServiceConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:46Z [overcloud.Compute]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:28:46Z [overcloud.Compute]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:28:46Z [overcloud.ControllerServiceConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:46Z [overcloud.CephStorage]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:47Z [overcloud.CephStorageMergedConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:47Z [overcloud.CephStorageMergedConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:47Z [overcloud.ObjectStorage]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:47Z [overcloud.ControllerMergedConfigSettings]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:47Z [overcloud.ControllerMergedConfigSettings]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:48Z [overcloud.Compute]: UPDATE_IN_PROGRESS  Stack UPDATE started
+2018-11-19 08:28:48Z [overcloud.Controller]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:48Z [overcloud.ObjectStorageServers]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:48Z [overcloud.ObjectStorageServers]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:48Z [overcloud.Compute.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:48Z [overcloud.BlockStorage]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:48Z [overcloud.CephStorage]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:48Z [overcloud.BlockStorageServers]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.BlockStorageServers]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:49Z [overcloud.BlockStorageNetworkHostnameMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.BlockStorageNetworkHostnameMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:49Z [overcloud.ObjectStorageNetworkHostnameMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.BlockStorageIpListMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.ObjectStorageNetworkHostnameMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:49Z [overcloud.CephStorageServers]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.CephStorageServers]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:49Z [overcloud.CephStorageNetworkHostnameMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.ObjectStorageIpListMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:49Z [overcloud.CephStorageNetworkHostnameMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:50Z [overcloud.CephStorageIpListMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:50Z [overcloud.BlockStorageIpListMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:28:50Z [overcloud.ObjectStorageIpListMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:28:51Z [overcloud.CephStorageIpListMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:28:51Z [overcloud.CephStorageIpListMap.EnabledServicesValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:51Z [overcloud.CephStorageIpListMap.EnabledServicesValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:51Z [overcloud.Controller]: UPDATE_IN_PROGRESS  Stack UPDATE started
+2018-11-19 08:28:51Z [overcloud.BlockStorageIpListMap.NetIpMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:51Z [overcloud.ObjectStorageIpListMap.NetIpMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:51Z [overcloud.BlockStorageIpListMap.NetIpMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:51Z [overcloud.ObjectStorageIpListMap.NetIpMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:51Z [overcloud.Controller.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:52Z [overcloud.ObjectStorageIpListMap.EnabledServicesValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:52Z [overcloud.ObjectStorageIpListMap.EnabledServicesValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:52Z [overcloud.ObjectStorageIpListMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:28:52Z [overcloud.ObjectStorageIpListMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:52Z [overcloud.BlockStorageIpListMap.EnabledServicesValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:52Z [overcloud.Compute.0]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:28:52Z [overcloud.CephStorageIpListMap.NetIpMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:52Z [overcloud.BlockStorageIpListMap.EnabledServicesValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:52Z [overcloud.BlockStorageIpListMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:28:52Z [overcloud.CephStorageIpListMap.NetIpMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:53Z [overcloud.CephStorageIpListMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:28:53Z [overcloud.CephStorageIpListMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:53Z [overcloud.BlockStorageIpListMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:54Z [overcloud.Compute.0.DeploymentActions]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:54Z [overcloud.Compute.0.DeploymentActions]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:55Z [overcloud.Compute.0.NodeUserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:55Z [overcloud.Controller.0]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:28:56Z [overcloud.Compute.0.NovaComputeUpgradeInitConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:56Z [overcloud.Compute.0.NovaComputeUpgradeInitConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:56Z [overcloud.Controller.0.UpdateConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:57Z [overcloud.Compute.0.NodeUserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:57Z [overcloud.Compute.0.RoleUserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:57Z [overcloud.Controller.0.DeploymentActions]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:57Z [overcloud.Controller.0.DeploymentActions]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:58Z [overcloud.Compute.0.NodeAdminUserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:58Z [overcloud.Controller.0.UpdateConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:58Z [overcloud.Controller.0.NodeAdminUserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:59Z [overcloud.Compute.0.RoleUserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:28:59Z [overcloud.Compute.0.UpdateConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:28:59Z [overcloud.Controller.0.NodeUserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:29:00Z [overcloud.Controller.0.NodeAdminUserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:00Z [overcloud.Compute.0.NodeAdminUserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:00Z [overcloud.Compute.0.UserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:29:00Z [overcloud.Controller.0.RoleUserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:29:01Z [overcloud.Compute.0.UserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:01Z [overcloud.Compute.0.NovaCompute]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:29:01Z [overcloud.Compute.0.UpdateConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:01Z [overcloud.Controller.0.NodeUserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:01Z [overcloud.Controller.0.ControllerUpgradeInitConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:29:02Z [overcloud.Controller.0.ControllerUpgradeInitConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:02Z [overcloud.Controller.0.RoleUserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:03Z [overcloud.Controller.0.UserData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:29:03Z [overcloud.Controller.0.UserData]: CREATE_COMPLETE  state changed
+2018-11-19 08:29:03Z [overcloud.Controller.0.Controller]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:01Z [overcloud.Compute.0.NovaCompute]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:02Z [overcloud.Compute.0.StorageMgmtPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:02Z [overcloud.Compute.0.InternalApiPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:02Z [overcloud.Compute.0.ExternalPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:02Z [overcloud.Compute.0.TenantPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:02Z [overcloud.Controller.0.Controller]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:02Z [overcloud.Compute.0.StoragePort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:03Z [overcloud.Compute.0.ManagementPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:03Z [overcloud.Compute.0.NetHostMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:03Z [overcloud.Compute.0.PreNetworkConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:03Z [overcloud.Compute.0.NetHostMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:03Z [overcloud.Compute.0.PreNetworkConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.ExternalPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:04Z [overcloud.Compute.0.StorageMgmtPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.PreNetworkConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.PreNetworkConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.StorageMgmtPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.TenantPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:04Z [overcloud.Compute.0.ExternalPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.StoragePort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.ManagementPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:04Z [overcloud.Controller.0.InternalApiPort]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:05Z [overcloud.Controller.0.NetHostMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:05Z [overcloud.Controller.0.NetHostMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:08Z [overcloud.Compute.0.ManagementPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:09Z [overcloud.Controller.0.ManagementPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:11Z [overcloud.Compute.0.TenantPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:12Z [overcloud.Compute.0.StoragePort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:14Z [overcloud.Compute.0.InternalApiPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:14Z [overcloud.Controller.0.StorageMgmtPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:15Z [overcloud.Controller.0.ExternalPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:16Z [overcloud.Compute.0.NetIpMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:16Z [overcloud.Compute.0.NetworkConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:16Z [overcloud.Controller.0.InternalApiPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:16Z [overcloud.Controller.0.TenantPort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:17Z [overcloud.Controller.0.StoragePort]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:17Z [overcloud.Compute.0.NetIpMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:18Z [overcloud.Compute.0.NetworkConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:18Z [overcloud.Compute.0.SshKnownHostsHostnames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:18Z [overcloud.Compute.0.NetworkDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:18Z [overcloud.Compute.0.SshKnownHostsHostnames]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:18Z [overcloud.Compute.0.NovaComputeConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:18Z [overcloud.Compute.0.NovaComputeConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:19Z [overcloud.Controller.0.NetworkConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:19Z [overcloud.Controller.0.NetIpMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.NetworkConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.NetIpMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.NetworkDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.SshKnownHostsHostnames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.ControllerConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.SshKnownHostsHostnames]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:21Z [overcloud.Controller.0.ControllerConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:58Z [overcloud.Compute.0.NetworkDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment 54a469d9-7a0b-4d73-9fcb-750ac06522ff succeeded
+2018-11-19 08:33:58Z [overcloud.Compute.0.NetworkDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:33:58Z [overcloud.Compute.0.NodeTLSCAData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:58Z [overcloud.Compute.0.NovaComputeUpgradeInitDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:58Z [overcloud.Compute.0.UpdateDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:33:58Z [overcloud.Compute.0.NodeTLSCAData]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:03Z [overcloud.Compute.0.NovaComputeUpgradeInitDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment 242d1327-724f-40b5-a79d-c3a325894347 succeeded
+2018-11-19 08:34:03Z [overcloud.Compute.0.NovaComputeUpgradeInitDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:04Z [overcloud.Compute.0.UpdateDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment e81403f1-f247-4847-9992-ed190cc02b4e succeeded
+2018-11-19 08:34:04Z [overcloud.Compute.0.UpdateDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:04Z [overcloud.Compute.0.NovaComputeDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.NetworkDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment 4b23df60-3d80-478b-826b-f91c51dae138 succeeded
+2018-11-19 08:34:06Z [overcloud.Controller.0.NetworkDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.UpdateDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.ControllerUpgradeInitDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.NodeTLSCAData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.NodeTLSCAData]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.NodeTLSData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:06Z [overcloud.Controller.0.NodeTLSData]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:11Z [overcloud.Compute.0.NovaComputeDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment 114d0448-b0dc-4549-b2d8-e8029b9db6c7 succeeded
+2018-11-19 08:34:11Z [overcloud.Controller.0.ControllerUpgradeInitDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment 014c7317-02c4-4158-9698-c385b1a43fef succeeded
+2018-11-19 08:34:11Z [overcloud.Compute.0.NovaComputeDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:11Z [overcloud.Compute.0.ComputeExtraConfigPre]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:11Z [overcloud.Compute.0.SshHostPubKey]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:12Z [overcloud.Controller.0.ControllerUpgradeInitDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:13Z [overcloud.Controller.0.UpdateDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment ac58c9db-39a5-4373-9e5b-7756de91e8ac succeeded
+2018-11-19 08:34:13Z [overcloud.Compute.0.ComputeExtraConfigPre]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:13Z [overcloud.Compute.0.NodeExtraConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:14Z [overcloud.Controller.0.UpdateDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:14Z [overcloud.Controller.0.ControllerDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:15Z [overcloud.Compute.0.NodeExtraConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:22Z [overcloud.Compute.0.SshHostPubKey]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:22Z [overcloud.Compute.0]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:23Z [overcloud.Compute.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:23Z [overcloud.Compute]: UPDATE_COMPLETE  Stack UPDATE completed successfully
+2018-11-19 08:34:23Z [overcloud.Compute]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:24Z [overcloud.ComputeNetworkHostnameMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:24Z [overcloud.ComputeNetworkHostnameMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:24Z [overcloud.ComputeServers]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:24Z [overcloud.ComputeServers]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:24Z [overcloud.ComputeIpListMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:25Z [overcloud.ComputeIpListMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:25Z [overcloud.ComputeIpListMap.NetIpMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:25Z [overcloud.ComputeIpListMap.NetIpMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:26Z [overcloud.ComputeIpListMap.EnabledServicesValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:26Z [overcloud.ComputeIpListMap.EnabledServicesValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:26Z [overcloud.ComputeIpListMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:27Z [overcloud.ComputeIpListMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:27Z [overcloud.Controller.0.ControllerDeployment]: SIGNAL_IN_PROGRESS  Signal: deployment e49e57ec-a024-403e-90f9-2009b7a2d5cc succeeded
+2018-11-19 08:34:27Z [overcloud.Controller.0.ControllerDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:27Z [overcloud.Controller.0.SshHostPubKey]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:27Z [overcloud.Controller.0.ControllerExtraConfigPre]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:29Z [overcloud.Controller.0.ControllerExtraConfigPre]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:30Z [overcloud.Controller.0.NodeExtraConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:31Z [overcloud.Controller.0.NodeExtraConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:46Z [overcloud.Controller.0.SshHostPubKey]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:46Z [overcloud.Controller.0]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:46Z [overcloud.Controller.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:46Z [overcloud.Controller]: UPDATE_COMPLETE  Stack UPDATE completed successfully
+2018-11-19 08:34:46Z [overcloud.Controller]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:47Z [overcloud.BlacklistedHostnames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:47Z [overcloud.BlacklistedHostnames]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:47Z [overcloud.SshKnownHostsHostnames]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:47Z [overcloud.SshKnownHostsHostnames]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:47Z [overcloud.BlacklistedIpAddresses]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:47Z [overcloud.BlacklistedIpAddresses]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:47Z [overcloud.ServerIdMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:47Z [overcloud.ControllerServers]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:47Z [overcloud.ServerIdMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:47Z [overcloud.SshKnownHostsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:47Z [overcloud.ControllerServers]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:47Z [overcloud.ServerOsCollectConfigData]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:48Z [overcloud.ServerOsCollectConfigData]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:48Z [overcloud.ControllerNetworkHostnameMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:48Z [overcloud.AllNodesValidationConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:48Z [overcloud.DeployedServerEnvironment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:48Z [overcloud.hostsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:48Z [overcloud.DeployedServerEnvironment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:48Z [overcloud.SshKnownHostsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:48Z [overcloud.ControllerNetworkHostnameMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:49Z [overcloud.ControllerIpListMap]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:49Z [overcloud.AllNodesValidationConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:49Z [overcloud.SshKnownHostsConfig.SSHKnownHostsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:49Z [overcloud.hostsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:49Z [overcloud.SshKnownHostsConfig.SSHKnownHostsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:49Z [overcloud.SshKnownHostsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:49Z [overcloud.AllNodesValidationConfig.AllNodesValidationsImpl]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:49Z [overcloud.AllNodesValidationConfig.AllNodesValidationsImpl]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:49Z [overcloud.AllNodesValidationConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:49Z [overcloud.ControllerIpListMap]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:49Z [overcloud.hostsConfig.hostsConfigImpl]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:49Z [overcloud.hostsConfig.hostsConfigImpl]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:49Z [overcloud.hostsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:49Z [overcloud.ControllerIpListMap.EnabledServicesValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:50Z [overcloud.ControllerIpListMap.EnabledServicesValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:50Z [overcloud.AllNodesValidationConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:50Z [overcloud.SshKnownHostsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:50Z [overcloud.hostsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:50Z [overcloud.ComputeSshKnownHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:50Z [overcloud.CephStorageSshKnownHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:50Z [overcloud.ObjectStorageSshKnownHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:50Z [overcloud.BlockStorageSshKnownHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:50Z [overcloud.ComputeHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:50Z [overcloud.ControllerSshKnownHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:51Z [overcloud.ObjectStorageHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:51Z [overcloud.ControllerIpListMap.NetIpMapValue]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:51Z [overcloud.ControllerIpListMap.NetIpMapValue]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:51Z [overcloud.ControllerHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:51Z [overcloud.CephStorageHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:51Z [overcloud.BlockStorageHostsDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:51Z [overcloud.ControllerIpListMap]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:52Z [overcloud.ControllerIpListMap]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:53Z [overcloud.ComputeSshKnownHostsDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:54Z [overcloud.BlockStorageSshKnownHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:54Z [overcloud.ControllerSshKnownHostsDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:54Z [overcloud.ComputeHostsDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:54Z [overcloud.ComputeHostsDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:54Z [overcloud.allNodesConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:54Z [overcloud.ControllerHostsDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:54Z [overcloud.CephStorageSshKnownHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:55Z [overcloud.ControllerSshKnownHostsDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:55Z [overcloud.ComputeSshKnownHostsDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:55Z [overcloud.CephStorageHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:55Z [overcloud.ObjectStorageSshKnownHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:55Z [overcloud.BlockStorageHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:55Z [overcloud.ControllerHostsDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:56Z [overcloud.ObjectStorageHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:57Z [overcloud.allNodesConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:34:57Z [overcloud.allNodesConfig.allNodesConfigImpl]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:34:58Z [overcloud.allNodesConfig.allNodesConfigImpl]: CREATE_COMPLETE  state changed
+2018-11-19 08:34:58Z [overcloud.allNodesConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:34:58Z [overcloud.allNodesConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:09Z [overcloud.ComputeHostsDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment fdb0bde1-9ce0-4b1d-a373-018946f80fac succeeded
+2018-11-19 08:35:09Z [overcloud.ComputeHostsDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:09Z [overcloud.ComputeHostsDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:35:10Z [overcloud.ComputeHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:10Z [overcloud.ComputeSshKnownHostsDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment b4b343a7-2dd3-492d-8d11-cf4d595fe7ed succeeded
+2018-11-19 08:35:10Z [overcloud.ComputeSshKnownHostsDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:10Z [overcloud.ComputeSshKnownHostsDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:35:11Z [overcloud.ComputeSshKnownHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:17Z [overcloud.ControllerHostsDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment d1eed4c9-4e4a-4b3f-ba04-a117c078e51f succeeded
+2018-11-19 08:35:18Z [overcloud.ControllerHostsDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:18Z [overcloud.ControllerHostsDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:35:18Z [overcloud.ControllerHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:18Z [overcloud.ControllerSshKnownHostsDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment 08613649-4358-471d-9beb-6130e1a6001e succeeded
+2018-11-19 08:35:18Z [overcloud.ControllerSshKnownHostsDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:18Z [overcloud.ControllerSshKnownHostsDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:35:19Z [overcloud.ControllerSshKnownHostsDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:19Z [overcloud.ControllerAllNodesDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:19Z [overcloud.BlockStorageAllNodesDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:19Z [overcloud.ObjectStorageAllNodesDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:19Z [overcloud.ComputeAllNodesDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:19Z [overcloud.CephStorageAllNodesDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:21Z [overcloud.ComputeAllNodesDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:35:21Z [overcloud.BlockStorageAllNodesDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:22Z [overcloud.ComputeAllNodesDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:22Z [overcloud.ObjectStorageAllNodesDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:22Z [overcloud.ControllerAllNodesDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:35:22Z [overcloud.BlockStorageAllNodesValidationDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:22Z [overcloud.ControllerAllNodesDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:22Z [overcloud.ObjectStorageAllNodesValidationDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:23Z [overcloud.CephStorageAllNodesDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:23Z [overcloud.BlockStorageAllNodesValidationDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:23Z [overcloud.CephStorageAllNodesValidationDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:24Z [overcloud.ObjectStorageAllNodesValidationDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:25Z [overcloud.CephStorageAllNodesValidationDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:42Z [overcloud.ComputeAllNodesDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment 62e48b07-8b99-45b7-8139-94d607c95242 succeeded
+2018-11-19 08:35:43Z [overcloud.ComputeAllNodesDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:43Z [overcloud.ComputeAllNodesDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:35:43Z [overcloud.ComputeAllNodesDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:43Z [overcloud.ComputeAllNodesValidationDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:45Z [overcloud.ComputeAllNodesValidationDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:35:45Z [overcloud.ComputeAllNodesValidationDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:50Z [overcloud.ControllerAllNodesDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment fc7bd864-e9c9-4eda-a231-54f62f22744b succeeded
+2018-11-19 08:35:50Z [overcloud.ControllerAllNodesDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:50Z [overcloud.ControllerAllNodesDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:35:51Z [overcloud.ControllerAllNodesDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:51Z [overcloud.UpdateWorkflow]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:52Z [overcloud.UpdateWorkflow]: CREATE_COMPLETE  state changed
+2018-11-19 08:35:52Z [overcloud.ControllerAllNodesValidationDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:35:53Z [overcloud.ControllerAllNodesValidationDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:35:53Z [overcloud.ControllerAllNodesValidationDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:16Z [overcloud.ComputeAllNodesValidationDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment 21635803-b92c-4608-87dd-573f70588573 succeeded
+2018-11-19 08:36:16Z [overcloud.ComputeAllNodesValidationDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:16Z [overcloud.ComputeAllNodesValidationDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:16Z [overcloud.ComputeAllNodesValidationDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:24Z [overcloud.ControllerAllNodesValidationDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment fa0af2ab-2b90-4aec-b16b-0edadfe9f25d succeeded
+2018-11-19 08:36:24Z [overcloud.ControllerAllNodesValidationDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:24Z [overcloud.ControllerAllNodesValidationDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:25Z [overcloud.ControllerAllNodesValidationDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:25Z [overcloud.AllNodesExtraConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:25Z [overcloud.AllNodesExtraConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:26Z [overcloud.AllNodesDeploySteps]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:28Z [overcloud.AllNodesDeploySteps]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:30Z [overcloud.AllNodesDeploySteps.ExternalPostDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:30Z [overcloud.AllNodesDeploySteps.ExternalPostDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:31Z [overcloud.AllNodesDeploySteps.ExternalDeployTasks]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:31Z [overcloud.AllNodesDeploySteps.ExternalDeployTasks]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:32Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:33Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:33Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:33Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsConfig.DeployArtifacts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsConfig.DeployArtifacts]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsConfig.DeployArtifacts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsConfig.DeployArtifacts]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.ComputeArtifactsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:34Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsDeploy]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.ComputeArtifactsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.ComputeArtifactsConfig.DeployArtifacts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsDeploy]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.ComputeArtifactsConfig.DeployArtifacts]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.ComputeArtifactsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:35Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:36Z [overcloud.AllNodesDeploySteps.ComputeArtifactsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:36Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:36Z [overcloud.AllNodesDeploySteps.RoleConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:36Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsConfig.DeployArtifacts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsConfig.DeployArtifacts]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.ObjectStorageArtifactsDeploy]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.RoleConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:37Z [overcloud.AllNodesDeploySteps.BootstrapServerId]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:38Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsDeploy]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:38Z [overcloud.AllNodesDeploySteps.BootstrapServerId]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:38Z [overcloud.AllNodesDeploySteps.CephStorageArtifactsDeploy]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:38Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:38Z [overcloud.AllNodesDeploySteps.ControllerArtifactsConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.ControllerHostPrepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.CephStorageHostPrepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.ControllerHostPrepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.BlockStorageHostPrepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.BlockStorageHostPrepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:39Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.BlockStorageArtifactsDeploy]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ControllerArtifactsConfig]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.BlockStorageHostPrepDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.CephStorageHostPrepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ComputeHostPrepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ObjectStorageHostPrepConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ComputeHostPrepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.CephStorageHostPrepDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ObjectStorageHostPrepConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ControllerArtifactsConfig.DeployArtifacts]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ControllerArtifactsConfig.DeployArtifacts]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:40Z [overcloud.AllNodesDeploySteps.ControllerArtifactsConfig]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:41Z [overcloud.AllNodesDeploySteps.ObjectStorageHostPrepDeployment]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:41Z [overcloud.AllNodesDeploySteps.ControllerArtifactsConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:41Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.BlockStorageHostPrepDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.CephStorageHostPrepDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.BlockStoragePreConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.BlockStoragePreConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.CephStoragePreConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.ObjectStorageHostPrepDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.CephStoragePreConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:42Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:43Z [overcloud.AllNodesDeploySteps.ObjectStoragePreConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:43Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy]: CREATE_IN_PROGRESS  Stack CREATE started
+2018-11-19 08:36:43Z [overcloud.AllNodesDeploySteps.ObjectStoragePreConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:44Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy.0]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:36:48Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy.0]: SIGNAL_IN_PROGRESS  Signal: deployment e603d7fc-3252-4f82-83d5-dea4f2832571 succeeded
+2018-11-19 08:36:48Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:48Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:49Z [overcloud.AllNodesDeploySteps.ComputeArtifactsDeploy]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:56Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy.0]: SIGNAL_IN_PROGRESS  Signal: deployment 1b2e6b9f-e8e5-4578-8bba-1e972a0fc153 succeeded
+2018-11-19 08:36:57Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:36:57Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:36:58Z [overcloud.AllNodesDeploySteps.ControllerArtifactsDeploy]: CREATE_COMPLETE  state changed
+2018-11-19 08:37:21Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment 176b4690-5772-412f-a52d-68deb6700c61 succeeded
+2018-11-19 08:37:21Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment.0]: CREATE_COMPLETE  state changed
+2018-11-19 08:37:21Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment]: CREATE_COMPLETE  Stack CREATE completed successfully
+2018-11-19 08:37:22Z [overcloud.AllNodesDeploySteps.ComputeHostPrepDeployment]: CREATE_COMPLETE  state changed
+2018-11-19 08:37:24Z [overcloud.AllNodesDeploySteps.ComputePreConfig]: CREATE_IN_PROGRESS  state changed
+2018-11-19 08:37:26Z [overcloud.AllNodesDeploySteps.ComputePreConfig]: CREATE_COMPLETE  state changed
+2018-11-19 08:37:37Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment.0]: SIGNAL_IN_PROGRESS  Signal: deployment dd32410b-a1ef-4517-b125-570a3362a338 failed (2)
+2018-11-19 08:37:38Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment.0]: CREATE_FAILED  Error: resources[0]: Deployment to server failed: deploy_status_code : Deployment exited with non-zero status code: 2
+2018-11-19 08:37:38Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment]: CREATE_FAILED  Resource CREATE failed: Error: resources[0]: Deployment to server failed: deploy_status_code : Deployment exited with non-zero status code: 2
+2018-11-19 08:37:39Z [overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment]: CREATE_FAILED  Error: resources.ControllerHostPrepDeployment.resources[0]: Deployment to server failed: deploy_status_code: Deployment exited with non-zero status code: 2
+2018-11-19 08:37:40Z [overcloud.AllNodesDeploySteps]: CREATE_FAILED  Resource CREATE failed: Error: resources.ControllerHostPrepDeployment.resources[0]: Deployment to server failed: deploy_status_code: Deployment exited with non-zero status code: 2
+2018-11-19 08:37:42Z [overcloud.AllNodesDeploySteps]: CREATE_FAILED  Error: resources.AllNodesDeploySteps.resources.ControllerHostPrepDeployment.resources[0]: Deployment to server failed: deploy_status_code: Deployment exited with non-zero status code: 2
+2018-11-19 08:37:43Z [overcloud]: CREATE_FAILED  Resource CREATE failed: Error: resources.AllNodesDeploySteps.resources.ControllerHostPrepDeployment.resources[0]: Deployment to server failed: deploy_status_code: Deployment exited with non-zero status code: 2
+
+ Stack overcloud CREATE_FAILED 
+
+overcloud.AllNodesDeploySteps.ControllerHostPrepDeployment.0:
+  resource_type: OS::Heat::SoftwareDeployment
+  physical_resource_id: dd32410b-a1ef-4517-b125-570a3362a338
+  status: CREATE_FAILED
+  status_reason: |
+    Error: resources[0]: Deployment to server failed: deploy_status_code : Deployment exited with non-zero status code: 2
+  deploy_stdout: |
+    ...
+    TASK [swift logs readme] *******************************************************
+    changed: [localhost]
+    
+    TASK [Format SwiftRawDisks] ****************************************************
+    failed: [localhost] (item=sdb) => {"changed": false, "err": "mkfs.xfs: cannot open /dev/sdb: Device or resource busy\n", "failed": true, "item": "sdb", "msg": "Creating filesystem xfs on device '/dev/sdb' failed", "rc": 1}
+    	to retry, use: --limit @/var/lib/heat-config/heat-config-ansible/6b28e2e4-2bf4-4ecc-a64a-66eb2ce6084b_playbook.retry
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=56   changed=40   unreachable=0    failed=1   
+    
+    (truncated, view all with --long)
+  deploy_stderr: |
+

@@ -1,0 +1,9 @@
+parameter_defaults:
+  CinderBackupBackend: ceph 
+  ControllerCount: 1
+  OvercloudControlFlavor: control
+  ComputeCount: 3
+  OvercloudComputeFlavor: compute
+  ComputeHCICount: 0
+  OvercloudComputeHCIFlavor: osdcompute
+  NeutronNetworkType: vlan

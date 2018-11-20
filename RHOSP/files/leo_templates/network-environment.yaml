@@ -1,0 +1,98 @@
+#This file is an example of an environment file for defining the isolated
+#networks and related parameters.
+resource_registry:
+  # Network Interface templates to use (these files must exist)
+  OS::TripleO::Network::Storage: /usr/share/openstack-tripleo-heat-templates/network/storage.yaml
+  OS::TripleO::Network::StorageMgmt: /usr/share/openstack-tripleo-heat-templates/network/storage_mgmt.yaml
+  OS::TripleO::Network::InternalApi: /usr/share/openstack-tripleo-heat-templates/network/internal_api.yaml
+  OS::TripleO::Network::Tenant: /usr/share/openstack-tripleo-heat-templates/network/tenant.yaml
+  OS::TripleO::Network::External: /usr/share/openstack-tripleo-heat-templates/network/external.yaml
+  OS::TripleO::ComputeHCI::Net::SoftwareConfig: /home/stack/templates/nic-configs/compute-hci.yaml
+  OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/templates/nic-configs/controller.yaml
+  OS::TripleO::Services::ComputeNeutronOvsDpdkAgent: /usr/share/openstack-tripleo-heat-templates/puppet/services/neutron-ovs-dpdk-agent.yaml
+
+  OS::TripleO::ComputeHCI::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml  # 1
+  OS::TripleO::ComputeHCI::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::ComputeHCI::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::ComputeHCI::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+  OS::TripleO::ComputeHCI::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt.yaml 
+
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external.yaml  #
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+  # disable StorageMgmt net on controller
+  OS::TripleO::Network::Ports::StorageMgmtVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+
+parameter_defaults:
+  # This section is where deployment-specific configuration is done
+  # CIDR subnet mask length for provisioning network
+  ControlPlaneSubnetCidr: '24'
+  # Gateway router for the provisioning network (or Undercloud IP)
+  ControlPlaneDefaultRoute: 172.30.5.1
+  EC2MetadataIp: 172.30.5.1 # Generally the IP of the Undercloud
+  # Customize the IP subnets to match the local environment
+  InternalApiNetCidr: 192.168.102.0/24
+  StorageNetCidr: 192.168.82.0/24
+  #StorageMgmtNetCidr: 192.168.72.0/24
+  TenantNetCidr: 192.168.122.0/24
+  ExternalNetCidr: 10.240.220.0/24
+  # Customize the VLAN IDs to match the local environment
+  InternalApiNetworkVlanID: 202
+  StorageNetworkVlanID: 302
+  StorageMgmtNetworkVlanID: 402
+  TenantNetworkVlanID: 502
+  #ExternalNetworkVlanID: 1
+  # Customize the IP ranges on each network to use for static IPs and VIPs
+  InternalApiAllocationPools: [{'start': '192.168.102.10', 'end': '192.168.102.200'}]
+  StorageAllocationPools: [{'start': '192.168.82.100', 'end': '192.168.82.200'}]
+  #StorageMgmtAllocationPools: [{'start': '192.168.72.10', 'end': '192.168.72.200'}]
+  TenantAllocationPools: [{'start': '192.168.122.10', 'end': '192.168.122.200'}]
+  ExternalAllocationPools: [{'start': '10.240.220.33', 'end': '10.240.220.36'}]
+  # Leave room if the external network is also used for floating IPs
+  # Gateway router for the external network
+  ExternalInterfaceDefaultRoute: 10.240.220.1
+  # Uncomment if using the Management Network (see network-management.yaml)
+  # ManagementNetCidr: 10.0.1.0/24
+  # ManagementAllocationPools: [{'start': '10.0.1.10', 'end', '10.0.1.50'}]
+  # Use either this parameter or ControlPlaneDefaultRoute in the NIC templates
+  # ManagementInterfaceDefaultRoute: 10.0.1.1
+  # Define the DNS servers (maximum 2) for the overcloud nodes
+  DnsServers: ["10.240.0.10", "10.240.0.11"]
+  # Set to empty string to enable multiple external networks or VLANs
+  NeutronExternalNetworkBridge: "''"
+  # The tunnel type for the tenant network (vxlan or gre). Set to '' to disable tunneling.
+  NeutronTunnelTypes: ''
+  # Customize bonding options, e.g. "mode=4 lacp_rate=1 updelay=1000 miimon=100"
+  BondInterfaceOvsOptions: "mode=4 lacp_rate=1 updelay=1500 miimon=200"
+  DpdkBondInterfaceOvsOptions: "bond_mode=balance-tcp lacp=active"
+
+  NeutronNetworkType: 'vlan'
+  NeutronBridgeMappings: 'datacentre:br-ex'
+  NeutronNetworkVLANRanges: 'datacentre:1:1'
+
+  NeutronDatapathType: "netdev"
+  NeutronVhostuserSocketDir: "/var/lib/vhost_sockets"
+  #NeutronVhostuserSocketDir: "/var/run/openvswitch"
+
+  NovaSchedulerDefaultFilters: "RamFilter,ComputeFilter,ServerGroupAffinityFilter,ServerGroupAntiAffinityFilter,AvailabilityZoneFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,PciPassthroughFilter,NUMATopologyFilter"
+
+# Custom variables for dpdk compute role
+  NovaDpdkComputeReservedHostMemory: 16384
+
+  NovaDpdkComputeVcpuPinSet: "4-9,18-23,32-37,46-51"
+  DpdkComputeKernelArgs: "default_hugepagesz=1GB hugepagesz=1G hugepages=128 iommu=pt intel_iommu=on"
+  DpdkHostIsolatedCoreList: "4-13,18-27,32-41,46-55"
+  DpdkHostCpusList: "'0,1,2,3,14,15,16,17,28,29,30,31,42,43,44,45'"
+
+
+  MysqlMaxConnections: 8192
+
+  controllerExtraConfig:
+    keystone::token_provider: 'fernet'
+    neutron::agents::dhcp::enable_isolated_metadata: true
+    ceilometer::expirer::time_to_live: 7776000
+    horizon::cinder_options:
+        enable_backup: True

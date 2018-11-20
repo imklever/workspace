@@ -1,4 +1,7 @@
-host:
+#############################################
+#############################################
+#host:
+#############################################
 #############################################
 IMM: 10.240.217.13
 用户名密码:
@@ -73,11 +76,6 @@ vbmc start controller
 
 netstat -anp | grep :::62[0-9][0-9]
 
-
-
-
-
-
 ipmitool -I lanplus -H 10.240.220.22 -p 6229 -U admin -P passw0rd power status
 
 
@@ -94,7 +92,10 @@ ipmitool -I lanplus -H 10.240.220.22 -p 6229 -U admin -P passw0rd power status
 
 
 
-undercontroller:
+#############################################
+#############################################
+#undercontroller:
+#############################################
 #############################################
 
 hostnamectl set-hostname leo-undercoloud.lenovo.com
@@ -123,14 +124,14 @@ cat ~/undercloud.conf | sed -e '/^# /d' -e '/^#$/d' -e '/^$/d'
 
 "
 [DEFAULT]
-undercloud_hostname = lctc-brain3-cloud4-director.labs.lenovo.com
+undercloud_hostname = leo-undercoloud.lenovo.com
 undercloud_nameservers = 10.240.0.10,10.240.0.11
 local_ip = 172.30.4.1/24
 network_gateway = 172.30.4.1
 undercloud_public_vip = 172.30.4.2
 undercloud_admin_vip = 172.30.4.3
 undercloud_service_certificate = /etc/pki/tls/certs/undercloud-172.30.4.2.pem
-generate_service_certificate = True
+generate_service_certificate = False
 certificate_generation_ca = local
 local_interface = eth1
 network_cidr = 172.30.4.0/24
@@ -217,6 +218,7 @@ enabled_hardware_types=ipmi,staging-ovirt
 #On RHV
 #############################3
 echo "10.240.220.17 engine.local" > /etc/hosts
+
 {
         "nodes":[
             {
@@ -229,7 +231,8 @@ echo "10.240.220.17 engine.local" > /etc/hosts
                 "pm_password":"passw0rd",
                 "pm_addr":"engine.local",
                 "pm_vm_name":"leo-controller",
-                "capabilities": "profile:control,boot_option:local"
+                "root_device":{"name":"/dev/sda"},
+                "capabilities":"profile:control,boot_option:local"
                 },
             {
                 "name":"compute1",
@@ -241,7 +244,8 @@ echo "10.240.220.17 engine.local" > /etc/hosts
                 "pm_password":"passw0rd",
                 "pm_addr":"engine.local",
                 "pm_vm_name":"leo-compute1",
-                "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
+                "root_device":{"name":"/dev/sda"},
+                "capabilities": "profile:compute,boot_option:local,boot_mode:uefi"
                 },
             {
                 "name":"compute2",
@@ -253,7 +257,8 @@ echo "10.240.220.17 engine.local" > /etc/hosts
                 "pm_password":"passw0rd",
                 "pm_addr":"engine.local",
                 "pm_vm_name":"leo-compute2",
-                "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
+                "root_device":{"name":"/dev/sda"},
+                "capabilities": "profile:compute,boot_option:local,boot_mode:uefi"
                 },
             {
                 "name":"compute3",
@@ -265,10 +270,11 @@ echo "10.240.220.17 engine.local" > /etc/hosts
                 "pm_password":"passw0rd",
                 "pm_addr":"engine.local",
                 "pm_vm_name":"leo-compute3",
-                "capabilities": "profile:osdcompute,boot_option:local,boot_mode:uefi"
+                "root_device":{"name":"/dev/sda"},
+                "capabilities": "profile:compute,boot_option:local,boot_mode:uefi"
                 }
             ]
-        }
+}
 
 
 
@@ -357,7 +363,9 @@ openstack overcloud deploy --templates \
 
 
 
-cmd:
+###################################
+#command:
+###################################
     openstack stack list
     openstack stack delete <ID>
 
@@ -367,4 +375,73 @@ cmd:
 
 
 
+#delete stack
 openstack stack list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $2}' | xargs openstack stack delete;watch openstack stack list
+
+#delete node
+for node in $(openstack baremetal node list --fields uuid -f value) ; do openstack baremetal node delete $node ; done; openstack baremetal node list
+openstack overcloud node import ~/env.json
+openstack overcloud node introspect --all-manageable --provide
+
+openstack overcloud profiles list
+
+openstack flavor list
+
+
+#flavor profile
+openstack flavor create --id auto --ram 4096 --disk 40 --vcpus 1 networker
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="networker" networker
+
+
+#disk info
+openstack baremetal introspection data save 1a4e30da-b6dc-499d-ba87-0bd8a3819bc0 | jq ".inventory.disks"
+
+
+
+
+nova list
+ssh heat-admin@172.30.4.16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

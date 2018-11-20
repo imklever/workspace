@@ -1,0 +1,86 @@
+#This file is an example of an environment file for defining the isolated
+#networks and related parameters.
+resource_registry:
+  # Network Interface templates to use (these files must exist)
+  OS::TripleO::Network::Storage: /usr/share/openstack-tripleo-heat-templates/network/storage.yaml
+  OS::TripleO::Network::InternalApi: /usr/share/openstack-tripleo-heat-templates/network/internal_api.yaml
+  OS::TripleO::Network::Tenant: /usr/share/openstack-tripleo-heat-templates/network/tenant.yaml
+  OS::TripleO::Network::External: /usr/share/openstack-tripleo-heat-templates/network/external.yaml
+  OS::TripleO::Controller::Net::SoftwareConfig:
+    /home/stack/lj_templates/controller.yaml
+  OS::TripleO::Compute::Net::SoftwareConfig:
+    /home/stack/lj_templates/compute.yaml  
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external.yaml  #
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+
+  OS::TripleO::Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+
+#
+#  # disable StorageMgmt net on controller
+#  OS::TripleO::Network::Ports::StorageMgmtVipPort:
+#    /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+#  OS::TripleO::Controller::Ports::StorageMgmtPort:
+#    /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+#  OS::TripleO::Controller::Ports::StorageMgmtVipPort:
+#    /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+
+parameter_defaults:
+  # This section is where deployment-specific configuration is done
+  # CIDR subnet mask length for provisioning network
+  ControlPlaneSubnetCidr: '24'
+  # Gateway router for the provisioning network (or Undercloud IP)
+  ControlPlaneDefaultRoute: 172.30.4.1
+  EC2MetadataIp: 172.30.4.1 # Generally the IP of the Undercloud
+  # Customize the IP subnets to match the local environment
+  InternalApiNetCidr: 172.20.4.0/24
+  StorageNetCidr: 172.80.4.0/24
+  StorageMgmtNetCidr: 172.70.4.0/24
+  TenantNetCidr: 172.40.4.0/24
+  ExternalNetCidr: 10.240.220.0/22
+  # Customize the VLAN IDs to match the local environment
+  InternalApiNetworkVlanID: 202
+  StorageNetworkVlanID: 302
+  StorageMgmtNetworkVlanID: 402
+  TenantNetworkVlanID: 502
+  ExternalNetworkVlanID: 1
+  # Customize the IP ranges on each network to use for static IPs and VIPs
+  InternalApiAllocationPools: [{'start': '172.20.4.10', 'end': '172.20.4.200'}]
+  StorageAllocationPools: [{'start': '172.80.4.100', 'end': '172.80.4.200'}]
+  StorageMgmtAllocationPools: [{'start': '172.70.4.10', 'end': '172.70.4.200'}]
+  TenantAllocationPools: [{'start': '172.40.4.10', 'end': '172.40.4.200'}]
+  ExternalAllocationPools: [{'start': '10.240.220.33', 'end': '10.240.220.36'}]
+  # Leave room if the external network is also used for floating IPs
+  # Gateway router for the external network
+  ExternalInterfaceDefaultRoute: 10.240.220.1
+  # Uncomment if using the Management Network (see network-management.yaml)
+  # ManagementNetCidr: 10.0.1.0/24
+  # ManagementAllocationPools: [{'start': '10.0.1.10', 'end', '10.0.1.50'}]
+  # Use either this parameter or ControlPlaneDefaultRoute in the NIC templates
+  # ManagementInterfaceDefaultRoute: 10.0.1.1
+  # Define the DNS servers (maximum 2) for the overcloud nodes
+  DnsServers: ["10.240.0.10", "10.240.0.11"]
+  # Set to empty string to enable multiple external networks or VLANs
+  NeutronExternalNetworkBridge: "''"
+  # The tunnel type for the tenant network (vxlan or gre). Set to '' to disable tunneling.
+  NeutronTunnelTypes: 'vxlan'
+
+
+  NeutronNetworkType: 'vlan'
+  NeutronBridgeMappings: 'datacentre:br-ex'
+  NeutronNetworkVLANRanges: 'datacentre:1:1'
+
+
+  NovaSchedulerDefaultFilters: "RamFilter,ComputeFilter,ServerGroupAffinityFilter,ServerGroupAntiAffinityFilter,AvailabilityZoneFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,PciPassthroughFilter,NUMATopologyFilter"
+
+  MysqlMaxConnections: 8192
+
+  controllerExtraConfig:
+    keystone::token_provider: 'fernet'
+    neutron::agents::dhcp::enable_isolated_metadata: true
+    ceilometer::expirer::time_to_live: 7776000
+    horizon::cinder_options:
+        enable_backup: True

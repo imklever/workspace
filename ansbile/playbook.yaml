@@ -1,14 +1,14 @@
 ---
 - hosts: local
   remote_user: root
-  gather_facts: False
+  #gather_facts: False
+  gather_facts: True
   tasks:
     - name: install vsftpd
       yum: pkg=vsftpd state=latest
 
-    - debug:
-        msg: "config the vsftpd.conf file"
-    - template:
+    - name: config the vsftpd.conf file
+      template:
         src: vsftpd.conf.j2
         dest: /etc/vsftpd/vsftpd.conf
         owner: root
@@ -16,18 +16,19 @@
         mode: '0600'
         backup: yes
 
-    - debug:
-        msg: "install & config & start vsftpd"
-    - service:
+    - name: install & config & start vsftpd
+      service:
         name: vsftpd
         enabled: yes
         state: started
-    - service:
+
+    - name: restart vsftpd
+      service:
         name: vsftpd
         state: restarted
-    - debug:
-        msg: "stop firewalld"
-    - service:
+
+    - name: stop firewalld
+      service:
         name: firewalld
         enabled: no
         state: stopped

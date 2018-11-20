@@ -1,0 +1,10 @@
+templates: /usr/share/openstack-tripleo-heat-templates/
+environments:
+  - /home/stack/lj_templates/node-info.yaml
+  - /usr/share/openstack-tripleo-heat-templates/environments/network-isolation.yaml
+  - /home/stack/lj_templates/storage-environment.yaml
+  - /home/stack/lj_templates/network-environment.yaml
+  - /home/stack/lj_templates/overcloud_images.yaml
+
+roles:
+  - /home/stack/lj_templates/roles_data.yaml

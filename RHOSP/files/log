@@ -1,0 +1,182 @@
+jinja2 rendering normal template net-config-bond.j2.yaml
+rendering j2 template to file: ./net-config-bond.yaml
+jinja2 rendering normal template net-config-bridge.j2.yaml
+rendering j2 template to file: ./net-config-bridge.yaml
+jinja2 rendering normal template net-config-linux-bridge.j2.yaml
+rendering j2 template to file: ./net-config-linux-bridge.yaml
+jinja2 rendering normal template net-config-noop.j2.yaml
+rendering j2 template to file: ./net-config-noop.yaml
+jinja2 rendering normal template net-config-static-bridge-with-external-dhcp.j2.yaml
+rendering j2 template to file: ./net-config-static-bridge-with-external-dhcp.yaml
+jinja2 rendering normal template net-config-static-bridge.j2.yaml
+rendering j2 template to file: ./net-config-static-bridge.yaml
+jinja2 rendering normal template net-config-static.j2.yaml
+rendering j2 template to file: ./net-config-static.yaml
+jinja2 rendering normal template net-config-undercloud.j2.yaml
+rendering j2 template to file: ./net-config-undercloud.yaml
+jinja2 rendering normal template overcloud-resource-registry-puppet.j2.yaml
+rendering j2 template to file: ./overcloud-resource-registry-puppet.yaml
+jinja2 rendering normal template overcloud.j2.yaml
+rendering j2 template to file: ./overcloud.yaml
+jinja2 rendering normal template post.j2.yaml
+rendering j2 template to file: ./common/post.yaml
+jinja2 rendering normal template host-config-and-reboot.j2.yaml
+rendering j2 template to file: ./environments/host-config-and-reboot.yaml
+jinja2 rendering normal template net-multiple-nics-v6.j2.yaml
+rendering j2 template to file: ./environments/net-multiple-nics-v6.yaml
+jinja2 rendering normal template net-multiple-nics.j2.yaml
+rendering j2 template to file: ./environments/net-multiple-nics.yaml
+jinja2 rendering normal template network-environment.j2.yaml
+rendering j2 template to file: ./environments/network-environment.yaml
+jinja2 rendering normal template network-isolation-v6.j2.yaml
+rendering j2 template to file: ./environments/network-isolation-v6.yaml
+jinja2 rendering normal template network-isolation.j2.yaml
+rendering j2 template to file: ./environments/network-isolation.yaml
+jinja2 rendering normal template deployed-server-environment.j2.yaml
+rendering j2 template to file: ./environments/deployed-server-environment.yaml
+jinja2 rendering normal template net-bond-with-vlans-v6.j2.yaml
+rendering j2 template to file: ./environments/net-bond-with-vlans-v6.yaml
+jinja2 rendering normal template net-bond-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-bond-with-vlans.yaml
+jinja2 rendering normal template net-single-nic-linux-bridge-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-linux-bridge-with-vlans.yaml
+jinja2 rendering normal template net-bond-with-vlans-no-external.j2.yaml
+rendering j2 template to file: ./environments/net-bond-with-vlans-no-external.yaml
+jinja2 rendering normal template net-dpdkbond-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-dpdkbond-with-vlans.yaml
+jinja2 rendering normal template net-single-nic-with-vlans-no-external.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-with-vlans-no-external.yaml
+jinja2 rendering normal template net-single-nic-with-vlans-v6.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-with-vlans-v6.yaml
+jinja2 rendering normal template net-single-nic-with-vlans.j2.yaml
+rendering j2 template to file: ./environments/net-single-nic-with-vlans.yaml
+jinja2 rendering normal template network-environment-v6.j2.yaml
+rendering j2 template to file: ./environments/network-environment-v6.yaml
+jinja2 rendering normal template network-isolation-no-tunneling.j2.yaml
+rendering j2 template to file: ./environments/network-isolation-no-tunneling.yaml
+jinja2 rendering normal template networks-disable.j2.yaml
+rendering j2 template to file: ./environments/networks-disable.yaml
+jinja2 rendering normal template overcloud-baremetal.j2.yaml
+rendering j2 template to file: ./environments/overcloud-baremetal.yaml
+jinja2 rendering normal template split-stack-consistent-hostname-format.j2.yaml
+rendering j2 template to file: ./environments/split-stack-consistent-hostname-format.yaml
+jinja2 rendering normal template mac_hostname.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/mac_hostname.yaml
+jinja2 rendering normal template random_string.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/random_string.yaml
+jinja2 rendering normal template swap-partition.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/swap-partition.yaml
+jinja2 rendering normal template swap.j2.yaml
+rendering j2 template to file: ./extraconfig/all_nodes/swap.yaml
+jinja2 rendering normal template krb-service-principals.j2.yaml
+rendering j2 template to file: ./extraconfig/nova_metadata/krb-service-principals.yaml
+jinja2 rendering normal template post_puppet_pacemaker.j2.yaml
+rendering j2 template to file: ./extraconfig/tasks/post_puppet_pacemaker.yaml
+jinja2 rendering network template network.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/internal_api.yaml
+rendering j2 template to file: ./network/management.yaml
+rendering j2 template to file: ./network/storage.yaml
+rendering j2 template to file: ./network/storage_mgmt.yaml
+rendering j2 template to file: ./network/external.yaml
+rendering j2 template to file: ./network/tenant.yaml
+jinja2 rendering network template network_v6.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/internal_api_v6.yaml
+rendering j2 template to file: ./network/management_v6.yaml
+rendering j2 template to file: ./network/storage_v6.yaml
+rendering j2 template to file: ./network/storage_mgmt_v6.yaml
+rendering j2 template to file: ./network/external_v6.yaml
+rendering j2 template to file: ./network/tenant_v6.yaml
+jinja2 rendering normal template networks.j2.yaml
+rendering j2 template to file: ./network/networks.yaml
+jinja2 rendering normal template service_net_map.j2.yaml
+rendering j2 template to file: ./network/service_net_map.yaml
+jinja2 rendering normal template controller-no-external.j2.yaml
+rendering j2 template to file: ./network/config/bond-with-vlans/controller-no-external.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/bond-with-vlans/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/bond-with-vlans/controller.yaml
+rendering j2 template to file: ./network/config/bond-with-vlans/compute.yaml
+jinja2 rendering normal template compute-dvr.j2.yaml
+rendering j2 template to file: ./network/config/multiple-nics/compute-dvr.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/multiple-nics/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/multiple-nics/controller.yaml
+rendering j2 template to file: ./network/config/multiple-nics/compute.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/single-nic-linux-bridge-vlans/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/single-nic-linux-bridge-vlans/controller.yaml
+rendering j2 template to file: ./network/config/single-nic-linux-bridge-vlans/compute.yaml
+jinja2 rendering normal template controller-no-external.j2.yaml
+rendering j2 template to file: ./network/config/single-nic-vlans/controller-no-external.yaml
+jinja2 rendering normal template controller-v6.j2.yaml
+rendering j2 template to file: ./network/config/single-nic-vlans/controller-v6.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./network/config/single-nic-vlans/controller.yaml
+rendering j2 template to file: ./network/config/single-nic-vlans/compute.yaml
+jinja2 rendering normal template net_ip_list_map.j2.yaml
+rendering j2 template to file: ./network/ports/net_ip_list_map.yaml
+jinja2 rendering normal template net_ip_map.j2.yaml
+rendering j2 template to file: ./network/ports/net_ip_map.yaml
+jinja2 rendering normal template net_vip_map_external.j2.yaml
+rendering j2 template to file: ./network/ports/net_vip_map_external.yaml
+jinja2 rendering normal template net_vip_map_external_v6.j2.yaml
+rendering j2 template to file: ./network/ports/net_vip_map_external_v6.yaml
+jinja2 rendering network template port.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api.yaml
+rendering j2 template to file: ./network/ports/management.yaml
+rendering j2 template to file: ./network/ports/storage.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt.yaml
+rendering j2 template to file: ./network/ports/external.yaml
+rendering j2 template to file: ./network/ports/tenant.yaml
+jinja2 rendering network template port_from_pool.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api_from_pool.yaml
+rendering j2 template to file: ./network/ports/management_from_pool.yaml
+rendering j2 template to file: ./network/ports/storage_from_pool.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt_from_pool.yaml
+rendering j2 template to file: ./network/ports/external_from_pool.yaml
+rendering j2 template to file: ./network/ports/tenant_from_pool.yaml
+jinja2 rendering network template port_from_pool_v6.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/management_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/storage_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/external_from_pool_v6.yaml
+rendering j2 template to file: ./network/ports/tenant_from_pool_v6.yaml
+jinja2 rendering network template port_v6.network.j2.yaml
+jinja2 rendering networks InternalApi,Management,Storage,StorageMgmt,External,Tenant
+rendering j2 template to file: ./network/ports/internal_api_v6.yaml
+rendering j2 template to file: ./network/ports/management_v6.yaml
+rendering j2 template to file: ./network/ports/storage_v6.yaml
+rendering j2 template to file: ./network/ports/storage_mgmt_v6.yaml
+rendering j2 template to file: ./network/ports/external_v6.yaml
+rendering j2 template to file: ./network/ports/tenant_v6.yaml
+jinja2 rendering normal template all-nodes-config.j2.yaml
+rendering j2 template to file: ./puppet/all-nodes-config.yaml
+jinja2 rendering role template role.role.j2.yaml
+jinja2 rendering roles Controller,Compute
+rendering j2 template to file: ./puppet/controller-role.yaml
+rendering j2 template to file: ./puppet/compute-role.yaml
+jinja2 rendering normal template neutron-ml2-cisco-nexus-ucsm.j2.yaml
+rendering j2 template to file: ./puppet/extraconfig/all_nodes/neutron-ml2-cisco-nexus-ucsm.yaml
+jinja2 rendering normal template apache.j2.yaml
+rendering j2 template to file: ./puppet/services/apache.yaml
+jinja2 rendering normal template haproxy-internal-tls-certmonger.j2.yaml
+rendering j2 template to file: ./puppet/services/haproxy-internal-tls-certmonger.yaml
+Started Mistral Workflow tripleo.validations.v1.check_pre_deployment_validations. Execution ID: 84c7eb52-36a3-49ea-a52f-11be2fef58d3
+Removing the current plan files
+Uploading new plan files
+Started Mistral Workflow tripleo.plan_management.v1.update_deployment_plan. Execution ID: 3b1981f0-f16d-46b2-a336-7d750aa7d0b5
+Plan updated.
+Processing templates in the directory /tmp/tripleoclient-CcNij6/tripleo-heat-templates

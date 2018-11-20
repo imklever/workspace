@@ -1,0 +1,19 @@
+- name: Setup oVirt environment
+  hosts: rhhi
+  gather_facts: no
+  remote_user: root
+  tasks:
+    - block:
+      - name: Obtain SSO token
+        ovirt_auth:
+          url:   https://engine.local/ovirt-engine/api
+          username: admin@internal
+          password: passw0rd
+          ca_file: /root/engine.pem
+
+      - name: start vm
+        ovirt_vms:
+          auth: "{{ ovirt_auth }}"
+          state: stopped
+          force: true
+          name: "{{ vm_name }}"

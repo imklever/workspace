@@ -1,0 +1,18 @@
+parameter_defaults:
+  ComputeCount: 0
+  X3650ComputeCount: 0
+  VirtualComputeCount: 0
+  DpdkComputeCount: 0
+  ComputeHCICount: 3
+  X3650ComputeSchedulerHints:
+    'capabilities:profile': 'x3650-compute'
+  VirtualComputeSchedulerHints:
+    'capabilities:profile': 'virtual-compute'
+  DpdkComputeSchedulerHints:
+    'capabilities:profile': 'dpdkcompute'
+  OvercloudX3650ComputeFlavor: x3650-compute
+  OvercloudVirtualComputeFlavor: virtual-compute
+  OvercloudDpdkComputeFlavor: dpdkcompute
+  ComputeHCISchedulerHints:
+    'capabilities:profile': 'osdcompute'
+  OvercloudComputeHCIFlavor: osdcompute

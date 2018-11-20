@@ -1,0 +1,5 @@
+parameter_defaults:
+  CephAnsibleExtraConfig:
+    osd_recovery_op_priority: 3 # 1
+    osd_recovery_max_active: 3 # 2
+    osd_max_backfills: 1 # 3

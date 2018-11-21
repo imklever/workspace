@@ -131,7 +131,7 @@ network_gateway = 172.30.4.1
 undercloud_public_vip = 172.30.4.2
 undercloud_admin_vip = 172.30.4.3
 undercloud_service_certificate = /etc/pki/tls/certs/undercloud-172.30.4.2.pem
-generate_service_certificate = False
+generate_service_certificate = true
 certificate_generation_ca = local
 local_interface = eth1
 network_cidr = 172.30.4.0/24
@@ -155,7 +155,30 @@ enabled_hardware_types=ipmi,staging-ovirt
 [auth]
 "
 
+cd ~
+openstack undercloud install
 
+
+
+
+###################################
+#from snapshot
+###################################
+source ~/stackrc
+sudo yum -y install rhosp-director-images rhosp-director-images-ipa
+cd ~/images
+tar -xvf /usr/share/rhosp-director-images/overcloud-full-latest-13.0.tar
+tar -xvf /usr/share/rhosp-director-images/ironic-python-agent-latest-13.0.tar
+openstack overcloud image upload --image-path /home/stack/images
+
+openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 virtual-compute
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="virtual-compute" virtual-compute
+
+openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 x3650-compute
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="x3650-compute" x3650-compute
+
+openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 dpdkcompute
+openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="dpdkcompute" dpdkcompute
 
 
 
@@ -275,32 +298,6 @@ echo "10.240.220.17 engine.local" > /etc/hosts
                 }
             ]
 }
-
-
-
-cd ~
-openstack undercloud install
-source ~/stackrc
-sudo yum -y install rhosp-director-images rhosp-director-images-ipa
-cd ~/images
-tar -xvf /usr/share/rhosp-director-images/overcloud-full-latest-13.0.tar
-tar -xvf /usr/share/rhosp-director-images/ironic-python-agent-latest-13.0.tar
-openstack overcloud image upload --image-path /home/stack/images
-
-openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 virtual-compute
-openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="virtual-compute" virtual-compute
-
-openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 x3650-compute
-openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="x3650-compute" x3650-compute
-
-openstack flavor create --id auto --ram 1 --disk 40 --vcpus 1 dpdkcompute
-openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" --property "capabilities:profile"="dpdkcompute" dpdkcompute
-
-
-
-###################################
-#from snapshot
-###################################
 openstack overcloud node import ~/env.json
 openstack overcloud node introspect --all-manageable --provide
 openstack overcloud profiles list

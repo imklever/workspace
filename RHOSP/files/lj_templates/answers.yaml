@@ -4,7 +4,7 @@ environments:
   - /usr/share/openstack-tripleo-heat-templates/environments/network-isolation.yaml
   - /home/stack/lj_templates/storage-environment.yaml
   - /home/stack/lj_templates/network-environment.yaml
-  - /home/stack/lj_templates/overcloud_images.yaml
+  - /home/stack/lj_templates/overcloud_images_sa.yaml
 
 roles:
   - /home/stack/lj_templates/roles_data.yaml

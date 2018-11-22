@@ -1,2 +1,11 @@
 name= {{name}}
 age = {{age}}
+
+start
+{%- for index_list in my_list %}
+    {%- for index in index_list %}
+name: {{ index.name }}
+age: {{ index.age }}
+    {%- endfor %}
+{%- endfor %}
+stop

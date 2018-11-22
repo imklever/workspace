@@ -43,7 +43,7 @@
     <h1 style="text-align:center;">Tmux</h1>
 
     <h2>在server端创建tmux server session:</h2>
-        <pre>tmux new -d -s <mark>&lt;session name&gt;</mark></pre>
+        <pre>tmux new -d -s &lt;session name&gt;</pre>
         <div class=note>
             <code>-d: 表示后台运行</code>
         </div>
@@ -52,7 +52,7 @@
         <pre>tmux ls</pre>
 
     <h2>在client 端连接 tmux server session:</h2>
-        <pre>tmux attach -t <mark>&lt;session name&gt;</mark></pre>
+        <pre>tmux attach -t &lt;session name&gt;</pre>
 
     <h2>在client 端退出而不销毁 tmux server session:</h2>
         <pre>Crtl-b d</pre>
@@ -65,25 +65,25 @@
 
     <h2>tmux 快捷键:</h2>
         <pre>
-ctrl+b ?            显示快捷键帮助
-ctrl+b 空格键       采用下一个内置布局，这个很有意思，在多屏时，用这个就会将多有屏幕竖着展示
-ctrl+b !            把当前窗口变为新窗口
-ctrl+b  "           模向分隔窗口
-ctrl+b %            纵向分隔窗口
-ctrl+b q            显示分隔窗口的编号
-ctrl+b o            跳到下一个分隔窗口。多屏之间的切换
-ctrl+b 上下键      上一个及下一个分隔窗口
-ctrl+b C-方向键    调整分隔窗口大小
-ctrl+b &amp;           确认后退出当前tmux
-ctrl+b [           复制模式，即将当前屏幕移到上一个的位置上，其他所有窗口都向前移动一个。
-ctrl+b c           创建新窗口
-ctrl+b n           选择下一个窗口
-ctrl+b l           最后使用的窗口
-ctrl+b p           选择前一个窗口
-ctrl+b w           以菜单方式显示及选择窗口
-ctrl+b s           以菜单方式显示和选择会话。这个常用到，可以选择进入哪个tmux
-ctrl+b t           显示时钟。然后按enter键后就会恢复到shell终端状态
-ctrl+b d           脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</pre>
+Ctrl+b ?            显示快捷键帮助
+Ctrl+b 空格键       采用下一个内置布局，这个很有意思，在多屏时，用这个就会将多有屏幕竖着展示
+Ctrl+b !            把当前窗口变为新窗口
+Ctrl+b "            模向分隔窗口
+Ctrl+b %            纵向分隔窗口
+Ctrl+b q            显示分隔窗口的编号
+Ctrl+b o            跳到下一个分隔窗口。多屏之间的切换
+Ctrl+b 上下键      上一个及下一个分隔窗口
+Ctrl+b C-方向键    调整分隔窗口大小
+Ctrl+b &amp;           确认后退出当前tmux
+Ctrl+b [           复制模式，即将当前屏幕移到上一个的位置上，其他所有窗口都向前移动一个。
+Ctrl+b c           创建新窗口
+Ctrl+b n           选择下一个窗口
+Ctrl+b l           最后使用的窗口
+Ctrl+b p           选择前一个窗口
+Ctrl+b w           以菜单方式显示及选择窗口
+Ctrl+b s           以菜单方式显示和选择会话。这个常用到，可以选择进入哪个tmux
+Ctrl+b t           显示时钟。然后按enter键后就会恢复到shell终端状态
+Ctrl+b d           脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</pre>
 
     <h2>ref:</h2>
     <a target= _blank href="https://www.cnblogs.com/kevingrace/p/6496899.html">https://www.cnblogs.com/kevingrace/p/6496899.html</a><br>

@@ -405,6 +405,7 @@ ssh heat-admin@172.30.4.16
 
 
 
+ip=`nova list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $7}' | awk -F'=' '{print $2}'`;for i in $ip; do echo;echo;echo;echo;echo;echo $i;echo '####################################'; ssh heat-admin@$i -t "sudo docker ps"; done;
 
 
 

@@ -40,4 +40,4 @@ resource_registry:
   OS::TripleO::ObjectStorage::Ports::InternalApiPort: file:///usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
 
   # Port assignments for the CephStorage
-  OS::TripleO::CephStorage::Ports::StoragePort: file:///usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  # OS::TripleO::CephStorage::Ports::StoragePort: file:///usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml

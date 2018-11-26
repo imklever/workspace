@@ -1,0 +1,34 @@
+---
+- hosts: local
+  remote_user: root
+  #gather_facts: False
+  gather_facts: True
+  tasks:
+    - name: install dhcp
+      yum: pkg=dhcp state=latest
+
+    - name: config the dhcpd.conf file
+      template:
+        src: dhcpd.conf.j2
+        dest: /etc/dhcp/dhcpd.conf
+        owner: root
+        group: root
+        mode: '0600'
+        backup: yes
+
+    - name: install & config & start dhcpd 
+      service:
+        name: dhcpd
+        enabled: yes
+        state: started
+
+    - name: restart dhcpd
+      service:
+        name: dhcpd
+        state: restarted
+
+    - name: stop firewalld
+      service:
+        name: firewalld
+        enabled: no
+        state: stopped

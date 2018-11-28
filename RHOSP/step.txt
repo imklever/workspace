@@ -396,19 +396,162 @@ openstack baremetal introspection data save 1a4e30da-b6dc-499d-ba87-0bd8a3819bc0
 
 
 
-nova list
-ssh heat-admin@172.30.4.16
 
 
 
 
 
-
-
+#remote check the container on each node
+########################################
 ip=`nova list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $7}' | awk -F'=' '{print $2}'`;for i in $ip; do echo;echo;echo;echo;echo;echo $i;echo '####################################'; ssh heat-admin@$i -t "sudo docker ps"; done;
 
 
 
+#check the container of swift
+############################
+docker ps -a | grep swift | awk -F\" '{print $3}' | awk '{printf"%-30s", $NF;for(i=1;i<NF;i++){printf "%s ",$i};printf"\n"}' | sort -k 5
+
+#error container:
+#################
+                              swift_copy_rings              15 hours ago Exited (0) 15 hours ago 
+                              swift_rsync_fix               15 hours ago Exited (0) 15 hours ago 
+                              swift_setup_srv               15 hours ago Exited (0) 15 hours ago 
+                              swift_rsync                   15 hours ago Restarting (10) About an hour ago 
+                              swift_account_server          15 hours ago Restarting (1) About an hour ago 
+                              swift_container_server        15 hours ago Restarting (1) About an hour ago 
+                              swift_object_server           15 hours ago Restarting (1) About an hour ago 
+                              swift_account_auditor         15 hours ago Up 15 hours 
+                              swift_account_reaper          15 hours ago Up 15 hours 
+                              swift_account_replicator      15 hours ago Up 15 hours 
+                              swift_container_auditor       15 hours ago Up 15 hours 
+                              swift_container_replicator    15 hours ago Up 15 hours 
+                              swift_container_updater       15 hours ago Up 15 hours 
+                              swift_object_auditor          15 hours ago Up 15 hours 
+                              swift_object_expirer          15 hours ago Up 15 hours 
+                              swift_object_replicator       15 hours ago Up 15 hours 
+                              swift_object_updater          15 hours ago Up 15 hours 
+                              swift_proxy                   15 hours ago Up 15 hours (healthy) 
+                              
+#check the container of all
+############################
+docker ps -a | awk -F\" '{print $3}' | awk '{printf"%-30s", $NF;for(i=1;i<NF;i++){printf "%s ",$i};printf"\n"}' | sort -k 5
+
+#error container:
+#################
+                                                            
+                              aodh_db_sync                  15 hours ago Exited (0) 15 hours ago 
+                              ceilometer_gnocchi_upgrade    15 hours ago Exited (0) 15 hours ago 
+                              ceilometer_init_log           15 hours ago Exited (0) 15 hours ago 
+                              cinder_api_db_sync            15 hours ago Exited (0) 15 hours ago 
+                              cinder_api_online_migrations  15 hours ago Exited (0) 15 hours ago 
+                              cinder_volume_init_bundle     15 hours ago Exited (0) 15 hours ago 
+                              cinder_volume_init_logs       15 hours ago Exited (0) 15 hours ago 
+                              cinder_volume_restart_bundle  15 hours ago Exited (0) 15 hours ago 
+                              create_dnsmasq_wrapper        15 hours ago Exited (0) 15 hours ago 
+                              create_keepalived_wrapper     15 hours ago Exited (0) 15 hours ago 
+                              glance_api_db_sync            15 hours ago Exited (0) 15 hours ago 
+                              gnocchi_db_sync               15 hours ago Exited (0) 15 hours ago 
+                              haproxy_init_bundle           15 hours ago Exited (0) 15 hours ago 
+                              haproxy_restart_bundle        15 hours ago Exited (0) 15 hours ago 
+                              heat_engine_db_sync           15 hours ago Exited (0) 15 hours ago 
+                              keystone_db_sync              15 hours ago Exited (0) 15 hours ago 
+                              keystone_init_log             15 hours ago Exited (0) 15 hours ago 
+                              mysql_init_bundle             15 hours ago Exited (0) 15 hours ago 
+                              neutron_db_sync               15 hours ago Exited (0) 15 hours ago 
+                              neutron_ovs_bridge            15 hours ago Exited (0) 15 hours ago 
+                              nova_api_db_sync              15 hours ago Exited (0) 15 hours ago 
+                              nova_api_discover_hosts       15 hours ago Exited (0) 15 hours ago 
+                              nova_api_ensure_default_cell  15 hours ago Exited (0) 15 hours ago 
+                              nova_api_map_cell0            15 hours ago Exited (0) 15 hours ago 
+                              nova_db_sync                  15 hours ago Exited (0) 15 hours ago 
+                              nova_online_migrations        15 hours ago Exited (0) 15 hours ago 
+                              nova_placement_init_log       15 hours ago Exited (0) 15 hours ago 
+                              panko_db_sync                 15 hours ago Exited (0) 15 hours ago 
+                              rabbitmq_init_bundle          16 hours ago Exited (0) 15 hours ago 
+                              redis_init_bundle             15 hours ago Exited (0) 15 hours ago 
+                              redis_restart_bundle          15 hours ago Exited (0) 15 hours ago 
+                              swift_copy_rings              15 hours ago Exited (0) 15 hours ago 
+                              swift_rsync_fix               15 hours ago Exited (0) 15 hours ago 
+                              swift_setup_srv               15 hours ago Exited (0) 15 hours ago 
+                              aodh_init_log                 16 hours ago Exited (0) 16 hours ago 
+                              cinder_api_init_logs          16 hours ago Exited (0) 16 hours ago 
+                              cinder_scheduler_init_logs    16 hours ago Exited (0) 16 hours ago 
+                              cinder_volume_image_tag       16 hours ago Exited (0) 16 hours ago 
+                              glance_init_logs              16 hours ago Exited (0) 16 hours ago 
+                              gnocchi_init_lib              16 hours ago Exited (0) 16 hours ago 
+                              gnocchi_init_log              16 hours ago Exited (0) 16 hours ago 
+                              haproxy_image_tag             16 hours ago Exited (0) 16 hours ago 
+                              heat_init_log                 16 hours ago Exited (0) 16 hours ago 
+                              horizon_fix_perms             16 hours ago Exited (0) 16 hours ago 
+                              mysql_bootstrap               16 hours ago Exited (0) 16 hours ago 
+                              mysql_data_ownership          16 hours ago Exited (0) 16 hours ago 
+                              mysql_image_tag               16 hours ago Exited (0) 16 hours ago 
+                              mysql_restart_bundle          16 hours ago Exited (0) 16 hours ago 
+                              neutron_init_logs             16 hours ago Exited (0) 16 hours ago 
+                              nova_api_init_logs            16 hours ago Exited (0) 16 hours ago 
+                              nova_metadata_init_log        16 hours ago Exited (0) 16 hours ago 
+                              panko_init_log                16 hours ago Exited (0) 16 hours ago 
+                              rabbitmq_bootstrap            16 hours ago Exited (0) 16 hours ago 
+                              rabbitmq_image_tag            16 hours ago Exited (0) 16 hours ago 
+                              rabbitmq_restart_bundle       16 hours ago Exited (0) 16 hours ago 
+                              redis_image_tag               16 hours ago Exited (0) 16 hours ago 
+                              swift_rsync                   15 hours ago Restarting (10) About an hour ago 
+                              swift_account_server          15 hours ago Restarting (1) About an hour ago 
+                              swift_container_server        15 hours ago Restarting (1) About an hour ago 
+                              swift_object_server           15 hours ago Restarting (1) About an hour ago 
+                              cinder_api_cron               15 hours ago Up 15 hours 
+                              clustercheck                  15 hours ago Up 15 hours 
+                              galera-bundle-docker-0        15 hours ago Up 15 hours 
+                              haproxy-bundle-docker-1       15 hours ago Up 15 hours 
+                              heat_api_cron                 15 hours ago Up 15 hours 
+                              horizon                       15 hours ago Up 15 hours 
+                              keystone_cron                 15 hours ago Up 15 hours 
+                              logrotate_crond               15 hours ago Up 15 hours 
+                              nova_api_cron                 15 hours ago Up 15 hours 
+                              redis-bundle-docker-0         15 hours ago Up 15 hours 
+                              swift_account_auditor         15 hours ago Up 15 hours 
+                              swift_account_reaper          15 hours ago Up 15 hours 
+                              swift_account_replicator      15 hours ago Up 15 hours 
+                              swift_container_auditor       15 hours ago Up 15 hours 
+                              swift_container_replicator    15 hours ago Up 15 hours 
+                              swift_container_updater       15 hours ago Up 15 hours 
+                              swift_object_auditor          15 hours ago Up 15 hours 
+                              swift_object_expirer          15 hours ago Up 15 hours 
+                              swift_object_replicator       15 hours ago Up 15 hours 
+                              swift_object_updater          15 hours ago Up 15 hours 
+                              aodh_api                      15 hours ago Up 15 hours (healthy) 
+                              aodh_evaluator                15 hours ago Up 15 hours (healthy) 
+                              aodh_listener                 15 hours ago Up 15 hours (healthy) 
+                              aodh_notifier                 15 hours ago Up 15 hours (healthy) 
+                              ceilometer_agent_central      15 hours ago Up 15 hours (healthy) 
+                              ceilometer_agent_notification 15 hours ago Up 15 hours (healthy) 
+                              cinder_api                    15 hours ago Up 15 hours (healthy) 
+                              cinder_scheduler              15 hours ago Up 15 hours (healthy) 
+                              glance_api                    15 hours ago Up 15 hours (healthy) 
+                              gnocchi_api                   15 hours ago Up 15 hours (healthy) 
+                              gnocchi_metricd               15 hours ago Up 15 hours (healthy) 
+                              gnocchi_statsd                15 hours ago Up 15 hours (healthy) 
+                              heat_api                      15 hours ago Up 15 hours (healthy) 
+                              heat_api_cfn                  15 hours ago Up 15 hours (healthy) 
+                              heat_engine                   15 hours ago Up 15 hours (healthy) 
+                              iscsid                        15 hours ago Up 15 hours (healthy) 
+                              keystone                      15 hours ago Up 15 hours (healthy) 
+                              neutron_api                   15 hours ago Up 15 hours (healthy) 
+                              neutron_dhcp                  15 hours ago Up 15 hours (healthy) 
+                              neutron_l3_agent              15 hours ago Up 15 hours (healthy) 
+                              neutron_metadata_agent        15 hours ago Up 15 hours (healthy) 
+                              neutron_ovs_agent             15 hours ago Up 15 hours (healthy) 
+                              nova_api                      15 hours ago Up 15 hours (healthy) 
+                              nova_conductor                15 hours ago Up 15 hours (healthy) 
+                              nova_consoleauth              15 hours ago Up 15 hours (healthy) 
+                              nova_metadata                 15 hours ago Up 15 hours (healthy) 
+                              nova_scheduler                15 hours ago Up 15 hours (healthy) 
+                              nova_vnc_proxy                15 hours ago Up 15 hours (healthy) 
+                              panko_api                     15 hours ago Up 15 hours (healthy) 
+                              swift_proxy                   15 hours ago Up 15 hours (healthy) 
+                              nova_placement                15 hours ago Up 15 hours (unhealthy) 
+                              rabbitmq-bundle-docker-0      16 hours ago Up 16 hours 
+                              memcached                     16 hours ago Up 16 hours (healthy) 
 
 
 
@@ -425,18 +568,9 @@ ip=`nova list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $7}' | awk -F'=' '
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+#path of swift config file
+#########################
+/var/lib/config-data/puppet-generated/swift/etc/swift/object-server.conf   
 
 
 

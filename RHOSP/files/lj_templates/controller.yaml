@@ -10,7 +10,7 @@ parameters:
     default: ''
     description: IP address/subnet on the storage network
     type: string
-  StorageMgmtIpSubnet:
+  :
     default: ''
     description: IP address/subnet on the storage mgmt network
     type: string
@@ -142,7 +142,16 @@ resources:
                 addresses:
                 - ip_netmask:
                     get_param: TenantIpSubnet
-
+              - type: vlan
+                device: eth1
+                use_dhcp: false
+                vlan_id:
+                    get_param: StorageMgmtNetworkVlanID
+                dns_servers:
+                  get_param: DnsServers
+                addresses:
+                - ip_netmask:
+                    get_param: StorageMgmtIpSubnet
 
 outputs:
   OS::stack_id:

@@ -1,0 +1,42 @@
+# A Heat environment file which can be used to enable the
+# use of an externally managed Ceph cluster.
+resource_registry:
+  OS::TripleO::Services::CephExternal: /usr/share/openstack-tripleo-heat-templates/puppet/services/ceph-external.yaml
+  OS::TripleO::Services::CephMon: OS::Heat::None
+  OS::TripleO::Services::CephClient: OS::Heat::None
+  OS::TripleO::Services::CephOSD: OS::Heat::None
+  OS::TripleO::Services::SwiftProxy: OS::Heat::None
+  OS::TripleO::Services::SwiftStorage: OS::Heat::None
+  OS::TripleO::Services::SwiftRingBuilder: OS::Heat::None
+
+parameter_defaults:
+  # NOTE: These example parameters are required when using CephExternal
+  # CephClusterFSID: '56db4129-e042-4c62-af48-f6949b09dbee'
+  # CephClientKey: 'AQA4mjtbkZXABRAAQpc0dXh8vuBGDCVM+TjQiQ=='
+  # CephExternalMonHost: '172.23.0.19,172.23.0.20,172.23.0.21'
+  CephClusterFSID: '708761a0-93aa-46a5-b206-83c71fb32c07'
+  CephClientKey: 'AQCKl71bb8ITERAAiTALPRlbpnpOxDi1xgLOFQ=='
+  CephExternalMonHost: '192.168.80.37,192.168.80.39,192.168.80.38'
+
+
+  # the following parameters enable Ceph backends for Cinder, Glance, Gnocchi and Nova
+  NovaEnableRbdBackend: true
+  CinderEnableRbdBackend: true
+  CinderBackupBackend: ceph
+  GlanceBackend: rbd
+  GnocchiBackend: rbd
+  # If the Ceph pools which host VMs, Volumes and Images do not match these
+  # names OR the client keyring to use is not named 'openstack',  edit the
+  # following as needed.
+  NovaRbdPoolName: cloud1_nova
+  CinderRbdPoolName: cloud1_volumes
+  CinderBackupRbdPoolName: cloud1_backups
+  GlanceRbdPoolName: cloud1_images
+  GnocchiRbdPoolName: cloud1_metrics
+  CephClientUserName: cloud1_openstack
+
+  # finally we disable the Cinder LVM backend
+  CinderEnableIscsiBackend: false
+
+  # Backward compatibility setting, will be removed in the future
+  CephAdminKey: ''

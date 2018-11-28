@@ -577,3 +577,82 @@ docker ps -a | awk -F\" '{print $3}' | awk '{printf"%-30s", $NF;for(i=1;i<NF;i++
 
 
 
+[root@overcloud-controller-0 ~]# docker attach swift_object_server
++ sudo -E kolla_set_configs
+INFO:__main__:Loading config file at /var/lib/kolla/config_files/config.json
+INFO:__main__:Validating config file
+INFO:__main__:Kolla config strategy set to: COPY_ALWAYS
+INFO:__main__:Copying service configuration files
+INFO:__main__:Deleting /etc/swift/account-server.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/account-server.conf to /etc/swift/account-server.conf
+INFO:__main__:Deleting /etc/swift/container-server.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/container-server.conf to /etc/swift/container-server.conf
+INFO:__main__:Deleting /etc/swift/keymaster.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/keymaster.conf to /etc/swift/keymaster.conf
+INFO:__main__:Deleting /etc/swift/object-expirer.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/object-expirer.conf to /etc/swift/object-expirer.conf
+INFO:__main__:Deleting /etc/swift/object-server.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/object-server.conf to /etc/swift/object-server.conf
+INFO:__main__:Deleting /etc/swift/proxy-server.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/proxy-server.conf to /etc/swift/proxy-server.conf
+INFO:__main__:Deleting /etc/swift/swift.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/swift.conf to /etc/swift/swift.conf
+INFO:__main__:Deleting /etc/swift/account.ring.gz
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/account.ring.gz to /etc/swift/account.ring.gz
+INFO:__main__:Deleting /etc/swift/container.ring.gz
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/container.ring.gz to /etc/swift/container.ring.gz
+INFO:__main__:Deleting /etc/swift/object.ring.gz
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/object.ring.gz to /etc/swift/object.ring.gz
+INFO:__main__:Deleting /etc/swift/account.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/account.builder to /etc/swift/account.builder
+INFO:__main__:Deleting /etc/swift/container.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/container.builder to /etc/swift/container.builder
+INFO:__main__:Deleting /etc/swift/object.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/object.builder to /etc/swift/object.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392875.account.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392875.account.builder to /etc/swift/backups/1543392875.account.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392875.container.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392875.container.builder to /etc/swift/backups/1543392875.container.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392875.object.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392875.object.builder to /etc/swift/backups/1543392875.object.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392881.account.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392881.account.builder to /etc/swift/backups/1543392881.account.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392881.account.ring.gz
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392881.account.ring.gz to /etc/swift/backups/1543392881.account.ring.gz
+INFO:__main__:Deleting /etc/swift/backups/1543392881.object.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392881.object.builder to /etc/swift/backups/1543392881.object.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392881.object.ring.gz
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392881.object.ring.gz to /etc/swift/backups/1543392881.object.ring.gz
+INFO:__main__:Deleting /etc/swift/backups/1543392882.container.builder
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392882.container.builder to /etc/swift/backups/1543392882.container.builder
+INFO:__main__:Deleting /etc/swift/backups/1543392882.container.ring.gz
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/swift/backups/1543392882.container.ring.gz to /etc/swift/backups/1543392882.container.ring.gz
+INFO:__main__:Deleting /etc/rsyncd.conf
+INFO:__main__:Copying /var/lib/kolla/config_files/src/etc/rsyncd.conf to /etc/rsyncd.conf
+INFO:__main__:Writing out command to execute
+INFO:__main__:Setting permission for /var/cache/swift
+INFO:__main__:Setting permission for /var/cache/swift/object.recon
+INFO:__main__:Setting permission for /var/cache/swift/account.recon
+INFO:__main__:Setting permission for /var/cache/swift/container.recon
+++ cat /run_command
++ CMD='/usr/bin/swift-object-server /etc/swift/object-server.conf'
++ ARGS=
++ [[ ! -n '' ]]
++ . kolla_extend_start
++ echo 'Running command: '\''/usr/bin/swift-object-server /etc/swift/object-server.conf'\'''
++ exec /usr/bin/swift-object-server /etc/swift/object-server.conf
+Running command: '/usr/bin/swift-object-server /etc/swift/object-server.conf'
+Traceback (most recent call last):
+      File "/usr/bin/swift-object-server", line 27, in <module>
+          **options))
+            File "/usr/lib/python2.7/site-packages/swift/common/wsgi.py", line 921, in run_wsgi
+                error_msg = strategy.do_bind_ports()
+                  File "/usr/lib/python2.7/site-packages/swift/common/wsgi.py", line 502, in do_bind_ports
+                      self.sock = get_socket(self.conf)
+                        File "/usr/lib/python2.7/site-packages/swift/common/wsgi.py", line 195, in get_socket
+                            family=address_family)
+                              File "/usr/lib/python2.7/site-packages/eventlet/convenience.py", line 46, in listen
+                                  sock.bind(addr)
+                                    File "/usr/lib64/python2.7/socket.py", line 224, in meth
+                                        return getattr(self._sock,name)(*args)
+                                    socket.error: [Errno 99] Cannot assign requested address

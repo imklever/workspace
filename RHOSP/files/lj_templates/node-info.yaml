@@ -1,6 +1,6 @@
 parameter_defaults:
   OvercloudControllerFlavor: control
   OvercloudComputeFlavor: compute
-  ControllerCount: 1
-  ComputeCount: 3
-  SwiftRawDisks: {"sdb": {}}
+  ControllerCount: 3
+  ComputeCount: 1
+  #SwiftRawDisks: {"sdb": {}}

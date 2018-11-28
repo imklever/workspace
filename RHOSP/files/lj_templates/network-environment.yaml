@@ -57,7 +57,7 @@ parameter_defaults:
   # Gateway router for the external network
   ExternalInterfaceDefaultRoute: 10.240.220.1
   # Uncomment if using the Management Network (see network-management.yaml)
-  # ManagementNetCidr: 10.0.1.0/24
+  #ManagementNetCidr: 10.0.1.0/24
   # ManagementAllocationPools: [{'start': '10.0.1.10', 'end', '10.0.1.50'}]
   # Use either this parameter or ControlPlaneDefaultRoute in the NIC templates
   # ManagementInterfaceDefaultRoute: 10.0.1.1

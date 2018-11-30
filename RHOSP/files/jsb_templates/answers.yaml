@@ -1,0 +1,12 @@
+templates: /usr/share/openstack-tripleo-heat-templates/
+environments:
+  - /home/stack/jsb_templates/node-info.yaml
+  - /usr/share/openstack-tripleo-heat-templates/environments/network-isolation.yaml
+  - /home/stack/jsb_templates/storage-environment.yaml
+  - /home/stack/jsb_templates/network-environment.yaml
+  - /home/stack/jsb_templates/overcloud_images_sa.yaml
+  - /home/stack/jsb_templates/disable-cinder.yaml
+  #- /home/stack/lj_templates/inject-trust-anchor.yaml
+
+roles:
+  - /home/stack/jsb_templates/roles_data.yaml

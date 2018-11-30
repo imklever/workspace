@@ -1,0 +1,8 @@
+# This heat environment can be used to disable all of the Cinder services.
+# It is most useful in an environments like VNF where Block Storage isn't needed.
+
+resource_registry:
+  OS::TripleO::Services::CinderApi: OS::Heat::None
+  OS::TripleO::Services::CinderScheduler: OS::Heat::None
+  OS::TripleO::Services::CinderVolume: OS::Heat::None
+  OS::TripleO::Services::CinderBackup: OS::Heat::None

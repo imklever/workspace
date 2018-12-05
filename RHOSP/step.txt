@@ -389,9 +389,14 @@ for node in $(openstack baremetal node list --fields uuid -f value) ; do opensta
 openstack overcloud node import ~/env.json
 openstack overcloud node introspect --all-manageable --provide
 
-openstack overcloud profiles list
 
+openstack overcloud profiles list
 openstack flavor list
+
+
+
+
+
 
 
 #flavor profile
@@ -409,10 +414,22 @@ openstack baremetal introspection data save 1a4e30da-b6dc-499d-ba87-0bd8a3819bc0
 
 
 
+
+
+
+
+
+
+
+
+#list docker images
+########################################
+cat overcloud_images_sa.yaml | grep Docker | awk -F'/' '{if(NF>1){print $NF}}'| sort -u 
+
+
 #remote check the container on each node
 ########################################
 ip=`nova list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $7}' | awk -F'=' '{print $2}'`;for i in $ip; do echo;echo;echo;echo;echo;echo $i;echo '####################################'; ssh heat-admin@$i -t "sudo docker ps"; done;
-                              
 
 
 #check the container of all
@@ -429,5 +446,36 @@ docker ps -a | grep swift | awk -F\" '{print $3}' | awk '{printf"%-30s", $NF;for
 #########################
 /var/lib/config-data/puppet-generated/swift/etc/swift/object-server.conf   
 
+
+
+
+
+
+
+
+
+
+
+
+controller
+
+/var/lib/kolla/config_files/glance_api.json
+/var/lib/kolla/config_files/config.json
+
+/var/lib/config-data/puppet-generated/glance_api/etc/glance/glance-api.conf
+/var/lib/kolla/config_files/src/etc/glance/glance-api.conf
+
+store=swift
+
+
+
+compute
+/var/lib/kolla/config_files/nova_compute.json
+/var/lib/kolla/config_files/config.json
+
+/var/lib/config-data/puppet-generated/nova_libvirt/etc/nova/nova.conf
+/var/lib/kolla/config_files/src/etc/nova/nova.config
+
+virt_type=qemu
 
 

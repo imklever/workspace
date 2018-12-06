@@ -1,0 +1,36 @@
+parameter_defaults:
+  ControllerCount: 3
+  OvercloudControlFlavor: control
+  
+  ComputeCount: 1
+  OvercloudComputeFlavor: compute
+  
+  CephStorageCount: 0
+  OvercloudCephStorageFlavor: ceph-storage
+  
+  CephMonCount: 0 
+  OvercloudCephMonFlavor: ceph-mon
+  
+  CephMdsCount: 0
+  OvercloudCephMdsFlavor: ceph-mds
+  
+  ComputeHCICount: 0
+  OvercloudComputeHCIFlavor: osdcompute
+  ComputeHCISchedulerHints:
+    'capabilities:profile': 'osdcompute'
+
+  Virtual-ComputeHCICount: 0
+  OvercloudVirtual-ComputeHCIFlavor: virtual-osdcompute
+  Virtual-ComputeHCISchedulerHints:
+    'capabilities:profile': 'virtual-osdcompute'
+
+  Virtual-ComputeCount: 0
+  OvercloudVirtual-ComputeFlavor: virtual-compute
+  Virtual-ComputeSchedulerHints:
+    'capabilities:profile': 'virtual-compute'
+  
+
+  Swift-ControllerCount: 0
+  OvercloudSwift-ControlFlavor: swift-control
+  Swift-ControllerSchedulerHints:
+    'capabilities:profile': 'swift-control'

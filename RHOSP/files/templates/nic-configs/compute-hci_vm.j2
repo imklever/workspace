@@ -1,6 +1,6 @@
 heat_template_version: queens
 description: >
-  Software Config to drive os-net-config to configure VLANs for the controller role.
+  Software Config to drive os-net-config to configure VLANs for the compute role.
 parameters:
   ControlPlaneIp:
     default: ''
@@ -31,39 +31,39 @@ parameters:
     description: IP address/subnet on the management network
     type: string
   InternalApiNetworkVlanID:
-    default: 202
+    default: 20{{ cloud_num|default("3") }}
     description: Vlan ID for the internal_api network traffic.
     type: number
   StorageNetworkVlanID:
-    default: 302
+    default: 30{{ cloud_num|default("3") }}
     description: Vlan ID for the storage network traffic.
     type: number
-  StorageMgmtNetworkVlanID:
-    default: 402
-    description: Vlan ID for the storage mgmt network traffic.
-    type: number
   TenantNetworkVlanID:
-    default: 502
+    default: 50{{ cloud_num|default("3") }}
     description: Vlan ID for the tenant network traffic.
     type: number
   ManagementNetworkVlanID:
-    default: 602
+    default: 60{{ cloud_num|default("3") }}
     description: Vlan ID for the management network traffic.
     type: number
+  StorageMgmtNetworkVlanID:
+    default: 40{{ cloud_num|default("3") }}
+    description: Vlan ID for the storage management network traffic.
+    type: number
+  ControlPlaneSubnetCidr: # Override this via parameter_defaults
+    default: '24'
+    description: The subnet CIDR of the control plane network.
+    type: string
   ControlPlaneDefaultRoute: # Override this via parameter_defaults
     description: The default route of the control plane network.
     type: string
-  ExternalInterfaceDefaultRoute:
-    default: 10.240.220.1
-    description: default route for the external network
+  ExternalInterfaceDefaultRoute: # Not used by default in this template
+    default: 10.240.40.1
+    description: The default route of the external network.
     type: string
   ManagementInterfaceDefaultRoute: # Commented out by default in this template
     default: unset
     description: The default route of the management network.
-    type: string
-  ControlPlaneSubnetCidr: # Override this via parameter_defaults
-    default: '24'
-    description: The subnet CIDR of the control plane network.
     type: string
   DnsServers: # Override this via parameter_defaults
     default: []
@@ -85,9 +85,8 @@ resources:
             $network_config:
               network_config:
               - type: interface
-                name: eth1
+                name: eth0
                 use_dhcp: false
-                defroute: false
                 dns_servers:
                   get_param: DnsServers
                 addresses:
@@ -100,55 +99,79 @@ resources:
                 - ip_netmask: 169.254.169.254/32
                   next_hop:
                     get_param: EC2MetadataIp
-#                -
-#                  default: false
-#                  next_hop: {get_param: ControlPlaneDefaultRoute}
-              - type: ovs_bridge
-                name:
-                  bridge_name
+                - default: true
+                  next_hop:
+                    get_param: ControlPlaneDefaultRoute
+              - type: vlan
+                device: eth1
                 use_dhcp: false
-                dns_servers:
-                  get_param: DnsServers
-                members:
-                - type: interface
-                  name: eth0
-                  # force the MAC address of the bridge to this interface
-                  primary: true
-                - type: vlan
-                  vlan_id:
-                    get_param: InternalApiNetworkVlanID
-                  addresses:
-                  - ip_netmask:
-                      get_param: InternalApiIpSubnet
-                - type: vlan
-                  vlan_id:
+                vlan_id:
                     get_param: StorageNetworkVlanID
-                  addresses:
-                  - ip_netmask:
-                      get_param: StorageIpSubnet
-                - type: vlan
-                  vlan_id:
-                    get_param: TenantNetworkVlanID
-                  addresses:
-                  - ip_netmask:
-                      get_param: TenantIpSubnet
-              - type: interface
-                name: eth2
-                use_dhcp: false
-                defroute: true
                 dns_servers:
                   get_param: DnsServers
                 addresses:
                 - ip_netmask:
-                    get_param: ExternalIpSubnet
-                routes:
-                - default: true
-                  next_hop:
-                    get_param: ExternalInterfaceDefaultRoute
+                    get_param: StorageIpSubnet
+              - type: vlan
+                device: eth1
+                use_dhcp: false
+                vlan_id:
+                    get_param: StorageMgmtNetworkVlanID
+                dns_servers:
+                  get_param: DnsServers
+                addresses:
+                - ip_netmask:
+                    get_param: StorageMgmtIpSubnet
+                    
+              - type: vlan
+                device: eth1
+                use_dhcp: false
+                vlan_id:
+                    get_param: InternalApiNetworkVlanID
+                dns_servers:
+                  get_param: DnsServers
+                addresses:
+                - ip_netmask:
+                    get_param: InternalApiIpSubnet
+              - type: vlan
+                device: eth1
+                use_dhcp: false
+                vlan_id:
+                    get_param: TenantNetworkVlanID
+                dns_servers:
+                  get_param: DnsServers
+                addresses:
+                - ip_netmask:
+                    get_param: TenantIpSubnet
+                    
+                    
+              
+              #- type: ovs_bridge
+              #  name:
+              #    bridge_name
+              #  use_dhcp: false
+              #  dns_servers:
+              #    get_param: DnsServers
+              #  members:
+              #  - type: interface
+              #    name: ens6f0
+              #    # force the MAC address of the bridge to this interface
+              #    primary: true
+              #  - type: vlan
+              #    vlan_id:
+              #      get_param: InternalApiNetworkVlanID
+              #    addresses:
+              #    - ip_netmask:
+              #        get_param: InternalApiIpSubnet
+              #  - type: vlan
+              #    vlan_id:
+              #      get_param: TenantNetworkVlanID
+              #    addresses:
+              #    - ip_netmask:
+              #        get_param: TenantIpSubnet
                 # Uncomment when including environments/network-management.yaml
                 # If setting default route on the Management interface, comment
-                # out the default route on the External interface. This will
-                # make the External API unreachable from remote subnets.
+                # out the default route on the Control Plane.
                 #-
                 #  type: vlan
                 #  vlan_id: {get_param: ManagementNetworkVlanID}

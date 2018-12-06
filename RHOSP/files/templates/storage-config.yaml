@@ -1,0 +1,38 @@
+parameter_defaults:
+  CinderBackupBackend: ceph 
+  CephAnsibleDisksConfig: 
+    osd_scenario: collocated
+    dmcrypt: true
+    devices:
+      - /dev/sdb
+      - /dev/sdc
+      - /dev/sdd
+      - /dev/sde
+  CinderEnableIscsiBackend: true 
+  CinderEnableRbdBackend: false
+  CinderBackupBackend: swift
+  NovaEnableRbdBackend: false
+  GlanceBackend: swift
+  GnocchiBackend: swift
+#      - /dev/sdf
+#      - /dev/sdg
+#    dedicated_devices:
+#      - /dev/nvme0n1
+#      - /dev/nvme0n1
+#      - /dev/nvme0n1
+#      - /dev/nvme1n1
+#      - /dev/nvme1n1
+#      - /dev/nvme1n1
+#  ControllerCount: 1
+#  OvercloudControlFlavor: control
+#  ComputeCount: 1
+#  OvercloudComputeFlavor: compute
+#  CephStorageCount: 0
+#  OvercloudCephStorageFlavor: ceph-storage
+#  CephMonCount: 0 
+#  OvercloudCephMonFlavor: ceph-mon
+#  CephMdsCount: 0
+#  OvercloudCephMdsFlavor: ceph-mds
+#  ComputeHCICount: 3
+#  OvercloudComputeHCIFlavor: osdcompute
+#  NeutronNetworkType: vlan

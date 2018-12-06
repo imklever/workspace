@@ -1,0 +1,2 @@
+#/bin/sh
+openstack overcloud deploy --templates    -r /home/stack/templates/roles_data.yaml     -e /home/stack/templates/storage-config.yaml   -e /home/stack/templates/roles_count.yml     -e /home/stack/templates/network-environment.yml   -e /home/stack/templates/network-config.yml -e /home/stack/templates/overcloud_images_sa.yaml   -e  /home/stack/templates/disable-cinder.yaml --ntp-server  cn.pool.ntp.org

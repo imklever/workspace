@@ -1,0 +1,12 @@
+templates: /usr/share/openstack-tripleo-heat-templates/
+environments:
+  - /usr/share/openstack-tripleo-heat-templates/environments/ceph-ansible/ceph-ansible.yaml   
+  - /home/stack/templates/storage-config.yaml   
+  - /home/stack/templates/roles_count.yml   
+  - /home/stack/templates/storage-container-config.yaml   
+  - /home/stack/templates/network-nvironment.yml   
+  - /home/stack/templates/network-config.yml 
+  - /home/stack/templates/overcloud_images_sa.yaml   
+  - /home/stack/templates/inject-trust-anchor.yaml
+roles:
+  - /home/stack/templates/roles_data.yaml

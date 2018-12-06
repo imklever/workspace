@@ -1,0 +1,13 @@
+templates: /usr/share/openstack-tripleo-heat-templates/
+environments:
+  - /home/stack/templates/roles_count.yml
+  - /home/stack/templates/network-environment.yaml
+  - /home/stack/templates/network-config.yml
+  - /home/stack/templates/storage-config.yaml
+  - /home/stack/templates/overcloud_images_sa.yaml
+  - /home/stack/templates/disable-cinder.yaml
+  #- /home/stack/lj_templates/inject-trust-anchor.yaml
+  #
+roles:
+  - /home/stack/templates/roles_data.yaml
+  

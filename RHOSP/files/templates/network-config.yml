@@ -1,0 +1,29 @@
+parameter_defaults:
+  # This section is where deployment-specific configuration is done
+  # CIDR subnet mask length for provisioning network
+  ControlPlaneSubnetCidr: '24'
+  # Gateway router for the provisioning network (or Undercloud IP)
+  ControlPlaneDefaultRoute: 172.30.4.1
+  EC2MetadataIp: 172.30.4.1 # Generally the IP of the Undercloud
+  # Customize the IP subnets to match the local environment
+  InternalApiNetCidr: 172.20.4.0/24
+  StorageNetCidr: 172.80.4.0/24
+  StorageMgmtNetCidr: 172.70.4.0/24
+  TenantNetCidr: 172.40.4.0/24
+  ExternalNetCidr: 10.240.220.0/22
+  # Customize the VLAN IDs to match the local environment
+  InternalApiNetworkVlanID: 202
+  StorageNetworkVlanID: 302
+  StorageMgmtNetworkVlanID: 402
+  TenantNetworkVlanID: 502
+  ExternalNetworkVlanID: 1
+  # Customize the IP ranges on each network to use for static IPs and VIPs
+  InternalApiAllocationPools: [{'start': '172.20.4.10', 'end': '172.20.4.200'}]
+  StorageAllocationPools: [{'start': '172.80.4.100', 'end': '172.80.4.200'}]
+  StorageMgmtAllocationPools: [{'start': '172.70.4.10', 'end': '172.70.4.200'}]
+  TenantAllocationPools: [{'start': '172.40.4.10', 'end': '172.40.4.200'}]
+  ExternalAllocationPools: [{'start': '10.240.220.33', 'end': '10.240.220.36'}]
+  # Leave room if the external network is also used for floating IPs
+  # Gateway router for the external network
+  ExternalInterfaceDefaultRoute: 10.240.220.1
+

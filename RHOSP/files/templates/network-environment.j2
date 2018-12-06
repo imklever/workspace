@@ -8,6 +8,11 @@ resource_registry:
   OS::TripleO::Network::Tenant: /usr/share/openstack-tripleo-heat-templates/network/tenant.yaml
   OS::TripleO::Network::External: /usr/share/openstack-tripleo-heat-templates/network/external.yaml
   OS::TripleO::ComputeHCI::Net::SoftwareConfig: /home/stack/templates/nic-configs/compute-hci.yaml
+  OS::TripleO::Compute::Net::SoftwareConfig: /home/stack/templates/nic-configs/compute.yaml
+  OS::TripleO::Virtual-ComputeHCI::Net::SoftwareConfig: /home/stack/templates/nic-configs/compute-hci_vm.yaml
+  OS::TripleO::Virtual-Compute::Net::SoftwareConfig: /home/stack/templates/nic-configs/compute_vm.yaml
+
+
   OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/templates/nic-configs/controller.yaml
   OS::TripleO::Services::ComputeNeutronOvsDpdkAgent: /usr/share/openstack-tripleo-heat-templates/puppet/services/neutron-ovs-dpdk-agent.yaml
 
@@ -17,43 +22,68 @@ resource_registry:
   OS::TripleO::ComputeHCI::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
   OS::TripleO::ComputeHCI::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt.yaml 
 
+  OS::TripleO::Virtual-ComputeHCI::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml  # 1
+  OS::TripleO::Virtual-ComputeHCI::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Virtual-ComputeHCI::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Virtual-ComputeHCI::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+  OS::TripleO::Virtual-ComputeHCI::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt.yaml
+
+
   OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external.yaml  #
   OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
   OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
   OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+
+  OS::TripleO::Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+
+  OS::TripleO::Virtual-Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Virtual-Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Virtual-Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+
+
+
+
   # disable StorageMgmt net on controller
   OS::TripleO::Network::Ports::StorageMgmtVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
   OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
   OS::TripleO::Controller::Ports::StorageMgmtVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  # Port assignments for the VIPs
+  OS::TripleO::Network::Ports::StorageVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Network::Ports::InternalApiVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Network::Ports::ExternalVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external.yaml
+  OS::TripleO::Network::Ports::RedisVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/vip.yaml
 
 parameter_defaults:
   # This section is where deployment-specific configuration is done
   # CIDR subnet mask length for provisioning network
   ControlPlaneSubnetCidr: '24'
   # Gateway router for the provisioning network (or Undercloud IP)
-  ControlPlaneDefaultRoute: 172.30.5.1
-  EC2MetadataIp: 172.30.5.1 # Generally the IP of the Undercloud
+  ControlPlaneDefaultRoute: 172.30.{{ cloud_num|default("3") }}.1
+  EC2MetadataIp: 172.30.{{ cloud_num|default("3") }}.1 # Generally the IP of the Undercloud
   # Customize the IP subnets to match the local environment
-  InternalApiNetCidr: 192.168.102.0/24
-  StorageNetCidr: 192.168.82.0/24
+  InternalApiNetCidr: 192.168.10{{ cloud_num|default("3") }}.0/24
+  StorageNetCidr: 192.168.8{{ cloud_num|default("3") }}.0/24
   #StorageMgmtNetCidr: 192.168.72.0/24
-  TenantNetCidr: 192.168.122.0/24
-  ExternalNetCidr: 10.240.220.0/24
+  StorageMgmtNetCidr: '172.16.{{ cloud_num|default("3") }}.0/24'
+  TenantNetCidr: 192.168.12{{ cloud_num|default("3") }}.0/24
+  ExternalNetCidr: {{ ExternalNetCidr|default("10.240.40.0/22") }}
   # Customize the VLAN IDs to match the local environment
-  InternalApiNetworkVlanID: 202
-  StorageNetworkVlanID: 302
-  StorageMgmtNetworkVlanID: 402
-  TenantNetworkVlanID: 502
+  InternalApiNetworkVlanID: 20{{ cloud_num|default("3") }}
+  StorageNetworkVlanID: 30{{ cloud_num|default("3") }}
+  StorageMgmtNetworkVlanID: 40{{ cloud_num|default("3") }}
+  TenantNetworkVlanID: 50{{ cloud_num|default("3") }}
   #ExternalNetworkVlanID: 1
   # Customize the IP ranges on each network to use for static IPs and VIPs
-  InternalApiAllocationPools: [{'start': '192.168.102.10', 'end': '192.168.102.200'}]
-  StorageAllocationPools: [{'start': '192.168.82.100', 'end': '192.168.82.200'}]
-  #StorageMgmtAllocationPools: [{'start': '192.168.72.10', 'end': '192.168.72.200'}]
-  TenantAllocationPools: [{'start': '192.168.122.10', 'end': '192.168.122.200'}]
-  ExternalAllocationPools: [{'start': '10.240.220.33', 'end': '10.240.220.36'}]
+  InternalApiAllocationPools: [{'start': '192.168.10{{ cloud_num|default("3") }}.10', 'end': '192.168.10{{ cloud_num|default("3") }}.200'}]
+  StorageAllocationPools: [{'start': '192.168.8{{ cloud_num|default("3") }}.100', 'end': '192.168.8{{ cloud_num|default("3") }}.200'}]
+  StorageMgmtAllocationPools: [{'start': '172.16.{{ cloud_num|default("3") }}.100', 'end': '172.16.{{ cloud_num|default("3") }}.200'}]
+  TenantAllocationPools: [{'start': '192.168.12{{ cloud_num|default("3") }}.10', 'end': '192.168.12{{ cloud_num|default("3") }}.200'}]
+  ExternalAllocationPools: [{'start': '{{ ExternalAllocationPoolsStart|default("10.240.43.19") }}', 'end': '{{ ExternalAllocationPoolsEnd|default("10.240.43.21") }}'}]
   # Leave room if the external network is also used for floating IPs
   # Gateway router for the external network
-  ExternalInterfaceDefaultRoute: 10.240.220.1
+  ExternalInterfaceDefaultRoute: {{ ExternalInterfaceDefaultRoute|default("10.240.40.1") }}
   # Uncomment if using the Management Network (see network-management.yaml)
   # ManagementNetCidr: 10.0.1.0/24
   # ManagementAllocationPools: [{'start': '10.0.1.10', 'end', '10.0.1.50'}]
@@ -64,7 +94,7 @@ parameter_defaults:
   # Set to empty string to enable multiple external networks or VLANs
   NeutronExternalNetworkBridge: "''"
   # The tunnel type for the tenant network (vxlan or gre). Set to '' to disable tunneling.
-  NeutronTunnelTypes: ''
+  NeutronTunnelTypes: 'gre'
   # Customize bonding options, e.g. "mode=4 lacp_rate=1 updelay=1000 miimon=100"
   BondInterfaceOvsOptions: "mode=4 lacp_rate=1 updelay=1500 miimon=200"
   DpdkBondInterfaceOvsOptions: "bond_mode=balance-tcp lacp=active"

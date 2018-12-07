@@ -1,0 +1,45 @@
+---
+    - hosts: local
+      remote_user: root
+      #gather_facts: False
+      gather_facts: True
+    
+      vars:
+        mymsg2: morning2
+      vars_files:
+        - /root/gitrepo/workspace/not_now/ansbile/vsftpd/my_vars.yaml
+    
+    
+      tasks:
+        - debug:
+              msg: hello:{{ mymsg2 }}
+        - debug:
+              msg: hello:{{ mymsg }}
+        #- name: install vsftpd
+        #  yum: pkg=vsftpd state=latest
+    
+        #- name: config the vsftpd.conf file
+        #  template:
+        #    src: vsftpd.conf.j2
+        #    dest: /etc/vsftpd/vsftpd.conf
+        #    owner: root
+        #    group: root
+        #    mode: '0600'
+        #    backup: yes
+    
+        #- name: install & config & start vsftpd
+        #  service:
+        #    name: vsftpd
+        #    enabled: yes
+        #    state: started
+    
+        #- name: restart vsftpd
+        #  service:
+        #    name: vsftpd
+        #    state: restarted
+    
+        #- name: stop firewalld
+        #  service:
+        #    name: firewalld
+        #    enabled: no
+        #    state: stopped

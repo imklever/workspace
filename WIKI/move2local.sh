@@ -1,9 +1,10 @@
 #!/bin/bash
 
 DES_PATH="/usr/share/nginx/html"
+
 echo "hello"
 
-
+cd `dirname $0`
 
 #ssh ${DES_HOST} "rm -f ${DES_PATH}/index.html"
 #ssh ${DES_HOST} "rm -f ${DES_PATH}/code/*"

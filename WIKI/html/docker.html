@@ -94,7 +94,8 @@ docker create -ti -v &lt;path in host&gt;:&lt;path in container&gt;:ro -v &lt;vo
         <h3>Data Network:</h3>
             <pre>
 docker network list                     #list docker network
-docker network inspect bridge           #show info of docker network</pre>
+docker network inspect bridge           #show info of docker network
+docker network inspect &lt;container name&gt; | grep Network   #show info of docker network</pre>
 
     <h2>ref:</h2>
         <a target= _blank href="https://www.cnblogs.com/gispathfinder/p/5871043.html">Docker的4种网络模式</a><br>

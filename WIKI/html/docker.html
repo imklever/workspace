@@ -91,6 +91,14 @@ docker volume rm test_volume                         #delete a data volume
 docker create -ti -v &lt;path in host&gt;:&lt;path in container&gt;:ro -v &lt;volume name&gt;:&lt;path in container&gt;:ro --name &lt;container name&gt; &lt;image name&gt;      #mount the data volume into the container,ro means read only
     eg: docker create -ti -v /root:/volumes/volume2:ro -v volume1:/volumes/volume1 --name test_container ubuntu</pre>
 
+        <h3>Data Network:</h3>
+            <pre>
+docker network list                     #list docker network
+docker network inspect bridge           #show info of docker network</pre>
+
+    <h2>ref:</h2>
+        <a target= _blank href="https://www.cnblogs.com/gispathfinder/p/5871043.html">Docker的4种网络模式</a><br>
+
     <!---
     <h2>ref:</h2>
     <a target= _blank href=ref>ref</a><br>

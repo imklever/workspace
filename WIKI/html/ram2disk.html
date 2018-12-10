@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>内存盘</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body>
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+
+    <h1 style="text-align:center;">将内存挂载成磁盘使用</h1>
+
+    <h2>挂载分区:</h2>
+        <pre>mkdir /mnt/ramdisk
+mount -t tmpfs -o size=800G tmpfs /mnt/ramdisk/</pre>
+        <div class=note>
+            挂载容量不受物理内存大小限制，即使mount参数为<code>-osize=800P</code>也不会报错
+        </div>
+
+            <h3>dd test:</h3>
+            <pre>[root@bootstrap-node leo]# dd if=/dev/zero of=~/file bs=500M count=4 conv=fdatasync
+4+0 records in
+4+0 records out
+2097152000 bytes (2.1 GB) copied, 11.667 s, <mark>180 MB/s</mark>
+
+[root@bootstrap-node leo]# dd if=/dev/zero of=/mnt/ramdisk/file bs=500M count=4 conv=fdatasync  
+4+0 records in
+4+0 records out
+2097152000 bytes (2.1 GB) copied, 1.16682 s, <mark>1.8 GB/s</mark></pre>
+
+        <pre></pre>
+        <pre></pre>
+        <pre></pre>
+        <pre></pre>
+        <pre></pre>
+<!---
+    <h2>:</h2>
+        <h3>:</h3>
+            <pre><mark></mark></pre>
+
+    <div class=note>
+        <code></code>
+    </div>
+
+    <h2>ref:</h2>
+    <a target= _blank href=ref>ref</a><br>
+    <a target= _blank href=ref>ref</a><br>
+--->
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>

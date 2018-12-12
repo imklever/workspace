@@ -386,8 +386,7 @@ openstack stack list | sed -e '2d' -e '/^+-.*/d' | awk -F'|' '{print $2}' | xarg
 
 #delete node
 for node in $(openstack baremetal node list --fields uuid -f value) ; do openstack baremetal node delete $node ; done; openstack baremetal node list
-openstack overcloud node import ~/env.json
-openstack overcloud node introspect --all-manageable --provide
+openstack overcloud node import ~/env.json; openstack overcloud node introspect --all-manageable --provide
 
 
 openstack overcloud profiles list

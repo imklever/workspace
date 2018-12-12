@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Switch</title>
+
+<meta charset="utf-8">
+<link rel="icon" href="../icon/title.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+</head>
+
+
+
+<body>
+
+<header>
+    <h1>笔记簿</h1>
+</header>
+
+<ul class="nav_dl">
+    <li><a href="">subpage1</a></li>
+    <li><a href="">subpage2</a></li>
+    <li><a href="">subpage3</a></li>
+    <li><a href="">subpage4</a></li>
+</ul>
+
+<nav>
+    <h2>目录:</h2>
+    <ul>
+        <li><a href="#1">#1</a></li>
+        <li><a href="#2">#2</a></li>
+        <li><a href="#3">#3</a></li>
+    </ul>
+</nav>
+
+<div class="contant">
+
+    <h1>交换机</h1>
+
+    <h2>VLAN:</h2>
+        <h3>Trunk:</h3>
+        <div class=note>
+            Trunk 模式下,允许多种Vlan tag的报文传送，trunk模式下具有native lan，默认为1.<br>
+            当接收的报文没有vlan tag时，会自动加上 native vlan的tag，并在报文送出时，剥离native vlan tag<br>
+            对于非native vlan 的其他vlan tag 值。不做vlan上的增加和剥离动作，仅根据规则，进行报文的接收或丢弃。<br>
+        </div>
+        <h3>Access:</h3>
+        <div class=note>
+            Access 模式下，接收或发送的报文必须都是无Vlan tag的报文。并在就收后，打上端口对应的PVID作为Vlan 值，以及在发送时剥离该Vlan值。<br>
+            对于接收的含有Vlan信息的报文会直接进行丢弃（该动作为缺省动作，不确定是否有其他操作可选）。<br>
+        </div>
+        <h3>试用情况:</h3>
+        <div class=note>
+            Access 模式适用于交换机端口直连pc终端或服务器终端(该PC或服务器终端的IP地址配置不含Vlan tag)<br>
+            Trunk  模式适用于交换机端口直连pc终端或服务器终端(该PC或服务器终端具有多个Vlan tag的IP 地址)<br>
+            Trunk  模式适用于交换机和交换机之间的连接<br>
+        </div>
+    <h2>命令，配置:</h2>
+        <pre>
+    enable
+
+    configure terminal
+    interface ip 1
+        ip address 10.240.220.2 255.255.255.192
+        vlan 533
+        enable
+        exit
+
+    configure terminal
+    interface port 2
+        switchport mode trunk allow 1-123
+        switchport mode access
+        switchport access vlan 11
+
+    show vlan
+    vlan 11
+    name c1
+    enable
+    member 1
+    exit
+
+    copy running-config startup-config
+
+
+Lenovo RackSwitch G8272.
+
+------------------------------------------------------------------
+NOTE: System dump exists in FLASH.
+The dump was saved at 19:40:35 Sat Apr 13, 2014.
+Use 'show flash-dump-uuencode' or 'copy flash-dump' to
+extract the dumps for analysis and 'clear flash-dump' to
+clear the FLASH region. 
+------------------------------------------------------------------
+
+ceph-cluster>
+Jan 22  0:39:46 ceph-cluster NOTICE  mgmt: admin(admin) login from host 10.104.206.25
+
+ceph-cluster>
+ceph-cluster>?
+Exec commands:
+  console-log         Enable session console logging
+  disable             Turn off privileged commands
+  edit                Edit a script
+  enable              Turn on privileged commands
+  exit                Exit from the EXEC
+  help                Description of the interactive help system
+  interface           Select an interface to perform operation
+  list                List all commands in the current CLI mode
+  logout              Exit from the EXEC
+  no                  Negate operational commands
+  openflow            Openflow operational functionalities
+  password            Change current user password
+  ping                Send echo messages
+  primary-password    Set new password for TACACS+ primary server
+  range-verbose       Set port range commands verbosity
+  router              Perform router operational functionalities
+  secondary-password  Set new password for TACACS+ secondary server
+  show                Show running system information
+  system              Set system configuration
+  telnet              Open a telnet connection
+  terminal-length     Set the number of lines displayed per screen
+  traceroute          Trace route
+  virt                Virtualization operations menu
+ceph-cluster>
+
+
+
+ceph-cluster>enable 
+Enable privilege granted.
+ceph-cluster#?
+Exec commands:
+  clear               Reset functions
+  configure           Enter configuration mode
+  console-log         Enable session console logging
+  copy                Copy from one file to another
+  debug               Debugging functions
+  dir                 List files
+  disable             Turn off privileged commands
+  edit                Edit a script
+  enable              Turn on privileged commands
+  exit                Exit from the EXEC
+  help                Description of the interactive help system
+  interface           Select an interface to perform operation
+  kill                Terminate a running script
+  list                List all commands in the current CLI mode
+  logout              Exit from the EXEC
+  mv                  Move a file
+  no                  Negate operational commands
+  ntp                 NTP operational functionalities
+  openflow            Openflow operational functionalities
+  password            Change current user password
+  ping                Send echo messages
+  primary-password    Set new password for TACACS+ primary server
+  python              Enter Python shell
+  range-verbose       Set port range commands verbosity
+  reload              Halt and perform a cold restart
+  router              Perform router operational functionalities
+  secondary-password  Set new password for TACACS+ secondary server
+  setup               Step by step configuration set up
+  show                Show running system information
+  system              Set system configuration
+  telnet              Open a telnet connection
+  terminal-length     Set the number of lines displayed per screen
+  traceroute          Trace route
+  usbcopy             Copy to/from USB drive
+  virt                Virtualization operations menu
+  write               Write current configuration to startup configuration
+ceph-cluster#
+
+
+
+ceph-cluster#configure terminal 
+Enter configuration commands, one per line.  End with Ctrl/Z.
+ceph-cluster(config)#?
+Configure commands:
+  access             Configure network access to this system
+  access-control     Access control list
+  banner             Define a login banner
+  boot               Boot commands
+  cee                CEE configuration
+  clear              Clear the existing details
+  debug              Debugging functions
+  default            Set a command to its defaults
+  dot1x              802.1x configuration
+  ecp                Edge Control Protocol (ECP)
+  enable             Modify enable password parameters
+  end                Exit from configuration mode
+  errdisable         Errdisable configuration
+  exit               Exit from configuration mode
+  failover           Failover configuration
+  fcalias            Configure fc-alias
+  fcf                FCF parameters config commands
+  fcoe               FCOE Configuration
+  hostname           Set system's network name
+  hotlinks           Hot Links configuration
+  ikev2              IKEv2 configuration commands
+  interface          Select an interface to configure
+  ip                 Global IP configuration subcommands
+  ipsec              IPsec configuration commands for IPv6
+  ipv6               IPV6 configuration
+  lacp               LACP configuration
+  ldap-server        LDAP-server configuration
+  line               Lines per page
+  lldp               LLDP configuration
+  logging            Syslog Configuration
+  mac-address-table  Forwarding Database configuration
+  microburst         Hardware microburst detection.
+  no                 Negate a command or set its defaults
+  ntp                NTP server configuration
+  openflow           Configure Openflow general configuration
+  port-mirroring     Port-mirroring configuration
+  PortChannel        Port channel
+  prompting          Enable command prompting
+  ptp                Configure PTP
+  qos                Configure Quality of Service
+  radius-server      RADIUS-server configuration
+  rmon               RMON configuration
+  route-map          Route-map configuration
+  router             Routing protocols
+  scheduler          Python scheduler configuration
+  sflow              sFlow configuration
+  snmp-server        SNMP server configuration
+  spanning-tree      Spanning Tree subsystem
+  ssh                Configure SSH server
+  ssl                Set SSL configuration
+  system             Set system configuration
+  tacacs-server      TACACS+ server configuration
+  ufp                UFP commands
+  virt               Virtual machine groups
+  vlag               Virtual Link Aggregation
+  vlan               VLAN commands
+  zone               Configurations for zone
+  zoneset            Configurations for zoneset
+ceph-cluster(config)#
+
+
+
+ceph-cluster(config)#interface port 2
+ceph-cluster(config-if)#?
+Interface configuration commands:
+  access-control         Access control list configuration
+  auto                   Set auto negotiation
+  bpdu-guard             Enable BPDU guard mode
+  default                Set a command to its defaults
+  description            Set interface description
+  dot1p                  Set default 802.1p priority
+  dot1x                  802.1x interface configuration
+  dscp-marking           Enable DSCP remarking for this interface
+  duplex                 Set full or half duplex mode
+  errdisable             Errdisable interface configuration
+  evb                    Edge Virtual Bridging Configuration
+  exit                   Exit from interface configuration mode
+  flood-blocking         Enable port Flood Blocking
+  flowcontrol            Set flow control 
+  ip                     IP configuration
+  lacp                   LACP interface 
+  learning               Enable FDB learning
+  lldp                   LLDP configuration
+  mac-address-table      Forwarding Database configuration
+  no                     Negate a command
+  oam                    Enable OAM Discovery process for this interface
+  openflow               Openflow port configuration
+  port-channel           Set port-channel
+  ptp                    Enable PTP on port
+  random-detect          Configure WRED and ECN
+  reflective-relay       Enable reflective relay
+  rmon                   Enable RMON on port
+  sflow                  sFlow interface configuration
+  shutdown               Disable interface
+  spanning-tree          Interface spanning-tree configuration
+  storm-control          Storm control levels configuration
+  switchport             Set switching mode characteristics
+  tagpvid-ingress        Enable inserting PVID as outer tag on ingress packets
+  udld                   Enable UDLD for this interface
+  vlan                   Vlan commands
+ceph-cluster(config-if)# </pre>
+
+    <h2>Vlan 实际参考信息:</h2>
+<pre>
+###############################################
+ceph-cluster#show interface trunk 
+Port    Tag RMON Lrn Fld Openflow PVID     DESCRIPTION  VLAN(s)
+        Trk                       NVLAN                        
+------- --- ---- --- --- -------- ------ -------------- ------------------------
+1        y   d    e   e      d       1                  1
+2        y   d    e   e      d       1                  1
+3        y   d    e   e      d       1                  1
+4        y   d    e   e      d       1                  1
+5        y   d    e   e      d       1                  1
+6        y   d    e   e      d       1                  1
+7        n   d    e   e      d       1                  1
+8        n   d    e   e      d       1                  1
+9        n   d    e   e      d     300                  300
+10       n   d    e   e      d     300                  300
+11       n   d    e   e      d     300                  300
+12       n   d    e   e      d     300                  300
+13       n   d    e   e      d     300                  300
+14       n   d    e   e      d     300                  300
+15       n   d    e   e      d     400                  400
+16       n   d    e   e      d     400                  400
+17       n   d    e   e      d     400                  400
+18       n   d    e   e      d     400                  400
+19       n   d    e   e      d     400                  400
+20       n   d    e   e      d     400                  400
+21       n   d    e   e      d       1                  1
+22       n   d    e   e      d       1                  1
+23       n   d    e   e      d       1                  1
+24       n   d    e   e      d       1                  1
+25       n   d    e   e      d       1                  1
+26       n   d    e   e      d       1                  1
+27       n   d    e   e      d       1                  1
+28       n   d    e   e      d       1                  1
+29       n   d    e   e      d       1                  1
+30       n   d    e   e      d       1                  1
+31       n   d    e   e      d     401                  401
+32       n   d    e   e      d     401                  401
+33       n   d    e   e      d     401                  401
+34       n   d    e   e      d     401                  401
+35       n   d    e   e      d     401                  401
+36       n   d    e   e      d     401                  401
+37       y   d    e   e      d      10                  10-11 201 300 501 700 800
+38       y   d    e   e      d      10                  10-11 201 300 501 700 800
+39       y   d    e   e      d      10                  10-11 201 300 501 700 800
+40       y   d    e   e      d      10                  10-11 201 300 501 700 800
+41       y   d    e   e      d      10                  10-11 201 300 501 700 800
+42       y   d    e   e      d      10                  10-11 201 300 501 700 800
+43       n   d    e   e      d       1                  1
+44       n   d    e   e      d       1                  1
+45       n   d    e   e      d       1                  1
+46       n   d    e   e      d       1                  1
+47       n   d    e   e      d       1                  1
+48       n   d    e   e      d       1                  1
+49       n   d    e   e      d       1                  1
+50       n   d    e   e      d       1                  1
+51       n   d    e   e      d       1                  1
+52       n   d    e   e      d       1                  1
+53       n   d    e   e      d       1                  1
+54       n   d    e   e      d       1                  1
+MGT      n   d    e   e      d    4095                  4095
+
+* = PVID/Native-VLAN is tagged.
+# = PVID is ingress tagged.
+Trk  = Trunk mode
+NVLAN = Native-VLAN
+
+
+
+###############################################
+ceph-cluster#show interface ip 
+Interface information:
+128:    IP4 10.240.220.15   255.255.255.192 10.240.220.63,   vlan 4095, up 
+Routed Port Interface Information:
+
+Loopback interface information:
+
+
+
+###############################################
+ceph-cluster#show interface link
+-----------------------------------------------------------------------
+Port     Speed    Duplex     Flow Ctrl      Link     Description
+-------  -----   --------  --TX-----RX--   ------   -------------
+1        10000     full      no     no       up       1       
+2        1G/10G    full      no     no      down      2       
+3        1G/10G    full      no     no      down      3       
+4        1G/10G    full      no     no      down      4       
+5        1G/10G    full      no     no      down      5       
+6        1G/10G    full      no     no      down      6       
+7        1G/10G    full      no     no      down      7       
+8        1G/10G    full      no     no      down      8       
+9        1G/10G    full      no     no      down      9       
+10       1G/10G    full      no     no      down      10      
+11       1G/10G    full      no     no      down      11      
+12       1G/10G    full      no     no      down      12      
+13       1G/10G    full      no     no      down      13      
+14       1G/10G    full      no     no      down      14      
+15       1G/10G    full      no     no      down      15      
+16       1G/10G    full      no     no      down      16      
+17       1G/10G    full      no     no      down      17      
+18       1G/10G    full      no     no      down      18      
+19       1G/10G    full      no     no      down      19      
+20       1G/10G    full      no     no      down      20      
+21       1G/10G    full      no     no      down      21      
+22       1G/10G    full      no     no      down      22      
+23       1G/10G    full      no     no      down      23      
+24       1G/10G    full      no     no      down      24      
+25       1G/10G    full      no     no      down      25      
+26       1G/10G    full      no     no      down      26      
+27       1G/10G    full      no     no      down      27      
+28       1G/10G    full      no     no      down      28      
+29       1G/10G    full      no     no      down      29      
+30       1G/10G    full      no     no      down      30      
+31       1G/10G    full      no     no      down      31      
+32       1G/10G    full      no     no      down      32      
+33       1G/10G    full      no     no      down      33      
+34       1G/10G    full      no     no      down      34      
+35       1G/10G    full      no     no      down      35      
+36       1G/10G    full      no     no      down      36      
+37       1G/10G    full      no     no      down      37      
+38       1G/10G    full      no     no      down      38      
+39       1G/10G    full      no     no      down      39      
+40       1G/10G    full      no     no      down      40      
+41       1G/10G    full      no     no      down      41      
+42       1G/10G    full      no     no      down      42      
+43       1G/10G    full      no     no      down      43      
+44       1G/10G    full      no     no      down      44      
+45       10000     full      no     no      down      45      
+46       1G/10G    full      no     no      down      46      
+47       1G/10G    full      no     no      down      47      
+48       1G/10G    full      no     no      down      48      
+49       40000     full      no     no      down      49      
+50       40000     full      no     no      down      50      
+51       40000     full      no     no      down      51      
+52       40000     full      no     no      down      52      
+53       40000     full      no     no      down      53      
+54       40000     full      no     no      down      54      
+MGT       1000     full     yes    yes       up       MGT     
+
+
+
+###############################################
+ceph-cluster#show interface port 2
+Current port 2 configuration: enabled, PVID/Native-VLAN 1, Tagging/Trunk-mode
+    ErrDisable recovery enabled
+    Switch port
+    STP: non-edge, auto link-type, no guard
+    The Unicast storm control currently turned off
+    The Multicast storm control currently turned off
+    The Broadcast storm control currently turned off
+    802.1p priority: 0
+    DSCP remarking for port: disabled
+    BPDU guard: disabled
+    Flood blocking: disabled
+    MAC address notification: disabled
+    L2 Learning: enabled
+    ACL Port config is empty
+    UDLD: disabled, mode normal
+    OAM: disabled, mode active
+    EVB Profile: 0
+    Reflective Relay is configured off
+    DHCP Snooping trust disable, limit rate: none
+    PTP enabled
+    Openflow: disabled
+    VLANs: 1
+    Private-VLAN: disabled
+
+
+Current Port 2 Gig link configuration:
+    speed 1000/10000, mode full duplex, fctl none, auto off
+
+
+###############################################
+ceph-cluster#show interface port 7 
+Current port 7 configuration: enabled, PVID/Native-VLAN 1
+    ErrDisable recovery enabled
+    Switch port
+    STP: non-edge, auto link-type, no guard
+    The Unicast storm control currently turned off
+    The Multicast storm control currently turned off
+    The Broadcast storm control currently turned off
+    802.1p priority: 0
+    DSCP remarking for port: disabled
+    BPDU guard: disabled
+    Flood blocking: disabled
+    MAC address notification: disabled
+    L2 Learning: enabled
+    ACL Port config is empty
+    UDLD: disabled, mode normal
+    OAM: disabled, mode active
+    EVB Profile: 0
+    Reflective Relay is configured off
+    DHCP Snooping trust disable, limit rate: none
+    PTP enabled
+    Openflow: disabled
+    VLANs: 1
+    Private-VLAN: disabled
+
+
+Current Port 7 Gig link configuration:
+    speed 1000/10000, mode full duplex, fctl none, auto off
+
+
+###############################################
+ceph-cluster#show interface port 31
+Current port 31 configuration: enabled, PVID/Native-VLAN 401
+    ErrDisable recovery enabled
+    Switch port
+    STP: non-edge, auto link-type, no guard
+    The Unicast storm control currently turned off
+    The Multicast storm control currently turned off
+    The Broadcast storm control currently turned off
+    802.1p priority: 0
+    DSCP remarking for port: disabled
+    BPDU guard: disabled
+    Flood blocking: disabled
+    MAC address notification: disabled
+    L2 Learning: enabled
+    ACL Port config is empty
+    UDLD: disabled, mode normal
+    OAM: disabled, mode active
+    EVB Profile: 0
+    Reflective Relay is configured off
+    DHCP Snooping trust disable, limit rate: none
+    PTP enabled
+    Openflow: disabled
+    VLANs: 401
+    Private-VLAN: disabled
+
+
+Current Port 31 Gig link configuration:
+    speed 1000/10000, mode full duplex, fctl none, auto off
+
+
+###############################################
+ceph-cluster#show interface port 41 
+Current port 41 configuration: enabled, PVID/Native-VLAN 10, Tagging/Trunk-mode
+    ErrDisable recovery enabled
+    Switch port
+    STP: non-edge, auto link-type, no guard
+    The Unicast storm control currently turned off
+    The Multicast storm control currently turned off
+    The Broadcast storm control currently turned off
+    802.1p priority: 0
+    DSCP remarking for port: disabled
+    BPDU guard: disabled
+    Flood blocking: disabled
+    MAC address notification: disabled
+    L2 Learning: enabled
+    ACL Port config is empty
+    UDLD: disabled, mode normal
+    OAM: disabled, mode active
+    EVB Profile: 0
+    Reflective Relay is configured off
+    DHCP Snooping trust disable, limit rate: none
+    PTP enabled
+    Openflow: disabled
+    VLANs: 10-11,201,300,501,700,800
+    Private-VLAN: disabled
+
+
+Current Port 41 Gig link configuration:
+    speed 1000/10000, mode full duplex, fctl none, auto off
+</pre>
+<!---
+    <h2>:</h2>
+        <h3>:</h3>
+            <pre><mark></mark></pre>
+
+    <div class=note>
+        <code></code>
+    </div>
+
+    <h2>ref:</h2>
+    <a target= _blank href=ref>ref</a><br>
+    <a target= _blank href=ref>ref</a><br>
+--->
+</div>
+
+<footer>
+yqnt418@163.com
+</footer>
+
+<script src="../js/WIKI.js"></script>
+
+</body>
+
+</html>
